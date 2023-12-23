@@ -4,11 +4,11 @@ from langchain_core.prompts import PromptTemplate
 checker_tmpl = """
 # Instruction:
 You're tasked with checking and validating resume by comparing it to the job 
-description below. Your responsibility is to determine whether the resume is suitable for the job or not.
+description below. Your responsibility is to strictly determine whether the resume is suitable for the job or not.
 
 {format_instructions}
 
-no other explanations must be shown
+no other explanations must be produced
 
 # RESUME:
 {resume}
@@ -20,9 +20,8 @@ no other explanations must be shown
 \n
 """
 
-cover_letter_tmpl = """
-# Instruction:
-Below is a job description and a cover letter. Your responsibility is to generate a cover letter than can be used as it is
+cover_letter_tmpl = """# Instruction: Below is a job description and a cover letter. Your responsibility is to 
+generate a cover letter than can be used as it is with a tile and body
 
 # RESUME:
 {resume}
@@ -39,6 +38,9 @@ checker_response_schemas = [
                    type="float"),
     ResponseSchema(name="value", description="if the resume is qualified for the job or not", type="boolean"),
     ResponseSchema(name="explanation", description="why the resume is fit or not for the job description"),
+    ResponseSchema(name="fixes",
+                   description="if not fit, explain step by step the different ways the resume can be improved for "
+                               "the job in a first person singular. eg. you should highlight any experience or skill.."),
 ]
 
 check_output_parser = StructuredOutputParser.from_response_schemas(checker_response_schemas)

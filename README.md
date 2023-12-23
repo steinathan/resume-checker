@@ -1,8 +1,6 @@
-# Project Title
-
 ## Resume Analyser
 
-A Python tool for analyzing the fit between a resume and a job posting.
+A Python tool for analyzing the fit between a resume and a job posting, assigns a score then generates a cover letter automatically, runs with local models (ollama) or openai
 
 ## Overview
 
@@ -29,7 +27,7 @@ Make sure you have the following installed:
 
 ## Usage
 
-Fisrt, install ollama here https://github.com/jmorganca/ollama
+First, install ollama here https://github.com/jmorganca/ollama
 
 ```shell
 $ curl https://ollama.ai/install.sh | sh
@@ -53,7 +51,6 @@ poetry install
 Create a .env file with the following content:
 ```dotenv
 OPENAI_API_KEY=xxxxxxxx
-DEBUG=True
 LLM_MODEL=openai  # or ollama
 ```
 
@@ -61,5 +58,10 @@ LLM_MODEL=openai  # or ollama
 
 Run the tool:
 ```shell
-python main.py
+python main.py --job-url="https://xxxxxxx" --resume="./path/to/resume.pdf"
 ```
+
+
+## TODOS
+- Scrape and find jobs automatically 
+- Auto apply for jobs if applicable after confirmation

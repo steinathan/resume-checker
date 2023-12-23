@@ -17,6 +17,7 @@ langchain-experimental = "^0.0.47"
 pypdf = "^3.17.3"
 python-dotenv = "^1.0.0"
 fake-useragent = "^1.4.0"
+click = "^8.1.7"
 
 
 [build-system]

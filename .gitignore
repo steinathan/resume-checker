@@ -1,4 +1,4 @@
-cover_letters/*
-resumes/*
+cover_letters/*.txt
+resumes/*.pdf
 .env
 *.log
