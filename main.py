@@ -17,7 +17,3 @@ def cli_entry_point(resume, job_url):
 
 if __name__ == "__main__":
     cli_entry_point()
-    # resume_path = "./resumes/main.pdf"
-    # job_url = "https://boards.greenhouse.io/remotecom/jobs/5789193003"
-    # analyzer = ResumeAnalyser(job_posting_url=job_url, resume_path=resume_path)
-    # analyzer.run()

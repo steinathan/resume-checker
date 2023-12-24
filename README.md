@@ -8,13 +8,18 @@ Resume Analyser is a command-line tool designed for evaluating how well a given 
 posting. The tool utilizes advanced language models for understanding and comparing textual content, providing a score
 and detailed feedback.
 
+## Services+
+- Together AI - https://together.ai
+- OpenAI - https://openai.com
+- Ollama - https://github.com/jmorganca/ollama
+
 ## Features
 
-- **Language Models:** Integrates with OpenAI's GPT-3.5 Turbo and Ollama for natural language processing.
-- **Resume Parsing:** Extracts text content from PDF resumes for analysis.
-- **Job Site Scraping:** Fetches job description content from specified URLs.
-- **Scoring System:** Generates a score indicating the fit between the resume and job description.
-- **Cover Letter Generation:** Automatically generates a cover letter if the fit is positive.
+- 🧠 **Language Models:** Integrates with OpenAI's GPT-3.5 Turbo and Ollama for natural language processing.
+- 📄 **Resume Parsing:** Extracts text content from PDF resumes for analysis.
+- 🌐 **Job Site Scraping:** Fetches job description content from specified URLs.
+- 🎯 **Scoring System:** Generates a score indicating the fit between the resume and job description.
+- ✉️ **Cover Letter Generation:** Automatically generates a cover letter if the fit is positive.
 
 ## Prerequisites
 
@@ -50,11 +55,11 @@ poetry install
 3. Set up environment variables:
 Create a .env file with the following content:
 ```dotenv
-OPENAI_API_KEY=xxxxxxxx
-LLM_MODEL=openai  # or ollama
+OPENAI_API_KEY="xxxxxxxxxxx"
+DEBUG="False"
+LLM_MODEL="openai" # together | ollama
+TOGETHER_API_KEY="xxxxxxxxxxxx"
 ```
-
-4. Place your resume(s) in the `resumes` directory.
 
 Run the tool:
 ```shell

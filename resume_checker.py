@@ -9,6 +9,7 @@ from langchain.document_loaders import PyPDFLoader
 from langchain_community.chat_models import ChatOpenAI
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.llms.ollama import Ollama
+from langchain_community.llms.together import Together
 from langchain_core.callbacks import StreamingStdOutCallbackHandler, CallbackManager
 from prompts import resume_checker_prompt, check_output_parser, resume_cover_letter_prompt
 
@@ -46,6 +47,12 @@ class ResumeAnalyser:
             self.llm = Ollama(
                 model="mistral",
                 callback_manager=CallbackManager([StreamingStdOutCallbackHandler()])
+            )
+        elif model_name == "together":
+            self.llm = Together(
+                model="mistralai/Mistral-7B-Instruct-v0.2",
+                temperature=0.7,
+                top_k=1,
             )
         else:
             raise ValueError("Invalid LLM model name")
