@@ -1,0 +1,165 @@
+from __future__ import annotations
+
+import logging
+import os
+from dataclasses import dataclass
+from datetime import datetime
+
+import validators
+from dotenv import load_dotenv
+from langchain.document_loaders import PyPDFLoader, OnlinePDFLoader
+from langchain_community.chat_models import ChatOpenAI
+from langchain_community.document_loaders import WebBaseLoader
+from langchain_community.llms.ollama import Ollama
+from langchain_community.llms.together import Together
+from langchain_core.callbacks import StreamingStdOutCallbackHandler, CallbackManager
+
+from prompts import resume_checker_prompt, check_output_parser, resume_cover_letter_prompt
+
+load_dotenv()
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s]: %(message)s",
+    handlers=[
+        logging.FileHandler("resume_logger.log"),
+        logging.StreamHandler()
+    ]
+)
+
+
+def is_valid_url(url: str) -> bool:
+    return validators.url(url)
+
+
+def trim_space(text: str) -> str:
+    return text.replace("\n", " ").replace("\r", " ").replace("\t", " ")
+
+
+@dataclass
+class ResumeAnalysis:
+    value: str | None = None
+    explanation: str | None = None
+    fixes: str | None = None
+    score: float | None = None
+
+
+@dataclass
+class ResumeAnalyserResult:
+    resume_content: str
+    job_url: str
+    cover_letter: str | None = None
+    resume_analysis: ResumeAnalysis | None = None
+
+
+class ResumeAnalyser:
+    """ ResumeAnalyser takes in a path to your resume and a job posting URL and lets you know if you're fit for the
+    job or not"""
+    llm = None
+    resume_content: str | None = ""
+    job_content: str | None = ""
+
+    def __init__(self, job_posting_url: str, resume_file_path: str | None = None, resume_content: str | None = None):
+        self.resume_path = resume_file_path
+        self.job_posting_url = job_posting_url
+
+        if resume_content:
+            self.resume_content = resume_content
+
+        if resume_file_path:
+            self.resume_path = resume_file_path
+
+        # either resume_content or path should be provided
+        if not resume_content and not resume_file_path:
+            raise ValueError("Either resume_content or resume_file_path must be provided")
+
+        model_name = os.getenv("LLM_MODEL")
+        if model_name == "openai":
+            self.llm = ChatOpenAI(model_name="gpt-3.5-turbo-1106")
+        elif model_name == "ollama":
+            self.llm = Ollama(
+                model="mistral",
+                callback_manager=CallbackManager(
+                    [StreamingStdOutCallbackHandler()])
+            )
+        elif model_name == "together":
+            self.llm = Together(
+                model="mistralai/Mistral-7B-Instruct-v0.2",
+                temperature=0.7,
+                top_k=1,
+            )
+        else:
+            raise ValueError("Invalid LLM model name")
+
+        logging.info(f"Using {model_name} model")
+
+        self.load_resume(self.resume_path)
+        self.load_job_site(self.job_posting_url)
+
+    def load_resume(self, path):
+        """ loads the resume text from the resume path """
+        if not self.resume_content:
+            logging.info(f"Resume content not provided, loading resume from URL or PATH: {path}")
+            if is_valid_url(path):
+                loader = OnlinePDFLoader(path)
+                logging.info(f"Loading resume from HTTP: {path}")
+            else:
+                loader = PyPDFLoader(path)
+                logging.info(f"Loading resume from local file: {path}")
+
+            docs = loader.load()
+            for doc in docs:
+                if not self.resume_content:
+                    self.resume_content = ""
+                self.resume_content += trim_space(doc.page_content)
+
+    def load_job_site(self, url):
+        """ loads the job text from the job site url """
+        loader = WebBaseLoader(url)
+        docs = loader.load()
+        for doc in docs:
+            if not self.job_content:
+                self.job_content = ""
+            self.job_content += trim_space(doc.page_content)
+
+    def run(self) -> ResumeAnalyserResult:
+        """ Runs the program """
+        check_prompt_str = resume_checker_prompt.format(
+            resume=self.resume_content, job_description=self.job_content)
+        logging.debug(check_prompt_str)
+        output = self.llm.predict(check_prompt_str)
+        result = check_output_parser.parse(output)
+        score, fit, explanation, fixes = result["score"], result["fit"], result["explanation"], result["fixes"]
+
+        cover_letter: str | None = None
+
+        if fit is True:
+            cover_letter = self.generate_cover_letter()
+
+        return ResumeAnalyserResult(
+            resume_content=self.resume_content,
+            cover_letter=cover_letter,
+            resume_analysis=result,
+            job_url=self.job_posting_url,
+        )
+
+    def generate_cover_letter(self) -> str:
+        """ generate cover letter for the job"""
+        cover_letter_prompt_str = resume_cover_letter_prompt.format(resume=self.resume_content,
+                                                                    job_description=self.job_content)
+        cover_letter = self.llm.predict(cover_letter_prompt_str)
+        logging.debug(cover_letter_prompt_str)
+
+        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+        filename = f"cover_letter_{timestamp}.txt"
+        filename = os.path.join("cover_letters", filename)
+
+        with open(filename, "w") as f:
+            f.write(cover_letter)
+
+        logging.info(f"Cover letter generated at {filename}")
+        print(f"""
+Here's an example cover letter you can use
+{cover_letter}
+        """)
+        return cover_letter

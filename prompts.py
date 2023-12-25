@@ -36,10 +36,11 @@ generate a cover letter than can be used as it is with a tile and body
 checker_response_schemas = [
     ResponseSchema(name="score", description="the score to the resume against the job description, from [0-10]",
                    type="float"),
-    ResponseSchema(name="value", description="if the resume is qualified for the job or not", type="boolean"),
+    ResponseSchema(name="fit", description="if the resume is qualified for the job or not", type="boolean"),
     ResponseSchema(name="explanation", description="why the resume is fit or not for the job description"),
     ResponseSchema(name="fixes",
-                   description="if not fit, explain step by step the different ways the resume can be improved for "
+                   description="if not fit, explain in a markdown step by step the different ways the resume can be "
+                               "improved for"
                                "the job in a first person singular. eg. you should highlight any experience or skill.."),
 ]
 
