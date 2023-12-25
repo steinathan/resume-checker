@@ -18,8 +18,15 @@ pypdf = "^3.17.3"
 python-dotenv = "^1.0.0"
 fake-useragent = "^1.4.0"
 click = "^8.1.7"
+supabase = "^2.3.0"
+fastapi = "^0.105.0"
+uvicorn = {extras = ["standard"], version = "^0.25.0"}
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+passlib = "^1.7.4"
+python-multipart = "^0.0.6"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+

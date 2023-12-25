@@ -46,7 +46,8 @@ class ResumeAnalyser:
         elif model_name == "ollama":
             self.llm = Ollama(
                 model="mistral",
-                callback_manager=CallbackManager([StreamingStdOutCallbackHandler()])
+                callback_manager=CallbackManager(
+                    [StreamingStdOutCallbackHandler()])
             )
         elif model_name == "together":
             self.llm = Together(
@@ -56,6 +57,8 @@ class ResumeAnalyser:
             )
         else:
             raise ValueError("Invalid LLM model name")
+
+        logging.info(f"Using {model_name} model")
 
         self.load_resume(self.resume_path)
         self.load_job_site(self.job_posting_url)
@@ -76,11 +79,13 @@ class ResumeAnalyser:
 
     def run(self):
         """ Runs the program """
-        check_prompt_str = resume_checker_prompt.format(resume=self.resume_content, job_description=self.job_content)
+        check_prompt_str = resume_checker_prompt.format(
+            resume=self.resume_content, job_description=self.job_content)
         logging.debug(check_prompt_str)
         output = self.llm.predict(check_prompt_str)
         result = check_output_parser.parse(output)
-        score, value, explanation, fixes = result["score"], result["value"], result["explanation"], result["fixes"]
+        score, value, explanation, fixes = result["score"], result[
+            "value"], result["explanation"], result["fixes"]
         print(f"""
 Job fit: {value}
 Explanation: {explanation}

@@ -63,7 +63,7 @@ TOGETHER_API_KEY="xxxxxxxxxxxx"
 
 Run the tool:
 ```shell
-python main.py --job-url="https://xxxxxxx" --resume="./path/to/resume.pdf"
+python main.cli.py --job-url="https://xxxxxxx" --resume="./path/to/resume.pdf"
 ```
 
 
