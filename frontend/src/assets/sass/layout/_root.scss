@@ -1,0 +1,41 @@
+//
+// Root
+//
+
+@include color-mode(light) {
+    // Page bg color
+    --#{$prefix}page-bg: #{$page-bg};
+
+    // App blank bg color
+    --#{$prefix}app-blank-bg: #{$app-blank-bg-color};
+
+    // Header
+    --#{$prefix}header-desktop-default-border: #{get($header-config, desktop, default, border)};
+    --#{$prefix}header-desktop-fixed-border: #{get($header-config, desktop, fixed, border)};
+    --#{$prefix}header-desktop-fixed-bg-color: #{get($header-config, desktop, fixed, bg-color)};
+    --#{$prefix}header-desktop-fixed-box-shadow: #{get($header-config, desktop, fixed, box-shadow)};
+
+    --#{$prefix}header-tablet-and-mobile-default-border: #{get($header-config, tablet-and-mobile, default, border)};
+    --#{$prefix}header-tablet-and-mobile-default-border: #{get($header-config, tablet-and-mobile, default, border)};
+    --#{$prefix}header-tablet-and-mobile-fixed-bg-color: #{get($header-config, tablet-and-mobile, fixed, bg-color)};
+    --#{$prefix}header-tablet-and-mobile-fixed-box-shadow: #{get($header-config, tablet-and-mobile, fixed, box-shadow)};
+}
+
+@include color-mode(dark) {
+    // Page bg color
+    --#{$prefix}page-bg: #{$page-bg-dark};
+
+    // App blank bg color
+    --#{$prefix}app-blank-bg: #{$app-blank-bg-color-dark};
+
+    // Header
+    --#{$prefix}header-desktop-default-border: #{get($header-config, desktop, default, border-dark)};
+    --#{$prefix}header-desktop-fixed-border: #{get($header-config, desktop, fixed, border-dark)};
+    --#{$prefix}header-desktop-fixed-bg-color: #{get($header-config, desktop, fixed, bg-color-dark)};
+    --#{$prefix}header-desktop-fixed-box-shadow: #{get($header-config, desktop, fixed, box-shadow-dark)};
+
+    --#{$prefix}header-tablet-and-mobile-default-border: #{get($header-config, tablet-and-mobile, default, border-dark)};
+    --#{$prefix}header-tablet-and-mobile-fixed-border: #{get($header-config, tablet-and-mobile, fixed, border-dark)};
+    --#{$prefix}header-tablet-and-mobile-fixed-bg-color: #{get($header-config, tablet-and-mobile, fixed, bg-color-dark)};
+    --#{$prefix}header-tablet-and-mobile-fixed-box-shadow: #{get($header-config, tablet-and-mobile, fixed, box-shadow-dark)};
+}

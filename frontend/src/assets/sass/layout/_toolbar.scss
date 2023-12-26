@@ -1,0 +1,14 @@
+//
+// Toolbar
+//
+
+// General
+.toolbar {
+    display: flex;
+    align-items: center;
+
+    // Custom button
+    .btn.btn-custom  {       
+        background-color: rgba($white, 0.1);         
+    }
+}

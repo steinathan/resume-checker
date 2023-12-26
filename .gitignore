@@ -2,3 +2,4 @@ cover_letters/*.txt
 resumes/*.pdf
 .env
 *.log
+__pycache__

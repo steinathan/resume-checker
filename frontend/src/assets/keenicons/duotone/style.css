@@ -1,0 +1,8665 @@
+@font-face {
+  font-family: 'keenicons-duotone';
+  src:  url('fonts/keenicons-duotone.eot?eut7fk');
+  src:  url('fonts/keenicons-duotone.eot?eut7fk#iefix') format('embedded-opentype'),
+    url('fonts/keenicons-duotone.ttf?eut7fk') format('truetype'),
+    url('fonts/keenicons-duotone.woff?eut7fk') format('woff'),
+    url('fonts/keenicons-duotone.svg?eut7fk#keenicons-duotone') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.ki-duotone {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'keenicons-duotone' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  
+ display: inline-flex; 
+ direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ki-abstract-1 .path1:before {
+  content: "\e900";
+  
+  opacity: 0.3;
+}
+.ki-abstract-1 .path2:before {
+  content: "\e901";
+  margin-left: -1em;
+  
+}
+.ki-abstract-2 .path1:before {
+  content: "\e902";
+  
+  opacity: 0.3;
+}
+.ki-abstract-2 .path2:before {
+  content: "\e903";
+  margin-left: -1em;
+  
+}
+.ki-abstract-3 .path1:before {
+  content: "\e904";
+  
+  opacity: 0.3;
+}
+.ki-abstract-3 .path2:before {
+  content: "\e905";
+  margin-left: -1em;
+  
+}
+.ki-abstract-4 .path1:before {
+  content: "\e906";
+  
+  opacity: 0.3;
+}
+.ki-abstract-4 .path2:before {
+  content: "\e907";
+  margin-left: -1em;
+  
+}
+.ki-abstract-5 .path1:before {
+  content: "\e908";
+  
+  opacity: 0.3;
+}
+.ki-abstract-5 .path2:before {
+  content: "\e909";
+  margin-left: -1em;
+  
+}
+.ki-abstract-6:before {
+  content: "\e90a";
+}
+.ki-abstract-7 .path1:before {
+  content: "\e90b";
+  
+  opacity: 0.3;
+}
+.ki-abstract-7 .path2:before {
+  content: "\e90c";
+  margin-left: -1em;
+  
+}
+.ki-abstract-8 .path1:before {
+  content: "\e90d";
+  
+  opacity: 0.3;
+}
+.ki-abstract-8 .path2:before {
+  content: "\e90e";
+  margin-left: -1em;
+  
+}
+.ki-abstract-9 .path1:before {
+  content: "\e90f";
+  
+  opacity: 0.3;
+}
+.ki-abstract-9 .path2:before {
+  content: "\e910";
+  margin-left: -1em;
+  
+}
+.ki-abstract-10 .path1:before {
+  content: "\e911";
+  
+  opacity: 0.3;
+}
+.ki-abstract-10 .path2:before {
+  content: "\e912";
+  margin-left: -1em;
+  
+}
+.ki-abstract-11 .path1:before {
+  content: "\e913";
+  
+  opacity: 0.3;
+}
+.ki-abstract-11 .path2:before {
+  content: "\e914";
+  margin-left: -1em;
+  
+}
+.ki-abstract-12 .path1:before {
+  content: "\e915";
+  
+  opacity: 0.3;
+}
+.ki-abstract-12 .path2:before {
+  content: "\e916";
+  margin-left: -1em;
+  
+}
+.ki-abstract-13 .path1:before {
+  content: "\e917";
+  
+  opacity: 0.3;
+}
+.ki-abstract-13 .path2:before {
+  content: "\e918";
+  margin-left: -1em;
+  
+}
+.ki-abstract-14 .path1:before {
+  content: "\e919";
+  
+}
+.ki-abstract-14 .path2:before {
+  content: "\e91a";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-15 .path1:before {
+  content: "\e91b";
+  
+  opacity: 0.3;
+}
+.ki-abstract-15 .path2:before {
+  content: "\e91c";
+  margin-left: -1em;
+  
+}
+.ki-abstract-16 .path1:before {
+  content: "\e91d";
+  
+  opacity: 0.3;
+}
+.ki-abstract-16 .path2:before {
+  content: "\e91e";
+  margin-left: -1em;
+  
+}
+.ki-abstract-17 .path1:before {
+  content: "\e91f";
+  
+}
+.ki-abstract-17 .path2:before {
+  content: "\e920";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-18 .path1:before {
+  content: "\e921";
+  
+}
+.ki-abstract-18 .path2:before {
+  content: "\e922";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-19 .path1:before {
+  content: "\e923";
+  
+}
+.ki-abstract-19 .path2:before {
+  content: "\e924";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-20 .path1:before {
+  content: "\e925";
+  
+}
+.ki-abstract-20 .path2:before {
+  content: "\e926";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-21 .path1:before {
+  content: "\e927";
+  
+  opacity: 0.3;
+}
+.ki-abstract-21 .path2:before {
+  content: "\e928";
+  margin-left: -1em;
+  
+}
+.ki-abstract-22 .path1:before {
+  content: "\e929";
+  
+  opacity: 0.3;
+}
+.ki-abstract-22 .path2:before {
+  content: "\e92a";
+  margin-left: -1em;
+  
+}
+.ki-abstract-23 .path1:before {
+  content: "\e92b";
+  
+  opacity: 0.3;
+}
+.ki-abstract-23 .path2:before {
+  content: "\e92c";
+  margin-left: -1em;
+  
+}
+.ki-abstract-24 .path1:before {
+  content: "\e92d";
+  
+}
+.ki-abstract-24 .path2:before {
+  content: "\e92e";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-25 .path1:before {
+  content: "\e92f";
+  
+  opacity: 0.3;
+}
+.ki-abstract-25 .path2:before {
+  content: "\e930";
+  margin-left: -1em;
+  
+}
+.ki-abstract-26 .path1:before {
+  content: "\e931";
+  
+  opacity: 0.3;
+}
+.ki-abstract-26 .path2:before {
+  content: "\e932";
+  margin-left: -1em;
+  
+}
+.ki-abstract-27 .path1:before {
+  content: "\e933";
+  
+}
+.ki-abstract-27 .path2:before {
+  content: "\e934";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-28 .path1:before {
+  content: "\e935";
+  
+}
+.ki-abstract-28 .path2:before {
+  content: "\e936";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-29 .path1:before {
+  content: "\e937";
+  
+}
+.ki-abstract-29 .path2:before {
+  content: "\e938";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-30 .path1:before {
+  content: "\e939";
+  
+}
+.ki-abstract-30 .path2:before {
+  content: "\e93a";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-31 .path1:before {
+  content: "\e93b";
+  
+}
+.ki-abstract-31 .path2:before {
+  content: "\e93c";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-32 .path1:before {
+  content: "\e93d";
+  
+}
+.ki-abstract-32 .path2:before {
+  content: "\e93e";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-33 .path1:before {
+  content: "\e93f";
+  
+  opacity: 0.3;
+}
+.ki-abstract-33 .path2:before {
+  content: "\e940";
+  margin-left: -1em;
+  
+}
+.ki-abstract-34 .path1:before {
+  content: "\e941";
+  
+  opacity: 0.3;
+}
+.ki-abstract-34 .path2:before {
+  content: "\e942";
+  margin-left: -1em;
+  
+}
+.ki-abstract-35 .path1:before {
+  content: "\e943";
+  
+}
+.ki-abstract-35 .path2:before {
+  content: "\e944";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-36 .path1:before {
+  content: "\e945";
+  
+}
+.ki-abstract-36 .path2:before {
+  content: "\e946";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-37 .path1:before {
+  content: "\e947";
+  
+  opacity: 0.3;
+}
+.ki-abstract-37 .path2:before {
+  content: "\e948";
+  margin-left: -1em;
+  
+}
+.ki-abstract-38 .path1:before {
+  content: "\e949";
+  
+}
+.ki-abstract-38 .path2:before {
+  content: "\e94a";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-39 .path1:before {
+  content: "\e94b";
+  
+  opacity: 0.3;
+}
+.ki-abstract-39 .path2:before {
+  content: "\e94c";
+  margin-left: -1em;
+  
+}
+.ki-abstract-40 .path1:before {
+  content: "\e94d";
+  
+}
+.ki-abstract-40 .path2:before {
+  content: "\e94e";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-41 .path1:before {
+  content: "\e94f";
+  
+}
+.ki-abstract-41 .path2:before {
+  content: "\e950";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-42 .path1:before {
+  content: "\e951";
+  
+  opacity: 0.3;
+}
+.ki-abstract-42 .path2:before {
+  content: "\e952";
+  margin-left: -1em;
+  
+}
+.ki-abstract-43 .path1:before {
+  content: "\e953";
+  
+  opacity: 0.3;
+}
+.ki-abstract-43 .path2:before {
+  content: "\e954";
+  margin-left: -1em;
+  
+}
+.ki-abstract-44 .path1:before {
+  content: "\e955";
+  
+}
+.ki-abstract-44 .path2:before {
+  content: "\e956";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-45 .path1:before {
+  content: "\e957";
+  
+}
+.ki-abstract-45 .path2:before {
+  content: "\e958";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-46 .path1:before {
+  content: "\e959";
+  
+  opacity: 0.3;
+}
+.ki-abstract-46 .path2:before {
+  content: "\e95a";
+  margin-left: -1em;
+  
+}
+.ki-abstract-47 .path1:before {
+  content: "\e95b";
+  
+  opacity: 0.3;
+}
+.ki-abstract-47 .path2:before {
+  content: "\e95c";
+  margin-left: -1em;
+  
+}
+.ki-abstract-48 .path1:before {
+  content: "\e95d";
+  
+  opacity: 0.3;
+}
+.ki-abstract-48 .path2:before {
+  content: "\e95e";
+  margin-left: -1em;
+  
+}
+.ki-abstract-48 .path3:before {
+  content: "\e95f";
+  margin-left: -1em;
+  
+}
+.ki-abstract-49 .path1:before {
+  content: "\e960";
+  
+  opacity: 0.3;
+}
+.ki-abstract-49 .path2:before {
+  content: "\e961";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-abstract-49 .path3:before {
+  content: "\e962";
+  margin-left: -1em;
+  
+}
+.ki-abstract .path1:before {
+  content: "\e963";
+  
+  opacity: 0.3;
+}
+.ki-abstract .path2:before {
+  content: "\e964";
+  margin-left: -1em;
+  
+}
+.ki-add-files .path1:before {
+  content: "\e965";
+  
+}
+.ki-add-files .path2:before {
+  content: "\e966";
+  margin-left: -1em;
+  
+}
+.ki-add-files .path3:before {
+  content: "\e967";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-add-folder .path1:before {
+  content: "\e968";
+  
+  opacity: 0.3;
+}
+.ki-add-folder .path2:before {
+  content: "\e969";
+  margin-left: -1em;
+  
+}
+.ki-add-item .path1:before {
+  content: "\e96a";
+  
+  opacity: 0.3;
+}
+.ki-add-item .path2:before {
+  content: "\e96b";
+  margin-left: -1em;
+  
+}
+.ki-add-item .path3:before {
+  content: "\e96c";
+  margin-left: -1em;
+  
+}
+.ki-add-notepad .path1:before {
+  content: "\e96d";
+  
+  opacity: 0.3;
+}
+.ki-add-notepad .path2:before {
+  content: "\e96e";
+  margin-left: -1em;
+  
+}
+.ki-add-notepad .path3:before {
+  content: "\e96f";
+  margin-left: -1em;
+  
+}
+.ki-add-notepad .path4:before {
+  content: "\e970";
+  margin-left: -1em;
+  
+}
+.ki-address-book .path1:before {
+  content: "\e971";
+  
+}
+.ki-address-book .path2:before {
+  content: "\e972";
+  margin-left: -1em;
+  
+}
+.ki-address-book .path3:before {
+  content: "\e973";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-airplane-square .path1:before {
+  content: "\e974";
+  
+  opacity: 0.3;
+}
+.ki-airplane-square .path2:before {
+  content: "\e975";
+  margin-left: -1em;
+  
+}
+.ki-airplane .path1:before {
+  content: "\e976";
+  
+  opacity: 0.3;
+}
+.ki-airplane .path2:before {
+  content: "\e977";
+  margin-left: -1em;
+  
+}
+.ki-airpod .path1:before {
+  content: "\e978";
+  
+  opacity: 0.3;
+}
+.ki-airpod .path2:before {
+  content: "\e979";
+  margin-left: -1em;
+  
+}
+.ki-airpod .path3:before {
+  content: "\e97a";
+  margin-left: -1em;
+  
+}
+.ki-android .path1:before {
+  content: "\e97b";
+  
+  opacity: 0.3;
+}
+.ki-android .path2:before {
+  content: "\e97c";
+  margin-left: -1em;
+  
+}
+.ki-android .path3:before {
+  content: "\e97d";
+  margin-left: -1em;
+  
+}
+.ki-android .path4:before {
+  content: "\e97e";
+  margin-left: -1em;
+  
+}
+.ki-android .path5:before {
+  content: "\e97f";
+  margin-left: -1em;
+  
+}
+.ki-android .path6:before {
+  content: "\e980";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-angular .path1:before {
+  content: "\e981";
+  
+  opacity: 0.3;
+}
+.ki-angular .path2:before {
+  content: "\e982";
+  margin-left: -1em;
+  
+}
+.ki-angular .path3:before {
+  content: "\e983";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-apple .path1:before {
+  content: "\e984";
+  
+}
+.ki-apple .path2:before {
+  content: "\e985";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-archive-tick .path1:before {
+  content: "\e986";
+  
+  opacity: 0.3;
+}
+.ki-archive-tick .path2:before {
+  content: "\e987";
+  margin-left: -1em;
+  
+}
+.ki-archive .path1:before {
+  content: "\e988";
+  
+  opacity: 0.3;
+}
+.ki-archive .path2:before {
+  content: "\e989";
+  margin-left: -1em;
+  
+}
+.ki-archive .path3:before {
+  content: "\e98a";
+  margin-left: -1em;
+  
+}
+.ki-arrow-circle-left .path1:before {
+  content: "\e98b";
+  
+  opacity: 0.3;
+}
+.ki-arrow-circle-left .path2:before {
+  content: "\e98c";
+  margin-left: -1em;
+  
+}
+.ki-arrow-circle-right .path1:before {
+  content: "\e98d";
+  
+  opacity: 0.3;
+}
+.ki-arrow-circle-right .path2:before {
+  content: "\e98e";
+  margin-left: -1em;
+  
+}
+.ki-arrow-diagonal .path1:before {
+  content: "\e98f";
+  
+  opacity: 0.3;
+}
+.ki-arrow-diagonal .path2:before {
+  content: "\e990";
+  margin-left: -1em;
+  
+}
+.ki-arrow-diagonal .path3:before {
+  content: "\e991";
+  margin-left: -1em;
+  
+}
+.ki-arrow-down-left .path1:before {
+  content: "\e992";
+  
+}
+.ki-arrow-down-left .path2:before {
+  content: "\e993";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-arrow-down-refraction .path1:before {
+  content: "\e994";
+  
+  opacity: 0.3;
+}
+.ki-arrow-down-refraction .path2:before {
+  content: "\e995";
+  margin-left: -1em;
+  
+}
+.ki-arrow-down-right .path1:before {
+  content: "\e996";
+  
+}
+.ki-arrow-down-right .path2:before {
+  content: "\e997";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-arrow-down .path1:before {
+  content: "\e998";
+  
+}
+.ki-arrow-down .path2:before {
+  content: "\e999";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-arrow-left .path1:before {
+  content: "\e99a";
+  
+}
+.ki-arrow-left .path2:before {
+  content: "\e99b";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-arrow-mix .path1:before {
+  content: "\e99c";
+  
+}
+.ki-arrow-mix .path2:before {
+  content: "\e99d";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-arrow-right-left .path1:before {
+  content: "\e99e";
+  
+  opacity: 0.3;
+}
+.ki-arrow-right-left .path2:before {
+  content: "\e99f";
+  margin-left: -1em;
+  
+}
+.ki-arrow-right .path1:before {
+  content: "\e9a0";
+  
+}
+.ki-arrow-right .path2:before {
+  content: "\e9a1";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-arrow-two-diagonals .path1:before {
+  content: "\e9a2";
+  
+  opacity: 0.3;
+}
+.ki-arrow-two-diagonals .path2:before {
+  content: "\e9a3";
+  margin-left: -1em;
+  
+}
+.ki-arrow-two-diagonals .path3:before {
+  content: "\e9a4";
+  margin-left: -1em;
+  
+}
+.ki-arrow-two-diagonals .path4:before {
+  content: "\e9a5";
+  margin-left: -1em;
+  
+}
+.ki-arrow-two-diagonals .path5:before {
+  content: "\e9a6";
+  margin-left: -1em;
+  
+}
+.ki-arrow-up-down .path1:before {
+  content: "\e9a7";
+  
+  opacity: 0.3;
+}
+.ki-arrow-up-down .path2:before {
+  content: "\e9a8";
+  margin-left: -1em;
+  
+}
+.ki-arrow-up-left .path1:before {
+  content: "\e9a9";
+  
+}
+.ki-arrow-up-left .path2:before {
+  content: "\e9aa";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-arrow-up-refraction .path1:before {
+  content: "\e9ab";
+  
+  opacity: 0.3;
+}
+.ki-arrow-up-refraction .path2:before {
+  content: "\e9ac";
+  margin-left: -1em;
+  
+}
+.ki-arrow-up-right .path1:before {
+  content: "\e9ad";
+  
+}
+.ki-arrow-up-right .path2:before {
+  content: "\e9ae";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-arrow-up .path1:before {
+  content: "\e9af";
+  
+}
+.ki-arrow-up .path2:before {
+  content: "\e9b0";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-arrow-zigzag .path1:before {
+  content: "\e9b1";
+  
+}
+.ki-arrow-zigzag .path2:before {
+  content: "\e9b2";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-arrows-circle .path1:before {
+  content: "\e9b3";
+  
+  opacity: 0.3;
+}
+.ki-arrows-circle .path2:before {
+  content: "\e9b4";
+  margin-left: -1em;
+  
+}
+.ki-arrows-loop .path1:before {
+  content: "\e9b5";
+  
+  opacity: 0.3;
+}
+.ki-arrows-loop .path2:before {
+  content: "\e9b6";
+  margin-left: -1em;
+  
+}
+.ki-artificial-intelligence .path1:before {
+  content: "\e9b7";
+  
+  opacity: 0.3;
+}
+.ki-artificial-intelligence .path2:before {
+  content: "\e9b8";
+  margin-left: -1em;
+  
+}
+.ki-artificial-intelligence .path3:before {
+  content: "\e9b9";
+  margin-left: -1em;
+  
+}
+.ki-artificial-intelligence .path4:before {
+  content: "\e9ba";
+  margin-left: -1em;
+  
+}
+.ki-artificial-intelligence .path5:before {
+  content: "\e9bb";
+  margin-left: -1em;
+  
+}
+.ki-artificial-intelligence .path6:before {
+  content: "\e9bc";
+  margin-left: -1em;
+  
+}
+.ki-artificial-intelligence .path7:before {
+  content: "\e9bd";
+  margin-left: -1em;
+  
+}
+.ki-artificial-intelligence .path8:before {
+  content: "\e9be";
+  margin-left: -1em;
+  
+}
+.ki-auto-brightness .path1:before {
+  content: "\e9bf";
+  
+  opacity: 0.3;
+}
+.ki-auto-brightness .path2:before {
+  content: "\e9c0";
+  margin-left: -1em;
+  
+}
+.ki-auto-brightness .path3:before {
+  content: "\e9c1";
+  margin-left: -1em;
+  
+}
+.ki-avalanche .path1:before {
+  content: "\e9c2";
+  
+  opacity: 0.3;
+}
+.ki-avalanche .path2:before {
+  content: "\e9c3";
+  margin-left: -1em;
+  
+}
+.ki-award .path1:before {
+  content: "\e9c4";
+  
+  opacity: 0.3;
+}
+.ki-award .path2:before {
+  content: "\e9c5";
+  margin-left: -1em;
+  
+}
+.ki-award .path3:before {
+  content: "\e9c6";
+  margin-left: -1em;
+  
+}
+.ki-badge .path1:before {
+  content: "\e9c7";
+  
+  opacity: 0.3;
+}
+.ki-badge .path2:before {
+  content: "\e9c8";
+  margin-left: -1em;
+  
+}
+.ki-badge .path3:before {
+  content: "\e9c9";
+  margin-left: -1em;
+  
+}
+.ki-badge .path4:before {
+  content: "\e9ca";
+  margin-left: -1em;
+  
+}
+.ki-badge .path5:before {
+  content: "\e9cb";
+  margin-left: -1em;
+  
+}
+.ki-bandage .path1:before {
+  content: "\e9cc";
+  
+  opacity: 0.3;
+}
+.ki-bandage .path2:before {
+  content: "\e9cd";
+  margin-left: -1em;
+  
+}
+.ki-bank .path1:before {
+  content: "\e9ce";
+  
+  opacity: 0.3;
+}
+.ki-bank .path2:before {
+  content: "\e9cf";
+  margin-left: -1em;
+  
+}
+.ki-barcode .path1:before {
+  content: "\e9d0";
+  
+}
+.ki-barcode .path2:before {
+  content: "\e9d1";
+  margin-left: -1em;
+  
+}
+.ki-barcode .path3:before {
+  content: "\e9d2";
+  margin-left: -1em;
+  
+}
+.ki-barcode .path4:before {
+  content: "\e9d3";
+  margin-left: -1em;
+  
+}
+.ki-barcode .path5:before {
+  content: "\e9d4";
+  margin-left: -1em;
+  
+}
+.ki-barcode .path6:before {
+  content: "\e9d5";
+  margin-left: -1em;
+  
+}
+.ki-barcode .path7:before {
+  content: "\e9d6";
+  margin-left: -1em;
+  
+}
+.ki-barcode .path8:before {
+  content: "\e9d7";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-basket-ok .path1:before {
+  content: "\e9d8";
+  
+  opacity: 0.3;
+}
+.ki-basket-ok .path2:before {
+  content: "\e9d9";
+  margin-left: -1em;
+  
+}
+.ki-basket-ok .path3:before {
+  content: "\e9da";
+  margin-left: -1em;
+  
+}
+.ki-basket-ok .path4:before {
+  content: "\e9db";
+  margin-left: -1em;
+  
+}
+.ki-basket .path1:before {
+  content: "\e9dc";
+  
+  opacity: 0.3;
+}
+.ki-basket .path2:before {
+  content: "\e9dd";
+  margin-left: -1em;
+  
+}
+.ki-basket .path3:before {
+  content: "\e9de";
+  margin-left: -1em;
+  
+}
+.ki-basket .path4:before {
+  content: "\e9df";
+  margin-left: -1em;
+  
+}
+.ki-behance .path1:before {
+  content: "\e9e0";
+  
+}
+.ki-behance .path2:before {
+  content: "\e9e1";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-bill .path1:before {
+  content: "\e9e2";
+  
+  opacity: 0.3;
+}
+.ki-bill .path2:before {
+  content: "\e9e3";
+  margin-left: -1em;
+  
+}
+.ki-bill .path3:before {
+  content: "\e9e4";
+  margin-left: -1em;
+  
+}
+.ki-bill .path4:before {
+  content: "\e9e5";
+  margin-left: -1em;
+  
+}
+.ki-bill .path5:before {
+  content: "\e9e6";
+  margin-left: -1em;
+  
+}
+.ki-bill .path6:before {
+  content: "\e9e7";
+  margin-left: -1em;
+  
+}
+.ki-binance-usd .path1:before {
+  content: "\e9e8";
+  
+}
+.ki-binance-usd .path2:before {
+  content: "\e9e9";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-binance-usd .path3:before {
+  content: "\e9ea";
+  margin-left: -1em;
+  
+}
+.ki-binance-usd .path4:before {
+  content: "\e9eb";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-binance .path1:before {
+  content: "\e9ec";
+  
+  opacity: 0.3;
+}
+.ki-binance .path2:before {
+  content: "\e9ed";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-binance .path3:before {
+  content: "\e9ee";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-binance .path4:before {
+  content: "\e9ef";
+  margin-left: -1em;
+  
+}
+.ki-binance .path5:before {
+  content: "\e9f0";
+  margin-left: -1em;
+  
+}
+.ki-bitcoin .path1:before {
+  content: "\e9f1";
+  
+  opacity: 0.3;
+}
+.ki-bitcoin .path2:before {
+  content: "\e9f2";
+  margin-left: -1em;
+  
+}
+.ki-black-down:before {
+  content: "\e9f3";
+}
+.ki-black-left-line .path1:before {
+  content: "\e9f4";
+  
+}
+.ki-black-left-line .path2:before {
+  content: "\e9f5";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-black-left:before {
+  content: "\e9f6";
+}
+.ki-black-right-line .path1:before {
+  content: "\e9f7";
+  
+}
+.ki-black-right-line .path2:before {
+  content: "\e9f8";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-black-right:before {
+  content: "\e9f9";
+}
+.ki-black-up:before {
+  content: "\e9fa";
+}
+.ki-bluetooth .path1:before {
+  content: "\e9fb";
+  
+}
+.ki-bluetooth .path2:before {
+  content: "\e9fc";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-book-open .path1:before {
+  content: "\e9fd";
+  
+  opacity: 0.3;
+}
+.ki-book-open .path2:before {
+  content: "\e9fe";
+  margin-left: -1em;
+  
+}
+.ki-book-open .path3:before {
+  content: "\e9ff";
+  margin-left: -1em;
+  
+}
+.ki-book-open .path4:before {
+  content: "\ea00";
+  margin-left: -1em;
+  
+}
+.ki-book-square .path1:before {
+  content: "\ea01";
+  
+  opacity: 0.3;
+}
+.ki-book-square .path2:before {
+  content: "\ea02";
+  margin-left: -1em;
+  
+}
+.ki-book-square .path3:before {
+  content: "\ea03";
+  margin-left: -1em;
+  
+}
+.ki-book .path1:before {
+  content: "\ea04";
+  
+  opacity: 0.3;
+}
+.ki-book .path2:before {
+  content: "\ea05";
+  margin-left: -1em;
+  
+}
+.ki-book .path3:before {
+  content: "\ea06";
+  margin-left: -1em;
+  
+}
+.ki-book .path4:before {
+  content: "\ea07";
+  margin-left: -1em;
+  
+}
+.ki-bookmark-2 .path1:before {
+  content: "\ea08";
+  
+  opacity: 0.3;
+}
+.ki-bookmark-2 .path2:before {
+  content: "\ea09";
+  margin-left: -1em;
+  
+}
+.ki-bookmark .path1:before {
+  content: "\ea0a";
+  
+  opacity: 0.3;
+}
+.ki-bookmark .path2:before {
+  content: "\ea0b";
+  margin-left: -1em;
+  
+}
+.ki-bootstrap .path1:before {
+  content: "\ea0c";
+  
+  opacity: 0.3;
+}
+.ki-bootstrap .path2:before {
+  content: "\ea0d";
+  margin-left: -1em;
+  
+}
+.ki-bootstrap .path3:before {
+  content: "\ea0e";
+  margin-left: -1em;
+  
+}
+.ki-briefcase .path1:before {
+  content: "\ea0f";
+  
+  opacity: 0.3;
+}
+.ki-briefcase .path2:before {
+  content: "\ea10";
+  margin-left: -1em;
+  
+}
+.ki-brifecase-cros .path1:before {
+  content: "\ea11";
+  
+  opacity: 0.3;
+}
+.ki-brifecase-cros .path2:before {
+  content: "\ea12";
+  margin-left: -1em;
+  
+}
+.ki-brifecase-cros .path3:before {
+  content: "\ea13";
+  margin-left: -1em;
+  
+}
+.ki-brifecase-tick .path1:before {
+  content: "\ea14";
+  
+  opacity: 0.3;
+}
+.ki-brifecase-tick .path2:before {
+  content: "\ea15";
+  margin-left: -1em;
+  
+}
+.ki-brifecase-tick .path3:before {
+  content: "\ea16";
+  margin-left: -1em;
+  
+}
+.ki-brifecase-timer .path1:before {
+  content: "\ea17";
+  
+  opacity: 0.3;
+}
+.ki-brifecase-timer .path2:before {
+  content: "\ea18";
+  margin-left: -1em;
+  
+}
+.ki-brifecase-timer .path3:before {
+  content: "\ea19";
+  margin-left: -1em;
+  
+}
+.ki-brush .path1:before {
+  content: "\ea1a";
+  
+  opacity: 0.3;
+}
+.ki-brush .path2:before {
+  content: "\ea1b";
+  margin-left: -1em;
+  
+}
+.ki-bucket-square .path1:before {
+  content: "\ea1c";
+  
+  opacity: 0.3;
+}
+.ki-bucket-square .path2:before {
+  content: "\ea1d";
+  margin-left: -1em;
+  
+}
+.ki-bucket-square .path3:before {
+  content: "\ea1e";
+  margin-left: -1em;
+  
+}
+.ki-bucket .path1:before {
+  content: "\ea1f";
+  
+  opacity: 0.3;
+}
+.ki-bucket .path2:before {
+  content: "\ea20";
+  margin-left: -1em;
+  
+}
+.ki-bucket .path3:before {
+  content: "\ea21";
+  margin-left: -1em;
+  
+}
+.ki-bucket .path4:before {
+  content: "\ea22";
+  margin-left: -1em;
+  
+}
+.ki-burger-menu-1 .path1:before {
+  content: "\ea23";
+  
+  opacity: 0.3;
+}
+.ki-burger-menu-1 .path2:before {
+  content: "\ea24";
+  margin-left: -1em;
+  
+}
+.ki-burger-menu-1 .path3:before {
+  content: "\ea25";
+  margin-left: -1em;
+  
+}
+.ki-burger-menu-1 .path4:before {
+  content: "\ea26";
+  margin-left: -1em;
+  
+}
+.ki-burger-menu-2 .path1:before {
+  content: "\ea27";
+  
+  opacity: 0.3;
+}
+.ki-burger-menu-2 .path2:before {
+  content: "\ea28";
+  margin-left: -1em;
+  
+}
+.ki-burger-menu-2 .path3:before {
+  content: "\ea29";
+  margin-left: -1em;
+  
+}
+.ki-burger-menu-2 .path4:before {
+  content: "\ea2a";
+  margin-left: -1em;
+  
+}
+.ki-burger-menu-2 .path5:before {
+  content: "\ea2b";
+  margin-left: -1em;
+  
+}
+.ki-burger-menu-2 .path6:before {
+  content: "\ea2c";
+  margin-left: -1em;
+  
+}
+.ki-burger-menu-2 .path7:before {
+  content: "\ea2d";
+  margin-left: -1em;
+  
+}
+.ki-burger-menu-2 .path8:before {
+  content: "\ea2e";
+  margin-left: -1em;
+  
+}
+.ki-burger-menu-2 .path9:before {
+  content: "\ea2f";
+  margin-left: -1em;
+  
+}
+.ki-burger-menu-2 .path10:before {
+  content: "\ea30";
+  margin-left: -1em;
+  
+}
+.ki-burger-menu-3 .path1:before {
+  content: "\ea31";
+  
+  opacity: 0.3;
+}
+.ki-burger-menu-3 .path2:before {
+  content: "\ea32";
+  margin-left: -1em;
+  
+}
+.ki-burger-menu-3 .path3:before {
+  content: "\ea33";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-burger-menu-3 .path4:before {
+  content: "\ea34";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-burger-menu-3 .path5:before {
+  content: "\ea35";
+  margin-left: -1em;
+  
+}
+.ki-burger-menu-3 .path6:before {
+  content: "\ea36";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-burger-menu-3 .path7:before {
+  content: "\ea37";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-burger-menu-3 .path8:before {
+  content: "\ea38";
+  margin-left: -1em;
+  
+}
+.ki-burger-menu-3 .path9:before {
+  content: "\ea39";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-burger-menu-4:before {
+  content: "\ea3a";
+}
+.ki-burger-menu-5:before {
+  content: "\ea3b";
+}
+.ki-burger-menu-6:before {
+  content: "\ea3c";
+}
+.ki-burger-menu .path1:before {
+  content: "\ea3d";
+  
+  opacity: 0.3;
+}
+.ki-burger-menu .path2:before {
+  content: "\ea3e";
+  margin-left: -1em;
+  
+}
+.ki-burger-menu .path3:before {
+  content: "\ea3f";
+  margin-left: -1em;
+  
+}
+.ki-burger-menu .path4:before {
+  content: "\ea40";
+  margin-left: -1em;
+  
+}
+.ki-bus .path1:before {
+  content: "\ea41";
+  
+  opacity: 0.3;
+}
+.ki-bus .path2:before {
+  content: "\ea42";
+  margin-left: -1em;
+  
+}
+.ki-bus .path3:before {
+  content: "\ea43";
+  margin-left: -1em;
+  
+}
+.ki-bus .path4:before {
+  content: "\ea44";
+  margin-left: -1em;
+  
+}
+.ki-bus .path5:before {
+  content: "\ea45";
+  margin-left: -1em;
+  
+}
+.ki-calculator .path1:before {
+  content: "\ea46";
+  
+  opacity: 0.3;
+}
+.ki-calculator .path2:before {
+  content: "\ea47";
+  margin-left: -1em;
+  
+}
+.ki-calculator .path3:before {
+  content: "\ea48";
+  margin-left: -1em;
+  
+}
+.ki-calculator .path4:before {
+  content: "\ea49";
+  margin-left: -1em;
+  
+}
+.ki-calculator .path5:before {
+  content: "\ea4a";
+  margin-left: -1em;
+  
+}
+.ki-calculator .path6:before {
+  content: "\ea4b";
+  margin-left: -1em;
+  
+}
+.ki-calendar-2 .path1:before {
+  content: "\ea4c";
+  
+  opacity: 0.3;
+}
+.ki-calendar-2 .path2:before {
+  content: "\ea4d";
+  margin-left: -1em;
+  
+}
+.ki-calendar-2 .path3:before {
+  content: "\ea4e";
+  margin-left: -1em;
+  
+}
+.ki-calendar-2 .path4:before {
+  content: "\ea4f";
+  margin-left: -1em;
+  
+}
+.ki-calendar-2 .path5:before {
+  content: "\ea50";
+  margin-left: -1em;
+  
+}
+.ki-calendar-8 .path1:before {
+  content: "\ea51";
+  
+  opacity: 0.3;
+}
+.ki-calendar-8 .path2:before {
+  content: "\ea52";
+  margin-left: -1em;
+  
+}
+.ki-calendar-8 .path3:before {
+  content: "\ea53";
+  margin-left: -1em;
+  
+}
+.ki-calendar-8 .path4:before {
+  content: "\ea54";
+  margin-left: -1em;
+  
+}
+.ki-calendar-8 .path5:before {
+  content: "\ea55";
+  margin-left: -1em;
+  
+}
+.ki-calendar-8 .path6:before {
+  content: "\ea56";
+  margin-left: -1em;
+  
+}
+.ki-calendar-add .path1:before {
+  content: "\ea57";
+  
+  opacity: 0.3;
+}
+.ki-calendar-add .path2:before {
+  content: "\ea58";
+  margin-left: -1em;
+  
+}
+.ki-calendar-add .path3:before {
+  content: "\ea59";
+  margin-left: -1em;
+  
+}
+.ki-calendar-add .path4:before {
+  content: "\ea5a";
+  margin-left: -1em;
+  
+}
+.ki-calendar-add .path5:before {
+  content: "\ea5b";
+  margin-left: -1em;
+  
+}
+.ki-calendar-add .path6:before {
+  content: "\ea5c";
+  margin-left: -1em;
+  
+}
+.ki-calendar-edit .path1:before {
+  content: "\ea5d";
+  
+  opacity: 0.3;
+}
+.ki-calendar-edit .path2:before {
+  content: "\ea5e";
+  margin-left: -1em;
+  
+}
+.ki-calendar-edit .path3:before {
+  content: "\ea5f";
+  margin-left: -1em;
+  
+}
+.ki-calendar-remove .path1:before {
+  content: "\ea60";
+  
+  opacity: 0.3;
+}
+.ki-calendar-remove .path2:before {
+  content: "\ea61";
+  margin-left: -1em;
+  
+}
+.ki-calendar-remove .path3:before {
+  content: "\ea62";
+  margin-left: -1em;
+  
+}
+.ki-calendar-remove .path4:before {
+  content: "\ea63";
+  margin-left: -1em;
+  
+}
+.ki-calendar-remove .path5:before {
+  content: "\ea64";
+  margin-left: -1em;
+  
+}
+.ki-calendar-remove .path6:before {
+  content: "\ea65";
+  margin-left: -1em;
+  
+}
+.ki-calendar-search .path1:before {
+  content: "\ea66";
+  
+  opacity: 0.3;
+}
+.ki-calendar-search .path2:before {
+  content: "\ea67";
+  margin-left: -1em;
+  
+}
+.ki-calendar-search .path3:before {
+  content: "\ea68";
+  margin-left: -1em;
+  
+}
+.ki-calendar-search .path4:before {
+  content: "\ea69";
+  margin-left: -1em;
+  
+}
+.ki-calendar-tick .path1:before {
+  content: "\ea6a";
+  
+  opacity: 0.3;
+}
+.ki-calendar-tick .path2:before {
+  content: "\ea6b";
+  margin-left: -1em;
+  
+}
+.ki-calendar-tick .path3:before {
+  content: "\ea6c";
+  margin-left: -1em;
+  
+}
+.ki-calendar-tick .path4:before {
+  content: "\ea6d";
+  margin-left: -1em;
+  
+}
+.ki-calendar-tick .path5:before {
+  content: "\ea6e";
+  margin-left: -1em;
+  
+}
+.ki-calendar-tick .path6:before {
+  content: "\ea6f";
+  margin-left: -1em;
+  
+}
+.ki-calendar .path1:before {
+  content: "\ea70";
+  
+  opacity: 0.3;
+}
+.ki-calendar .path2:before {
+  content: "\ea71";
+  margin-left: -1em;
+  
+}
+.ki-call .path1:before {
+  content: "\ea72";
+  
+  opacity: 0.3;
+}
+.ki-call .path2:before {
+  content: "\ea73";
+  margin-left: -1em;
+  
+}
+.ki-call .path3:before {
+  content: "\ea74";
+  margin-left: -1em;
+  
+}
+.ki-call .path4:before {
+  content: "\ea75";
+  margin-left: -1em;
+  
+}
+.ki-call .path5:before {
+  content: "\ea76";
+  margin-left: -1em;
+  
+}
+.ki-call .path6:before {
+  content: "\ea77";
+  margin-left: -1em;
+  
+}
+.ki-call .path7:before {
+  content: "\ea78";
+  margin-left: -1em;
+  
+}
+.ki-call .path8:before {
+  content: "\ea79";
+  margin-left: -1em;
+  
+}
+.ki-capsule .path1:before {
+  content: "\ea7a";
+  
+  opacity: 0.3;
+}
+.ki-capsule .path2:before {
+  content: "\ea7b";
+  margin-left: -1em;
+  
+}
+.ki-car-2 .path1:before {
+  content: "\ea7c";
+  
+}
+.ki-car-2 .path2:before {
+  content: "\ea7d";
+  margin-left: -1em;
+  
+}
+.ki-car-2 .path3:before {
+  content: "\ea7e";
+  margin-left: -1em;
+  
+}
+.ki-car-2 .path4:before {
+  content: "\ea7f";
+  margin-left: -1em;
+  
+}
+.ki-car-2 .path5:before {
+  content: "\ea80";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-car-2 .path6:before {
+  content: "\ea81";
+  margin-left: -1em;
+  
+}
+.ki-car-3 .path1:before {
+  content: "\ea82";
+  
+}
+.ki-car-3 .path2:before {
+  content: "\ea83";
+  margin-left: -1em;
+  
+}
+.ki-car-3 .path3:before {
+  content: "\ea84";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-car .path1:before {
+  content: "\ea85";
+  
+  opacity: 0.3;
+}
+.ki-car .path2:before {
+  content: "\ea86";
+  margin-left: -1em;
+  
+}
+.ki-car .path3:before {
+  content: "\ea87";
+  margin-left: -1em;
+  
+}
+.ki-car .path4:before {
+  content: "\ea88";
+  margin-left: -1em;
+  
+}
+.ki-car .path5:before {
+  content: "\ea89";
+  margin-left: -1em;
+  
+}
+.ki-category .path1:before {
+  content: "\ea8a";
+  
+}
+.ki-category .path2:before {
+  content: "\ea8b";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-category .path3:before {
+  content: "\ea8c";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-category .path4:before {
+  content: "\ea8d";
+  margin-left: -1em;
+  
+}
+.ki-cd .path1:before {
+  content: "\ea8e";
+  
+}
+.ki-cd .path2:before {
+  content: "\ea8f";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-celsius .path1:before {
+  content: "\ea90";
+  
+}
+.ki-celsius .path2:before {
+  content: "\ea91";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-chart-line-down-2 .path1:before {
+  content: "\ea92";
+  
+  opacity: 0.3;
+}
+.ki-chart-line-down-2 .path2:before {
+  content: "\ea93";
+  margin-left: -1em;
+  
+}
+.ki-chart-line-down-2 .path3:before {
+  content: "\ea94";
+  margin-left: -1em;
+  
+}
+.ki-chart-line-down .path1:before {
+  content: "\ea95";
+  
+  opacity: 0.3;
+}
+.ki-chart-line-down .path2:before {
+  content: "\ea96";
+  margin-left: -1em;
+  
+}
+.ki-chart-line-star .path1:before {
+  content: "\ea97";
+  
+}
+.ki-chart-line-star .path2:before {
+  content: "\ea98";
+  margin-left: -1em;
+  
+}
+.ki-chart-line-star .path3:before {
+  content: "\ea99";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-chart-line-up-2 .path1:before {
+  content: "\ea9a";
+  
+}
+.ki-chart-line-up-2 .path2:before {
+  content: "\ea9b";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-chart-line-up .path1:before {
+  content: "\ea9c";
+  
+}
+.ki-chart-line-up .path2:before {
+  content: "\ea9d";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-chart-line .path1:before {
+  content: "\ea9e";
+  
+  opacity: 0.3;
+}
+.ki-chart-line .path2:before {
+  content: "\ea9f";
+  margin-left: -1em;
+  
+}
+.ki-chart-pie-3 .path1:before {
+  content: "\eaa0";
+  
+}
+.ki-chart-pie-3 .path2:before {
+  content: "\eaa1";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-chart-pie-3 .path3:before {
+  content: "\eaa2";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-chart-pie-4 .path1:before {
+  content: "\eaa3";
+  
+}
+.ki-chart-pie-4 .path2:before {
+  content: "\eaa4";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-chart-pie-4 .path3:before {
+  content: "\eaa5";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-chart-pie-simple .path1:before {
+  content: "\eaa6";
+  
+}
+.ki-chart-pie-simple .path2:before {
+  content: "\eaa7";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-chart-pie-too .path1:before {
+  content: "\eaa8";
+  
+  opacity: 0.3;
+}
+.ki-chart-pie-too .path2:before {
+  content: "\eaa9";
+  margin-left: -1em;
+  
+}
+.ki-chart-simple-2 .path1:before {
+  content: "\eaaa";
+  
+  opacity: 0.3;
+}
+.ki-chart-simple-2 .path2:before {
+  content: "\eaab";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-chart-simple-2 .path3:before {
+  content: "\eaac";
+  margin-left: -1em;
+  
+}
+.ki-chart-simple-2 .path4:before {
+  content: "\eaad";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-chart-simple-3 .path1:before {
+  content: "\eaae";
+  
+  opacity: 0.3;
+}
+.ki-chart-simple-3 .path2:before {
+  content: "\eaaf";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-chart-simple-3 .path3:before {
+  content: "\eab0";
+  margin-left: -1em;
+  
+}
+.ki-chart-simple-3 .path4:before {
+  content: "\eab1";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-chart-simple .path1:before {
+  content: "\eab2";
+  
+  opacity: 0.3;
+}
+.ki-chart-simple .path2:before {
+  content: "\eab3";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-chart-simple .path3:before {
+  content: "\eab4";
+  margin-left: -1em;
+  
+}
+.ki-chart-simple .path4:before {
+  content: "\eab5";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-chart .path1:before {
+  content: "\eab6";
+  
+}
+.ki-chart .path2:before {
+  content: "\eab7";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-check-circle .path1:before {
+  content: "\eab8";
+  
+  opacity: 0.3;
+}
+.ki-check-circle .path2:before {
+  content: "\eab9";
+  margin-left: -1em;
+  
+}
+.ki-check-square .path1:before {
+  content: "\eaba";
+  
+  opacity: 0.3;
+}
+.ki-check-square .path2:before {
+  content: "\eabb";
+  margin-left: -1em;
+  
+}
+.ki-check:before {
+  content: "\eabc";
+}
+.ki-cheque .path1:before {
+  content: "\eabd";
+  
+}
+.ki-cheque .path2:before {
+  content: "\eabe";
+  margin-left: -1em;
+  
+}
+.ki-cheque .path3:before {
+  content: "\eabf";
+  margin-left: -1em;
+  
+}
+.ki-cheque .path4:before {
+  content: "\eac0";
+  margin-left: -1em;
+  
+}
+.ki-cheque .path5:before {
+  content: "\eac1";
+  margin-left: -1em;
+  
+}
+.ki-cheque .path6:before {
+  content: "\eac2";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-cheque .path7:before {
+  content: "\eac3";
+  margin-left: -1em;
+  
+}
+.ki-chrome .path1:before {
+  content: "\eac4";
+  
+  opacity: 0.3;
+}
+.ki-chrome .path2:before {
+  content: "\eac5";
+  margin-left: -1em;
+  
+}
+.ki-classmates .path1:before {
+  content: "\eac6";
+  
+}
+.ki-classmates .path2:before {
+  content: "\eac7";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-click .path1:before {
+  content: "\eac8";
+  
+}
+.ki-click .path2:before {
+  content: "\eac9";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-click .path3:before {
+  content: "\eaca";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-click .path4:before {
+  content: "\eacb";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-click .path5:before {
+  content: "\eacc";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-clipboard .path1:before {
+  content: "\eacd";
+  
+  opacity: 0.3;
+}
+.ki-clipboard .path2:before {
+  content: "\eace";
+  margin-left: -1em;
+  
+}
+.ki-clipboard .path3:before {
+  content: "\eacf";
+  margin-left: -1em;
+  
+}
+.ki-cloud-add .path1:before {
+  content: "\ead0";
+  
+}
+.ki-cloud-add .path2:before {
+  content: "\ead1";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-cloud-change .path1:before {
+  content: "\ead2";
+  
+}
+.ki-cloud-change .path2:before {
+  content: "\ead3";
+  margin-left: -1em;
+  
+}
+.ki-cloud-change .path3:before {
+  content: "\ead4";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-cloud-download .path1:before {
+  content: "\ead5";
+  
+  opacity: 0.3;
+}
+.ki-cloud-download .path2:before {
+  content: "\ead6";
+  margin-left: -1em;
+  
+}
+.ki-cloud:before {
+  content: "\ead7";
+}
+.ki-code .path1:before {
+  content: "\ead8";
+  
+  opacity: 0.3;
+}
+.ki-code .path2:before {
+  content: "\ead9";
+  margin-left: -1em;
+  
+}
+.ki-code .path3:before {
+  content: "\eada";
+  margin-left: -1em;
+  
+}
+.ki-code .path4:before {
+  content: "\eadb";
+  margin-left: -1em;
+  
+}
+.ki-coffee .path1:before {
+  content: "\eadc";
+  
+  opacity: 0.3;
+}
+.ki-coffee .path2:before {
+  content: "\eadd";
+  margin-left: -1em;
+  
+}
+.ki-coffee .path3:before {
+  content: "\eade";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-coffee .path4:before {
+  content: "\eadf";
+  margin-left: -1em;
+  
+}
+.ki-coffee .path5:before {
+  content: "\eae0";
+  margin-left: -1em;
+  
+}
+.ki-coffee .path6:before {
+  content: "\eae1";
+  margin-left: -1em;
+  
+}
+.ki-color-swatch .path1:before {
+  content: "\eae2";
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path2:before {
+  content: "\eae3";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path3:before {
+  content: "\eae4";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path4:before {
+  content: "\eae5";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path5:before {
+  content: "\eae6";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path6:before {
+  content: "\eae7";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path7:before {
+  content: "\eae8";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path8:before {
+  content: "\eae9";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path9:before {
+  content: "\eaea";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path10:before {
+  content: "\eaeb";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path11:before {
+  content: "\eaec";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path12:before {
+  content: "\eaed";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path13:before {
+  content: "\eaee";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path14:before {
+  content: "\eaef";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path15:before {
+  content: "\eaf0";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path16:before {
+  content: "\eaf1";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path17:before {
+  content: "\eaf2";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path18:before {
+  content: "\eaf3";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path19:before {
+  content: "\eaf4";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path20:before {
+  content: "\eaf5";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-color-swatch .path21:before {
+  content: "\eaf6";
+  margin-left: -1em;
+  
+}
+.ki-colors-square .path1:before {
+  content: "\eaf7";
+  
+  opacity: 0.3;
+}
+.ki-colors-square .path2:before {
+  content: "\eaf8";
+  margin-left: -1em;
+  
+}
+.ki-colors-square .path3:before {
+  content: "\eaf9";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-colors-square .path4:before {
+  content: "\eafa";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-compass .path1:before {
+  content: "\eafb";
+  
+}
+.ki-compass .path2:before {
+  content: "\eafc";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-copy-success .path1:before {
+  content: "\eafd";
+  
+}
+.ki-copy-success .path2:before {
+  content: "\eafe";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-copy:before {
+  content: "\eaff";
+}
+.ki-courier-express .path1:before {
+  content: "\eb00";
+  
+}
+.ki-courier-express .path2:before {
+  content: "\eb01";
+  margin-left: -1em;
+  
+}
+.ki-courier-express .path3:before {
+  content: "\eb02";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-courier-express .path4:before {
+  content: "\eb03";
+  margin-left: -1em;
+  
+}
+.ki-courier-express .path5:before {
+  content: "\eb04";
+  margin-left: -1em;
+  
+}
+.ki-courier-express .path6:before {
+  content: "\eb05";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-courier-express .path7:before {
+  content: "\eb06";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-courier .path1:before {
+  content: "\eb07";
+  
+}
+.ki-courier .path2:before {
+  content: "\eb08";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-courier .path3:before {
+  content: "\eb09";
+  margin-left: -1em;
+  
+}
+.ki-credit-cart .path1:before {
+  content: "\eb0a";
+  
+  opacity: 0.3;
+}
+.ki-credit-cart .path2:before {
+  content: "\eb0b";
+  margin-left: -1em;
+  
+}
+.ki-cross-circle .path1:before {
+  content: "\eb0c";
+  
+  opacity: 0.3;
+}
+.ki-cross-circle .path2:before {
+  content: "\eb0d";
+  margin-left: -1em;
+  
+}
+.ki-cross-square .path1:before {
+  content: "\eb0e";
+  
+  opacity: 0.3;
+}
+.ki-cross-square .path2:before {
+  content: "\eb0f";
+  margin-left: -1em;
+  
+}
+.ki-cross .path1:before {
+  content: "\eb10";
+  
+}
+.ki-cross .path2:before {
+  content: "\eb11";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-crown-2 .path1:before {
+  content: "\eb12";
+  
+  opacity: 0.3;
+}
+.ki-crown-2 .path2:before {
+  content: "\eb13";
+  margin-left: -1em;
+  
+}
+.ki-crown-2 .path3:before {
+  content: "\eb14";
+  margin-left: -1em;
+  
+}
+.ki-crown .path1:before {
+  content: "\eb15";
+  
+  opacity: 0.3;
+}
+.ki-crown .path2:before {
+  content: "\eb16";
+  margin-left: -1em;
+  
+}
+.ki-css .path1:before {
+  content: "\eb17";
+  
+  opacity: 0.3;
+}
+.ki-css .path2:before {
+  content: "\eb18";
+  margin-left: -1em;
+  
+}
+.ki-cube-2 .path1:before {
+  content: "\eb19";
+  
+  opacity: 0.3;
+}
+.ki-cube-2 .path2:before {
+  content: "\eb1a";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-cube-2 .path3:before {
+  content: "\eb1b";
+  margin-left: -1em;
+  
+}
+.ki-cube-3 .path1:before {
+  content: "\eb1c";
+  
+  opacity: 0.3;
+}
+.ki-cube-3 .path2:before {
+  content: "\eb1d";
+  margin-left: -1em;
+  
+}
+.ki-cup .path1:before {
+  content: "\eb1e";
+  
+  opacity: 0.3;
+}
+.ki-cup .path2:before {
+  content: "\eb1f";
+  margin-left: -1em;
+  
+}
+.ki-dash .path1:before {
+  content: "\eb20";
+  
+  opacity: 0.3;
+}
+.ki-dash .path2:before {
+  content: "\eb21";
+  margin-left: -1em;
+  
+}
+.ki-data .path1:before {
+  content: "\eb22";
+  
+}
+.ki-data .path2:before {
+  content: "\eb23";
+  margin-left: -1em;
+  
+}
+.ki-data .path3:before {
+  content: "\eb24";
+  margin-left: -1em;
+  
+}
+.ki-data .path4:before {
+  content: "\eb25";
+  margin-left: -1em;
+  
+}
+.ki-data .path5:before {
+  content: "\eb26";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-delete-files .path1:before {
+  content: "\eb27";
+  
+}
+.ki-delete-files .path2:before {
+  content: "\eb28";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-delete-folder .path1:before {
+  content: "\eb29";
+  
+  opacity: 0.3;
+}
+.ki-delete-folder .path2:before {
+  content: "\eb2a";
+  margin-left: -1em;
+  
+}
+.ki-delivery-2 .path1:before {
+  content: "\eb2b";
+  
+  opacity: 0.3;
+}
+.ki-delivery-2 .path2:before {
+  content: "\eb2c";
+  margin-left: -1em;
+  
+}
+.ki-delivery-2 .path3:before {
+  content: "\eb2d";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-delivery-2 .path4:before {
+  content: "\eb2e";
+  margin-left: -1em;
+  
+}
+.ki-delivery-2 .path5:before {
+  content: "\eb2f";
+  margin-left: -1em;
+  
+}
+.ki-delivery-2 .path6:before {
+  content: "\eb30";
+  margin-left: -1em;
+  
+}
+.ki-delivery-2 .path7:before {
+  content: "\eb31";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-delivery-2 .path8:before {
+  content: "\eb32";
+  margin-left: -1em;
+  
+}
+.ki-delivery-2 .path9:before {
+  content: "\eb33";
+  margin-left: -1em;
+  
+}
+.ki-delivery-3 .path1:before {
+  content: "\eb34";
+  
+  opacity: 0.3;
+}
+.ki-delivery-3 .path2:before {
+  content: "\eb35";
+  margin-left: -1em;
+  
+}
+.ki-delivery-3 .path3:before {
+  content: "\eb36";
+  margin-left: -1em;
+  
+}
+.ki-delivery-24 .path1:before {
+  content: "\eb37";
+  
+}
+.ki-delivery-24 .path2:before {
+  content: "\eb38";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-delivery-24 .path3:before {
+  content: "\eb39";
+  margin-left: -1em;
+  
+}
+.ki-delivery-24 .path4:before {
+  content: "\eb3a";
+  margin-left: -1em;
+  
+}
+.ki-delivery-door .path1:before {
+  content: "\eb3b";
+  
+  opacity: 0.3;
+}
+.ki-delivery-door .path2:before {
+  content: "\eb3c";
+  margin-left: -1em;
+  
+}
+.ki-delivery-door .path3:before {
+  content: "\eb3d";
+  margin-left: -1em;
+  
+}
+.ki-delivery-door .path4:before {
+  content: "\eb3e";
+  margin-left: -1em;
+  
+}
+.ki-delivery-geolocation .path1:before {
+  content: "\eb3f";
+  
+}
+.ki-delivery-geolocation .path2:before {
+  content: "\eb40";
+  margin-left: -1em;
+  
+}
+.ki-delivery-geolocation .path3:before {
+  content: "\eb41";
+  margin-left: -1em;
+  
+}
+.ki-delivery-geolocation .path4:before {
+  content: "\eb42";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-delivery-geolocation .path5:before {
+  content: "\eb43";
+  margin-left: -1em;
+  
+}
+.ki-delivery-time .path1:before {
+  content: "\eb44";
+  
+}
+.ki-delivery-time .path2:before {
+  content: "\eb45";
+  margin-left: -1em;
+  
+}
+.ki-delivery-time .path3:before {
+  content: "\eb46";
+  margin-left: -1em;
+  
+}
+.ki-delivery-time .path4:before {
+  content: "\eb47";
+  margin-left: -1em;
+  
+}
+.ki-delivery-time .path5:before {
+  content: "\eb48";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-delivery .path1:before {
+  content: "\eb49";
+  
+}
+.ki-delivery .path2:before {
+  content: "\eb4a";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-delivery .path3:before {
+  content: "\eb4b";
+  margin-left: -1em;
+  
+}
+.ki-delivery .path4:before {
+  content: "\eb4c";
+  margin-left: -1em;
+  
+}
+.ki-delivery .path5:before {
+  content: "\eb4d";
+  margin-left: -1em;
+  
+}
+.ki-design-2 .path1:before {
+  content: "\eb4e";
+  
+  opacity: 0.3;
+}
+.ki-design-2 .path2:before {
+  content: "\eb4f";
+  margin-left: -1em;
+  
+}
+.ki-design-frame .path1:before {
+  content: "\eb50";
+  
+  opacity: 0.3;
+}
+.ki-design-frame .path2:before {
+  content: "\eb51";
+  margin-left: -1em;
+  
+}
+.ki-design-mask .path1:before {
+  content: "\eb52";
+  
+  opacity: 0.3;
+}
+.ki-design-mask .path2:before {
+  content: "\eb53";
+  margin-left: -1em;
+  
+}
+.ki-design .path1:before {
+  content: "\eb54";
+  
+  opacity: 0.3;
+}
+.ki-design .path2:before {
+  content: "\eb55";
+  margin-left: -1em;
+  
+}
+.ki-devices-2 .path1:before {
+  content: "\eb56";
+  
+  opacity: 0.3;
+}
+.ki-devices-2 .path2:before {
+  content: "\eb57";
+  margin-left: -1em;
+  
+}
+.ki-devices-2 .path3:before {
+  content: "\eb58";
+  margin-left: -1em;
+  
+}
+.ki-devices .path1:before {
+  content: "\eb59";
+  
+  opacity: 0.3;
+}
+.ki-devices .path2:before {
+  content: "\eb5a";
+  margin-left: -1em;
+  
+}
+.ki-devices .path3:before {
+  content: "\eb5b";
+  margin-left: -1em;
+  
+}
+.ki-devices .path4:before {
+  content: "\eb5c";
+  margin-left: -1em;
+  
+}
+.ki-devices .path5:before {
+  content: "\eb5d";
+  margin-left: -1em;
+  
+}
+.ki-diamonds .path1:before {
+  content: "\eb5e";
+  
+}
+.ki-diamonds .path2:before {
+  content: "\eb5f";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-directbox-default .path1:before {
+  content: "\eb60";
+  
+}
+.ki-directbox-default .path2:before {
+  content: "\eb61";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-directbox-default .path3:before {
+  content: "\eb62";
+  margin-left: -1em;
+  
+}
+.ki-directbox-default .path4:before {
+  content: "\eb63";
+  margin-left: -1em;
+  
+}
+.ki-disconnect .path1:before {
+  content: "\eb64";
+  
+}
+.ki-disconnect .path2:before {
+  content: "\eb65";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-disconnect .path3:before {
+  content: "\eb66";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-disconnect .path4:before {
+  content: "\eb67";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-disconnect .path5:before {
+  content: "\eb68";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-discount .path1:before {
+  content: "\eb69";
+  
+  opacity: 0.3;
+}
+.ki-discount .path2:before {
+  content: "\eb6a";
+  margin-left: -1em;
+  
+}
+.ki-disk .path1:before {
+  content: "\eb6b";
+  
+  opacity: 0.3;
+}
+.ki-disk .path2:before {
+  content: "\eb6c";
+  margin-left: -1em;
+  
+}
+.ki-dislike .path1:before {
+  content: "\eb6d";
+  
+}
+.ki-dislike .path2:before {
+  content: "\eb6e";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-dj:before {
+  content: "\eb6f";
+}
+.ki-document .path1:before {
+  content: "\eb70";
+  
+  opacity: 0.3;
+}
+.ki-document .path2:before {
+  content: "\eb71";
+  margin-left: -1em;
+  
+}
+.ki-dollar .path1:before {
+  content: "\eb72";
+  
+  opacity: 0.3;
+}
+.ki-dollar .path2:before {
+  content: "\eb73";
+  margin-left: -1em;
+  
+}
+.ki-dollar .path3:before {
+  content: "\eb74";
+  margin-left: -1em;
+  
+}
+.ki-dots-circle-vertical .path1:before {
+  content: "\eb75";
+  
+  opacity: 0.3;
+}
+.ki-dots-circle-vertical .path2:before {
+  content: "\eb76";
+  margin-left: -1em;
+  
+}
+.ki-dots-circle-vertical .path3:before {
+  content: "\eb77";
+  margin-left: -1em;
+  
+}
+.ki-dots-circle-vertical .path4:before {
+  content: "\eb78";
+  margin-left: -1em;
+  
+}
+.ki-dots-circle .path1:before {
+  content: "\eb79";
+  
+  opacity: 0.3;
+}
+.ki-dots-circle .path2:before {
+  content: "\eb7a";
+  margin-left: -1em;
+  
+}
+.ki-dots-circle .path3:before {
+  content: "\eb7b";
+  margin-left: -1em;
+  
+}
+.ki-dots-circle .path4:before {
+  content: "\eb7c";
+  margin-left: -1em;
+  
+}
+.ki-dots-horizontal .path1:before {
+  content: "\eb7d";
+  
+}
+.ki-dots-horizontal .path2:before {
+  content: "\eb7e";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-dots-horizontal .path3:before {
+  content: "\eb7f";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-dots-square-vertical .path1:before {
+  content: "\eb80";
+  
+  opacity: 0.3;
+}
+.ki-dots-square-vertical .path2:before {
+  content: "\eb81";
+  margin-left: -1em;
+  
+}
+.ki-dots-square-vertical .path3:before {
+  content: "\eb82";
+  margin-left: -1em;
+  
+}
+.ki-dots-square-vertical .path4:before {
+  content: "\eb83";
+  margin-left: -1em;
+  
+}
+.ki-dots-square .path1:before {
+  content: "\eb84";
+  
+  opacity: 0.3;
+}
+.ki-dots-square .path2:before {
+  content: "\eb85";
+  margin-left: -1em;
+  
+}
+.ki-dots-square .path3:before {
+  content: "\eb86";
+  margin-left: -1em;
+  
+}
+.ki-dots-square .path4:before {
+  content: "\eb87";
+  margin-left: -1em;
+  
+}
+.ki-dots-vertical .path1:before {
+  content: "\eb88";
+  
+}
+.ki-dots-vertical .path2:before {
+  content: "\eb89";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-dots-vertical .path3:before {
+  content: "\eb8a";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-double-check-circle .path1:before {
+  content: "\eb8b";
+  
+  opacity: 0.3;
+}
+.ki-double-check-circle .path2:before {
+  content: "\eb8c";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-double-check-circle .path3:before {
+  content: "\eb8d";
+  margin-left: -1em;
+  
+}
+.ki-double-check .path1:before {
+  content: "\eb8e";
+  
+}
+.ki-double-check .path2:before {
+  content: "\eb8f";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-double-down .path1:before {
+  content: "\eb90";
+  
+}
+.ki-double-down .path2:before {
+  content: "\eb91";
+  margin-left: -1em;
+  
+}
+.ki-double-down .path3:before {
+  content: "\eb92";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-double-left-arrow .path1:before {
+  content: "\eb93";
+  
+  opacity: 0.3;
+}
+.ki-double-left-arrow .path2:before {
+  content: "\eb94";
+  margin-left: -1em;
+  
+}
+.ki-double-left .path1:before {
+  content: "\eb95";
+  
+}
+.ki-double-left .path2:before {
+  content: "\eb96";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-double-right-arrow .path1:before {
+  content: "\eb97";
+  
+  opacity: 0.3;
+}
+.ki-double-right-arrow .path2:before {
+  content: "\eb98";
+  margin-left: -1em;
+  
+}
+.ki-double-right .path1:before {
+  content: "\eb99";
+  
+}
+.ki-double-right .path2:before {
+  content: "\eb9a";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-double-up .path1:before {
+  content: "\eb9b";
+  
+}
+.ki-double-up .path2:before {
+  content: "\eb9c";
+  margin-left: -1em;
+  
+}
+.ki-double-up .path3:before {
+  content: "\eb9d";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-down-square .path1:before {
+  content: "\eb9e";
+  
+  opacity: 0.3;
+}
+.ki-down-square .path2:before {
+  content: "\eb9f";
+  margin-left: -1em;
+  
+}
+.ki-down:before {
+  content: "\eba0";
+}
+.ki-dribbble .path1:before {
+  content: "\eba1";
+  
+}
+.ki-dribbble .path2:before {
+  content: "\eba2";
+  margin-left: -1em;
+  
+}
+.ki-dribbble .path3:before {
+  content: "\eba3";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-dribbble .path4:before {
+  content: "\eba4";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-dribbble .path5:before {
+  content: "\eba5";
+  margin-left: -1em;
+  
+}
+.ki-dribbble .path6:before {
+  content: "\eba6";
+  margin-left: -1em;
+  
+}
+.ki-drop .path1:before {
+  content: "\eba7";
+  
+}
+.ki-drop .path2:before {
+  content: "\eba8";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-dropbox .path1:before {
+  content: "\eba9";
+  
+  opacity: 0.4;
+}
+.ki-dropbox .path2:before {
+  content: "\ebaa";
+  margin-left: -1em;
+  
+  opacity: 0.4;
+}
+.ki-dropbox .path3:before {
+  content: "\ebab";
+  margin-left: -1em;
+  
+  opacity: 0.4;
+}
+.ki-dropbox .path4:before {
+  content: "\ebac";
+  margin-left: -1em;
+  
+  opacity: 0.4;
+}
+.ki-dropbox .path5:before {
+  content: "\ebad";
+  margin-left: -1em;
+  
+}
+.ki-educare .path1:before {
+  content: "\ebae";
+  
+  opacity: 0.3;
+}
+.ki-educare .path2:before {
+  content: "\ebaf";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-educare .path3:before {
+  content: "\ebb0";
+  margin-left: -1em;
+  
+}
+.ki-educare .path4:before {
+  content: "\ebb1";
+  margin-left: -1em;
+  
+}
+.ki-electricity .path1:before {
+  content: "\ebb2";
+  
+}
+.ki-electricity .path2:before {
+  content: "\ebb3";
+  margin-left: -1em;
+  
+}
+.ki-electricity .path3:before {
+  content: "\ebb4";
+  margin-left: -1em;
+  
+}
+.ki-electricity .path4:before {
+  content: "\ebb5";
+  margin-left: -1em;
+  
+}
+.ki-electricity .path5:before {
+  content: "\ebb6";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-electricity .path6:before {
+  content: "\ebb7";
+  margin-left: -1em;
+  
+}
+.ki-electricity .path7:before {
+  content: "\ebb8";
+  margin-left: -1em;
+  
+}
+.ki-electricity .path8:before {
+  content: "\ebb9";
+  margin-left: -1em;
+  
+}
+.ki-electricity .path9:before {
+  content: "\ebba";
+  margin-left: -1em;
+  
+}
+.ki-electricity .path10:before {
+  content: "\ebbb";
+  margin-left: -1em;
+  
+}
+.ki-electronic-clock .path1:before {
+  content: "\ebbc";
+  
+  opacity: 0.3;
+}
+.ki-electronic-clock .path2:before {
+  content: "\ebbd";
+  margin-left: -1em;
+  
+}
+.ki-electronic-clock .path3:before {
+  content: "\ebbe";
+  margin-left: -1em;
+  
+}
+.ki-electronic-clock .path4:before {
+  content: "\ebbf";
+  margin-left: -1em;
+  
+}
+.ki-element-1 .path1:before {
+  content: "\ebc0";
+  
+}
+.ki-element-1 .path2:before {
+  content: "\ebc1";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-element-1 .path3:before {
+  content: "\ebc2";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-element-1 .path4:before {
+  content: "\ebc3";
+  margin-left: -1em;
+  
+}
+.ki-element-2 .path1:before {
+  content: "\ebc4";
+  
+}
+.ki-element-2 .path2:before {
+  content: "\ebc5";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-element-3 .path1:before {
+  content: "\ebc6";
+  
+  opacity: 0.3;
+}
+.ki-element-3 .path2:before {
+  content: "\ebc7";
+  margin-left: -1em;
+  
+}
+.ki-element-4 .path1:before {
+  content: "\ebc8";
+  
+}
+.ki-element-4 .path2:before {
+  content: "\ebc9";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-element-5 .path1:before {
+  content: "\ebca";
+  
+}
+.ki-element-5 .path2:before {
+  content: "\ebcb";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-element-6 .path1:before {
+  content: "\ebcc";
+  
+  opacity: 0.3;
+}
+.ki-element-6 .path2:before {
+  content: "\ebcd";
+  margin-left: -1em;
+  
+}
+.ki-element-7 .path1:before {
+  content: "\ebce";
+  
+}
+.ki-element-7 .path2:before {
+  content: "\ebcf";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-element-8 .path1:before {
+  content: "\ebd0";
+  
+  opacity: 0.3;
+}
+.ki-element-8 .path2:before {
+  content: "\ebd1";
+  margin-left: -1em;
+  
+}
+.ki-element-9 .path1:before {
+  content: "\ebd2";
+  
+  opacity: 0.3;
+}
+.ki-element-9 .path2:before {
+  content: "\ebd3";
+  margin-left: -1em;
+  
+}
+.ki-element-10 .path1:before {
+  content: "\ebd4";
+  
+}
+.ki-element-10 .path2:before {
+  content: "\ebd5";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-element-10 .path3:before {
+  content: "\ebd6";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-element-11 .path1:before {
+  content: "\ebd7";
+  
+}
+.ki-element-11 .path2:before {
+  content: "\ebd8";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-element-11 .path3:before {
+  content: "\ebd9";
+  margin-left: -1em;
+  
+}
+.ki-element-11 .path4:before {
+  content: "\ebda";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-element-12 .path1:before {
+  content: "\ebdb";
+  
+  opacity: 0.3;
+}
+.ki-element-12 .path2:before {
+  content: "\ebdc";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-element-12 .path3:before {
+  content: "\ebdd";
+  margin-left: -1em;
+  
+}
+.ki-element-equal .path1:before {
+  content: "\ebde";
+  
+}
+.ki-element-equal .path2:before {
+  content: "\ebdf";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-element-equal .path3:before {
+  content: "\ebe0";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-element-equal .path4:before {
+  content: "\ebe1";
+  margin-left: -1em;
+  
+}
+.ki-element-equal .path5:before {
+  content: "\ebe2";
+  margin-left: -1em;
+  
+}
+.ki-element-plus .path1:before {
+  content: "\ebe3";
+  
+}
+.ki-element-plus .path2:before {
+  content: "\ebe4";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-element-plus .path3:before {
+  content: "\ebe5";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-element-plus .path4:before {
+  content: "\ebe6";
+  margin-left: -1em;
+  
+}
+.ki-element-plus .path5:before {
+  content: "\ebe7";
+  margin-left: -1em;
+  
+}
+.ki-emoji-happy .path1:before {
+  content: "\ebe8";
+  
+  opacity: 0.3;
+}
+.ki-emoji-happy .path2:before {
+  content: "\ebe9";
+  margin-left: -1em;
+  
+}
+.ki-emoji-happy .path3:before {
+  content: "\ebea";
+  margin-left: -1em;
+  
+}
+.ki-emoji-happy .path4:before {
+  content: "\ebeb";
+  margin-left: -1em;
+  
+}
+.ki-enjin-coin .path1:before {
+  content: "\ebec";
+  
+}
+.ki-enjin-coin .path2:before {
+  content: "\ebed";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-entrance-left .path1:before {
+  content: "\ebee";
+  
+}
+.ki-entrance-left .path2:before {
+  content: "\ebef";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-entrance-right .path1:before {
+  content: "\ebf0";
+  
+  opacity: 0.3;
+}
+.ki-entrance-right .path2:before {
+  content: "\ebf1";
+  margin-left: -1em;
+  
+}
+.ki-eraser .path1:before {
+  content: "\ebf2";
+  
+  opacity: 0.3;
+}
+.ki-eraser .path2:before {
+  content: "\ebf3";
+  margin-left: -1em;
+  
+}
+.ki-eraser .path3:before {
+  content: "\ebf4";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-euro .path1:before {
+  content: "\ebf5";
+  
+  opacity: 0.3;
+}
+.ki-euro .path2:before {
+  content: "\ebf6";
+  margin-left: -1em;
+  
+}
+.ki-euro .path3:before {
+  content: "\ebf7";
+  margin-left: -1em;
+  
+}
+.ki-exit-down .path1:before {
+  content: "\ebf8";
+  
+  opacity: 0.3;
+}
+.ki-exit-down .path2:before {
+  content: "\ebf9";
+  margin-left: -1em;
+  
+}
+.ki-exit-left .path1:before {
+  content: "\ebfa";
+  
+  opacity: 0.3;
+}
+.ki-exit-left .path2:before {
+  content: "\ebfb";
+  margin-left: -1em;
+  
+}
+.ki-exit-right-corner .path1:before {
+  content: "\ebfc";
+  
+  opacity: 0.3;
+}
+.ki-exit-right-corner .path2:before {
+  content: "\ebfd";
+  margin-left: -1em;
+  
+}
+.ki-exit-right .path1:before {
+  content: "\ebfe";
+  
+  opacity: 0.3;
+}
+.ki-exit-right .path2:before {
+  content: "\ebff";
+  margin-left: -1em;
+  
+}
+.ki-exit-up .path1:before {
+  content: "\ec00";
+  
+  opacity: 0.3;
+}
+.ki-exit-up .path2:before {
+  content: "\ec01";
+  margin-left: -1em;
+  
+}
+.ki-external-drive .path1:before {
+  content: "\ec02";
+  
+}
+.ki-external-drive .path2:before {
+  content: "\ec03";
+  margin-left: -1em;
+  
+}
+.ki-external-drive .path3:before {
+  content: "\ec04";
+  margin-left: -1em;
+  
+}
+.ki-external-drive .path4:before {
+  content: "\ec05";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-external-drive .path5:before {
+  content: "\ec06";
+  margin-left: -1em;
+  
+}
+.ki-eye-slash .path1:before {
+  content: "\ec07";
+  
+}
+.ki-eye-slash .path2:before {
+  content: "\ec08";
+  margin-left: -1em;
+  
+}
+.ki-eye-slash .path3:before {
+  content: "\ec09";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-eye-slash .path4:before {
+  content: "\ec0a";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-eye .path1:before {
+  content: "\ec0b";
+  
+}
+.ki-eye .path2:before {
+  content: "\ec0c";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-eye .path3:before {
+  content: "\ec0d";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-facebook .path1:before {
+  content: "\ec0e";
+  
+  opacity: 0.3;
+}
+.ki-facebook .path2:before {
+  content: "\ec0f";
+  margin-left: -1em;
+  
+}
+.ki-faceid .path1:before {
+  content: "\ec10";
+  
+  opacity: 0.3;
+}
+.ki-faceid .path2:before {
+  content: "\ec11";
+  margin-left: -1em;
+  
+}
+.ki-faceid .path3:before {
+  content: "\ec12";
+  margin-left: -1em;
+  
+}
+.ki-faceid .path4:before {
+  content: "\ec13";
+  margin-left: -1em;
+  
+}
+.ki-faceid .path5:before {
+  content: "\ec14";
+  margin-left: -1em;
+  
+}
+.ki-faceid .path6:before {
+  content: "\ec15";
+  margin-left: -1em;
+  
+}
+.ki-fasten .path1:before {
+  content: "\ec16";
+  
+  opacity: 0.3;
+}
+.ki-fasten .path2:before {
+  content: "\ec17";
+  margin-left: -1em;
+  
+}
+.ki-fat-rows .path1:before {
+  content: "\ec18";
+  
+}
+.ki-fat-rows .path2:before {
+  content: "\ec19";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-feather .path1:before {
+  content: "\ec1a";
+  
+  opacity: 0.3;
+}
+.ki-feather .path2:before {
+  content: "\ec1b";
+  margin-left: -1em;
+  
+}
+.ki-figma .path1:before {
+  content: "\ec1c";
+  
+  opacity: 0.4;
+}
+.ki-figma .path2:before {
+  content: "\ec1d";
+  margin-left: -1em;
+  
+  opacity: 0.4;
+}
+.ki-figma .path3:before {
+  content: "\ec1e";
+  margin-left: -1em;
+  
+}
+.ki-figma .path4:before {
+  content: "\ec1f";
+  margin-left: -1em;
+  
+}
+.ki-figma .path5:before {
+  content: "\ec20";
+  margin-left: -1em;
+  
+}
+.ki-file-added .path1:before {
+  content: "\ec21";
+  
+}
+.ki-file-added .path2:before {
+  content: "\ec22";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-file-deleted .path1:before {
+  content: "\ec23";
+  
+}
+.ki-file-deleted .path2:before {
+  content: "\ec24";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-file-down .path1:before {
+  content: "\ec25";
+  
+  opacity: 0.3;
+}
+.ki-file-down .path2:before {
+  content: "\ec26";
+  margin-left: -1em;
+  
+}
+.ki-file-left .path1:before {
+  content: "\ec27";
+  
+  opacity: 0.3;
+}
+.ki-file-left .path2:before {
+  content: "\ec28";
+  margin-left: -1em;
+  
+}
+.ki-file-right .path1:before {
+  content: "\ec29";
+  
+  opacity: 0.3;
+}
+.ki-file-right .path2:before {
+  content: "\ec2a";
+  margin-left: -1em;
+  
+}
+.ki-file-sheet .path1:before {
+  content: "\ec2b";
+  
+}
+.ki-file-sheet .path2:before {
+  content: "\ec2c";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-file-up .path1:before {
+  content: "\ec2d";
+  
+  opacity: 0.3;
+}
+.ki-file-up .path2:before {
+  content: "\ec2e";
+  margin-left: -1em;
+  
+}
+.ki-file .path1:before {
+  content: "\ec2f";
+  
+}
+.ki-file .path2:before {
+  content: "\ec30";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-files-tablet .path1:before {
+  content: "\ec31";
+  
+}
+.ki-files-tablet .path2:before {
+  content: "\ec32";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-filter-edit .path1:before {
+  content: "\ec33";
+  
+  opacity: 0.3;
+}
+.ki-filter-edit .path2:before {
+  content: "\ec34";
+  margin-left: -1em;
+  
+}
+.ki-filter-search .path1:before {
+  content: "\ec35";
+  
+  opacity: 0.3;
+}
+.ki-filter-search .path2:before {
+  content: "\ec36";
+  margin-left: -1em;
+  
+}
+.ki-filter-search .path3:before {
+  content: "\ec37";
+  margin-left: -1em;
+  
+}
+.ki-filter-square .path1:before {
+  content: "\ec38";
+  
+}
+.ki-filter-square .path2:before {
+  content: "\ec39";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-filter-tablet .path1:before {
+  content: "\ec3a";
+  
+  opacity: 0.3;
+}
+.ki-filter-tablet .path2:before {
+  content: "\ec3b";
+  margin-left: -1em;
+  
+}
+.ki-filter-tick .path1:before {
+  content: "\ec3c";
+  
+  opacity: 0.3;
+}
+.ki-filter-tick .path2:before {
+  content: "\ec3d";
+  margin-left: -1em;
+  
+}
+.ki-filter .path1:before {
+  content: "\ec3e";
+  
+}
+.ki-filter .path2:before {
+  content: "\ec3f";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-finance-calculator .path1:before {
+  content: "\ec40";
+  
+  opacity: 0.3;
+}
+.ki-finance-calculator .path2:before {
+  content: "\ec41";
+  margin-left: -1em;
+  
+}
+.ki-finance-calculator .path3:before {
+  content: "\ec42";
+  margin-left: -1em;
+  
+}
+.ki-finance-calculator .path4:before {
+  content: "\ec43";
+  margin-left: -1em;
+  
+}
+.ki-finance-calculator .path5:before {
+  content: "\ec44";
+  margin-left: -1em;
+  
+}
+.ki-finance-calculator .path6:before {
+  content: "\ec45";
+  margin-left: -1em;
+  
+}
+.ki-finance-calculator .path7:before {
+  content: "\ec46";
+  margin-left: -1em;
+  
+}
+.ki-financial-schedule .path1:before {
+  content: "\ec47";
+  
+  opacity: 0.3;
+}
+.ki-financial-schedule .path2:before {
+  content: "\ec48";
+  margin-left: -1em;
+  
+}
+.ki-financial-schedule .path3:before {
+  content: "\ec49";
+  margin-left: -1em;
+  
+}
+.ki-financial-schedule .path4:before {
+  content: "\ec4a";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-fingerprint-scanning .path1:before {
+  content: "\ec4b";
+  
+}
+.ki-fingerprint-scanning .path2:before {
+  content: "\ec4c";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-fingerprint-scanning .path3:before {
+  content: "\ec4d";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-fingerprint-scanning .path4:before {
+  content: "\ec4e";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-fingerprint-scanning .path5:before {
+  content: "\ec4f";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-flag .path1:before {
+  content: "\ec50";
+  
+  opacity: 0.3;
+}
+.ki-flag .path2:before {
+  content: "\ec51";
+  margin-left: -1em;
+  
+}
+.ki-flash-circle .path1:before {
+  content: "\ec52";
+  
+  opacity: 0.3;
+}
+.ki-flash-circle .path2:before {
+  content: "\ec53";
+  margin-left: -1em;
+  
+}
+.ki-flask .path1:before {
+  content: "\ec54";
+  
+  opacity: 0.3;
+}
+.ki-flask .path2:before {
+  content: "\ec55";
+  margin-left: -1em;
+  
+}
+.ki-focus .path1:before {
+  content: "\ec56";
+  
+  opacity: 0.3;
+}
+.ki-focus .path2:before {
+  content: "\ec57";
+  margin-left: -1em;
+  
+}
+.ki-folder-added .path1:before {
+  content: "\ec58";
+  
+  opacity: 0.3;
+}
+.ki-folder-added .path2:before {
+  content: "\ec59";
+  margin-left: -1em;
+  
+}
+.ki-folder-down .path1:before {
+  content: "\ec5a";
+  
+  opacity: 0.3;
+}
+.ki-folder-down .path2:before {
+  content: "\ec5b";
+  margin-left: -1em;
+  
+}
+.ki-folder-up .path1:before {
+  content: "\ec5c";
+  
+  opacity: 0.3;
+}
+.ki-folder-up .path2:before {
+  content: "\ec5d";
+  margin-left: -1em;
+  
+}
+.ki-folder .path1:before {
+  content: "\ec5e";
+  
+  opacity: 0.3;
+}
+.ki-folder .path2:before {
+  content: "\ec5f";
+  margin-left: -1em;
+  
+}
+.ki-frame .path1:before {
+  content: "\ec60";
+  
+}
+.ki-frame .path2:before {
+  content: "\ec61";
+  margin-left: -1em;
+  
+}
+.ki-frame .path3:before {
+  content: "\ec62";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-frame .path4:before {
+  content: "\ec63";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-gear .path1:before {
+  content: "\ec64";
+  
+  opacity: 0.3;
+}
+.ki-gear .path2:before {
+  content: "\ec65";
+  margin-left: -1em;
+  
+}
+.ki-general-mouse .path1:before {
+  content: "\ec66";
+  
+  opacity: 0.3;
+}
+.ki-general-mouse .path2:before {
+  content: "\ec67";
+  margin-left: -1em;
+  
+}
+.ki-geolocation-home .path1:before {
+  content: "\ec68";
+  
+  opacity: 0.3;
+}
+.ki-geolocation-home .path2:before {
+  content: "\ec69";
+  margin-left: -1em;
+  
+}
+.ki-geolocation .path1:before {
+  content: "\ec6a";
+  
+  opacity: 0.3;
+}
+.ki-geolocation .path2:before {
+  content: "\ec6b";
+  margin-left: -1em;
+  
+}
+.ki-ghost .path1:before {
+  content: "\ec6c";
+  
+}
+.ki-ghost .path2:before {
+  content: "\ec6d";
+  margin-left: -1em;
+  
+}
+.ki-ghost .path3:before {
+  content: "\ec6e";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-gift .path1:before {
+  content: "\ec6f";
+  
+  opacity: 0.3;
+}
+.ki-gift .path2:before {
+  content: "\ec70";
+  margin-left: -1em;
+  
+}
+.ki-gift .path3:before {
+  content: "\ec71";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-gift .path4:before {
+  content: "\ec72";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-github .path1:before {
+  content: "\ec73";
+  
+  opacity: 0.3;
+}
+.ki-github .path2:before {
+  content: "\ec74";
+  margin-left: -1em;
+  
+}
+.ki-glass .path1:before {
+  content: "\ec75";
+  
+}
+.ki-glass .path2:before {
+  content: "\ec76";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-glass .path3:before {
+  content: "\ec77";
+  margin-left: -1em;
+  
+}
+.ki-google-play .path1:before {
+  content: "\ec78";
+  
+  opacity: 0.3;
+}
+.ki-google-play .path2:before {
+  content: "\ec79";
+  margin-left: -1em;
+  
+}
+.ki-google .path1:before {
+  content: "\ec7a";
+  
+  opacity: 0.3;
+}
+.ki-google .path2:before {
+  content: "\ec7b";
+  margin-left: -1em;
+  
+}
+.ki-graph-2 .path1:before {
+  content: "\ec7c";
+  
+  opacity: 0.3;
+}
+.ki-graph-2 .path2:before {
+  content: "\ec7d";
+  margin-left: -1em;
+  
+}
+.ki-graph-2 .path3:before {
+  content: "\ec7e";
+  margin-left: -1em;
+  
+}
+.ki-graph-3 .path1:before {
+  content: "\ec7f";
+  
+  opacity: 0.3;
+}
+.ki-graph-3 .path2:before {
+  content: "\ec80";
+  margin-left: -1em;
+  
+}
+.ki-graph-4 .path1:before {
+  content: "\ec81";
+  
+}
+.ki-graph-4 .path2:before {
+  content: "\ec82";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-graph-up .path1:before {
+  content: "\ec83";
+  
+  opacity: 0.3;
+}
+.ki-graph-up .path2:before {
+  content: "\ec84";
+  margin-left: -1em;
+  
+}
+.ki-graph-up .path3:before {
+  content: "\ec85";
+  margin-left: -1em;
+  
+}
+.ki-graph-up .path4:before {
+  content: "\ec86";
+  margin-left: -1em;
+  
+}
+.ki-graph-up .path5:before {
+  content: "\ec87";
+  margin-left: -1em;
+  
+}
+.ki-graph-up .path6:before {
+  content: "\ec88";
+  margin-left: -1em;
+  
+}
+.ki-graph .path1:before {
+  content: "\ec89";
+  
+  opacity: 0.3;
+}
+.ki-graph .path2:before {
+  content: "\ec8a";
+  margin-left: -1em;
+  
+}
+.ki-graph .path3:before {
+  content: "\ec8b";
+  margin-left: -1em;
+  
+}
+.ki-graph .path4:before {
+  content: "\ec8c";
+  margin-left: -1em;
+  
+}
+.ki-grid-2 .path1:before {
+  content: "\ec8d";
+  
+  opacity: 0.3;
+}
+.ki-grid-2 .path2:before {
+  content: "\ec8e";
+  margin-left: -1em;
+  
+}
+.ki-grid-frame .path1:before {
+  content: "\ec8f";
+  
+}
+.ki-grid-frame .path2:before {
+  content: "\ec90";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-grid-frame .path3:before {
+  content: "\ec91";
+  margin-left: -1em;
+  
+}
+.ki-grid .path1:before {
+  content: "\ec92";
+  
+  opacity: 0.3;
+}
+.ki-grid .path2:before {
+  content: "\ec93";
+  margin-left: -1em;
+  
+}
+.ki-handcart:before {
+  content: "\ec94";
+}
+.ki-happy-emoji .path1:before {
+  content: "\ec95";
+  
+  opacity: 0.3;
+}
+.ki-happy-emoji .path2:before {
+  content: "\ec96";
+  margin-left: -1em;
+  
+}
+.ki-heart-circle .path1:before {
+  content: "\ec97";
+  
+  opacity: 0.3;
+}
+.ki-heart-circle .path2:before {
+  content: "\ec98";
+  margin-left: -1em;
+  
+}
+.ki-heart .path1:before {
+  content: "\ec99";
+  
+  opacity: 0.3;
+}
+.ki-heart .path2:before {
+  content: "\ec9a";
+  margin-left: -1em;
+  
+}
+.ki-home-1 .path1:before {
+  content: "\ec9b";
+  
+  opacity: 0.3;
+}
+.ki-home-1 .path2:before {
+  content: "\ec9c";
+  margin-left: -1em;
+  
+}
+.ki-home-2 .path1:before {
+  content: "\ec9d";
+  
+  opacity: 0.3;
+}
+.ki-home-2 .path2:before {
+  content: "\ec9e";
+  margin-left: -1em;
+  
+}
+.ki-home-3 .path1:before {
+  content: "\ec9f";
+  
+  opacity: 0.3;
+}
+.ki-home-3 .path2:before {
+  content: "\eca0";
+  margin-left: -1em;
+  
+}
+.ki-home:before {
+  content: "\eca1";
+}
+.ki-html .path1:before {
+  content: "\eca2";
+  
+  opacity: 0.3;
+}
+.ki-html .path2:before {
+  content: "\eca3";
+  margin-left: -1em;
+  
+}
+.ki-icon .path1:before {
+  content: "\eca4";
+  
+  opacity: 0.3;
+}
+.ki-icon .path2:before {
+  content: "\eca5";
+  margin-left: -1em;
+  
+}
+.ki-icon .path3:before {
+  content: "\eca6";
+  margin-left: -1em;
+  
+}
+.ki-illustrator .path1:before {
+  content: "\eca7";
+  
+  opacity: 0.3;
+}
+.ki-illustrator .path2:before {
+  content: "\eca8";
+  margin-left: -1em;
+  
+}
+.ki-illustrator .path3:before {
+  content: "\eca9";
+  margin-left: -1em;
+  
+}
+.ki-illustrator .path4:before {
+  content: "\ecaa";
+  margin-left: -1em;
+  
+}
+.ki-information-2 .path1:before {
+  content: "\ecab";
+  
+  opacity: 0.3;
+}
+.ki-information-2 .path2:before {
+  content: "\ecac";
+  margin-left: -1em;
+  
+}
+.ki-information-2 .path3:before {
+  content: "\ecad";
+  margin-left: -1em;
+  
+}
+.ki-information-3 .path1:before {
+  content: "\ecae";
+  
+  opacity: 0.3;
+}
+.ki-information-3 .path2:before {
+  content: "\ecaf";
+  margin-left: -1em;
+  
+}
+.ki-information-3 .path3:before {
+  content: "\ecb0";
+  margin-left: -1em;
+  
+}
+.ki-information-4 .path1:before {
+  content: "\ecb1";
+  
+  opacity: 0.3;
+}
+.ki-information-4 .path2:before {
+  content: "\ecb2";
+  margin-left: -1em;
+  
+}
+.ki-information-4 .path3:before {
+  content: "\ecb3";
+  margin-left: -1em;
+  
+}
+.ki-information-5 .path1:before {
+  content: "\ecb4";
+  
+  opacity: 0.3;
+}
+.ki-information-5 .path2:before {
+  content: "\ecb5";
+  margin-left: -1em;
+  
+}
+.ki-information-5 .path3:before {
+  content: "\ecb6";
+  margin-left: -1em;
+  
+}
+.ki-information .path1:before {
+  content: "\ecb7";
+  
+  opacity: 0.3;
+}
+.ki-information .path2:before {
+  content: "\ecb8";
+  margin-left: -1em;
+  
+}
+.ki-information .path3:before {
+  content: "\ecb9";
+  margin-left: -1em;
+  
+}
+.ki-instagram .path1:before {
+  content: "\ecba";
+  
+  opacity: 0.3;
+}
+.ki-instagram .path2:before {
+  content: "\ecbb";
+  margin-left: -1em;
+  
+}
+.ki-joystick .path1:before {
+  content: "\ecbc";
+  
+}
+.ki-joystick .path2:before {
+  content: "\ecbd";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-joystick .path3:before {
+  content: "\ecbe";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-joystick .path4:before {
+  content: "\ecbf";
+  margin-left: -1em;
+  
+}
+.ki-js-2 .path1:before {
+  content: "\ecc0";
+  
+}
+.ki-js-2 .path2:before {
+  content: "\ecc1";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-js .path1:before {
+  content: "\ecc2";
+  
+}
+.ki-js .path2:before {
+  content: "\ecc3";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-kanban .path1:before {
+  content: "\ecc4";
+  
+}
+.ki-kanban .path2:before {
+  content: "\ecc5";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-key-square .path1:before {
+  content: "\ecc6";
+  
+  opacity: 0.3;
+}
+.ki-key-square .path2:before {
+  content: "\ecc7";
+  margin-left: -1em;
+  
+}
+.ki-key .path1:before {
+  content: "\ecc8";
+  
+  opacity: 0.3;
+}
+.ki-key .path2:before {
+  content: "\ecc9";
+  margin-left: -1em;
+  
+}
+.ki-keyboard .path1:before {
+  content: "\ecca";
+  
+}
+.ki-keyboard .path2:before {
+  content: "\eccb";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-laptop .path1:before {
+  content: "\eccc";
+  
+  opacity: 0.3;
+}
+.ki-laptop .path2:before {
+  content: "\eccd";
+  margin-left: -1em;
+  
+}
+.ki-laravel .path1:before {
+  content: "\ecce";
+  
+  opacity: 0.3;
+}
+.ki-laravel .path2:before {
+  content: "\eccf";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-laravel .path3:before {
+  content: "\ecd0";
+  margin-left: -1em;
+  
+}
+.ki-laravel .path4:before {
+  content: "\ecd1";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-laravel .path5:before {
+  content: "\ecd2";
+  margin-left: -1em;
+  
+}
+.ki-laravel .path6:before {
+  content: "\ecd3";
+  margin-left: -1em;
+  
+}
+.ki-laravel .path7:before {
+  content: "\ecd4";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-left-square .path1:before {
+  content: "\ecd5";
+  
+  opacity: 0.3;
+}
+.ki-left-square .path2:before {
+  content: "\ecd6";
+  margin-left: -1em;
+  
+}
+.ki-left:before {
+  content: "\ecd7";
+}
+.ki-like-2 .path1:before {
+  content: "\ecd8";
+  
+  opacity: 0.3;
+}
+.ki-like-2 .path2:before {
+  content: "\ecd9";
+  margin-left: -1em;
+  
+}
+.ki-like-folder .path1:before {
+  content: "\ecda";
+  
+  opacity: 0.3;
+}
+.ki-like-folder .path2:before {
+  content: "\ecdb";
+  margin-left: -1em;
+  
+}
+.ki-like-shapes .path1:before {
+  content: "\ecdc";
+  
+  opacity: 0.3;
+}
+.ki-like-shapes .path2:before {
+  content: "\ecdd";
+  margin-left: -1em;
+  
+}
+.ki-like-tag .path1:before {
+  content: "\ecde";
+  
+  opacity: 0.3;
+}
+.ki-like-tag .path2:before {
+  content: "\ecdf";
+  margin-left: -1em;
+  
+}
+.ki-like .path1:before {
+  content: "\ece0";
+  
+}
+.ki-like .path2:before {
+  content: "\ece1";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-loading .path1:before {
+  content: "\ece2";
+  
+}
+.ki-loading .path2:before {
+  content: "\ece3";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-lock-2 .path1:before {
+  content: "\ece4";
+  
+}
+.ki-lock-2 .path2:before {
+  content: "\ece5";
+  margin-left: -1em;
+  
+}
+.ki-lock-2 .path3:before {
+  content: "\ece6";
+  margin-left: -1em;
+  
+}
+.ki-lock-2 .path4:before {
+  content: "\ece7";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-lock-2 .path5:before {
+  content: "\ece8";
+  margin-left: -1em;
+  
+}
+.ki-lock-3 .path1:before {
+  content: "\ece9";
+  
+  opacity: 0.3;
+}
+.ki-lock-3 .path2:before {
+  content: "\ecea";
+  margin-left: -1em;
+  
+}
+.ki-lock-3 .path3:before {
+  content: "\eceb";
+  margin-left: -1em;
+  
+}
+.ki-lock .path1:before {
+  content: "\ecec";
+  
+  opacity: 0.3;
+}
+.ki-lock .path2:before {
+  content: "\eced";
+  margin-left: -1em;
+  
+}
+.ki-lock .path3:before {
+  content: "\ecee";
+  margin-left: -1em;
+  
+}
+.ki-logistic .path1:before {
+  content: "\ecef";
+  
+  opacity: 0.3;
+}
+.ki-logistic .path2:before {
+  content: "\ecf0";
+  margin-left: -1em;
+  
+}
+.ki-logistic .path3:before {
+  content: "\ecf1";
+  margin-left: -1em;
+  
+}
+.ki-logistic .path4:before {
+  content: "\ecf2";
+  margin-left: -1em;
+  
+}
+.ki-logistic .path5:before {
+  content: "\ecf3";
+  margin-left: -1em;
+  
+}
+.ki-logistic .path6:before {
+  content: "\ecf4";
+  margin-left: -1em;
+  
+}
+.ki-logistic .path7:before {
+  content: "\ecf5";
+  margin-left: -1em;
+  
+}
+.ki-lots-shopping .path1:before {
+  content: "\ecf6";
+  
+  opacity: 0.3;
+}
+.ki-lots-shopping .path2:before {
+  content: "\ecf7";
+  margin-left: -1em;
+  
+}
+.ki-lots-shopping .path3:before {
+  content: "\ecf8";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-lots-shopping .path4:before {
+  content: "\ecf9";
+  margin-left: -1em;
+  
+}
+.ki-lots-shopping .path5:before {
+  content: "\ecfa";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-lots-shopping .path6:before {
+  content: "\ecfb";
+  margin-left: -1em;
+  
+}
+.ki-lots-shopping .path7:before {
+  content: "\ecfc";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-lots-shopping .path8:before {
+  content: "\ecfd";
+  margin-left: -1em;
+  
+}
+.ki-lovely .path1:before {
+  content: "\ecfe";
+  
+  opacity: 0.3;
+}
+.ki-lovely .path2:before {
+  content: "\ecff";
+  margin-left: -1em;
+  
+}
+.ki-lts .path1:before {
+  content: "\ed00";
+  
+}
+.ki-lts .path2:before {
+  content: "\ed01";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-magnifier .path1:before {
+  content: "\ed02";
+  
+  opacity: 0.3;
+}
+.ki-magnifier .path2:before {
+  content: "\ed03";
+  margin-left: -1em;
+  
+}
+.ki-map .path1:before {
+  content: "\ed04";
+  
+  opacity: 0.3;
+}
+.ki-map .path2:before {
+  content: "\ed05";
+  margin-left: -1em;
+  
+}
+.ki-map .path3:before {
+  content: "\ed06";
+  margin-left: -1em;
+  
+}
+.ki-mask .path1:before {
+  content: "\ed07";
+  
+  opacity: 0.3;
+}
+.ki-mask .path2:before {
+  content: "\ed08";
+  margin-left: -1em;
+  
+}
+.ki-mask .path3:before {
+  content: "\ed09";
+  margin-left: -1em;
+  
+}
+.ki-maximize .path1:before {
+  content: "\ed0a";
+  
+  opacity: 0.3;
+}
+.ki-maximize .path2:before {
+  content: "\ed0b";
+  margin-left: -1em;
+  
+}
+.ki-maximize .path3:before {
+  content: "\ed0c";
+  margin-left: -1em;
+  
+}
+.ki-maximize .path4:before {
+  content: "\ed0d";
+  margin-left: -1em;
+  
+}
+.ki-maximize .path5:before {
+  content: "\ed0e";
+  margin-left: -1em;
+  
+}
+.ki-medal-star .path1:before {
+  content: "\ed0f";
+  
+}
+.ki-medal-star .path2:before {
+  content: "\ed10";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-medal-star .path3:before {
+  content: "\ed11";
+  margin-left: -1em;
+  
+}
+.ki-medal-star .path4:before {
+  content: "\ed12";
+  margin-left: -1em;
+  
+}
+.ki-menu .path1:before {
+  content: "\ed13";
+  
+  opacity: 0.3;
+}
+.ki-menu .path2:before {
+  content: "\ed14";
+  margin-left: -1em;
+  
+}
+.ki-menu .path3:before {
+  content: "\ed15";
+  margin-left: -1em;
+  
+}
+.ki-menu .path4:before {
+  content: "\ed16";
+  margin-left: -1em;
+  
+}
+.ki-message-add .path1:before {
+  content: "\ed17";
+  
+  opacity: 0.3;
+}
+.ki-message-add .path2:before {
+  content: "\ed18";
+  margin-left: -1em;
+  
+}
+.ki-message-add .path3:before {
+  content: "\ed19";
+  margin-left: -1em;
+  
+}
+.ki-message-edit .path1:before {
+  content: "\ed1a";
+  
+  opacity: 0.3;
+}
+.ki-message-edit .path2:before {
+  content: "\ed1b";
+  margin-left: -1em;
+  
+}
+.ki-message-minus .path1:before {
+  content: "\ed1c";
+  
+  opacity: 0.3;
+}
+.ki-message-minus .path2:before {
+  content: "\ed1d";
+  margin-left: -1em;
+  
+}
+.ki-message-notif .path1:before {
+  content: "\ed1e";
+  
+}
+.ki-message-notif .path2:before {
+  content: "\ed1f";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-message-notif .path3:before {
+  content: "\ed20";
+  margin-left: -1em;
+  
+}
+.ki-message-notif .path4:before {
+  content: "\ed21";
+  margin-left: -1em;
+  
+}
+.ki-message-notif .path5:before {
+  content: "\ed22";
+  margin-left: -1em;
+  
+}
+.ki-message-programming .path1:before {
+  content: "\ed23";
+  
+  opacity: 0.3;
+}
+.ki-message-programming .path2:before {
+  content: "\ed24";
+  margin-left: -1em;
+  
+}
+.ki-message-programming .path3:before {
+  content: "\ed25";
+  margin-left: -1em;
+  
+}
+.ki-message-programming .path4:before {
+  content: "\ed26";
+  margin-left: -1em;
+  
+}
+.ki-message-question .path1:before {
+  content: "\ed27";
+  
+  opacity: 0.3;
+}
+.ki-message-question .path2:before {
+  content: "\ed28";
+  margin-left: -1em;
+  
+}
+.ki-message-question .path3:before {
+  content: "\ed29";
+  margin-left: -1em;
+  
+}
+.ki-message-text-2 .path1:before {
+  content: "\ed2a";
+  
+  opacity: 0.3;
+}
+.ki-message-text-2 .path2:before {
+  content: "\ed2b";
+  margin-left: -1em;
+  
+}
+.ki-message-text-2 .path3:before {
+  content: "\ed2c";
+  margin-left: -1em;
+  
+}
+.ki-message-text .path1:before {
+  content: "\ed2d";
+  
+  opacity: 0.3;
+}
+.ki-message-text .path2:before {
+  content: "\ed2e";
+  margin-left: -1em;
+  
+}
+.ki-message-text .path3:before {
+  content: "\ed2f";
+  margin-left: -1em;
+  
+}
+.ki-messages .path1:before {
+  content: "\ed30";
+  
+}
+.ki-messages .path2:before {
+  content: "\ed31";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-messages .path3:before {
+  content: "\ed32";
+  margin-left: -1em;
+  
+}
+.ki-messages .path4:before {
+  content: "\ed33";
+  margin-left: -1em;
+  
+}
+.ki-messages .path5:before {
+  content: "\ed34";
+  margin-left: -1em;
+  
+}
+.ki-microsoft .path1:before {
+  content: "\ed35";
+  
+  opacity: 0.3;
+}
+.ki-microsoft .path2:before {
+  content: "\ed36";
+  margin-left: -1em;
+  
+}
+.ki-microsoft .path3:before {
+  content: "\ed37";
+  margin-left: -1em;
+  
+}
+.ki-microsoft .path4:before {
+  content: "\ed38";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-milk .path1:before {
+  content: "\ed39";
+  
+  opacity: 0.3;
+}
+.ki-milk .path2:before {
+  content: "\ed3a";
+  margin-left: -1em;
+  
+}
+.ki-milk .path3:before {
+  content: "\ed3b";
+  margin-left: -1em;
+  
+}
+.ki-minus-circle .path1:before {
+  content: "\ed3c";
+  
+  opacity: 0.3;
+}
+.ki-minus-circle .path2:before {
+  content: "\ed3d";
+  margin-left: -1em;
+  
+}
+.ki-minus-folder .path1:before {
+  content: "\ed3e";
+  
+  opacity: 0.3;
+}
+.ki-minus-folder .path2:before {
+  content: "\ed3f";
+  margin-left: -1em;
+  
+}
+.ki-minus-square .path1:before {
+  content: "\ed40";
+  
+  opacity: 0.3;
+}
+.ki-minus-square .path2:before {
+  content: "\ed41";
+  margin-left: -1em;
+  
+}
+.ki-minus:before {
+  content: "\ed42";
+}
+.ki-monitor-mobile .path1:before {
+  content: "\ed43";
+  
+  opacity: 0.3;
+}
+.ki-monitor-mobile .path2:before {
+  content: "\ed44";
+  margin-left: -1em;
+  
+}
+.ki-moon .path1:before {
+  content: "\ed45";
+  
+}
+.ki-moon .path2:before {
+  content: "\ed46";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-more-2 .path1:before {
+  content: "\ed47";
+  
+  opacity: 0.3;
+}
+.ki-more-2 .path2:before {
+  content: "\ed48";
+  margin-left: -1em;
+  
+}
+.ki-more-2 .path3:before {
+  content: "\ed49";
+  margin-left: -1em;
+  
+}
+.ki-more-2 .path4:before {
+  content: "\ed4a";
+  margin-left: -1em;
+  
+}
+.ki-mouse-circle .path1:before {
+  content: "\ed4b";
+  
+}
+.ki-mouse-circle .path2:before {
+  content: "\ed4c";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-mouse-square .path1:before {
+  content: "\ed4d";
+  
+  opacity: 0.3;
+}
+.ki-mouse-square .path2:before {
+  content: "\ed4e";
+  margin-left: -1em;
+  
+}
+.ki-mouse .path1:before {
+  content: "\ed4f";
+  
+  opacity: 0.3;
+}
+.ki-mouse .path2:before {
+  content: "\ed50";
+  margin-left: -1em;
+  
+}
+.ki-nexo .path1:before {
+  content: "\ed51";
+  
+  opacity: 0.3;
+}
+.ki-nexo .path2:before {
+  content: "\ed52";
+  margin-left: -1em;
+  
+}
+.ki-night-day .path1:before {
+  content: "\ed53";
+  
+}
+.ki-night-day .path2:before {
+  content: "\ed54";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-night-day .path3:before {
+  content: "\ed55";
+  margin-left: -1em;
+  
+}
+.ki-night-day .path4:before {
+  content: "\ed56";
+  margin-left: -1em;
+  
+}
+.ki-night-day .path5:before {
+  content: "\ed57";
+  margin-left: -1em;
+  
+}
+.ki-night-day .path6:before {
+  content: "\ed58";
+  margin-left: -1em;
+  
+}
+.ki-night-day .path7:before {
+  content: "\ed59";
+  margin-left: -1em;
+  
+}
+.ki-night-day .path8:before {
+  content: "\ed5a";
+  margin-left: -1em;
+  
+}
+.ki-night-day .path9:before {
+  content: "\ed5b";
+  margin-left: -1em;
+  
+}
+.ki-night-day .path10:before {
+  content: "\ed5c";
+  margin-left: -1em;
+  
+}
+.ki-note-2 .path1:before {
+  content: "\ed5d";
+  
+  opacity: 0.3;
+}
+.ki-note-2 .path2:before {
+  content: "\ed5e";
+  margin-left: -1em;
+  
+}
+.ki-note-2 .path3:before {
+  content: "\ed5f";
+  margin-left: -1em;
+  
+}
+.ki-note-2 .path4:before {
+  content: "\ed60";
+  margin-left: -1em;
+  
+}
+.ki-note .path1:before {
+  content: "\ed61";
+  
+  opacity: 0.3;
+}
+.ki-note .path2:before {
+  content: "\ed62";
+  margin-left: -1em;
+  
+}
+.ki-notepad-bookmark .path1:before {
+  content: "\ed63";
+  
+}
+.ki-notepad-bookmark .path2:before {
+  content: "\ed64";
+  margin-left: -1em;
+  
+}
+.ki-notepad-bookmark .path3:before {
+  content: "\ed65";
+  margin-left: -1em;
+  
+}
+.ki-notepad-bookmark .path4:before {
+  content: "\ed66";
+  margin-left: -1em;
+  
+}
+.ki-notepad-bookmark .path5:before {
+  content: "\ed67";
+  margin-left: -1em;
+  
+}
+.ki-notepad-bookmark .path6:before {
+  content: "\ed68";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-notepad-edit .path1:before {
+  content: "\ed69";
+  
+  opacity: 0.3;
+}
+.ki-notepad-edit .path2:before {
+  content: "\ed6a";
+  margin-left: -1em;
+  
+}
+.ki-notepad .path1:before {
+  content: "\ed6b";
+  
+}
+.ki-notepad .path2:before {
+  content: "\ed6c";
+  margin-left: -1em;
+  
+}
+.ki-notepad .path3:before {
+  content: "\ed6d";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-notepad .path4:before {
+  content: "\ed6e";
+  margin-left: -1em;
+  
+}
+.ki-notepad .path5:before {
+  content: "\ed6f";
+  margin-left: -1em;
+  
+}
+.ki-notification-2 .path1:before {
+  content: "\ed70";
+  
+}
+.ki-notification-2 .path2:before {
+  content: "\ed71";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-notification-bing .path1:before {
+  content: "\ed72";
+  
+}
+.ki-notification-bing .path2:before {
+  content: "\ed73";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-notification-bing .path3:before {
+  content: "\ed74";
+  margin-left: -1em;
+  
+}
+.ki-notification-circle .path1:before {
+  content: "\ed75";
+  
+}
+.ki-notification-circle .path2:before {
+  content: "\ed76";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-notification-favorite .path1:before {
+  content: "\ed77";
+  
+}
+.ki-notification-favorite .path2:before {
+  content: "\ed78";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-notification-favorite .path3:before {
+  content: "\ed79";
+  margin-left: -1em;
+  
+}
+.ki-notification-on .path1:before {
+  content: "\ed7a";
+  
+  opacity: 0.3;
+}
+.ki-notification-on .path2:before {
+  content: "\ed7b";
+  margin-left: -1em;
+  
+}
+.ki-notification-on .path3:before {
+  content: "\ed7c";
+  margin-left: -1em;
+  
+}
+.ki-notification-on .path4:before {
+  content: "\ed7d";
+  margin-left: -1em;
+  
+}
+.ki-notification-on .path5:before {
+  content: "\ed7e";
+  margin-left: -1em;
+  
+}
+.ki-notification-status .path1:before {
+  content: "\ed7f";
+  
+}
+.ki-notification-status .path2:before {
+  content: "\ed80";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-notification-status .path3:before {
+  content: "\ed81";
+  margin-left: -1em;
+  
+}
+.ki-notification-status .path4:before {
+  content: "\ed82";
+  margin-left: -1em;
+  
+}
+.ki-notification .path1:before {
+  content: "\ed83";
+  
+  opacity: 0.3;
+}
+.ki-notification .path2:before {
+  content: "\ed84";
+  margin-left: -1em;
+  
+}
+.ki-notification .path3:before {
+  content: "\ed85";
+  margin-left: -1em;
+  
+}
+.ki-ocean .path1:before {
+  content: "\ed86";
+  
+}
+.ki-ocean .path2:before {
+  content: "\ed87";
+  margin-left: -1em;
+  
+}
+.ki-ocean .path3:before {
+  content: "\ed88";
+  margin-left: -1em;
+  
+}
+.ki-ocean .path4:before {
+  content: "\ed89";
+  margin-left: -1em;
+  
+}
+.ki-ocean .path5:before {
+  content: "\ed8a";
+  margin-left: -1em;
+  
+}
+.ki-ocean .path6:before {
+  content: "\ed8b";
+  margin-left: -1em;
+  
+}
+.ki-ocean .path7:before {
+  content: "\ed8c";
+  margin-left: -1em;
+  
+}
+.ki-ocean .path8:before {
+  content: "\ed8d";
+  margin-left: -1em;
+  
+}
+.ki-ocean .path9:before {
+  content: "\ed8e";
+  margin-left: -1em;
+  
+}
+.ki-ocean .path10:before {
+  content: "\ed8f";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-ocean .path11:before {
+  content: "\ed90";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-ocean .path12:before {
+  content: "\ed91";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-ocean .path13:before {
+  content: "\ed92";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-ocean .path14:before {
+  content: "\ed93";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-ocean .path15:before {
+  content: "\ed94";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-ocean .path16:before {
+  content: "\ed95";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-ocean .path17:before {
+  content: "\ed96";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-ocean .path18:before {
+  content: "\ed97";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-ocean .path19:before {
+  content: "\ed98";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-office-bag .path1:before {
+  content: "\ed99";
+  
+  opacity: 0.3;
+}
+.ki-office-bag .path2:before {
+  content: "\ed9a";
+  margin-left: -1em;
+  
+}
+.ki-office-bag .path3:before {
+  content: "\ed9b";
+  margin-left: -1em;
+  
+}
+.ki-office-bag .path4:before {
+  content: "\ed9c";
+  margin-left: -1em;
+  
+}
+.ki-package .path1:before {
+  content: "\ed9d";
+  
+  opacity: 0.3;
+}
+.ki-package .path2:before {
+  content: "\ed9e";
+  margin-left: -1em;
+  
+}
+.ki-package .path3:before {
+  content: "\ed9f";
+  margin-left: -1em;
+  
+}
+.ki-pails .path1:before {
+  content: "\eda0";
+  
+  opacity: 0.3;
+}
+.ki-pails .path2:before {
+  content: "\eda1";
+  margin-left: -1em;
+  
+}
+.ki-pails .path3:before {
+  content: "\eda2";
+  margin-left: -1em;
+  
+}
+.ki-pails .path4:before {
+  content: "\eda3";
+  margin-left: -1em;
+  
+}
+.ki-pails .path5:before {
+  content: "\eda4";
+  margin-left: -1em;
+  
+}
+.ki-pails .path6:before {
+  content: "\eda5";
+  margin-left: -1em;
+  
+}
+.ki-pails .path7:before {
+  content: "\eda6";
+  margin-left: -1em;
+  
+}
+.ki-pails .path8:before {
+  content: "\eda7";
+  margin-left: -1em;
+  
+}
+.ki-pails .path9:before {
+  content: "\eda8";
+  margin-left: -1em;
+  
+}
+.ki-paintbucket .path1:before {
+  content: "\eda9";
+  
+  opacity: 0.3;
+}
+.ki-paintbucket .path2:before {
+  content: "\edaa";
+  margin-left: -1em;
+  
+}
+.ki-paintbucket .path3:before {
+  content: "\edab";
+  margin-left: -1em;
+  
+}
+.ki-paper-clip:before {
+  content: "\edac";
+}
+.ki-parcel-tracking .path1:before {
+  content: "\edad";
+  
+}
+.ki-parcel-tracking .path2:before {
+  content: "\edae";
+  margin-left: -1em;
+  
+}
+.ki-parcel-tracking .path3:before {
+  content: "\edaf";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-parcel .path1:before {
+  content: "\edb0";
+  
+  opacity: 0.3;
+}
+.ki-parcel .path2:before {
+  content: "\edb1";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-parcel .path3:before {
+  content: "\edb2";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-parcel .path4:before {
+  content: "\edb3";
+  margin-left: -1em;
+  
+}
+.ki-parcel .path5:before {
+  content: "\edb4";
+  margin-left: -1em;
+  
+}
+.ki-password-check .path1:before {
+  content: "\edb5";
+  
+}
+.ki-password-check .path2:before {
+  content: "\edb6";
+  margin-left: -1em;
+  
+}
+.ki-password-check .path3:before {
+  content: "\edb7";
+  margin-left: -1em;
+  
+}
+.ki-password-check .path4:before {
+  content: "\edb8";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-password-check .path5:before {
+  content: "\edb9";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-paypal .path1:before {
+  content: "\edba";
+  
+}
+.ki-paypal .path2:before {
+  content: "\edbb";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-pencil .path1:before {
+  content: "\edbc";
+  
+  opacity: 0.3;
+}
+.ki-pencil .path2:before {
+  content: "\edbd";
+  margin-left: -1em;
+  
+}
+.ki-people .path1:before {
+  content: "\edbe";
+  
+}
+.ki-people .path2:before {
+  content: "\edbf";
+  margin-left: -1em;
+  
+}
+.ki-people .path3:before {
+  content: "\edc0";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-people .path4:before {
+  content: "\edc1";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-people .path5:before {
+  content: "\edc2";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-percentage .path1:before {
+  content: "\edc3";
+  
+}
+.ki-percentage .path2:before {
+  content: "\edc4";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-phone .path1:before {
+  content: "\edc5";
+  
+  opacity: 0.3;
+}
+.ki-phone .path2:before {
+  content: "\edc6";
+  margin-left: -1em;
+  
+}
+.ki-photoshop .path1:before {
+  content: "\edc7";
+  
+  opacity: 0.3;
+}
+.ki-photoshop .path2:before {
+  content: "\edc8";
+  margin-left: -1em;
+  
+}
+.ki-picture .path1:before {
+  content: "\edc9";
+  
+  opacity: 0.3;
+}
+.ki-picture .path2:before {
+  content: "\edca";
+  margin-left: -1em;
+  
+}
+.ki-pill:before {
+  content: "\edcb";
+}
+.ki-pin .path1:before {
+  content: "\edcc";
+  
+  opacity: 0.3;
+}
+.ki-pin .path2:before {
+  content: "\edcd";
+  margin-left: -1em;
+  
+}
+.ki-plus-circle .path1:before {
+  content: "\edce";
+  
+  opacity: 0.3;
+}
+.ki-plus-circle .path2:before {
+  content: "\edcf";
+  margin-left: -1em;
+  
+}
+.ki-plus-square .path1:before {
+  content: "\edd0";
+  
+  opacity: 0.3;
+}
+.ki-plus-square .path2:before {
+  content: "\edd1";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-plus-square .path3:before {
+  content: "\edd2";
+  margin-left: -1em;
+  
+}
+.ki-plus:before {
+  content: "\edd3";
+}
+.ki-pointers .path1:before {
+  content: "\edd4";
+  
+  opacity: 0.3;
+}
+.ki-pointers .path2:before {
+  content: "\edd5";
+  margin-left: -1em;
+  
+}
+.ki-pointers .path3:before {
+  content: "\edd6";
+  margin-left: -1em;
+  
+}
+.ki-price-tag .path1:before {
+  content: "\edd7";
+  
+  opacity: 0.3;
+}
+.ki-price-tag .path2:before {
+  content: "\edd8";
+  margin-left: -1em;
+  
+}
+.ki-price-tag .path3:before {
+  content: "\edd9";
+  margin-left: -1em;
+  
+}
+.ki-printer .path1:before {
+  content: "\edda";
+  
+  opacity: 0.3;
+}
+.ki-printer .path2:before {
+  content: "\eddb";
+  margin-left: -1em;
+  
+}
+.ki-printer .path3:before {
+  content: "\eddc";
+  margin-left: -1em;
+  
+}
+.ki-printer .path4:before {
+  content: "\eddd";
+  margin-left: -1em;
+  
+}
+.ki-printer .path5:before {
+  content: "\edde";
+  margin-left: -1em;
+  
+}
+.ki-profile-circle .path1:before {
+  content: "\eddf";
+  
+  opacity: 0.3;
+}
+.ki-profile-circle .path2:before {
+  content: "\ede0";
+  margin-left: -1em;
+  
+}
+.ki-profile-circle .path3:before {
+  content: "\ede1";
+  margin-left: -1em;
+  
+}
+.ki-profile-user .path1:before {
+  content: "\ede2";
+  
+  opacity: 0.3;
+}
+.ki-profile-user .path2:before {
+  content: "\ede3";
+  margin-left: -1em;
+  
+}
+.ki-profile-user .path3:before {
+  content: "\ede4";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-profile-user .path4:before {
+  content: "\ede5";
+  margin-left: -1em;
+  
+}
+.ki-pulse .path1:before {
+  content: "\ede6";
+  
+  opacity: 0.3;
+}
+.ki-pulse .path2:before {
+  content: "\ede7";
+  margin-left: -1em;
+  
+}
+.ki-purchase .path1:before {
+  content: "\ede8";
+  
+  opacity: 0.3;
+}
+.ki-purchase .path2:before {
+  content: "\ede9";
+  margin-left: -1em;
+  
+}
+.ki-python .path1:before {
+  content: "\edea";
+  
+  opacity: 0.3;
+}
+.ki-python .path2:before {
+  content: "\edeb";
+  margin-left: -1em;
+  
+}
+.ki-question-2 .path1:before {
+  content: "\edec";
+  
+  opacity: 0.3;
+}
+.ki-question-2 .path2:before {
+  content: "\eded";
+  margin-left: -1em;
+  
+}
+.ki-question-2 .path3:before {
+  content: "\edee";
+  margin-left: -1em;
+  
+}
+.ki-question .path1:before {
+  content: "\edef";
+  
+  opacity: 0.3;
+}
+.ki-question .path2:before {
+  content: "\edf0";
+  margin-left: -1em;
+  
+}
+.ki-question .path3:before {
+  content: "\edf1";
+  margin-left: -1em;
+  
+}
+.ki-questionnaire-tablet .path1:before {
+  content: "\edf2";
+  
+  opacity: 0.3;
+}
+.ki-questionnaire-tablet .path2:before {
+  content: "\edf3";
+  margin-left: -1em;
+  
+}
+.ki-ranking .path1:before {
+  content: "\edf4";
+  
+  opacity: 0.3;
+}
+.ki-ranking .path2:before {
+  content: "\edf5";
+  margin-left: -1em;
+  
+}
+.ki-ranking .path3:before {
+  content: "\edf6";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-ranking .path4:before {
+  content: "\edf7";
+  margin-left: -1em;
+  
+}
+.ki-react .path1:before {
+  content: "\edf8";
+  
+  opacity: 0.3;
+}
+.ki-react .path2:before {
+  content: "\edf9";
+  margin-left: -1em;
+  
+}
+.ki-receipt-square .path1:before {
+  content: "\edfa";
+  
+  opacity: 0.3;
+}
+.ki-receipt-square .path2:before {
+  content: "\edfb";
+  margin-left: -1em;
+  
+}
+.ki-rescue .path1:before {
+  content: "\edfc";
+  
+  opacity: 0.3;
+}
+.ki-rescue .path2:before {
+  content: "\edfd";
+  margin-left: -1em;
+  
+}
+.ki-right-left .path1:before {
+  content: "\edfe";
+  
+}
+.ki-right-left .path2:before {
+  content: "\edff";
+  margin-left: -1em;
+  
+}
+.ki-right-left .path3:before {
+  content: "\ee00";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-right-square .path1:before {
+  content: "\ee01";
+  
+  opacity: 0.3;
+}
+.ki-right-square .path2:before {
+  content: "\ee02";
+  margin-left: -1em;
+  
+}
+.ki-right:before {
+  content: "\ee03";
+}
+.ki-rocket .path1:before {
+  content: "\ee04";
+  
+  opacity: 0.3;
+}
+.ki-rocket .path2:before {
+  content: "\ee05";
+  margin-left: -1em;
+  
+}
+.ki-route .path1:before {
+  content: "\ee06";
+  
+}
+.ki-route .path2:before {
+  content: "\ee07";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-route .path3:before {
+  content: "\ee08";
+  margin-left: -1em;
+  
+}
+.ki-route .path4:before {
+  content: "\ee09";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-router .path1:before {
+  content: "\ee0a";
+  
+  opacity: 0.3;
+}
+.ki-router .path2:before {
+  content: "\ee0b";
+  margin-left: -1em;
+  
+}
+.ki-row-horizontal .path1:before {
+  content: "\ee0c";
+  
+}
+.ki-row-horizontal .path2:before {
+  content: "\ee0d";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-row-vertical .path1:before {
+  content: "\ee0e";
+  
+}
+.ki-row-vertical .path2:before {
+  content: "\ee0f";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-safe-home .path1:before {
+  content: "\ee10";
+  
+  opacity: 0.3;
+}
+.ki-safe-home .path2:before {
+  content: "\ee11";
+  margin-left: -1em;
+  
+}
+.ki-satellite .path1:before {
+  content: "\ee12";
+  
+  opacity: 0.3;
+}
+.ki-satellite .path2:before {
+  content: "\ee13";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-satellite .path3:before {
+  content: "\ee14";
+  margin-left: -1em;
+  
+}
+.ki-satellite .path4:before {
+  content: "\ee15";
+  margin-left: -1em;
+  
+}
+.ki-satellite .path5:before {
+  content: "\ee16";
+  margin-left: -1em;
+  
+}
+.ki-satellite .path6:before {
+  content: "\ee17";
+  margin-left: -1em;
+  
+}
+.ki-save-2 .path1:before {
+  content: "\ee18";
+  
+  opacity: 0.3;
+}
+.ki-save-2 .path2:before {
+  content: "\ee19";
+  margin-left: -1em;
+  
+}
+.ki-save-deposit .path1:before {
+  content: "\ee1a";
+  
+}
+.ki-save-deposit .path2:before {
+  content: "\ee1b";
+  margin-left: -1em;
+  
+}
+.ki-save-deposit .path3:before {
+  content: "\ee1c";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-save-deposit .path4:before {
+  content: "\ee1d";
+  margin-left: -1em;
+  
+}
+.ki-scan-barcode .path1:before {
+  content: "\ee1e";
+  
+}
+.ki-scan-barcode .path2:before {
+  content: "\ee1f";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-scan-barcode .path3:before {
+  content: "\ee20";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-scan-barcode .path4:before {
+  content: "\ee21";
+  margin-left: -1em;
+  
+}
+.ki-scan-barcode .path5:before {
+  content: "\ee22";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-scan-barcode .path6:before {
+  content: "\ee23";
+  margin-left: -1em;
+  
+}
+.ki-scan-barcode .path7:before {
+  content: "\ee24";
+  margin-left: -1em;
+  
+}
+.ki-scan-barcode .path8:before {
+  content: "\ee25";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-scooter-2:before {
+  content: "\ee26";
+}
+.ki-scooter .path1:before {
+  content: "\ee27";
+  
+}
+.ki-scooter .path2:before {
+  content: "\ee28";
+  margin-left: -1em;
+  
+}
+.ki-scooter .path3:before {
+  content: "\ee29";
+  margin-left: -1em;
+  
+}
+.ki-scooter .path4:before {
+  content: "\ee2a";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-scooter .path5:before {
+  content: "\ee2b";
+  margin-left: -1em;
+  
+}
+.ki-scooter .path6:before {
+  content: "\ee2c";
+  margin-left: -1em;
+  
+}
+.ki-scooter .path7:before {
+  content: "\ee2d";
+  margin-left: -1em;
+  
+}
+.ki-screen .path1:before {
+  content: "\ee2e";
+  
+  opacity: 0.3;
+}
+.ki-screen .path2:before {
+  content: "\ee2f";
+  margin-left: -1em;
+  
+}
+.ki-screen .path3:before {
+  content: "\ee30";
+  margin-left: -1em;
+  
+}
+.ki-screen .path4:before {
+  content: "\ee31";
+  margin-left: -1em;
+  
+}
+.ki-scroll .path1:before {
+  content: "\ee32";
+  
+  opacity: 0.3;
+}
+.ki-scroll .path2:before {
+  content: "\ee33";
+  margin-left: -1em;
+  
+}
+.ki-scroll .path3:before {
+  content: "\ee34";
+  margin-left: -1em;
+  
+}
+.ki-search-list .path1:before {
+  content: "\ee35";
+  
+  opacity: 0.3;
+}
+.ki-search-list .path2:before {
+  content: "\ee36";
+  margin-left: -1em;
+  
+}
+.ki-search-list .path3:before {
+  content: "\ee37";
+  margin-left: -1em;
+  
+}
+.ki-security-check .path1:before {
+  content: "\ee38";
+  
+}
+.ki-security-check .path2:before {
+  content: "\ee39";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-security-check .path3:before {
+  content: "\ee3a";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-security-check .path4:before {
+  content: "\ee3b";
+  margin-left: -1em;
+  
+}
+.ki-security-user .path1:before {
+  content: "\ee3c";
+  
+  opacity: 0.3;
+}
+.ki-security-user .path2:before {
+  content: "\ee3d";
+  margin-left: -1em;
+  
+}
+.ki-send .path1:before {
+  content: "\ee3e";
+  
+}
+.ki-send .path2:before {
+  content: "\ee3f";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-setting-2 .path1:before {
+  content: "\ee40";
+  
+  opacity: 0.3;
+}
+.ki-setting-2 .path2:before {
+  content: "\ee41";
+  margin-left: -1em;
+  
+}
+.ki-setting-3 .path1:before {
+  content: "\ee42";
+  
+  opacity: 0.3;
+}
+.ki-setting-3 .path2:before {
+  content: "\ee43";
+  margin-left: -1em;
+  
+}
+.ki-setting-3 .path3:before {
+  content: "\ee44";
+  margin-left: -1em;
+  
+}
+.ki-setting-3 .path4:before {
+  content: "\ee45";
+  margin-left: -1em;
+  
+}
+.ki-setting-3 .path5:before {
+  content: "\ee46";
+  margin-left: -1em;
+  
+}
+.ki-setting-4:before {
+  content: "\ee47";
+}
+.ki-setting .path1:before {
+  content: "\ee48";
+  
+  opacity: 0.3;
+}
+.ki-setting .path2:before {
+  content: "\ee49";
+  margin-left: -1em;
+  
+}
+.ki-share .path1:before {
+  content: "\ee4a";
+  
+  opacity: 0.3;
+}
+.ki-share .path2:before {
+  content: "\ee4b";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-share .path3:before {
+  content: "\ee4c";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-share .path4:before {
+  content: "\ee4d";
+  margin-left: -1em;
+  
+}
+.ki-share .path5:before {
+  content: "\ee4e";
+  margin-left: -1em;
+  
+}
+.ki-share .path6:before {
+  content: "\ee4f";
+  margin-left: -1em;
+  
+}
+.ki-shield-cross .path1:before {
+  content: "\ee50";
+  
+  opacity: 0.3;
+}
+.ki-shield-cross .path2:before {
+  content: "\ee51";
+  margin-left: -1em;
+  
+}
+.ki-shield-cross .path3:before {
+  content: "\ee52";
+  margin-left: -1em;
+  
+}
+.ki-shield-search .path1:before {
+  content: "\ee53";
+  
+  opacity: 0.3;
+}
+.ki-shield-search .path2:before {
+  content: "\ee54";
+  margin-left: -1em;
+  
+}
+.ki-shield-search .path3:before {
+  content: "\ee55";
+  margin-left: -1em;
+  
+}
+.ki-shield-slash .path1:before {
+  content: "\ee56";
+  
+}
+.ki-shield-slash .path2:before {
+  content: "\ee57";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-shield-slash .path3:before {
+  content: "\ee58";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-shield-tick .path1:before {
+  content: "\ee59";
+  
+  opacity: 0.3;
+}
+.ki-shield-tick .path2:before {
+  content: "\ee5a";
+  margin-left: -1em;
+  
+}
+.ki-shield .path1:before {
+  content: "\ee5b";
+  
+  opacity: 0.3;
+}
+.ki-shield .path2:before {
+  content: "\ee5c";
+  margin-left: -1em;
+  
+}
+.ki-ship .path1:before {
+  content: "\ee5d";
+  
+  opacity: 0.3;
+}
+.ki-ship .path2:before {
+  content: "\ee5e";
+  margin-left: -1em;
+  
+}
+.ki-ship .path3:before {
+  content: "\ee5f";
+  margin-left: -1em;
+  
+}
+.ki-shop .path1:before {
+  content: "\ee60";
+  
+}
+.ki-shop .path2:before {
+  content: "\ee61";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-shop .path3:before {
+  content: "\ee62";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-shop .path4:before {
+  content: "\ee63";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-shop .path5:before {
+  content: "\ee64";
+  margin-left: -1em;
+  
+}
+.ki-simcard-2 .path1:before {
+  content: "\ee65";
+  
+  opacity: 0.3;
+}
+.ki-simcard-2 .path2:before {
+  content: "\ee66";
+  margin-left: -1em;
+  
+}
+.ki-simcard .path1:before {
+  content: "\ee67";
+  
+  opacity: 0.3;
+}
+.ki-simcard .path2:before {
+  content: "\ee68";
+  margin-left: -1em;
+  
+}
+.ki-simcard .path3:before {
+  content: "\ee69";
+  margin-left: -1em;
+  
+}
+.ki-simcard .path4:before {
+  content: "\ee6a";
+  margin-left: -1em;
+  
+}
+.ki-simcard .path5:before {
+  content: "\ee6b";
+  margin-left: -1em;
+  
+}
+.ki-size .path1:before {
+  content: "\ee6c";
+  
+  opacity: 0.3;
+}
+.ki-size .path2:before {
+  content: "\ee6d";
+  margin-left: -1em;
+  
+}
+.ki-slack .path1:before {
+  content: "\ee6e";
+  
+}
+.ki-slack .path2:before {
+  content: "\ee6f";
+  margin-left: -1em;
+  
+}
+.ki-slack .path3:before {
+  content: "\ee70";
+  margin-left: -1em;
+  
+}
+.ki-slack .path4:before {
+  content: "\ee71";
+  margin-left: -1em;
+  
+}
+.ki-slack .path5:before {
+  content: "\ee72";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-slack .path6:before {
+  content: "\ee73";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-slack .path7:before {
+  content: "\ee74";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-slack .path8:before {
+  content: "\ee75";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-slider-horizontal-2 .path1:before {
+  content: "\ee76";
+  
+}
+.ki-slider-horizontal-2 .path2:before {
+  content: "\ee77";
+  margin-left: -1em;
+  
+}
+.ki-slider-horizontal-2 .path3:before {
+  content: "\ee78";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-slider-horizontal .path1:before {
+  content: "\ee79";
+  
+  opacity: 0.3;
+}
+.ki-slider-horizontal .path2:before {
+  content: "\ee7a";
+  margin-left: -1em;
+  
+}
+.ki-slider-horizontal .path3:before {
+  content: "\ee7b";
+  margin-left: -1em;
+  
+}
+.ki-slider-vertical-2 .path1:before {
+  content: "\ee7c";
+  
+  opacity: 0.3;
+}
+.ki-slider-vertical-2 .path2:before {
+  content: "\ee7d";
+  margin-left: -1em;
+  
+}
+.ki-slider-vertical-2 .path3:before {
+  content: "\ee7e";
+  margin-left: -1em;
+  
+}
+.ki-slider-vertical .path1:before {
+  content: "\ee7f";
+  
+}
+.ki-slider-vertical .path2:before {
+  content: "\ee80";
+  margin-left: -1em;
+  
+}
+.ki-slider-vertical .path3:before {
+  content: "\ee81";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-slider .path1:before {
+  content: "\ee82";
+  
+  opacity: 0.3;
+}
+.ki-slider .path2:before {
+  content: "\ee83";
+  margin-left: -1em;
+  
+}
+.ki-slider .path3:before {
+  content: "\ee84";
+  margin-left: -1em;
+  
+}
+.ki-slider .path4:before {
+  content: "\ee85";
+  margin-left: -1em;
+  
+}
+.ki-sms .path1:before {
+  content: "\ee86";
+  
+  opacity: 0.3;
+}
+.ki-sms .path2:before {
+  content: "\ee87";
+  margin-left: -1em;
+  
+}
+.ki-snapchat .path1:before {
+  content: "\ee88";
+  
+}
+.ki-snapchat .path2:before {
+  content: "\ee89";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-social-media .path1:before {
+  content: "\ee8a";
+  
+}
+.ki-social-media .path2:before {
+  content: "\ee8b";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-soft-2 .path1:before {
+  content: "\ee8c";
+  
+  opacity: 0.3;
+}
+.ki-soft-2 .path2:before {
+  content: "\ee8d";
+  margin-left: -1em;
+  
+}
+.ki-soft-3 .path1:before {
+  content: "\ee8e";
+  
+}
+.ki-soft-3 .path2:before {
+  content: "\ee8f";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-soft .path1:before {
+  content: "\ee90";
+  
+  opacity: 0.3;
+}
+.ki-soft .path2:before {
+  content: "\ee91";
+  margin-left: -1em;
+  
+}
+.ki-soft .path3:before {
+  content: "\ee92";
+  margin-left: -1em;
+  
+}
+.ki-soft .path4:before {
+  content: "\ee93";
+  margin-left: -1em;
+  
+}
+.ki-soft .path5:before {
+  content: "\ee94";
+  margin-left: -1em;
+  
+}
+.ki-soft .path6:before {
+  content: "\ee95";
+  margin-left: -1em;
+  
+}
+.ki-some-files .path1:before {
+  content: "\ee96";
+  
+  opacity: 0.3;
+}
+.ki-some-files .path2:before {
+  content: "\ee97";
+  margin-left: -1em;
+  
+}
+.ki-sort .path1:before {
+  content: "\ee98";
+  
+  opacity: 0.3;
+}
+.ki-sort .path2:before {
+  content: "\ee99";
+  margin-left: -1em;
+  
+}
+.ki-sort .path3:before {
+  content: "\ee9a";
+  margin-left: -1em;
+  
+}
+.ki-sort .path4:before {
+  content: "\ee9b";
+  margin-left: -1em;
+  
+}
+.ki-speaker .path1:before {
+  content: "\ee9c";
+  
+  opacity: 0.3;
+}
+.ki-speaker .path2:before {
+  content: "\ee9d";
+  margin-left: -1em;
+  
+}
+.ki-speaker .path3:before {
+  content: "\ee9e";
+  margin-left: -1em;
+  
+}
+.ki-spotify .path1:before {
+  content: "\ee9f";
+  
+}
+.ki-spotify .path2:before {
+  content: "\eea0";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-spring-framework:before {
+  content: "\eea1";
+}
+.ki-square-brackets .path1:before {
+  content: "\eea2";
+  
+  opacity: 0.3;
+}
+.ki-square-brackets .path2:before {
+  content: "\eea3";
+  margin-left: -1em;
+  
+}
+.ki-square-brackets .path3:before {
+  content: "\eea4";
+  margin-left: -1em;
+  
+}
+.ki-square-brackets .path4:before {
+  content: "\eea5";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-star:before {
+  content: "\eea6";
+}
+.ki-status .path1:before {
+  content: "\eea7";
+  
+  opacity: 0.3;
+}
+.ki-status .path2:before {
+  content: "\eea8";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-status .path3:before {
+  content: "\eea9";
+  margin-left: -1em;
+  
+}
+.ki-subtitle .path1:before {
+  content: "\eeaa";
+  
+  opacity: 0.3;
+}
+.ki-subtitle .path2:before {
+  content: "\eeab";
+  margin-left: -1em;
+  
+}
+.ki-subtitle .path3:before {
+  content: "\eeac";
+  margin-left: -1em;
+  
+}
+.ki-subtitle .path4:before {
+  content: "\eead";
+  margin-left: -1em;
+  
+}
+.ki-subtitle .path5:before {
+  content: "\eeae";
+  margin-left: -1em;
+  
+}
+.ki-sun .path1:before {
+  content: "\eeaf";
+  
+}
+.ki-sun .path2:before {
+  content: "\eeb0";
+  margin-left: -1em;
+  
+}
+.ki-sun .path3:before {
+  content: "\eeb1";
+  margin-left: -1em;
+  
+}
+.ki-sun .path4:before {
+  content: "\eeb2";
+  margin-left: -1em;
+  
+}
+.ki-sun .path5:before {
+  content: "\eeb3";
+  margin-left: -1em;
+  
+}
+.ki-sun .path6:before {
+  content: "\eeb4";
+  margin-left: -1em;
+  
+}
+.ki-sun .path7:before {
+  content: "\eeb5";
+  margin-left: -1em;
+  
+}
+.ki-sun .path8:before {
+  content: "\eeb6";
+  margin-left: -1em;
+  
+}
+.ki-sun .path9:before {
+  content: "\eeb7";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-support-24 .path1:before {
+  content: "\eeb8";
+  
+  opacity: 0.3;
+}
+.ki-support-24 .path2:before {
+  content: "\eeb9";
+  margin-left: -1em;
+  
+}
+.ki-support-24 .path3:before {
+  content: "\eeba";
+  margin-left: -1em;
+  
+}
+.ki-switch .path1:before {
+  content: "\eebb";
+  
+}
+.ki-switch .path2:before {
+  content: "\eebc";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-syringe .path1:before {
+  content: "\eebd";
+  
+  opacity: 0.3;
+}
+.ki-syringe .path2:before {
+  content: "\eebe";
+  margin-left: -1em;
+  
+}
+.ki-syringe .path3:before {
+  content: "\eebf";
+  margin-left: -1em;
+  
+}
+.ki-tablet-book .path1:before {
+  content: "\eec0";
+  
+  opacity: 0.3;
+}
+.ki-tablet-book .path2:before {
+  content: "\eec1";
+  margin-left: -1em;
+  
+}
+.ki-tablet-delete .path1:before {
+  content: "\eec2";
+  
+}
+.ki-tablet-delete .path2:before {
+  content: "\eec3";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-tablet-delete .path3:before {
+  content: "\eec4";
+  margin-left: -1em;
+  
+}
+.ki-tablet-down .path1:before {
+  content: "\eec5";
+  
+  opacity: 0.3;
+}
+.ki-tablet-down .path2:before {
+  content: "\eec6";
+  margin-left: -1em;
+  
+}
+.ki-tablet-down .path3:before {
+  content: "\eec7";
+  margin-left: -1em;
+  
+}
+.ki-tablet-ok .path1:before {
+  content: "\eec8";
+  
+}
+.ki-tablet-ok .path2:before {
+  content: "\eec9";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-tablet-ok .path3:before {
+  content: "\eeca";
+  margin-left: -1em;
+  
+}
+.ki-tablet-text-down .path1:before {
+  content: "\eecb";
+  
+}
+.ki-tablet-text-down .path2:before {
+  content: "\eecc";
+  margin-left: -1em;
+  
+}
+.ki-tablet-text-down .path3:before {
+  content: "\eecd";
+  margin-left: -1em;
+  
+}
+.ki-tablet-text-down .path4:before {
+  content: "\eece";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-tablet-text-up .path1:before {
+  content: "\eecf";
+  
+}
+.ki-tablet-text-up .path2:before {
+  content: "\eed0";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-tablet-up .path1:before {
+  content: "\eed1";
+  
+  opacity: 0.3;
+}
+.ki-tablet-up .path2:before {
+  content: "\eed2";
+  margin-left: -1em;
+  
+}
+.ki-tablet-up .path3:before {
+  content: "\eed3";
+  margin-left: -1em;
+  
+}
+.ki-tablet .path1:before {
+  content: "\eed4";
+  
+  opacity: 0.3;
+}
+.ki-tablet .path2:before {
+  content: "\eed5";
+  margin-left: -1em;
+  
+}
+.ki-tablet .path3:before {
+  content: "\eed6";
+  margin-left: -1em;
+  
+}
+.ki-tag-cross .path1:before {
+  content: "\eed7";
+  
+  opacity: 0.3;
+}
+.ki-tag-cross .path2:before {
+  content: "\eed8";
+  margin-left: -1em;
+  
+}
+.ki-tag-cross .path3:before {
+  content: "\eed9";
+  margin-left: -1em;
+  
+}
+.ki-tag .path1:before {
+  content: "\eeda";
+  
+  opacity: 0.3;
+}
+.ki-tag .path2:before {
+  content: "\eedb";
+  margin-left: -1em;
+  
+}
+.ki-tag .path3:before {
+  content: "\eedc";
+  margin-left: -1em;
+  
+}
+.ki-teacher .path1:before {
+  content: "\eedd";
+  
+  opacity: 0.3;
+}
+.ki-teacher .path2:before {
+  content: "\eede";
+  margin-left: -1em;
+  
+}
+.ki-tech-wifi .path1:before {
+  content: "\eedf";
+  
+  opacity: 0.3;
+}
+.ki-tech-wifi .path2:before {
+  content: "\eee0";
+  margin-left: -1em;
+  
+}
+.ki-technology-2 .path1:before {
+  content: "\eee1";
+  
+  opacity: 0.3;
+}
+.ki-technology-2 .path2:before {
+  content: "\eee2";
+  margin-left: -1em;
+  
+}
+.ki-technology-3 .path1:before {
+  content: "\eee3";
+  
+}
+.ki-technology-3 .path2:before {
+  content: "\eee4";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-technology-3 .path3:before {
+  content: "\eee5";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-technology-3 .path4:before {
+  content: "\eee6";
+  margin-left: -1em;
+  
+}
+.ki-technology-4 .path1:before {
+  content: "\eee7";
+  
+}
+.ki-technology-4 .path2:before {
+  content: "\eee8";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-technology-4 .path3:before {
+  content: "\eee9";
+  margin-left: -1em;
+  
+}
+.ki-technology-4 .path4:before {
+  content: "\eeea";
+  margin-left: -1em;
+  
+}
+.ki-technology-4 .path5:before {
+  content: "\eeeb";
+  margin-left: -1em;
+  
+}
+.ki-technology-4 .path6:before {
+  content: "\eeec";
+  margin-left: -1em;
+  
+}
+.ki-technology-4 .path7:before {
+  content: "\eeed";
+  margin-left: -1em;
+  
+}
+.ki-technology .path1:before {
+  content: "\eeee";
+  
+}
+.ki-technology .path2:before {
+  content: "\eeef";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-technology .path3:before {
+  content: "\eef0";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-technology .path4:before {
+  content: "\eef1";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-technology .path5:before {
+  content: "\eef2";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-technology .path6:before {
+  content: "\eef3";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-technology .path7:before {
+  content: "\eef4";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-technology .path8:before {
+  content: "\eef5";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-technology .path9:before {
+  content: "\eef6";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-telephone-geolocation .path1:before {
+  content: "\eef7";
+  
+}
+.ki-telephone-geolocation .path2:before {
+  content: "\eef8";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-telephone-geolocation .path3:before {
+  content: "\eef9";
+  margin-left: -1em;
+  
+}
+.ki-test-tubes .path1:before {
+  content: "\eefa";
+  
+  opacity: 0.3;
+}
+.ki-test-tubes .path2:before {
+  content: "\eefb";
+  margin-left: -1em;
+  
+}
+.ki-text-align-center .path1:before {
+  content: "\eefc";
+  
+}
+.ki-text-align-center .path2:before {
+  content: "\eefd";
+  margin-left: -1em;
+  
+}
+.ki-text-align-center .path3:before {
+  content: "\eefe";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-text-align-center .path4:before {
+  content: "\eeff";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-text-align-justify-center .path1:before {
+  content: "\ef00";
+  
+}
+.ki-text-align-justify-center .path2:before {
+  content: "\ef01";
+  margin-left: -1em;
+  
+}
+.ki-text-align-justify-center .path3:before {
+  content: "\ef02";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-text-align-justify-center .path4:before {
+  content: "\ef03";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-text-align-left .path1:before {
+  content: "\ef04";
+  
+}
+.ki-text-align-left .path2:before {
+  content: "\ef05";
+  margin-left: -1em;
+  
+}
+.ki-text-align-left .path3:before {
+  content: "\ef06";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-text-align-left .path4:before {
+  content: "\ef07";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-text-align-right .path1:before {
+  content: "\ef08";
+  
+}
+.ki-text-align-right .path2:before {
+  content: "\ef09";
+  margin-left: -1em;
+  
+}
+.ki-text-align-right .path3:before {
+  content: "\ef0a";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-text-align-right .path4:before {
+  content: "\ef0b";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-text-bold .path1:before {
+  content: "\ef0c";
+  
+  opacity: 0.3;
+}
+.ki-text-bold .path2:before {
+  content: "\ef0d";
+  margin-left: -1em;
+  
+}
+.ki-text-bold .path3:before {
+  content: "\ef0e";
+  margin-left: -1em;
+  
+}
+.ki-text-circle .path1:before {
+  content: "\ef0f";
+  
+}
+.ki-text-circle .path2:before {
+  content: "\ef10";
+  margin-left: -1em;
+  
+}
+.ki-text-circle .path3:before {
+  content: "\ef11";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-text-circle .path4:before {
+  content: "\ef12";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-text-circle .path5:before {
+  content: "\ef13";
+  margin-left: -1em;
+  
+}
+.ki-text-circle .path6:before {
+  content: "\ef14";
+  margin-left: -1em;
+  
+}
+.ki-text-italic .path1:before {
+  content: "\ef15";
+  
+  opacity: 0.3;
+}
+.ki-text-italic .path2:before {
+  content: "\ef16";
+  margin-left: -1em;
+  
+}
+.ki-text-italic .path3:before {
+  content: "\ef17";
+  margin-left: -1em;
+  
+}
+.ki-text-italic .path4:before {
+  content: "\ef18";
+  margin-left: -1em;
+  
+}
+.ki-text-number .path1:before {
+  content: "\ef19";
+  
+}
+.ki-text-number .path2:before {
+  content: "\ef1a";
+  margin-left: -1em;
+  
+}
+.ki-text-number .path3:before {
+  content: "\ef1b";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-text-number .path4:before {
+  content: "\ef1c";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-text-number .path5:before {
+  content: "\ef1d";
+  margin-left: -1em;
+  
+}
+.ki-text-number .path6:before {
+  content: "\ef1e";
+  margin-left: -1em;
+  
+}
+.ki-text-strikethrough .path1:before {
+  content: "\ef1f";
+  
+  opacity: 0.3;
+}
+.ki-text-strikethrough .path2:before {
+  content: "\ef20";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-text-strikethrough .path3:before {
+  content: "\ef21";
+  margin-left: -1em;
+  
+}
+.ki-text-underline .path1:before {
+  content: "\ef22";
+  
+  opacity: 0.3;
+}
+.ki-text-underline .path2:before {
+  content: "\ef23";
+  margin-left: -1em;
+  
+}
+.ki-text-underline .path3:before {
+  content: "\ef24";
+  margin-left: -1em;
+  
+}
+.ki-text:before {
+  content: "\ef25";
+}
+.ki-thermometer .path1:before {
+  content: "\ef26";
+  
+  opacity: 0.3;
+}
+.ki-thermometer .path2:before {
+  content: "\ef27";
+  margin-left: -1em;
+  
+}
+.ki-theta .path1:before {
+  content: "\ef28";
+  
+}
+.ki-theta .path2:before {
+  content: "\ef29";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-tiktok .path1:before {
+  content: "\ef2a";
+  
+  opacity: 0.3;
+}
+.ki-tiktok .path2:before {
+  content: "\ef2b";
+  margin-left: -1em;
+  
+}
+.ki-time .path1:before {
+  content: "\ef2c";
+  
+  opacity: 0.3;
+}
+.ki-time .path2:before {
+  content: "\ef2d";
+  margin-left: -1em;
+  
+}
+.ki-timer .path1:before {
+  content: "\ef2e";
+  
+  opacity: 0.3;
+}
+.ki-timer .path2:before {
+  content: "\ef2f";
+  margin-left: -1em;
+  
+}
+.ki-timer .path3:before {
+  content: "\ef30";
+  margin-left: -1em;
+  
+}
+.ki-to-left:before {
+  content: "\ef31";
+}
+.ki-to-right:before {
+  content: "\ef32";
+}
+.ki-toggle-off-circle .path1:before {
+  content: "\ef33";
+  
+  opacity: 0.3;
+}
+.ki-toggle-off-circle .path2:before {
+  content: "\ef34";
+  margin-left: -1em;
+  
+}
+.ki-toggle-off .path1:before {
+  content: "\ef35";
+  
+  opacity: 0.3;
+}
+.ki-toggle-off .path2:before {
+  content: "\ef36";
+  margin-left: -1em;
+  
+}
+.ki-toggle-on-circle .path1:before {
+  content: "\ef37";
+  
+  opacity: 0.3;
+}
+.ki-toggle-on-circle .path2:before {
+  content: "\ef38";
+  margin-left: -1em;
+  
+}
+.ki-toggle-on .path1:before {
+  content: "\ef39";
+  
+  opacity: 0.3;
+}
+.ki-toggle-on .path2:before {
+  content: "\ef3a";
+  margin-left: -1em;
+  
+}
+.ki-trailer .path1:before {
+  content: "\ef3b";
+  
+}
+.ki-trailer .path2:before {
+  content: "\ef3c";
+  margin-left: -1em;
+  
+}
+.ki-trailer .path3:before {
+  content: "\ef3d";
+  margin-left: -1em;
+  
+}
+.ki-trailer .path4:before {
+  content: "\ef3e";
+  margin-left: -1em;
+  
+}
+.ki-trailer .path5:before {
+  content: "\ef3f";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-trash-square .path1:before {
+  content: "\ef40";
+  
+  opacity: 0.3;
+}
+.ki-trash-square .path2:before {
+  content: "\ef41";
+  margin-left: -1em;
+  
+}
+.ki-trash-square .path3:before {
+  content: "\ef42";
+  margin-left: -1em;
+  
+}
+.ki-trash-square .path4:before {
+  content: "\ef43";
+  margin-left: -1em;
+  
+}
+.ki-trash .path1:before {
+  content: "\ef44";
+  
+  opacity: 0.3;
+}
+.ki-trash .path2:before {
+  content: "\ef45";
+  margin-left: -1em;
+  
+}
+.ki-trash .path3:before {
+  content: "\ef46";
+  margin-left: -1em;
+  
+}
+.ki-trash .path4:before {
+  content: "\ef47";
+  margin-left: -1em;
+  
+}
+.ki-trash .path5:before {
+  content: "\ef48";
+  margin-left: -1em;
+  
+}
+.ki-tree .path1:before {
+  content: "\ef49";
+  
+  opacity: 0.3;
+}
+.ki-tree .path2:before {
+  content: "\ef4a";
+  margin-left: -1em;
+  
+}
+.ki-tree .path3:before {
+  content: "\ef4b";
+  margin-left: -1em;
+  
+}
+.ki-trello .path1:before {
+  content: "\ef4c";
+  
+  opacity: 0.3;
+}
+.ki-trello .path2:before {
+  content: "\ef4d";
+  margin-left: -1em;
+  
+}
+.ki-trello .path3:before {
+  content: "\ef4e";
+  margin-left: -1em;
+  
+}
+.ki-triangle .path1:before {
+  content: "\ef4f";
+  
+}
+.ki-triangle .path2:before {
+  content: "\ef50";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-triangle .path3:before {
+  content: "\ef51";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-truck .path1:before {
+  content: "\ef52";
+  
+}
+.ki-truck .path2:before {
+  content: "\ef53";
+  margin-left: -1em;
+  
+}
+.ki-truck .path3:before {
+  content: "\ef54";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-truck .path4:before {
+  content: "\ef55";
+  margin-left: -1em;
+  
+}
+.ki-truck .path5:before {
+  content: "\ef56";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-ts .path1:before {
+  content: "\ef57";
+  
+  opacity: 0.3;
+}
+.ki-ts .path2:before {
+  content: "\ef58";
+  margin-left: -1em;
+  
+}
+.ki-ts .path3:before {
+  content: "\ef59";
+  margin-left: -1em;
+  
+}
+.ki-twitch .path1:before {
+  content: "\ef5a";
+  
+  opacity: 0.3;
+}
+.ki-twitch .path2:before {
+  content: "\ef5b";
+  margin-left: -1em;
+  
+}
+.ki-twitch .path3:before {
+  content: "\ef5c";
+  margin-left: -1em;
+  
+}
+.ki-twitter .path1:before {
+  content: "\ef5d";
+  
+  opacity: 0.3;
+}
+.ki-twitter .path2:before {
+  content: "\ef5e";
+  margin-left: -1em;
+  
+}
+.ki-two-credit-cart .path1:before {
+  content: "\ef5f";
+  
+}
+.ki-two-credit-cart .path2:before {
+  content: "\ef60";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-two-credit-cart .path3:before {
+  content: "\ef61";
+  margin-left: -1em;
+  
+}
+.ki-two-credit-cart .path4:before {
+  content: "\ef62";
+  margin-left: -1em;
+  
+}
+.ki-two-credit-cart .path5:before {
+  content: "\ef63";
+  margin-left: -1em;
+  
+}
+.ki-underlining .path1:before {
+  content: "\ef64";
+  
+  opacity: 0.3;
+}
+.ki-underlining .path2:before {
+  content: "\ef65";
+  margin-left: -1em;
+  
+}
+.ki-underlining .path3:before {
+  content: "\ef66";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-up-down .path1:before {
+  content: "\ef67";
+  
+  opacity: 0.3;
+}
+.ki-up-down .path2:before {
+  content: "\ef68";
+  margin-left: -1em;
+  
+}
+.ki-up-down .path3:before {
+  content: "\ef69";
+  margin-left: -1em;
+  
+}
+.ki-up-square .path1:before {
+  content: "\ef6a";
+  
+  opacity: 0.3;
+}
+.ki-up-square .path2:before {
+  content: "\ef6b";
+  margin-left: -1em;
+  
+}
+.ki-up:before {
+  content: "\ef6c";
+}
+.ki-update-file .path1:before {
+  content: "\ef6d";
+  
+  opacity: 0.3;
+}
+.ki-update-file .path2:before {
+  content: "\ef6e";
+  margin-left: -1em;
+  
+}
+.ki-update-file .path3:before {
+  content: "\ef6f";
+  margin-left: -1em;
+  
+}
+.ki-update-file .path4:before {
+  content: "\ef70";
+  margin-left: -1em;
+  
+}
+.ki-update-folder .path1:before {
+  content: "\ef71";
+  
+  opacity: 0.3;
+}
+.ki-update-folder .path2:before {
+  content: "\ef72";
+  margin-left: -1em;
+  
+}
+.ki-user-edit .path1:before {
+  content: "\ef73";
+  
+}
+.ki-user-edit .path2:before {
+  content: "\ef74";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-user-edit .path3:before {
+  content: "\ef75";
+  margin-left: -1em;
+  
+}
+.ki-user-square .path1:before {
+  content: "\ef76";
+  
+  opacity: 0.3;
+}
+.ki-user-square .path2:before {
+  content: "\ef77";
+  margin-left: -1em;
+  
+}
+.ki-user-square .path3:before {
+  content: "\ef78";
+  margin-left: -1em;
+  
+}
+.ki-user-tick .path1:before {
+  content: "\ef79";
+  
+}
+.ki-user-tick .path2:before {
+  content: "\ef7a";
+  margin-left: -1em;
+  
+}
+.ki-user-tick .path3:before {
+  content: "\ef7b";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-user .path1:before {
+  content: "\ef7c";
+  
+  opacity: 0.3;
+}
+.ki-user .path2:before {
+  content: "\ef7d";
+  margin-left: -1em;
+  
+}
+.ki-verify .path1:before {
+  content: "\ef7e";
+  
+  opacity: 0.3;
+}
+.ki-verify .path2:before {
+  content: "\ef7f";
+  margin-left: -1em;
+  
+}
+.ki-vibe .path1:before {
+  content: "\ef80";
+  
+}
+.ki-vibe .path2:before {
+  content: "\ef81";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-virus .path1:before {
+  content: "\ef82";
+  
+  opacity: 0.3;
+}
+.ki-virus .path2:before {
+  content: "\ef83";
+  margin-left: -1em;
+  
+}
+.ki-virus .path3:before {
+  content: "\ef84";
+  margin-left: -1em;
+  
+}
+.ki-vue .path1:before {
+  content: "\ef85";
+  
+  opacity: 0.3;
+}
+.ki-vue .path2:before {
+  content: "\ef86";
+  margin-left: -1em;
+  
+}
+.ki-vuesax .path1:before {
+  content: "\ef87";
+  
+}
+.ki-vuesax .path2:before {
+  content: "\ef88";
+  margin-left: -1em;
+  
+  opacity: 0.4;
+}
+.ki-vuesax .path3:before {
+  content: "\ef89";
+  margin-left: -1em;
+  
+}
+.ki-wallet .path1:before {
+  content: "\ef8a";
+  
+  opacity: 0.3;
+}
+.ki-wallet .path2:before {
+  content: "\ef8b";
+  margin-left: -1em;
+  
+}
+.ki-wallet .path3:before {
+  content: "\ef8c";
+  margin-left: -1em;
+  
+}
+.ki-wallet .path4:before {
+  content: "\ef8d";
+  margin-left: -1em;
+  
+}
+.ki-wanchain .path1:before {
+  content: "\ef8e";
+  
+}
+.ki-wanchain .path2:before {
+  content: "\ef8f";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-watch .path1:before {
+  content: "\ef90";
+  
+  opacity: 0.3;
+}
+.ki-watch .path2:before {
+  content: "\ef91";
+  margin-left: -1em;
+  
+}
+.ki-whatsapp .path1:before {
+  content: "\ef92";
+  
+  opacity: 0.4;
+}
+.ki-whatsapp .path2:before {
+  content: "\ef93";
+  margin-left: -1em;
+  
+}
+.ki-wifi-home .path1:before {
+  content: "\ef94";
+  
+  opacity: 0.3;
+}
+.ki-wifi-home .path2:before {
+  content: "\ef95";
+  margin-left: -1em;
+  
+}
+.ki-wifi-home .path3:before {
+  content: "\ef96";
+  margin-left: -1em;
+  
+}
+.ki-wifi-home .path4:before {
+  content: "\ef97";
+  margin-left: -1em;
+  
+}
+.ki-wifi-square .path1:before {
+  content: "\ef98";
+  
+  opacity: 0.3;
+}
+.ki-wifi-square .path2:before {
+  content: "\ef99";
+  margin-left: -1em;
+  
+}
+.ki-wifi-square .path3:before {
+  content: "\ef9a";
+  margin-left: -1em;
+  
+}
+.ki-wifi-square .path4:before {
+  content: "\ef9b";
+  margin-left: -1em;
+  
+}
+.ki-wifi .path1:before {
+  content: "\ef9c";
+  
+}
+.ki-wifi .path2:before {
+  content: "\ef9d";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-wifi .path3:before {
+  content: "\ef9e";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-wifi .path4:before {
+  content: "\ef9f";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-wrench .path1:before {
+  content: "\efa0";
+  
+  opacity: 0.3;
+}
+.ki-wrench .path2:before {
+  content: "\efa1";
+  margin-left: -1em;
+  
+}
+.ki-xaomi .path1:before {
+  content: "\efa2";
+  
+}
+.ki-xaomi .path2:before {
+  content: "\efa3";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-xd .path1:before {
+  content: "\efa4";
+  
+  opacity: 0.3;
+}
+.ki-xd .path2:before {
+  content: "\efa5";
+  margin-left: -1em;
+  
+}
+.ki-xd .path3:before {
+  content: "\efa6";
+  margin-left: -1em;
+  
+}
+.ki-xmr .path1:before {
+  content: "\efa7";
+  
+}
+.ki-xmr .path2:before {
+  content: "\efa8";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-yii .path1:before {
+  content: "\efa9";
+  
+  opacity: 0.3;
+}
+.ki-yii .path2:before {
+  content: "\efaa";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+.ki-yii .path3:before {
+  content: "\efab";
+  margin-left: -1em;
+  
+}
+.ki-youtube .path1:before {
+  content: "\efac";
+  
+}
+.ki-youtube .path2:before {
+  content: "\efad";
+  margin-left: -1em;
+  
+  opacity: 0.3;
+}
+
+.ki-duotone i {
+font-style: normal;
+}
