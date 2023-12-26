@@ -14,7 +14,8 @@ from langchain_community.llms.ollama import Ollama
 from langchain_community.llms.together import Together
 from langchain_core.callbacks import StreamingStdOutCallbackHandler, CallbackManager
 
-from prompts import resume_checker_prompt, check_output_parser, resume_cover_letter_prompt
+from prompts import resume_checker_prompt, check_output_parser, resume_cover_letter_prompt, analyse_resume_prompt, \
+    ResumeCheckerModel, analyse_resume_parser
 
 load_dotenv()
 
@@ -59,15 +60,11 @@ class ResumeAnalyser:
     resume_content: str | None = ""
     job_content: str | None = ""
 
-    def __init__(self, job_posting_url: str, resume_file_path: str | None = None, resume_content: str | None = None):
-        self.resume_path = resume_file_path
+    def __init__(self, job_posting_url: str | None = None, resume_file_path: str | None = None,
+                 resume_content: str | None = None):
         self.job_posting_url = job_posting_url
-
-        if resume_content:
-            self.resume_content = resume_content
-
-        if resume_file_path:
-            self.resume_path = resume_file_path
+        self.resume_content = resume_content
+        self.resume_path = resume_file_path
 
         # either resume_content or path should be provided
         if not resume_content and not resume_file_path:
@@ -94,9 +91,11 @@ class ResumeAnalyser:
         logging.info(f"Using {model_name} model")
 
         self.load_resume(self.resume_path)
-        self.load_job_site(self.job_posting_url)
 
-    def load_resume(self, path):
+        if self.job_posting_url:
+            self.load_job_site(self.job_posting_url)
+
+    def load_resume(self, path: str | None):
         """ loads the resume text from the resume path """
         if not self.resume_content:
             logging.info(f"Resume content not provided, loading resume from URL or PATH: {path}")
@@ -142,6 +141,14 @@ class ResumeAnalyser:
             resume_analysis=result,
             job_url=self.job_posting_url,
         )
+
+    def analyse_resume(self) -> ResumeCheckerModel:
+        """ analyses the resume extracting, ats tips, contact info, education match, date formatting and file type,
+        this only analysis the resume without the job description"""
+        analyse_resume_prompt_str = analyse_resume_prompt.format(resume=self.resume_content)
+        output = self.llm.predict(analyse_resume_prompt_str)
+        resume_analysis_result = analyse_resume_parser.parse(output)
+        return resume_analysis_result
 
     def generate_cover_letter(self) -> str:
         """ generate cover letter for the job"""

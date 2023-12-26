@@ -10,7 +10,7 @@ from app.dependencies import get_current_user
 from app.models.common_models import User, Resume
 from app.supabase_client.client import supabase
 from app.handlers.resume_handler import CreateResumeParams, create_new_resume, find_all_resumes, process_job_for_resume, \
-    AnalyseJobForResumeParams
+    AnalyseJobForResumeParams, analyze_resume
 
 load_dotenv()
 
@@ -58,6 +58,12 @@ async def get_login_token(form_data: Annotated[OAuth2PasswordRequestForm, Depend
     data = supabase.auth.sign_in_with_password({"email": form_data.username, "password": form_data.password})
     token, token_type = data.session.access_token, data.session.token_type
     return {"access_token": token, "token_type": token_type}
+
+
+@app.post("/resume/{resume_id}/analyze")
+async def analyze_user_resume(resume_id: str, current_user: Annotated[User, Depends(get_current_user)]):
+    """ analyzes a resume extracting fixes and suggestions, save the results to the resume"""
+    return await analyze_resume(current_user, resume_id)
 
 
 if __name__ == "__main__":

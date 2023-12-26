@@ -7,6 +7,8 @@ from app.models.common_models import Resume, User
 from app.supabase_client.client import supabase
 from uuid import uuid4
 
+from prompts import ResumeCheckerModel
+
 TABLE_NAME = "resumes"
 
 
@@ -35,6 +37,14 @@ def find_all_resumes(user: User) -> list[Resume]:
     return [Resume(**data) for data in response.data]
 
 
+def update_resume(user: User, resume_id: str, resume: Resume) -> Resume:
+    (supabase.table(TABLE_NAME).update(resume.model_dump())
+     .eq("user_id", user.id)
+     .eq("id", resume_id)
+     .execute())
+    return find_resume_by_id(user, resume_id)
+
+
 async def delete_resume(user: User, resume_id: str) -> bool:
     await (supabase.table(TABLE_NAME).delete()
            .eq("user_id", user.id)
@@ -57,3 +67,17 @@ def process_job_for_resume(user: User, params: AnalyseJobForResumeParams):
     analyzer = ResumeAnalyser(job_posting_url=params.job_url, resume_content=resume.text)
     result: ResumeAnalyserResult = analyzer.run()
     return result
+
+
+async def analyze_resume(user: User, resume_id: str):
+    resume = find_resume_by_id(user, resume_id)
+    if not resume:
+        raise Exception("Resume not found for user")
+
+    analyzer = ResumeAnalyser(resume_content=resume.text)
+    analysis: ResumeCheckerModel = analyzer.analyse_resume()
+
+    # update the resume with analysis results
+    update_resume(user, resume.id, resume.model_copy(update={"analysis": analysis}))
+
+    return analysis

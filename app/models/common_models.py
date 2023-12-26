@@ -4,6 +4,9 @@ from uuid import uuid4, UUID
 
 from pydantic import BaseModel
 
+from app.handlers.resume_checkerv2 import ResumeAnalysis
+from prompts import ResumeCheckerModel
+
 
 class AllBaseModel(BaseModel):
     id: str | None = None
@@ -19,15 +22,25 @@ class User(AllBaseModel):
     disabled: bool | None = False
 
 
+class ResumeLLMAnalysis(ResumeCheckerModel):
+    """ ResumeLLMAnalysis is the analysis of the resume after being parsed into an LLM, processed after resume is
+    uploaded"""
+    pass
+
+
 class Resume(AllBaseModel):
     user_id: str
     src: str
     name: str
     text: str | None = None
+    analysis: ResumeLLMAnalysis | None = None
 
 
 class CoverLetter(AllBaseModel):
     user_id: str
     resume_id: str
+    text: str
     job_url: str | None = None
     job_description: str | None = None
+
+#
