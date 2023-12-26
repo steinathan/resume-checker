@@ -34,6 +34,31 @@ const routes: Array<RouteRecordRaw> = [
           breadcrumbs: ["Dashboards"],
         },
       },
+      {
+        path: "/resume/:resume_id",
+        name: "single-resume",
+        component: () =>
+          import("@/components/page-layouts/SingleResumeLayout.vue"),
+      },
+      {
+        path: "/profile",
+        name: "profile",
+        component: () => import("@/components/page-layouts/Profile.vue"),
+        meta: {
+          breadcrumbs: ["Pages", "Profile"],
+        },
+        children: [
+          {
+            path: "overview",
+            name: "profile-overview",
+            component: () =>
+              import("@/views/crafted/pages/profile/Overview.vue"),
+            meta: {
+              pageTitle: "Overview",
+            },
+          },
+        ],
+      },
     ],
   },
   {

@@ -109,7 +109,7 @@ export default defineComponent({
     };
 
     const signOut = () => {
-      // store.logout();
+      authStore.logout();
       router.push({ name: "sign-in" });
     };
 

@@ -2,6 +2,7 @@ import { ref } from "vue";
 import { defineStore } from "pinia";
 import ApiService from "@/core/services/ApiService";
 import JwtService from "@/core/services/JwtService";
+import supabase from "@/core/services/supabase";
 
 export interface User {
   id: string;
@@ -38,11 +39,16 @@ export const useAuthStore = defineStore("auth", () => {
     errors.value = [];
     JwtService.destroyToken();
   }
+  function logout() {
+    supabase.auth.signOut().catch(console.error);
+    purgeAuth();
+  }
 
   return {
     errors,
     user,
     isAuthenticated,
+    logout,
     setAuth,
   };
 });

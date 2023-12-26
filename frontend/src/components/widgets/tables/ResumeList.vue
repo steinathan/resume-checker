@@ -1,5 +1,6 @@
 <template>
   <!--begin::Tables Widget 9-->
+
   <div class="card">
     <!--begin::Header-->
     <div class="card-header border-0 pt-5">
@@ -34,6 +35,13 @@
     <!--begin::Body-->
     <div class="card-body py-3">
       <!--begin::Table container-->
+      <EmptyState
+        v-if="resumes.length === 0"
+        type="job_scan"
+        title="No Resume"
+        description="Upload a resume to get started"
+      ></EmptyState>
+
       <div class="table-responsive">
         <!--begin::Table-->
         <table
@@ -88,10 +96,13 @@
                 <td>
                   <div class="d-flex align-items-center">
                     <div class="d-flex justify-content-start flex-column">
-                      <a
-                        href="#"
+                      <router-link
+                        :to="{
+                          name: 'single-resume',
+                          params: { resume_id: resume.id },
+                        }"
                         class="text-dark fw-bold text-hover-primary fs-6"
-                        >{{ resume.name }}</a
+                        >{{ resume.name }}</router-link
                       >
                       <span
                         class="text-muted fw-semobold text-muted d-block fs-7"
@@ -165,19 +176,12 @@
 
                 <!-- actions -->
                 <td class="text-end">
-                  <a
-                    href="#"
-                    class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                  >
-                    <KTIcon icon-name="switch" icon-class="fs-3" />
-                  </a>
-
-                  <a
-                    href="#"
-                    class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                  >
-                    <KTIcon icon-name="pencil" icon-class="fs-3" />
-                  </a>
+                  <!--                  <a-->
+                  <!--                    href="#"-->
+                  <!--                    class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"-->
+                  <!--                  >-->
+                  <!--                    <KTIcon icon-name="pencil" icon-class="fs-3" />-->
+                  <!--                  </a>-->
 
                   <a
                     href="#"
@@ -206,6 +210,7 @@ import { onMounted, ref } from "vue";
 import type { Resume } from "../../../../types";
 import { getColorCodeByPercentage } from "@/core/helpers/color";
 import moment from "moment";
+import EmptyState from "@/components/EmptyState.vue";
 
 const checkedRows = ref<Array<number>>([]);
 const resumes = ref<Resume[]>([]);

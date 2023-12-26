@@ -65,6 +65,12 @@ async def list_resume(current_user: Annotated[User, Depends(get_current_user)]):
     return find_all_resumes(current_user)
 
 
+@app.get("/resumes/{resume_id}", response_model=Optional[Resume])
+async def find_resume(resume_id: str, current_user: Annotated[User, Depends(get_current_user)]):
+    """ finds the resume by id """
+    return find_resume_by_id(current_user, resume_id)
+
+
 @app.post("/get-token")
 async def get_login_token(form_data: Annotated[OAuth2PasswordRequestForm, Depends()]):
     data = supabase.auth.sign_in_with_password({"email": form_data.username, "password": form_data.password})
