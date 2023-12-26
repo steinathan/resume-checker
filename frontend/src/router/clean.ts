@@ -37,8 +37,18 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: "/resume/:resume_id",
         name: "single-resume",
+        redirect: {
+          name: "single-resume-analysis",
+        },
         component: () =>
           import("@/components/page-layouts/SingleResumeLayout.vue"),
+        children: [
+          {
+            path: "analysis",
+            name: "single-resume-analysis",
+            component: () => import("@/components/single_resume_section.vue"),
+          },
+        ],
       },
       {
         path: "/profile",

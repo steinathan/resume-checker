@@ -1,6 +1,6 @@
 <template>
   <!--begin::Navbar-->
-  <div class="card mb-5 mb-xxl-8">
+  <div v-if="resume" class="card mb-5 mb-xxl-8">
     <div class="card-body pt-9 pb-0">
       <!--begin::Details-->
       <div class="d-flex flex-wrap flex-sm-nowrap mb-3">
@@ -11,12 +11,10 @@
               <span
                 class="total_score"
                 :style="{
-                  color: getColorCodeByPercentage(
-                    resume.analysis?.total_score * 10
-                  ),
+                  color: getColorCodeByPercentage(analysis?.total_score * 10),
                 }"
               >
-                {{ resume.analysis?.total_score }}
+                {{ analysis?.total_score }}
               </span>
               <span class="text-muted score_base"> /10 </span>
             </div>
@@ -37,6 +35,7 @@
             <!--begin::User-->
             <div class="d-flex flex-column">
               <!--begin::Name-->
+
               <div class="d-flex align-items-center mb-2">
                 <span
                   class="text-gray-800 text-hover-primary fs-2 fw-bold me-1"
@@ -86,7 +85,7 @@
                 >
                   <i class="bi bi-three-dots fs-3"></i>
                 </button>
-                <Dropdown3></Dropdown3>
+                <!--                <Dropdown3></Dropdown3>-->
               </div>
               <!--end::Menu-->
             </div>
@@ -170,11 +169,11 @@
           <!--begin::Nav item-->
           <li class="nav-item">
             <router-link
-              to="/crafted/pages/profile/overview"
+              :to="`/resume/${resume.id}/analysis`"
               class="nav-link text-active-primary me-6"
               active-class="active"
             >
-              Overview
+              Analysis
             </router-link>
           </li>
           <!--end::Nav item-->
@@ -182,54 +181,10 @@
           <li class="nav-item">
             <router-link
               class="nav-link text-active-primary me-6"
-              to="/crafted/pages/profile/projects"
+              :to="`/resume/${resume.id}/cover_letters`"
               active-class="active"
             >
-              Projects
-            </router-link>
-          </li>
-          <!--end::Nav item-->
-          <!--begin::Nav item-->
-          <li class="nav-item">
-            <router-link
-              class="nav-link text-active-primary me-6"
-              to="/crafted/pages/profile/campaigns"
-              active-class="active"
-            >
-              Campaigns
-            </router-link>
-          </li>
-          <!--end::Nav item-->
-          <!--begin::Nav item-->
-          <li class="nav-item">
-            <router-link
-              class="nav-link text-active-primary me-6"
-              to="/crafted/pages/profile/documents"
-              active-class="active"
-            >
-              Documents
-            </router-link>
-          </li>
-          <!--end::Nav item-->
-          <!--begin::Nav item-->
-          <li class="nav-item">
-            <router-link
-              class="nav-link text-active-primary me-6"
-              to="/crafted/pages/profile/connections"
-              active-class="active"
-            >
-              Connections
-            </router-link>
-          </li>
-          <!--end::Nav item-->
-          <!--begin::Nav item-->
-          <li class="nav-item">
-            <router-link
-              class="nav-link text-active-primary me-6"
-              to="/crafted/pages/profile/activity"
-              active-class="active"
-            >
-              Activity
+              Cover letters
             </router-link>
           </li>
           <!--end::Nav item-->
@@ -251,15 +206,21 @@ import { get } from "@/core/services/ApiService2";
 import ResumeHeaderStat from "@/components/ResumeHeaderStat.vue";
 import KTIcon from "@/core/helpers/kt-icon/KTIcon.vue";
 import { getColorCodeByPercentage } from "@/core/helpers/color";
-
-const resume = ref<Resume>({} as Resume);
-const analysis = computed<ResumeLLMAnalysis>(
-  () => resume.value?.analysis || ({} as ResumeLLMAnalysis)
-);
+import { useResumeStore } from "@/stores/resume";
+import { storeToRefs } from "pinia";
 
 const route = useRoute();
+
+const resumeStore = useResumeStore();
+const { resume } = storeToRefs(resumeStore);
+const analysis = computed<ResumeLLMAnalysis>(
+  () => resume?.value?.analysis || ({} as ResumeLLMAnalysis)
+);
+
 onMounted(async () => {
-  resume.value = await get("/resumes/" + route.params["resume_id"], {});
+  const _resume = await get("/resumes/" + route.params["resume_id"], {});
+  resumeStore.setResume(_resume as Resume);
+  console.log(analysis.value, resume.value);
 });
 </script>
 

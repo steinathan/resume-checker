@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f139b09e-ed21-44ad-98e3-6a656f3a056f" name="Changes" comment="added base example resume listing">
+    <list default="true" id="f139b09e-ed21-44ad-98e3-6a656f3a056f" name="Changes" comment="added dummy resume section">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/page-layouts/Profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/page-layouts/Profile.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/ResumeList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/widgets/tables/ResumeList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/Widget5.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/widgets/tables/Widget5.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/layouts/main-layout/menus/UserAccountMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/layouts/main-layout/menus/UserAccountMenu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/page-layouts/SingleResumeLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/page-layouts/SingleResumeLayout.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/router/clean.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/clean.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/stores/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/stores/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Dashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client_secret_479001249606-p7178p8687358s3uj62t0jmu3u79omf1.apps.googleusercontent.com.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="TypeScript File" />
         <option value="Vue Composition API Component" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -176,7 +172,7 @@
       <workItem from="1703586995235" duration="5338000" />
       <workItem from="1703593767099" duration="9097000" />
       <workItem from="1703603775934" duration="556000" />
-      <workItem from="1703604696928" duration="8211000" />
+      <workItem from="1703604696928" duration="15054000" />
     </task>
     <task id="LOCAL-00001" summary="↫ initial commit">
       <option name="closed" value="true" />
@@ -258,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703607171044</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added dummy resume section">
+      <option name="closed" value="true" />
+      <created>1703613003104</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703613003104</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,7 +281,8 @@
     <MESSAGE value="refactored to client-server structure" />
     <MESSAGE value="moved server to app-server struture" />
     <MESSAGE value="added base example resume listing" />
-    <option name="LAST_COMMIT_MESSAGE" value="added base example resume listing" />
+    <MESSAGE value="added dummy resume section" />
+    <option name="LAST_COMMIT_MESSAGE" value="added dummy resume section" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
