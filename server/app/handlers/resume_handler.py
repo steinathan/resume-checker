@@ -7,7 +7,7 @@ from app.models.common_models import Resume, User
 from app.supabase_client.client import supabase
 from uuid import uuid4
 
-from prompts import ResumeCheckerModel
+from app.prompts.resume_analysis_prompt import ResumeCheckerModel
 
 TABLE_NAME = "resumes"
 
@@ -27,6 +27,10 @@ class CreateResumeParams(BaseModel):
 
 def create_new_resume(user: User, params: CreateResumeParams) -> Resume:
     resume_id = str(uuid4())
+    if params.src:
+        if not params.src.endswith("pdf"):
+            raise ValueError("src must be a valid PDF")
+
     resume = Resume(**params.model_dump(), user_id=user.id, id=resume_id)
     response = supabase.table(TABLE_NAME).insert(resume.model_dump()).execute()
     return Resume(**response.data[0])

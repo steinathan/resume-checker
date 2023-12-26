@@ -37,7 +37,7 @@
       <!--begin::Table container-->
       <EmptyState
         v-if="resumes.length === 0"
-        type="job_scan"
+        type="resume"
         title="No Resume"
         description="Upload a resume to get started"
       ></EmptyState>

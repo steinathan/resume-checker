@@ -9,14 +9,14 @@ from datetime import datetime
 import requests
 import validators
 from dotenv import load_dotenv
-from langchain.document_loaders import PyPDFLoader, OnlinePDFLoader
+from langchain.document_loaders import PyPDFLoader
 from langchain_community.chat_models import ChatOpenAI
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.llms.ollama import Ollama
 from langchain_community.llms.together import Together
 from langchain_core.callbacks import StreamingStdOutCallbackHandler, CallbackManager
 
-from prompts import resume_checker_prompt, check_output_parser, resume_cover_letter_prompt, analyse_resume_prompt, \
+from app.prompts.resume_analysis_prompt import resume_checker_prompt, check_output_parser, resume_cover_letter_prompt, analyse_resume_prompt, \
     ResumeCheckerModel, analyse_resume_parser
 
 load_dotenv()

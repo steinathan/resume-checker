@@ -4,7 +4,7 @@ from typing import ClassVar, Any
 
 from pydantic import BaseModel, Field
 
-from prompts import ResumeCheckerModel, ResumeSection
+from app.prompts.resume_analysis_prompt import ResumeCheckerModel, ResumeSection
 
 
 class AllBaseModel(BaseModel):

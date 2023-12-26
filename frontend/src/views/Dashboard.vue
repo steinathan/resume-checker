@@ -7,7 +7,7 @@
             ><span class="path1"></span><span class="path2"></span
             ><span class="path3"></span><span class="path4"></span
           ></i>
-          <div class="text-inverse-primary fw-bold fs-2 mb-2 mt-5">1</div>
+          <div class="text-inverse-primary fw-bold fs-2 mb-2 mt-5">0</div>
           <div class="text-inverse-primary fw-semibold fs-7">
             Total Resume Scans
           </div>
@@ -20,7 +20,7 @@
       <div class="card-xl-stretch mb-xl-8 bg-dark card hoverable">
         <div class="card-body">
           <i class="ki-duotone ki-plus text-gray-100 fs-3x mx-n1"><!----></i>
-          <div class="text-inverse-dark fw-bold fs-2 mb-2 mt-5">10</div>
+          <div class="text-inverse-dark fw-bold fs-2 mb-2 mt-5">0</div>
           <div class="text-inverse-dark fw-semibold fs-7">Improvements</div>
         </div>
       </div>
@@ -32,7 +32,7 @@
           <i class="ki-duotone ki-chart-pie-simple text-white fs-3x mx-n1"
             ><span class="path1"></span><span class="path2"></span
           ></i>
-          <div class="text-inverse-info fw-bold fs-2 mb-2 mt-5">3.4/10</div>
+          <div class="text-inverse-info fw-bold fs-2 mb-2 mt-5">0/10</div>
           <div class="text-inverse-info fw-semibold fs-7">
             Resume Score Rating
           </div>

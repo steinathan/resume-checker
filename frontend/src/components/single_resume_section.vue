@@ -1,6 +1,6 @@
 <template>
   <!--begin::Tables Widget 9-->
-  <div class="card">
+  <div class="card" v-if="items.length > 0">
     <!--begin::Header-->
     <div class="card-header border-0 pt-5">
       <h3 class="card-title align-items-start flex-column">
@@ -71,7 +71,7 @@
 
                 <!-- issues -->
                 <td>
-                  <span v-if="item.section.issues.length == 0">
+                  <span v-if="item.section.issues?.length == 0">
                     <i class="fas fa-shield-cat text-info fs-4"></i>
 
                     No issue</span
@@ -95,7 +95,7 @@
                 <td>
                   <div class="d-flex flex-column float-end w-100 me-2">
                     <div class="d-flex flex-stack mb-2">
-                      <span v-if="item.section.improvements.length == 0">
+                      <span v-if="item.section.improvements?.length == 0">
                         <i class="fas fa-shield-cat text-info fs-4"></i>
                         No improvements to make</span
                       >
@@ -119,7 +119,7 @@
                   <div class="d-flex flex-column w-100 me-2">
                     <div class="d-flex flex-stack mb-2">
                       <div class="me-2 fs-7 fw-semobold">
-                        <span v-if="item.section.done.length == 0">
+                        <span v-if="item.section.done?.length == 0">
                           <i class="fas fa-shield-cat text-info fs-4"></i>
                           No improvements</span
                         >

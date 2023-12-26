@@ -1,6 +1,5 @@
 import os
 import logging
-import argparse
 
 from datetime import datetime
 
@@ -11,7 +10,7 @@ from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.llms.ollama import Ollama
 from langchain_community.llms.together import Together
 from langchain_core.callbacks import StreamingStdOutCallbackHandler, CallbackManager
-from prompts import resume_checker_prompt, check_output_parser, resume_cover_letter_prompt
+from app.prompts.resume_analysis_prompt import resume_checker_prompt, check_output_parser, resume_cover_letter_prompt
 
 load_dotenv()
 

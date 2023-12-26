@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f139b09e-ed21-44ad-98e3-6a656f3a056f" name="Changes" comment="added dummy resume section">
+    <list default="true" id="f139b09e-ed21-44ad-98e3-6a656f3a056f" name="Changes" comment="🚀 add(resume): single resume metrics view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/page-layouts/SingleResumeLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/page-layouts/SingleResumeLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router/clean.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/clean.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/single_resume_section.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/single_resume_section.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/ResumeList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/widgets/tables/ResumeList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/handlers/resume_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/handlers/resume_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/models/common_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/models/common_models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/client_secret_479001249606-p7178p8687358s3uj62t0jmu3u79omf1.apps.googleusercontent.com.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/prompts.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/prompts/resume_analysis_prompt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/resume_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/resume_checker.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +24,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Vue Composition API Component" />
         <option value="TypeScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -63,6 +67,7 @@
     "Notification.DisplayName-DoNotAsk-CythonWarning": "Python debugger native extension available",
     "Notification.DoNotAsk-CythonWarning": "true",
     "Python.common_models.executor": "Debug",
+    "Python.job_matcher_prompt.executor": "Run",
     "Python.main.executor": "Debug",
     "Python.prompts.executor": "Run",
     "Python.resume_checker.executor": "Debug",
@@ -75,7 +80,7 @@
     "git-widget-placeholder": "feature/resume-api",
     "javascript.nodejs.core.library.configured.version": "19.8.1",
     "javascript.nodejs.core.library.typings.version": "20.10.5",
-    "last_opened_file_path": "/home/navicstein/Idea/resume-checker/frontend/src/components/page-layouts",
+    "last_opened_file_path": "/home/navicstein/Idea/resume-checker/server/app/prompts",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -97,21 +102,21 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/app/prompts" />
       <recent name="$PROJECT_DIR$/frontend/src/components/page-layouts" />
       <recent name="$PROJECT_DIR$/frontend/src/components" />
       <recent name="$PROJECT_DIR$/frontend/src/core/services" />
       <recent name="$PROJECT_DIR$/app/handlers" />
-      <recent name="$PROJECT_DIR$/app/supabase_client" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/app/prompts" />
       <recent name="$PROJECT_DIR$/app/handlers" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app/routers" />
       <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/app/supabase_client" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="langchain-ollama" />
       <option name="ENV_FILES" value="" />
@@ -147,8 +152,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -172,7 +177,7 @@
       <workItem from="1703586995235" duration="5338000" />
       <workItem from="1703593767099" duration="9097000" />
       <workItem from="1703603775934" duration="556000" />
-      <workItem from="1703604696928" duration="15054000" />
+      <workItem from="1703604696928" duration="21752000" />
     </task>
     <task id="LOCAL-00001" summary="↫ initial commit">
       <option name="closed" value="true" />
@@ -262,7 +267,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703613003104</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="🚀 add(resume): single resume metrics view">
+      <option name="closed" value="true" />
+      <created>1703620717423</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1703620717424</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +295,8 @@
     <MESSAGE value="moved server to app-server struture" />
     <MESSAGE value="added base example resume listing" />
     <MESSAGE value="added dummy resume section" />
-    <option name="LAST_COMMIT_MESSAGE" value="added dummy resume section" />
+    <MESSAGE value=" add(resume): single resume metrics view" />
+    <option name="LAST_COMMIT_MESSAGE" value=" add(resume): single resume metrics view" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -315,6 +329,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/resume_checker$test_resume_score.coverage" NAME="test_resume_score Coverage Results" MODIFIED="1703603196061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/tests" />
     <SUITE FILE_PATH="coverage/resume_checker$common_models.coverage" NAME="common_models Coverage Results" MODIFIED="1703602919459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/models" />
-    <SUITE FILE_PATH="coverage/resume_checker$main.coverage" NAME="main Coverage Results" MODIFIED="1703604764090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/resume_checker$job_matcher_prompt.coverage" NAME="job_matcher_prompt Coverage Results" MODIFIED="1703631254743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/prompts" />
+    <SUITE FILE_PATH="coverage/resume_checker$main.coverage" NAME="main Coverage Results" MODIFIED="1703625829738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
   </component>
 </project>

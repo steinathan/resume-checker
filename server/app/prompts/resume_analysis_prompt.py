@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing import List
 
 from langchain.output_parsers import ResponseSchema, StructuredOutputParser, PydanticOutputParser
@@ -24,7 +26,7 @@ no other explanations must be produced
 """
 
 cover_letter_tmpl = """# Instruction: Below is a job description and a cover letter. Your responsibility is to 
-generate a cover letter than can be used as it is with a tile and body
+generate a cover letter than can be used as it is with a title and body
 
 # RESUME:
 {resume}
@@ -84,7 +86,7 @@ class ResumeSection(BaseModel):
 
 
 class ResumeCheckerModel(BaseModel):
-    # ats_tips: Section = Field(description="tips for the ATS")
+    """ Resume checker is the model of an analysis from a resume without a job description """
     contact_info: ResumeSection = Field(description="contact info, email, phone, etc")
     education: ResumeSection = Field(description="education")
     experience: ResumeSection = Field(description="experience")
@@ -95,14 +97,7 @@ class ResumeCheckerModel(BaseModel):
     section_headings: ResumeSection = Field(
         description="how best & professional the section heading was spelled, eg. prefer `Work History` to `work "
                     "experience`")
-
-    # computed at runtime
-    # total_score: float = 0.0
-
-    # @field_validator("total_score")
-    # def compute_total_score(cls, total_score: float, values):
-    #     section_scores = [values[section].score for section in values if isinstance(values[section], ResumeSection)]
-    #     return sum(section_scores) / max(len(section_scores), 1)
+    resume_skills: List[str] | None = Field(description="Identify and list the skills mentioned in the resume", default=[])
 
 
 analyse_resume_parser = PydanticOutputParser(pydantic_object=ResumeCheckerModel)
