@@ -4,6 +4,7 @@ import ApiService from "@/core/services/ApiService";
 import JwtService from "@/core/services/JwtService";
 
 export interface User {
+  id: string;
   name: string;
   surname: string;
   email: string;
@@ -34,64 +35,11 @@ export const useAuthStore = defineStore("auth", () => {
     JwtService.destroyToken();
   }
 
-  function login(credentials: User) {
-    return ApiService.post("login", credentials)
-      .then(({ data }) => {
-        setAuth(data);
-      })
-      .catch(({ response }) => {
-        setError(response.data.errors);
-      });
-  }
-
-  function logout() {
-    purgeAuth();
-  }
-
-  function register(credentials: User) {
-    return ApiService.post("register", credentials)
-      .then(({ data }) => {
-        setAuth(data);
-      })
-      .catch(({ response }) => {
-        setError(response.data.errors);
-      });
-  }
-
-  function forgotPassword(email: string) {
-    return ApiService.post("forgot_password", email)
-      .then(() => {
-        setError({});
-      })
-      .catch(({ response }) => {
-        setError(response.data.errors);
-      });
-  }
-
-  function verifyAuth() {
-    if (JwtService.getToken()) {
-      ApiService.setHeader();
-      ApiService.post("verify_token", { api_token: JwtService.getToken() })
-        .then(({ data }) => {
-          setAuth(data);
-        })
-        .catch(({ response }) => {
-          setError(response.data.errors);
-          purgeAuth();
-        });
-    } else {
-      purgeAuth();
-    }
-  }
 
   return {
     errors,
     user,
     isAuthenticated,
-    login,
-    logout,
-    register,
-    forgotPassword,
-    verifyAuth,
+    setAuth,
   };
 });

@@ -18,11 +18,18 @@ import { initVeeValidate } from "@/core/plugins/vee-validate";
 import { initKtIcon } from "@/core/plugins/keenthemes";
 
 import "@/core/plugins/prismjs";
+import {createLogger} from "vue-logger-plugin";
+
+const logger = createLogger({
+  enabled: true,
+  level: "debug",
+});
 
 const app = createApp(App);
 
 app.use(createPinia());
 app.use(router);
+app.use(logger);
 app.use(ElementPlus);
 
 ApiService.init(app);

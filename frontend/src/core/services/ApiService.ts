@@ -29,16 +29,16 @@ class ApiService {
   public static setHeader(): void {
     ApiService.vueInstance.axios.defaults.headers.common[
       "Authorization"
-    ] = `Token ${JwtService.getToken()}`;
+    ] = `Bearer ${JwtService.getToken()}`;
     ApiService.vueInstance.axios.defaults.headers.common["Accept"] =
       "application/json";
   }
 
   /**
    * @description send the GET HTTP request
-   * @param resource: string
-   * @param params: AxiosRequestConfig
-   * @returns Promise<AxiosResponse>
+   * @param params
+   * @param resource
+   * @param params
    */
   public static query(resource: string, params: any): Promise<AxiosResponse> {
     return ApiService.vueInstance.axios.get(resource, params);
@@ -46,9 +46,9 @@ class ApiService {
 
   /**
    * @description send the GET HTTP request
-   * @param resource: string
-   * @param slug: string
-   * @returns Promise<AxiosResponse>
+   * @param slug
+   * @param resource
+   * @param slug
    */
   public static get(
     resource: string,
@@ -59,9 +59,9 @@ class ApiService {
 
   /**
    * @description set the POST HTTP request
-   * @param resource: string
-   * @param params: AxiosRequestConfig
-   * @returns Promise<AxiosResponse>
+   * @param params
+   * @param resource
+   * @param params
    */
   public static post(resource: string, params: any): Promise<AxiosResponse> {
     return ApiService.vueInstance.axios.post(`${resource}`, params);
@@ -69,10 +69,10 @@ class ApiService {
 
   /**
    * @description send the UPDATE HTTP request
-   * @param resource: string
-   * @param slug: string
-   * @param params: AxiosRequestConfig
-   * @returns Promise<AxiosResponse>
+   * @param params
+   * @param resource
+   * @param slug
+   * @param params
    */
   public static update(
     resource: string,
@@ -84,9 +84,9 @@ class ApiService {
 
   /**
    * @description Send the PUT HTTP request
-   * @param resource: string
-   * @param params: AxiosRequestConfig
-   * @returns Promise<AxiosResponse>
+   * @param params
+   * @param resource
+   * @param params
    */
   public static put(resource: string, params: any): Promise<AxiosResponse> {
     return ApiService.vueInstance.axios.put(`${resource}`, params);
@@ -94,8 +94,8 @@ class ApiService {
 
   /**
    * @description Send the DELETE HTTP request
-   * @param resource: string
    * @returns Promise<AxiosResponse>
+   * @param resource
    */
   public static delete(resource: string): Promise<AxiosResponse> {
     return ApiService.vueInstance.axios.delete(resource);
