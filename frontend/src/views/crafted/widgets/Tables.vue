@@ -92,7 +92,7 @@ import TablesWidget5 from "@/components/widgets/tables/Widget5.vue";
 import TablesWidget6 from "@/components/widgets/tables/Widget6.vue";
 import TablesWidget7 from "@/components/widgets/tables/Widget7.vue";
 import TablesWidget8 from "@/components/widgets/tables/Widget8.vue";
-import TablesWidget9 from "@/components/widgets/tables/Widget9.vue";
+import TablesWidget9 from "@/components/widgets/tables/ResumeList.vue";
 import TablesWidget10 from "@/components/widgets/tables/Widget10.vue";
 import TablesWidget11 from "@/components/widgets/tables/Widget11.vue";
 import TablesWidget12 from "@/components/widgets/tables/Widget12.vue";

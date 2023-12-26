@@ -175,7 +175,7 @@ import { getAssetPath } from "@/core/helpers/assets";
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({
-  name: "kt-widget-9",
+  name: "ResumeList",
   components: {},
   props: {
     widgetClasses: String,

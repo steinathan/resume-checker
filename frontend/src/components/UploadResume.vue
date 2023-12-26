@@ -1,9 +1,9 @@
 <template>
   <div
-      class="modal fade"
-      id="upload_resume_modal"
-      tabindex="-1"
-      aria-hidden="false"
+    class="modal fade"
+    id="upload_resume_modal"
+    tabindex="-1"
+    aria-hidden="false"
   >
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-900px">
@@ -17,10 +17,10 @@
 
           <!--begin::Close-->
           <div
-              class="btn btn-sm btn-icon btn-active-color-primary"
-              data-bs-dismiss="modal"
+            class="btn btn-sm btn-icon btn-active-color-primary"
+            data-bs-dismiss="modal"
           >
-            <KTIcon icon-name="cross" icon-class="fs-1"/>
+            <KTIcon icon-name="cross" icon-class="fs-1" />
           </div>
           <!--end::Close-->
         </div>
@@ -32,9 +32,9 @@
             <!-- is uploading -->
             <div v-if="isUploading" class="col-6 w-50 text-center">
               <div
-                  class="spinner-border"
-                  role="status"
-                  style="width: 4rem; height: 4rem"
+                class="spinner-border"
+                role="status"
+                style="width: 4rem; height: 4rem"
               >
                 <span class="visually-hidden">Loading...</span>
               </div>
@@ -48,11 +48,11 @@
             <div v-else class="w-75 d-flex flex-column">
               <!-- Errors -->
               <Notice
-                  v-if="errMsg"
-                  classes="rounded-3"
-                  color="danger"
-                  title="Consistency Violation!"
-                  :body="errMsg"
+                v-if="errMsg"
+                classes="rounded-3"
+                color="danger"
+                title="Consistency Violation!"
+                :body="errMsg"
               ></Notice>
 
               <!--              <div class="dropzone my-10" id="dropzone_file_section">-->
@@ -72,7 +72,6 @@
               <!--                </div>-->
               <!--              </div>-->
 
-
               <div class="my-10 dropzone">
                 <label for="fileInput" class="dz-message needsclick">
                   <i class="ki-duotone ki-file-up fs-3x text-primary">
@@ -88,15 +87,14 @@
 
                   <!-- Add a file input element -->
                   <input
-                      type="file"
-                      id="fileInput"
-                      ref="fileInput"
-                      style="display: none"
-                      @change="handleFileUpload"
+                    type="file"
+                    id="fileInput"
+                    ref="fileInput"
+                    style="display: none"
+                    @change="handleFileUpload"
                   />
                 </label>
               </div>
-
 
               <!--              <div class="text-center text-muted text-uppercase fw-bold mb-5">-->
               <!--                or-->
@@ -121,14 +119,14 @@
           </div>
 
           <div
-              class="card-footer d-flex align-items-end justify-content-between"
+            class="card-footer d-flex align-items-end justify-content-between"
           >
             <div></div>
             <div>
               <button
-                  :disabled="!isValid || uploadLimitReached"
-                  @click="uploadFile"
-                  class="btn btn-primary"
+                :disabled="!isValid || uploadLimitReached"
+                @click="uploadFile"
+                class="btn btn-primary"
               >
                 Upload
               </button>
@@ -145,22 +143,22 @@
 </template>
 
 <script setup lang="ts">
-import {computed, onMounted, ref, watch} from "vue";
+import { computed, onMounted, ref, watch } from "vue";
 // import { useCollectionStore } from "@/stores/collection";
-import {storeToRefs} from "pinia";
+import { storeToRefs } from "pinia";
 import Dropzone from "dropzone";
 import JwtService from "@/core/services/JwtService";
-import {useRoute, useRouter} from "vue-router";
-import {useLogger} from "vue-logger-plugin";
+import { useRoute, useRouter } from "vue-router";
+import { useLogger } from "vue-logger-plugin";
 import Notice from "@/components/Notice.vue";
-import {post} from "@/core/services/ApiService2";
-import {hideModal} from "@/core/helpers/dom";
+import { post } from "@/core/services/ApiService2";
+import { hideModal } from "@/core/helpers/dom";
 import Swal from "sweetalert2";
-import {useAuthStore} from "@/stores/auth";
+import { useAuthStore } from "@/stores/auth";
 import supabase from "@/core/services/supabase";
 
 const authStore = useAuthStore();
-const {user} = storeToRefs(authStore);
+const { user } = storeToRefs(authStore);
 
 const logger = useLogger();
 const route = useRoute();
@@ -168,12 +166,8 @@ const router = useRouter();
 
 const isUploading = ref(false);
 const uploadProgress = ref(0);
-
 const errMsg = ref<string>("");
-
 const uploadMessage = ref("Do not close your browser tab");
-
-
 const isValid = ref(false);
 
 function clearStates() {
@@ -189,8 +183,8 @@ const uploadLimitReached = computed(() => {
   return user.value.limits?.reached === true;
 });
 
-const fileInput = ref<any>(null)
-const resumeFile = ref<File | null>(null)
+const fileInput = ref<any>(null);
+const resumeFile = ref<File | null>(null);
 
 function NotifyUser() {
   Swal.fire({
@@ -213,50 +207,47 @@ function NotifyUser() {
 const handleFileUpload = () => {
   const file = fileInput.value?.files?.[0];
   if (file) {
-    isValid.value = true
-    resumeFile.value = file
+    isValid.value = true;
+    resumeFile.value = file;
   }
-
-}
+};
 
 async function uploadFile() {
   setError("");
-  const BUCKET_NAME = "ai-resume"
+  const BUCKET_NAME = "ai-resume";
   isUploading.value = true;
-  logger.debug("starting upload:...")
-  const uploadPath = `${user.value.id}/${resumeFile.value!.name}`
-  const {data, error} = await supabase
-      .storage
-      .from(BUCKET_NAME)
-      .upload(uploadPath, resumeFile.value as File, {
-        cacheControl: '3600',
-        upsert: true
-      })
+  logger.debug("starting upload:...");
+  const uploadPath = `${user.value.id}/${resumeFile.value!.name}`;
+  const { data, error } = await supabase.storage
+    .from(BUCKET_NAME)
+    .upload(uploadPath, resumeFile.value as File, {
+      cacheControl: "3600",
+      upsert: true,
+    });
 
   if (error) {
-    setError(error.message)
-    uploadProgress.value = 0
+    setError(error.message);
+    uploadProgress.value = 0;
     isUploading.value = false;
   }
 
   if (data) {
-    uploadProgress.value = 50
-    let {data: fileData} = supabase
-        .storage
-        .from(BUCKET_NAME)
-        .getPublicUrl(data.path)
-    console.log(fileData.publicUrl)
+    uploadProgress.value = 50;
+    let { data: fileData } = supabase.storage
+      .from(BUCKET_NAME)
+      .getPublicUrl(data.path);
+    console.log(fileData.publicUrl);
 
     const createResumeParams = {
       src: fileData.publicUrl,
-      name: resumeFile.value!.name
-    }
+      name: resumeFile.value!.name,
+    };
 
-    await post("/resume", createResumeParams)
-    uploadProgress.value = 100
-    clearStates()
-    NotifyUser()
-    hideModal("#upload_resume_modal" as unknown as HTMLElement)
+    await post("/resume", createResumeParams);
+    uploadProgress.value = 100;
+    clearStates();
+    NotifyUser();
+    hideModal("#upload_resume_modal" as unknown as HTMLElement);
   }
 }
 
@@ -268,7 +259,6 @@ async function gotoDocsRoute(id: string) {
     },
   });
 }
-
 </script>
 
 <style lang="scss">
