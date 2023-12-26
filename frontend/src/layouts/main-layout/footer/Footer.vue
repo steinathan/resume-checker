@@ -18,6 +18,10 @@
           class="text-gray-800 text-hover-primary"
           >UnResume</a
         >
+        -
+        <span class="text-muted">
+          we're still working on our product, let us know what you think
+        </span>
       </div>
       <!--end::Copyright-->
 

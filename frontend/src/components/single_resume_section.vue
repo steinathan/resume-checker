@@ -168,7 +168,6 @@ type rev = {
   section: ResumeSection;
 };
 const items = ref<rev[]>([]);
-const route = useRoute();
 const resumeStore = useResumeStore();
 const { resume } = storeToRefs(resumeStore);
 const analysis = computed<ResumeLLMAnalysis>(

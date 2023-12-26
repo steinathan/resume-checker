@@ -43,6 +43,7 @@
 
   <KTHelpDrawer />
   <UploadResume />
+  <ScanJobModdal />
 </template>
 
 <script lang="ts">
@@ -80,10 +81,12 @@ import supabase from "@/core/services/supabase";
 import type { User } from "@/stores/auth";
 import { useAuthStore } from "@/stores/auth";
 import UploadResume from "@/components/UploadResume.vue";
+import ScanJobModdal from "@/components/ScanJobModdal.vue";
 
 export default defineComponent({
   name: "master-layout",
   components: {
+    ScanJobModdal,
     UploadResume,
     RouterView,
     KTAside,
