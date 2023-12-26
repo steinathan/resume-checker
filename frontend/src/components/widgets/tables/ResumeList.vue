@@ -1,31 +1,33 @@
 <template>
   <!--begin::Tables Widget 9-->
-  <div class="card" :class="widgetClasses">
+  <div class="card">
     <!--begin::Header-->
     <div class="card-header border-0 pt-5">
       <h3 class="card-title align-items-start flex-column">
-        <span class="card-label fw-bold fs-3 mb-1">Members Statistics</span>
+        <span class="card-label fw-bold fs-3 mb-1">Your Resumes</span>
 
-        <span class="text-muted mt-1 fw-semobold fs-7">Over 500 members</span>
+        <span class="text-muted mt-1 fw-semobold fs-7"
+          >{{ resumes.length }} resume(s)</span
+        >
       </h3>
 
-      <div
-        class="card-toolbar"
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        data-bs-trigger="hover"
-        title="Click to add a user"
-      >
-        <a
-          href="#"
-          class="btn btn-sm btn-light-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#kt_modal_invite_friends"
-        >
-          <KTIcon icon-name="plus" icon-class="fs-3" />
-          New Member
-        </a>
-      </div>
+      <!--      <div-->
+      <!--        class="card-toolbar"-->
+      <!--        data-bs-toggle="tooltip"-->
+      <!--        data-bs-placement="top"-->
+      <!--        data-bs-trigger="hover"-->
+      <!--        title="Click to add a user"-->
+      <!--      >-->
+      <!--        <a-->
+      <!--          href="#"-->
+      <!--          class="btn btn-sm btn-light-primary"-->
+      <!--          data-bs-toggle="modal"-->
+      <!--          data-bs-target="#kt_modal_invite_friends"-->
+      <!--        >-->
+      <!--          <KTIcon icon-name="plus" icon-class="fs-3" />-->
+      <!--          New Member-->
+      <!--        </a>-->
+      <!--      </div>-->
     </div>
     <!--end::Header-->
 
@@ -55,9 +57,11 @@
                   />
                 </div>
               </th>
-              <th class="min-w-150px">Authors</th>
-              <th class="min-w-140px">Company</th>
-              <th class="min-w-120px">Progress</th>
+              <th class="min-w-150px">Name</th>
+              <th class="min-w-150px">Score</th>
+              <th class="min-w-140px">Issues</th>
+              <th class="min-w-120px">Improvements</th>
+              <!--              <th class="min-w-140px">Done</th>-->
               <th class="min-w-100px text-end">Actions</th>
             </tr>
           </thead>
@@ -65,7 +69,7 @@
 
           <!--begin::Table body-->
           <tbody>
-            <template v-for="(item, index) in list" :key="index">
+            <template v-for="(resume, index) in resumes" :key="index">
               <tr>
                 <td>
                   <div
@@ -80,60 +84,86 @@
                   </div>
                 </td>
 
+                <!-- name -->
                 <td>
                   <div class="d-flex align-items-center">
-                    <div class="symbol symbol-45px me-5">
-                      <img :src="item.image" alt="" />
-                    </div>
                     <div class="d-flex justify-content-start flex-column">
                       <a
                         href="#"
                         class="text-dark fw-bold text-hover-primary fs-6"
-                        >{{ item.name }}</a
+                        >{{ resume.name }}</a
                       >
-
                       <span
                         class="text-muted fw-semobold text-muted d-block fs-7"
-                        >{{ item.skills }}</span
+                        >{{
+                          moment(resume.created_at).format(
+                            "MMMM Do YYYY, h:mm:ss a"
+                          )
+                        }}</span
                       >
                     </div>
                   </div>
                 </td>
 
+                <!-- resume score -->
                 <td>
-                  <a
-                    href="#"
-                    class="text-dark fw-bold text-hover-primary d-block fs-6"
-                    >{{ item.companyName }}</a
-                  >
                   <span
-                    class="text-muted fw-semobold text-muted d-block fs-7"
-                    >{{ item.companySkills }}</span
+                    class="text-dark fw-bold text-hover-primary d-block fs-6"
+                    >{{ resume.analysis?.total_score }}/10</span
                   >
+                  <span class="text-muted fw-semobold text-muted d-block fs-7"
+                    >Overall rating</span
+                  >
+                  <div class="progress h-6px w-100">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      :style="{
+                        background: getColorCodeByPercentage(
+                          resume.analysis?.total_score * 10
+                        ),
+                        width: resume.analysis?.total_score * 10 + '%',
+                      }"
+                      aria-valuemin="0"
+                      aria-valuemax="10"
+                    ></div>
+                  </div>
                 </td>
 
+                <!-- issues -->
+                <td class="text-end">
+                  <div class="d-flex flex-column w-100 me-2">
+                    <div class="d-flex flex-stack mb-2">
+                      <span class="text-muted me-2 fs-7 fw-bolder">
+                        {{ resume.analysis?.total_issues }}
+                      </span>
+                    </div>
+                  </div>
+                </td>
+
+                <!-- improvements -->
                 <td class="text-end">
                   <div class="d-flex flex-column w-100 me-2">
                     <div class="d-flex flex-stack mb-2">
                       <span class="text-muted me-2 fs-7 fw-semobold">
-                        {{ item.value }}%
+                        {{ resume.analysis?.total_improvements }}
                       </span>
-                    </div>
-
-                    <div class="progress h-6px w-100">
-                      <div
-                        class="progress-bar"
-                        :class="`bg-${item.color}`"
-                        role="progressbar"
-                        :style="{ width: item.value + '%' }"
-                        :aria-valuenow="item.value"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
                     </div>
                   </div>
                 </td>
 
+                <!-- sections done -->
+                <!--                <td class="text-end">-->
+                <!--                  <div class="d-flex flex-column w-100 me-2">-->
+                <!--                    <div class="d-flex flex-stack mb-2">-->
+                <!--                      <div class="text-muted me-2 fs-7 fw-semobold">-->
+                <!--                        {{ resume.analysis?.total_done }}-->
+                <!--                      </div>-->
+                <!--                    </div>-->
+                <!--                  </div>-->
+                <!--                </td>-->
+
+                <!-- actions -->
                 <td class="text-end">
                   <a
                     href="#"
@@ -170,72 +200,17 @@
   <!--end::Tables Widget 9-->
 </template>
 
-<script lang="ts">
-import { getAssetPath } from "@/core/helpers/assets";
-import { defineComponent, ref } from "vue";
+<script lang="ts" setup>
+import { get } from "@/core/services/ApiService2";
+import { onMounted, ref } from "vue";
+import type { Resume } from "../../../../types";
+import { getColorCodeByPercentage } from "@/core/helpers/color";
+import moment from "moment";
 
-export default defineComponent({
-  name: "ResumeList",
-  components: {},
-  props: {
-    widgetClasses: String,
-  },
-  setup() {
-    const checkedRows = ref<Array<number>>([]);
+const checkedRows = ref<Array<number>>([]);
+const resumes = ref<Resume[]>([]);
 
-    const list = [
-      {
-        image: getAssetPath("media/avatars/300-14.jpg"),
-        name: "Ana Simmons",
-        skills: "HTML, JS, ReactJS",
-        companyName: "Intertico",
-        companySkills: "Web, UI/UX Design",
-        value: "50",
-        color: "primary",
-      },
-      {
-        image: getAssetPath("media/avatars/300-2.jpg"),
-        name: "Jessie Clarcson",
-        skills: "C#, ASP.NET, MS SQL",
-        companyName: "Agoda",
-        companySkills: "Houses & Hotels",
-        value: "70",
-        color: "danger",
-      },
-      {
-        image: getAssetPath("media/avatars/300-5.jpg"),
-        name: "Lebron Wayde",
-        skills: "PHP, Laravel, VueJS",
-        companyName: "RoadGee",
-        companySkills: "Transportation",
-        value: "60",
-        color: "success",
-      },
-      {
-        image: getAssetPath("media/avatars/300-20.jpg"),
-        name: "Natali Goodwin",
-        skills: "Python, PostgreSQL, ReactJS",
-        companyName: "The Hill",
-        companySkills: "Insurance",
-        value: "50",
-        color: "warning",
-      },
-      {
-        image: getAssetPath("media/avatars/300-23.jpg"),
-        name: "Kevin Leonard",
-        skills: "HTML, JS, ReactJS",
-        companyName: "RoadGee",
-        companySkills: "Art Director",
-        value: "90",
-        color: "info",
-      },
-    ];
-
-    return {
-      list,
-      checkedRows,
-      getAssetPath,
-    };
-  },
+onMounted(async () => {
+  resumes.value = await get("/resumes", {});
 });
 </script>

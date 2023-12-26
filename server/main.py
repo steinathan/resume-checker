@@ -5,12 +5,13 @@ import uvicorn
 from dotenv import load_dotenv
 from fastapi import FastAPI, Depends
 from fastapi.security import OAuth2PasswordRequestForm
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.dependencies import get_current_user
 from app.models.common_models import User, Resume
 from app.supabase_client.client import supabase
 from app.handlers.resume_handler import CreateResumeParams, create_new_resume, find_all_resumes, process_job_for_resume, \
-    AnalyseJobForResumeParams, analyze_resume
+    AnalyseJobForResumeParams, analyze_resume, find_resume_by_id
 
 load_dotenv()
 
@@ -24,6 +25,15 @@ logging.basicConfig(
 )
 
 app = FastAPI()
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
@@ -39,7 +49,9 @@ async def read_users_me(current_user: Annotated[User, Depends(get_current_user)]
 @app.post("/resume", response_model=Resume)
 async def create_resume(params: CreateResumeParams, current_user: Annotated[User, Depends(get_current_user)]):
     """ creates a new resume called after uploading to bucket"""
-    return create_new_resume(current_user, params)
+    resume = create_new_resume(current_user, params)
+    await analyze_resume(current_user, resume.id)
+    return find_resume_by_id(current_user, resume.id)
 
 
 @app.post("/job/process")

@@ -29,7 +29,7 @@ def create_new_resume(user: User, params: CreateResumeParams) -> Resume:
     resume_id = str(uuid4())
     resume = Resume(**params.model_dump(), user_id=user.id, id=resume_id)
     response = supabase.table(TABLE_NAME).insert(resume.model_dump()).execute()
-    return response.data[0]
+    return Resume(**response.data[0])
 
 
 def find_all_resumes(user: User) -> list[Resume]:
@@ -69,15 +69,15 @@ def process_job_for_resume(user: User, params: AnalyseJobForResumeParams):
     return result
 
 
-async def analyze_resume(user: User, resume_id: str):
+async def analyze_resume(user: User, resume_id: str) -> object:
     resume = find_resume_by_id(user, resume_id)
     if not resume:
         raise Exception("Resume not found for user")
 
-    analyzer = ResumeAnalyser(resume_content=resume.text)
+    analyzer = ResumeAnalyser(resume_content=resume.text, resume_file_path=resume.src)
     analysis: ResumeCheckerModel = analyzer.analyse_resume()
 
     # update the resume with analysis results
-    update_resume(user, resume.id, resume.model_copy(update={"analysis": analysis}))
+    update_resume(user, resume.id, resume.model_copy(update={"analysis": analysis, "text": analyzer.resume_content}))
 
     return analysis

@@ -143,11 +143,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from "vue";
-// import { useCollectionStore } from "@/stores/collection";
+import { computed, ref } from "vue";
 import { storeToRefs } from "pinia";
-import Dropzone from "dropzone";
-import JwtService from "@/core/services/JwtService";
 import { useRoute, useRouter } from "vue-router";
 import { useLogger } from "vue-logger-plugin";
 import Notice from "@/components/Notice.vue";
@@ -236,7 +233,6 @@ async function uploadFile() {
     let { data: fileData } = supabase.storage
       .from(BUCKET_NAME)
       .getPublicUrl(data.path);
-    console.log(fileData.publicUrl);
 
     const createResumeParams = {
       src: fileData.publicUrl,

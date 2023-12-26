@@ -10,9 +10,8 @@
     </div>
   </div>
 
-  <Resumes widget-classes="card-xxl-stretch mb-5 mb-xl-8"></Resumes>
-
-  <JobMatchers widget-classes="card-xxl-stretch mb-5 mb-xxl-8"></JobMatchers>
+  <Resumes class="card-xxl-stretch mb-10 mb-xl-8"></Resumes>
+  <JobMatchers class="card-xxl-stretch mb-5 mb-xxl-8"></JobMatchers>
   <!--end::Dashboard-->
 </template>
 

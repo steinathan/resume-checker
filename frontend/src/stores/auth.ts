@@ -9,7 +9,9 @@ export interface User {
   surname: string;
   email: string;
   password: string;
+  pro?: string;
   api_token: string;
+  profile_url?: string;
 }
 
 export const useAuthStore = defineStore("auth", () => {
@@ -18,6 +20,8 @@ export const useAuthStore = defineStore("auth", () => {
   const isAuthenticated = ref(!!JwtService.getToken());
 
   function setAuth(authUser: User) {
+    const name = authUser.name ?? authUser.email?.split("@")[0];
+    authUser.profile_url = `https://ui-avatars.com/api/?name=${name}&background=0D8ABC&color=fff`;
     isAuthenticated.value = true;
     user.value = authUser;
     errors.value = {};
@@ -34,7 +38,6 @@ export const useAuthStore = defineStore("auth", () => {
     errors.value = [];
     JwtService.destroyToken();
   }
-
 
   return {
     errors,

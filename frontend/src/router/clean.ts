@@ -1,6 +1,7 @@
 import {
   createRouter,
   createWebHashHistory,
+  createWebHistory,
   type RouteRecordRaw,
 } from "vue-router";
 import { useAuthStore } from "@/stores/auth";
@@ -9,6 +10,15 @@ import { useConfigStore } from "@/stores/config";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
+    name: "sign-in-home",
+    component: () =>
+      import("@/views/crafted/authentication/basic-flow/SignIn.vue"),
+    meta: {
+      pageTitle: "Sign In",
+    },
+  },
+  {
+    path: "/dash",
     redirect: "/dashboard",
     component: () => import("@/layouts/main-layout/MainLayout.vue"),
     meta: {
@@ -84,12 +94,12 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/:pathMatch(.*)*",
-    redirect: "/404",
+    component: () => import("@/views/crafted/authentication/Error404.vue"),
   },
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 
@@ -102,9 +112,6 @@ router.beforeEach((to, from, next) => {
 
   // reset config to initial state
   configStore.resetLayoutConfig();
-
-  // verify auth token before each page change
-  authStore.verifyAuth();
 
   // before page access check if page requires authentication
   if (to.meta.middleware == "auth") {

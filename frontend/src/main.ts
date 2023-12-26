@@ -6,7 +6,7 @@ import App from "./App.vue";
 /*
 TIP: To get started with clean router change path to @/router/clean.ts.
  */
-import router from "./router";
+import router from "./router/clean";
 import ElementPlus from "element-plus";
 import i18n from "@/core/plugins/i18n";
 
@@ -18,7 +18,7 @@ import { initVeeValidate } from "@/core/plugins/vee-validate";
 import { initKtIcon } from "@/core/plugins/keenthemes";
 
 import "@/core/plugins/prismjs";
-import {createLogger} from "vue-logger-plugin";
+import { createLogger } from "vue-logger-plugin";
 
 const logger = createLogger({
   enabled: true,

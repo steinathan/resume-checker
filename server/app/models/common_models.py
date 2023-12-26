@@ -1,11 +1,10 @@
 from __future__ import annotations
 from datetime import datetime
-from uuid import uuid4, UUID
+from typing import ClassVar, Any
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
-from app.handlers.resume_checkerv2 import ResumeAnalysis
-from prompts import ResumeCheckerModel
+from prompts import ResumeCheckerModel, ResumeSection
 
 
 class AllBaseModel(BaseModel):
@@ -25,7 +24,32 @@ class User(AllBaseModel):
 class ResumeLLMAnalysis(ResumeCheckerModel):
     """ ResumeLLMAnalysis is the analysis of the resume after being parsed into an LLM, processed after resume is
     uploaded"""
-    pass
+    sections_count: int = Field(description="number of sections analyzed", default=0)
+    total_score: float = Field(description="Total score for the resume analysis", default=0.0)
+    total_issues: int = Field(description="total number of issues for the resume analysis", default=0)
+    total_improvements: int = Field(description="total number of improvements for the resume analysis", default=0)
+    total_done: int = Field(description="total number of sections done for the resume analysis", default=0)
+
+    class_values: ClassVar[Any] = None
+
+    def __init__(self, **data):
+        super().__init__(**data)
+        ResumeLLMAnalysis.class_values = self.__dict__.values()
+        self.sections_count += sum(isinstance(value, ResumeSection) for value in ResumeLLMAnalysis.class_values)
+        self.calculate_scores()
+
+    def calculate_scores(self) -> None:
+        """ calculates scores for all individual sections"""
+        total_score = 0.0
+        class_values = self.__dict__.values()
+        for section_value in class_values:
+            if isinstance(section_value, ResumeSection):
+                self.total_done += len(section_value.done)
+                self.total_improvements += len(section_value.improvements)
+                self.total_issues += len(section_value.issues)
+                total_score += section_value.score
+        rounded_score = round(total_score / self.sections_count, 1) if self.sections_count > 0 else 0.0
+        self.total_score = float(rounded_score)
 
 
 class Resume(AllBaseModel):
@@ -42,5 +66,3 @@ class CoverLetter(AllBaseModel):
     text: str
     job_url: str | None = None
     job_description: str | None = None
-
-#

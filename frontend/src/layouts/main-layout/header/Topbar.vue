@@ -2,75 +2,33 @@
   <!--begin::Toolbar wrapper-->
   <div class="d-flex align-items-stretch flex-shrink-0">
     <div class="topbar d-flex align-items-stretch flex-shrink-0">
-      <!--begin::Search-->
-      <div class="d-flex align-items-stretch ms-1 ms-lg-3">
-        <KTSearch></KTSearch>
-      </div>
-      <!--end::Search-->
-
       <!--begin::Activities-->
-      <div class="d-flex align-items-center ms-1 ms-lg-3">
-        <!--begin::drawer toggle-->
-        <div
-          class="btn btn-icon btn-active-light-primary btn-custom w-30px h-30px w-md-40px h-md-40px"
-          id="kt_activities_toggle"
-        >
-          <KTIcon icon-name="chart-simple" icon-class="fs-1" />
-        </div>
-        <!--end::drawer toggle-->
-      </div>
-      <!--end::Activities-->
-
-      <!--begin::Notifications-->
-      <div class="d-flex align-items-center ms-1 ms-lg-3">
-        <!--begin::Menu-->
-        <div
-          class="btn btn-icon btn-active-light-primary btn-custom w-30px h-30px w-md-40px h-md-40px"
-          data-kt-menu-trigger="click"
-          data-kt-menu-attach="parent"
-          data-kt-menu-placement="bottom-end"
-          data-kt-menu-flip="bottom"
-        >
-          <KTIcon icon-name="element-plus" icon-class="fs-1" />
-        </div>
-        <KTNotificationsMenu></KTNotificationsMenu>
-        <!--end::Menu-->
-      </div>
-      <!--end::Notifications-->
-
-      <!--begin::Chat-->
-      <div class="d-flex align-items-center ms-1 ms-lg-3">
-        <!--begin::Menu wrapper-->
-        <div
-          class="btn btn-icon btn-active-light-primary btn-custom position-relative w-30px h-30px w-md-40px h-md-40px"
-          id="kt_drawer_chat_toggle"
-        >
-          <KTIcon icon-name="message-text-2" icon-class="fs-1" />
-
-          <span
-            class="bullet bullet-dot bg-success h-6px w-6px position-absolute translate-middle top-0 start-50 animation-blink"
-          >
-          </span>
-        </div>
-        <!--end::Menu wrapper-->
-      </div>
-      <!--end::Chat-->
+      <!--      <div class="d-flex align-items-center ms-1 ms-lg-3">-->
+      <!--        &lt;!&ndash;begin::drawer toggle&ndash;&gt;-->
+      <!--        <div-->
+      <!--          class="btn btn-icon btn-active-light-primary btn-custom w-30px h-30px w-md-40px h-md-40px"-->
+      <!--          id="kt_activities_toggle"-->
+      <!--        >-->
+      <!--          <KTIcon icon-name="chart-simple" icon-class="fs-1" />-->
+      <!--        </div>-->
+      <!--        &lt;!&ndash;end::drawer toggle&ndash;&gt;-->
+      <!--      </div>-->
 
       <!--begin::Quick links-->
-      <div class="d-flex align-items-center ms-1 ms-lg-3">
-        <!--begin::Menu-->
-        <div
-          class="btn btn-icon btn-active-light-primary btn-custom w-30px h-30px w-md-40px h-md-40px"
-          data-kt-menu-trigger="click"
-          data-kt-menu-attach="parent"
-          data-kt-menu-placement="bottom-end"
-          data-kt-menu-flip="bottom"
-        >
-          <KTIcon icon-name="element-11" icon-class="fs-1" />
-        </div>
-        <KTQuickLinksMenu></KTQuickLinksMenu>
-        <!--end::Menu-->
-      </div>
+      <!--      <div class="d-flex align-items-center ms-1 ms-lg-3">-->
+      <!--        &lt;!&ndash;begin::Menu&ndash;&gt;-->
+      <!--        <div-->
+      <!--          class="btn btn-icon btn-active-light-primary btn-custom w-30px h-30px w-md-40px h-md-40px"-->
+      <!--          data-kt-menu-trigger="click"-->
+      <!--          data-kt-menu-attach="parent"-->
+      <!--          data-kt-menu-placement="bottom-end"-->
+      <!--          data-kt-menu-flip="bottom"-->
+      <!--        >-->
+      <!--          <KTIcon icon-name="element-11" icon-class="fs-1" />-->
+      <!--        </div>-->
+      <!--        <KTQuickLinksMenu></KTQuickLinksMenu>-->
+      <!--        &lt;!&ndash;end::Menu&ndash;&gt;-->
+      <!--      </div>-->
       <!--end::Quick links-->
 
       <!--begin::Theme mode-->
@@ -108,7 +66,7 @@
           data-kt-menu-flip="bottom"
         >
           <img
-            :src="getAssetPath('media/avatars/300-2.jpg')"
+            :src="user.profile_url"
             alt="metronic"
             class="h-30px w-30px rounded"
           />
@@ -122,7 +80,7 @@
   <!--end::Toolbar wrapper-->
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { getAssetPath } from "@/core/helpers/assets";
 import { defineComponent } from "vue";
 import KTSearch from "@/layouts/main-layout/search/Search.vue";
@@ -130,20 +88,9 @@ import KTNotificationsMenu from "@/layouts/main-layout/menus/NotificationsMenu.v
 import KTQuickLinksMenu from "@/layouts/main-layout/menus/QuickLinksMenu.vue";
 import KTUserMenu from "@/layouts/main-layout/menus/UserAccountMenu.vue";
 import KTThemeModeSwitcher from "@/layouts/main-layout/theme-mode/ThemeModeSwitcher.vue";
+import { useAuthStore } from "@/stores/auth";
+import { storeToRefs } from "pinia";
 
-export default defineComponent({
-  name: "layout-topbar",
-  components: {
-    KTNotificationsMenu,
-    KTQuickLinksMenu,
-    KTUserMenu,
-    KTSearch,
-    KTThemeModeSwitcher,
-  },
-  setup() {
-    return {
-      getAssetPath,
-    };
-  },
-});
+const authStore = useAuthStore();
+const { user } = storeToRefs(authStore);
 </script>

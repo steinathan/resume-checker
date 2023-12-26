@@ -2,9 +2,11 @@ from __future__ import annotations
 
 import logging
 import os
+import tempfile
 from dataclasses import dataclass
 from datetime import datetime
 
+import requests
 import validators
 from dotenv import load_dotenv
 from langchain.document_loaders import PyPDFLoader, OnlinePDFLoader
@@ -31,6 +33,20 @@ logging.basicConfig(
 
 def is_valid_url(url: str) -> bool:
     return validators.url(url)
+
+
+def download_pdf(url):
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as temp_file:
+            temp_file.write(response.content)
+            temp_file_path = temp_file.name
+            print(f"PDF downloaded successfully. File path: {temp_file_path}")
+            return temp_file_path
+    else:
+        print(f"Failed to download PDF. Status code: {response.status_code}")
+        return None
 
 
 def trim_space(text: str) -> str:
@@ -100,11 +116,10 @@ class ResumeAnalyser:
         if not self.resume_content:
             logging.info(f"Resume content not provided, loading resume from URL or PATH: {path}")
             if is_valid_url(path):
-                loader = OnlinePDFLoader(path)
                 logging.info(f"Loading resume from HTTP: {path}")
-            else:
-                loader = PyPDFLoader(path)
-                logging.info(f"Loading resume from local file: {path}")
+                path = download_pdf(path)
+            loader = PyPDFLoader(path)
+            logging.info(f"Loading resume from local file: {path}")
 
             docs = loader.load()
             for doc in docs:
