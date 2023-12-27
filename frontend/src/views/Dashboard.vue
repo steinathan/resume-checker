@@ -48,7 +48,7 @@
 
 <script lang="ts" setup>
 import Resumes from "@/components/widgets/tables/ResumeList.vue";
-import JobMatchers from "@/components/widgets/tables/Widget5.vue";
+import JobMatchers from "@/components/widgets/tables/JobScanList.vue";
 import MixedWidget7 from "@/components/widgets/mixed/Widget7.vue";
 import MixedWidget10 from "@/components/widgets/mixed/Widget10.vue";
 </script>

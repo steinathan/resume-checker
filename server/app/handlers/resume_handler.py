@@ -41,7 +41,7 @@ def create_new_resume(user: User, params: CreateResumeParams) -> Resume:
 
 
 def find_all_resumes(user: User) -> list[Resume]:
-    response = supabase.table(TABLE_NAME).select("*").eq("user_id", user.id).execute()
+    response = supabase.table(TABLE_NAME).select("*").order("created_at", desc=True).eq("user_id", user.id).execute()
     return [Resume(**data) for data in response.data]
 
 
@@ -65,6 +65,13 @@ def find_resume_by_id(user: User, resume_id: str) -> Resume | None:
     response = supabase.table(TABLE_NAME).select("*").eq("user_id", user.id).eq("id", resume_id).execute()
     if response.data:
         return Resume(**response.data[0])
+    return None
+
+
+def find_job_scan_by_id(user: User, scan_id: str) -> AtsJobScan | None:
+    response = supabase.table(JOB_SCAN_TABLE).select("*").eq("user_id", user.id).eq("id", scan_id).execute()
+    if response.data:
+        return AtsJobScan(**response.data[0])
     return None
 
 
@@ -106,13 +113,13 @@ def process_job_for_resume(user: User, params: AnalyseJobForResumeParams):
     resume = find_resume_by_id(user, params.resume_id)
     if not resume:
         raise Exception("Resume not found for user")
-    analyzer = ResumeAnalyser(job_posting_url=params.job_url, resume_content=resume.text)
+    analyzer = ResumeAnalyser(job_posting_url=params.job_url, job_content=params.job_description, resume_content=resume.text)
     result: AtsAnalyserResult = analyzer.run_ats()
 
     cover_letter = None
 
     # create cover letter
-    if result.resume_content is not None:
+    if result.generated_cover_letter is not None:
         cover_letter = create_cover_letter(user, resume, result)
 
     # create resume ats job scan in db
@@ -132,3 +139,9 @@ async def analyze_resume(user: User, resume_id: str) -> object:
     update_resume(user, resume.id, resume.model_copy(update={"analysis": analysis, "text": analyzer.resume_content}))
 
     return analysis
+
+
+def list_job_scans_for_user(user: User) -> list[AtsJobScan]:
+    response = supabase.table(JOB_SCAN_TABLE).select("*").order("created_at", desc=True).eq("user_id", user.id).execute()
+    return [AtsJobScan(**data) for data in response.data]
+

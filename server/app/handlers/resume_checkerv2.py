@@ -71,10 +71,11 @@ class ResumeAnalyser:
     job_content: str | None = ""
 
     def __init__(self, job_posting_url: str | None = None, resume_file_path: str | None = None,
-                 resume_content: str | None = None):
+                 resume_content: str | None = None, job_content: str | None = None):
         self.job_posting_url = job_posting_url
         self.resume_content = resume_content
         self.resume_path = resume_file_path
+        self.job_content = job_content
 
         # either resume_content or path should be provided
         if not resume_content and not resume_file_path:
@@ -137,7 +138,7 @@ class ResumeAnalyser:
         logging.debug(check_prompt_str)
         output = self.llm.predict(check_prompt_str)
         ats_result: AtsJobPromptModel = job_ats_parser.parse(output)
-        fit = ats_result.score > 5
+        fit = ats_result.score > 6.5
 
         cover_letter: str | None = None
 

@@ -204,9 +204,6 @@ function setError(msg: string) {
   errMsg.value = msg;
 }
 
-const fileInput = ref<any>(null);
-const resumeFile = ref<File | null>(null);
-
 const resumeStore = useResumeStore();
 const { resumes } = storeToRefs(resumeStore);
 
@@ -227,11 +224,12 @@ async function processScan() {
   // })
   clearStates();
   hideModal("#scan_job_modal" as unknown as HTMLElement);
+  gotoJobRoute(data.id);
 }
 
-async function gotoJobRoute(id: string) {
-  await router.push({
-    name: "view-scan",
+function gotoJobRoute(id: string) {
+  router.push({
+    name: "single-scan",
     params: {
       id: id,
     },

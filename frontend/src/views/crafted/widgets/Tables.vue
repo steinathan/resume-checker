@@ -88,7 +88,7 @@ import TablesWidget1 from "@/components/widgets/tables/Widget1.vue";
 import TablesWidget2 from "@/components/widgets/tables/Widget2.vue";
 import TablesWidget3 from "@/components/widgets/tables/Widget3.vue";
 import TablesWidget4 from "@/components/widgets/tables/Widget4.vue";
-import TablesWidget5 from "@/components/widgets/tables/Widget5.vue";
+import TablesWidget5 from "@/components/widgets/tables/JobScanList.vue";
 import TablesWidget6 from "@/components/widgets/tables/Widget6.vue";
 import TablesWidget7 from "@/components/widgets/tables/Widget7.vue";
 import TablesWidget8 from "@/components/widgets/tables/Widget8.vue";

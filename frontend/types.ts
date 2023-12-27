@@ -40,8 +40,10 @@ export interface Resume extends AllBaseModel {
 
 export interface ATSAnalysisSection {
   values: string[];
-  explanations: string[];
-  improvements: string[];
+  explanation: string;
+  issues: string[];
+  suggestion: string;
+  score: number;
 }
 export interface ATSAnalysis {
   education: ATSAnalysisSection;
@@ -51,6 +53,8 @@ export interface ATSAnalysis {
   avoidable_keywords: ATSAnalysisSection;
   score: number;
   explanation: string;
+  job_title: string;
+  company_name: string;
 }
 
 export interface ATSAnalysisJobData {

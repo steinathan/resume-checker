@@ -8,8 +8,12 @@ resume_path = "https://rbscckjjbznellmpzemf.supabase.co/storage/v1/object/public
 job_url = "https://boards.greenhouse.io/remotecom/jobs/5789193003"
 
 
-# analyzer = ResumeAnalyser(job_posting_url=job_url, resume_file_path=resume_path)
-# result = analyzer.run_ats()
+def test_resume_analyser():
+    analyzer = ResumeAnalyser(job_posting_url=job_url, resume_file_path=resume_path)
+    result = analyzer.run_ats()
+    print(result)
+
+test_resume_analyser()
 
 
 def gen_uuid():

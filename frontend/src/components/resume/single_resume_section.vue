@@ -157,7 +157,7 @@
 <script lang="ts" setup>
 import { get } from "@/core/services/ApiService2";
 import { computed, onMounted, ref, watchEffect } from "vue";
-import type { Resume, ResumeLLMAnalysis, ResumeSection } from "../../types";
+import type { Resume, ResumeLLMAnalysis, ResumeSection } from "../../../types";
 import { useRoute } from "vue-router";
 import { useResumeStore } from "@/stores/resume";
 import { storeToRefs } from "pinia";
