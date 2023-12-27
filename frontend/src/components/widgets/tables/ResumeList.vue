@@ -37,7 +37,7 @@
       <!--begin::Table container-->
       <EmptyState
         v-if="resumes.length === 0"
-        type="job_scan"
+        type="resume"
         title="No Resume"
         description="Upload a resume to get started"
       ></EmptyState>
@@ -211,11 +211,16 @@ import type { Resume } from "../../../../types";
 import { getColorCodeByPercentage } from "@/core/helpers/color";
 import moment from "moment";
 import EmptyState from "@/components/EmptyState.vue";
+import { useResumeStore } from "@/stores/resume";
+import { storeToRefs } from "pinia";
 
 const checkedRows = ref<Array<number>>([]);
-const resumes = ref<Resume[]>([]);
+const resumeStore = useResumeStore();
+
+const { resumes } = storeToRefs(resumeStore);
 
 onMounted(async () => {
-  resumes.value = await get("/resumes", {});
+  const userResumes = await get("/resumes", {});
+  resumeStore.setResumes(userResumes as Resume[]);
 });
 </script>

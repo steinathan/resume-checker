@@ -1,15 +1,19 @@
 from __future__ import annotations
 
+import logging
+
 from pydantic import BaseModel
 
-from app.handlers.resume_checkerv2 import ResumeAnalyser, ResumeAnalyserResult
-from app.models.common_models import Resume, User
+from app.handlers.resume_checkerv2 import ResumeAnalyser, AtsAnalyserResult
+from app.models.common_models import Resume, User, CoverLetter, AtsJobScan
 from app.supabase_client.client import supabase
 from uuid import uuid4
 
-from prompts import ResumeCheckerModel
+from app.prompts.resume_analysis_prompt import ResumeCheckerModel
 
 TABLE_NAME = "resumes"
+COVER_LETTER_TABLE = "cover_letters"
+JOB_SCAN_TABLE = "job_scans"
 
 
 class AnalyseJobForResumeParams(BaseModel):
@@ -27,13 +31,17 @@ class CreateResumeParams(BaseModel):
 
 def create_new_resume(user: User, params: CreateResumeParams) -> Resume:
     resume_id = str(uuid4())
+    if params.src:
+        if not params.src.endswith("pdf"):
+            raise ValueError("src must be a valid PDF")
+
     resume = Resume(**params.model_dump(), user_id=user.id, id=resume_id)
     response = supabase.table(TABLE_NAME).insert(resume.model_dump()).execute()
     return Resume(**response.data[0])
 
 
 def find_all_resumes(user: User) -> list[Resume]:
-    response = supabase.table(TABLE_NAME).select("*").eq("user_id", user.id).execute()
+    response = supabase.table(TABLE_NAME).select("*").order("created_at", desc=True).eq("user_id", user.id).execute()
     return [Resume(**data) for data in response.data]
 
 
@@ -60,13 +68,63 @@ def find_resume_by_id(user: User, resume_id: str) -> Resume | None:
     return None
 
 
+def find_job_scan_by_id(user: User, scan_id: str) -> AtsJobScan | None:
+    response = supabase.table(JOB_SCAN_TABLE).select("*").eq("user_id", user.id).eq("id", scan_id).execute()
+    if response.data:
+        return AtsJobScan(**response.data[0])
+    return None
+
+
+def create_cover_letter(user: User, resume: Resume, scan_result: AtsAnalyserResult) -> CoverLetter:
+    letter = CoverLetter(
+        id=str(uuid4()),
+        user_id=user.id,
+        resume_id=resume.id,
+        job_url=scan_result.job_url,
+        job_description=scan_result.job_description,
+        text=scan_result.generated_cover_letter
+    )
+
+    logging.info("creating job scan result", letter.model_dump())
+    response = supabase.table(COVER_LETTER_TABLE).insert(letter.model_dump()).execute()
+    return CoverLetter(**response.data[0])
+
+
+def create_scan_result(scan_result: AtsAnalyserResult, user: User, resume: Resume,
+                       cover_letter: CoverLetter | None = None) -> AtsJobScan:
+    job = AtsJobScan(
+        id=str(uuid4()),
+        user_id=user.id,
+        resume_id=resume.id,
+        job_description=scan_result.job_description,
+        job_url=scan_result.job_url or cover_letter.job_url,
+        ats_analysis=scan_result.ats_analysis
+    )
+
+    if cover_letter is not None:
+        job.cover_letter_id = cover_letter.id
+
+    logging.info("creating job scan result", job.model_dump())
+    response = supabase.table(JOB_SCAN_TABLE).insert(job.model_dump()).execute()
+    return AtsJobScan(**response.data[0])
+
+
 def process_job_for_resume(user: User, params: AnalyseJobForResumeParams):
     resume = find_resume_by_id(user, params.resume_id)
     if not resume:
         raise Exception("Resume not found for user")
-    analyzer = ResumeAnalyser(job_posting_url=params.job_url, resume_content=resume.text)
-    result: ResumeAnalyserResult = analyzer.run()
-    return result
+    analyzer = ResumeAnalyser(job_posting_url=params.job_url, job_content=params.job_description, resume_content=resume.text)
+    result: AtsAnalyserResult = analyzer.run_ats()
+
+    cover_letter = None
+
+    # create cover letter
+    if result.generated_cover_letter is not None:
+        cover_letter = create_cover_letter(user, resume, result)
+
+    # create resume ats job scan in db
+    job_scan = create_scan_result(scan_result=result, user=user, resume=resume, cover_letter=cover_letter)
+    return job_scan
 
 
 async def analyze_resume(user: User, resume_id: str) -> object:
@@ -81,3 +139,9 @@ async def analyze_resume(user: User, resume_id: str) -> object:
     update_resume(user, resume.id, resume.model_copy(update={"analysis": analysis, "text": analyzer.resume_content}))
 
     return analysis
+
+
+def list_job_scans_for_user(user: User) -> list[AtsJobScan]:
+    response = supabase.table(JOB_SCAN_TABLE).select("*").order("created_at", desc=True).eq("user_id", user.id).execute()
+    return [AtsJobScan(**data) for data in response.data]
+

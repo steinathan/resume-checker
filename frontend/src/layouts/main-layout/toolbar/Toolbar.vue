@@ -36,12 +36,22 @@
         <!--begin::Button-->
         <button
           data-bs-theme="light"
-          class="btn bg-body btn-active-color-primary"
+          class="btn bg-body btn-active-color-primary mx-2"
           data-bs-toggle="modal"
           data-bs-target="#upload_resume_modal"
           id="kt_toolbar_primary_button"
         >
           Upload Resume
+        </button>
+
+        <button
+          data-bs-theme="light"
+          data-bs-toggle="modal"
+          class="btn btn-primary btn-active-color-secondary"
+          data-bs-target="#scan_job_modal"
+          id="kt_toolbar_primary_button"
+        >
+          Scan Job (ATS)
         </button>
         <!--end::Button-->
       </div>

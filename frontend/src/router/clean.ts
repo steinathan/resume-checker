@@ -37,8 +37,36 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: "/resume/:resume_id",
         name: "single-resume",
+        redirect: {
+          name: "single-resume-analysis",
+        },
         component: () =>
           import("@/components/page-layouts/SingleResumeLayout.vue"),
+        children: [
+          {
+            path: "analysis",
+            name: "single-resume-analysis",
+            component: () =>
+              import("@/components/resume/single_resume_section.vue"),
+          },
+        ],
+      },
+      {
+        path: "/scan/:scan_id",
+        name: "single-scan",
+        redirect: {
+          name: "single-scan-analysis",
+        },
+        component: () =>
+          import("@/components/page-layouts/SingleJobScanLayout.vue"),
+        children: [
+          {
+            path: "results",
+            name: "single-scan-analysis",
+            component: () =>
+              import("@/components/job_scan/single_job_scan_section.vue"),
+          },
+        ],
       },
       {
         path: "/profile",

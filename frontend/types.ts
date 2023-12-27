@@ -35,3 +35,36 @@ export interface Resume extends AllBaseModel {
   text?: string | null;
   analysis?: ResumeLLMAnalysis | null;
 }
+
+// TODO: refactor
+
+export interface ATSAnalysisSection {
+  values: string[];
+  explanation: string;
+  issues: string[];
+  suggestion: string;
+  score: number;
+}
+export interface ATSAnalysis {
+  education: ATSAnalysisSection;
+  met_skills: ATSAnalysisSection;
+  unmet_skills: ATSAnalysisSection;
+  resume_skills: ATSAnalysisSection;
+  avoidable_keywords: ATSAnalysisSection;
+  score: number;
+  explanation: string;
+  job_title: string;
+  company_name: string;
+}
+
+export interface ATSAnalysisJobData {
+  id: string;
+  created_at: string;
+  updated_at: string;
+  user_id: string;
+  resume_id: string;
+  cover_letter_id: string;
+  job_url: string;
+  job_description: string;
+  ats_analysis: ATSAnalysis;
+}

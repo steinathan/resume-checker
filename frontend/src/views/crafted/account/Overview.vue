@@ -210,7 +210,7 @@ import { getAssetPath } from "@/core/helpers/assets";
 import { defineComponent } from "vue";
 import KTChartWidget1 from "@/components/widgets/charts/Widget1.vue";
 import KTListWidget5 from "@/components/widgets/lists/Widget5.vue";
-import KTTableWidget5 from "@/components/widgets/tables/Widget5.vue";
+import KTTableWidget5 from "@/components/widgets/tables/JobScanList.vue";
 import KTListWidget1 from "@/components/widgets/lists/Widget1.vue";
 
 export default defineComponent({

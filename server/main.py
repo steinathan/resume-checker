@@ -8,10 +8,10 @@ from fastapi.security import OAuth2PasswordRequestForm
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.dependencies import get_current_user
-from app.models.common_models import User, Resume
+from app.models.common_models import User, Resume, AtsJobScan
 from app.supabase_client.client import supabase
 from app.handlers.resume_handler import CreateResumeParams, create_new_resume, find_all_resumes, process_job_for_resume, \
-    AnalyseJobForResumeParams, analyze_resume, find_resume_by_id
+    AnalyseJobForResumeParams, analyze_resume, find_resume_by_id, list_job_scans_for_user, find_job_scan_by_id
 
 load_dotenv()
 
@@ -54,9 +54,16 @@ async def create_resume(params: CreateResumeParams, current_user: Annotated[User
     return find_resume_by_id(current_user, resume.id)
 
 
-@app.post("/job/process")
-async def create_resume(params: AnalyseJobForResumeParams, current_user: Annotated[User, Depends(get_current_user)]):
+@app.post("/job/scan", response_model=AtsJobScan)
+async def at_scan_job(params: AnalyseJobForResumeParams, current_user: Annotated[User, Depends(get_current_user)]):
+    """ scans a job against a resume """
     return process_job_for_resume(current_user, params)
+
+
+@app.get("/job/scans", response_model=Optional[List[AtsJobScan]])
+async def get_job_scans(current_user: Annotated[User, Depends(get_current_user)]):
+    """ lists all job scans for the user """
+    return list_job_scans_for_user(current_user)
 
 
 @app.get("/resumes", response_model=Optional[List[Resume]])
@@ -69,6 +76,12 @@ async def list_resume(current_user: Annotated[User, Depends(get_current_user)]):
 async def find_resume(resume_id: str, current_user: Annotated[User, Depends(get_current_user)]):
     """ finds the resume by id """
     return find_resume_by_id(current_user, resume_id)
+
+
+@app.get("/job/scans/{scan_id}", response_model=Optional[AtsJobScan])
+async def find_job_scan(scan_id: str, current_user: Annotated[User, Depends(get_current_user)]):
+    """ finds the resume by id """
+    return find_job_scan_by_id(current_user, scan_id)
 
 
 @app.post("/get-token")

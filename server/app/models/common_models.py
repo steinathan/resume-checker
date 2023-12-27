@@ -4,7 +4,8 @@ from typing import ClassVar, Any
 
 from pydantic import BaseModel, Field
 
-from prompts import ResumeCheckerModel, ResumeSection
+from app.prompts.ats_job_prompt import AtsJobPromptModel
+from app.prompts.resume_analysis_prompt import ResumeCheckerModel, ResumeSection
 
 
 class AllBaseModel(BaseModel):
@@ -66,3 +67,12 @@ class CoverLetter(AllBaseModel):
     text: str
     job_url: str | None = None
     job_description: str | None = None
+
+
+class AtsJobScan(AllBaseModel):
+    user_id: str
+    resume_id: str
+    cover_letter_id: str | None = None
+    job_url: str
+    job_description: str
+    ats_analysis: AtsJobPromptModel | None = None

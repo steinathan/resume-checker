@@ -9,14 +9,15 @@ from datetime import datetime
 import requests
 import validators
 from dotenv import load_dotenv
-from langchain.document_loaders import PyPDFLoader, OnlinePDFLoader
+from langchain.document_loaders import PyPDFLoader
 from langchain_community.chat_models import ChatOpenAI
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.llms.ollama import Ollama
 from langchain_community.llms.together import Together
 from langchain_core.callbacks import StreamingStdOutCallbackHandler, CallbackManager
 
-from prompts import resume_checker_prompt, check_output_parser, resume_cover_letter_prompt, analyse_resume_prompt, \
+from app.prompts.ats_job_prompt import job_ats_parser, job_ats_prompt, AtsJobPromptModel
+from app.prompts.resume_analysis_prompt import resume_cover_letter_prompt, analyse_resume_prompt, \
     ResumeCheckerModel, analyse_resume_parser
 
 load_dotenv()
@@ -54,19 +55,12 @@ def trim_space(text: str) -> str:
 
 
 @dataclass
-class ResumeAnalysis:
-    value: str | None = None
-    explanation: str | None = None
-    fixes: str | None = None
-    score: float | None = None
-
-
-@dataclass
-class ResumeAnalyserResult:
+class AtsAnalyserResult:
     resume_content: str
     job_url: str
-    cover_letter: str | None = None
-    resume_analysis: ResumeAnalysis | None = None
+    job_description: str
+    generated_cover_letter: str | None = None
+    ats_analysis: AtsJobPromptModel | None = None
 
 
 class ResumeAnalyser:
@@ -77,10 +71,11 @@ class ResumeAnalyser:
     job_content: str | None = ""
 
     def __init__(self, job_posting_url: str | None = None, resume_file_path: str | None = None,
-                 resume_content: str | None = None):
+                 resume_content: str | None = None, job_content: str | None = None):
         self.job_posting_url = job_posting_url
         self.resume_content = resume_content
         self.resume_path = resume_file_path
+        self.job_content = job_content
 
         # either resume_content or path should be provided
         if not resume_content and not resume_file_path:
@@ -136,24 +131,27 @@ class ResumeAnalyser:
                 self.job_content = ""
             self.job_content += trim_space(doc.page_content)
 
-    def run(self) -> ResumeAnalyserResult:
-        """ Runs the program """
-        check_prompt_str = resume_checker_prompt.format(
+    def run_ats(self) -> AtsAnalyserResult:
+        """ Runs the program for an ATS """
+        check_prompt_str = job_ats_prompt.format(
             resume=self.resume_content, job_description=self.job_content)
         logging.debug(check_prompt_str)
         output = self.llm.predict(check_prompt_str)
-        result = check_output_parser.parse(output)
-        score, fit, explanation, fixes = result["score"], result["fit"], result["explanation"], result["fixes"]
+        ats_result: AtsJobPromptModel = job_ats_parser.parse(output)
+        fit = ats_result.score > 6.5
 
         cover_letter: str | None = None
 
-        if fit is True:
+        if fit:
             cover_letter = self.generate_cover_letter()
+        else:
+            logging.info("resume is not fit, refusing to generate cover letter")
 
-        return ResumeAnalyserResult(
+        return AtsAnalyserResult(
             resume_content=self.resume_content,
-            cover_letter=cover_letter,
-            resume_analysis=result,
+            generated_cover_letter=cover_letter,
+            ats_analysis=ats_result,
+            job_description=self.job_content,
             job_url=self.job_posting_url,
         )
 

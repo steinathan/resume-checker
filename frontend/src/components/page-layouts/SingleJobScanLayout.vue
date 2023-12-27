@@ -1,6 +1,6 @@
 <template>
   <!--begin::Navbar-->
-  <div v-if="resume" class="card mb-5 mb-xxl-8">
+  <div v-if="singleScan && analysis" class="card mb-5 mb-xxl-8">
     <div class="card-body pt-9 pb-0">
       <!--begin::Details-->
       <div class="d-flex flex-wrap flex-sm-nowrap mb-3">
@@ -11,10 +11,10 @@
               <span
                 class="total_score"
                 :style="{
-                  color: getColorCodeByPercentage(analysis?.total_score * 10),
+                  color: getColorCodeByPercentage(analysis?.score * 10),
                 }"
               >
-                {{ analysis?.total_score }}
+                {{ analysis?.score }}
               </span>
               <span class="text-muted score_base"> /10 </span>
             </div>
@@ -39,7 +39,7 @@
               <div class="d-flex align-items-center mb-2">
                 <span
                   class="text-gray-800 text-hover-primary fs-2 fw-bold me-1"
-                  >{{ resume.name }}</span
+                  >{{ singleScan.ats_analysis.job_title }}</span
                 >
                 <span>
                   <KTIcon
@@ -57,7 +57,17 @@
                   class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2"
                 >
                   <KTIcon icon-name="calendar" icon-class="fs-4 me-1" />
-                  {{ resume.created_at }}
+                  {{ singleScan.created_at }}
+                </span>
+              </div>
+              <!--end::Info-->
+              <!--begin::Info-->
+              <div class="d-flex flex-wrap fw-semobold fs-6 mb-4 pe-2">
+                <span
+                  class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2"
+                >
+                  <KTIcon icon-name="user" icon-class="fs-4 me-1" />
+                  {{ analysis.company_name }}
                 </span>
               </div>
               <!--end::Info-->
@@ -66,14 +76,14 @@
 
             <!--begin::Actions-->
             <div class="d-flex my-4">
-              <a
-                href="#"
-                class="btn btn-sm btn-light me-2"
-                id="kt_user_follow_button"
-              >
-                <KTIcon icon-name="check" icon-class="fs-3 d-none" />
-                Re-Analyze
-              </a>
+              <!--              <a-->
+              <!--                href="#"-->
+              <!--                class="btn btn-sm btn-light me-2"-->
+              <!--                id="kt_user_follow_button"-->
+              <!--              >-->
+              <!--                <KTIcon icon-name="check" icon-class="fs-3 d-none" />-->
+              <!--                Re-San-->
+              <!--              </a>-->
 
               <!--begin::Menu-->
               <div class="me-0">
@@ -102,30 +112,30 @@
                 class="d-flex flex-wrap"
                 v-if="analysis && Object.keys(analysis).length > 0"
               >
-                <ResumeHeaderStat
-                  :score="analysis.contact_info.score"
-                  title="Contact Information"
-                />
-                <ResumeHeaderStat
-                  :score="analysis.education.score"
-                  title="Education"
-                />
-                <ResumeHeaderStat
-                  :score="analysis.date_formatting.score"
-                  title="Date Formatting"
-                />
-                <ResumeHeaderStat
-                  :score="analysis.experience.score"
-                  title="Experience Information"
-                />
-                <ResumeHeaderStat
-                  :score="analysis.personal_projects.score"
-                  title="Personal Projects"
-                />
-                <ResumeHeaderStat
-                  :score="analysis.skills.score"
-                  title="Skills Section"
-                />
+                <!--                <ResumeHeaderStat-->
+                <!--                  :score="analysis.contact_info.score"-->
+                <!--                  title="Contact Information"-->
+                <!--                />-->
+                <!--                <ResumeHeaderStat-->
+                <!--                  :score="analysis.education.score"-->
+                <!--                  title="Education"-->
+                <!--                />-->
+                <!--                <ResumeHeaderStat-->
+                <!--                  :score="analysis.date_formatting.score"-->
+                <!--                  title="Date Formatting"-->
+                <!--                />-->
+                <!--                <ResumeHeaderStat-->
+                <!--                  :score="analysis.experience.score"-->
+                <!--                  title="Experience Information"-->
+                <!--                />-->
+                <!--                <ResumeHeaderStat-->
+                <!--                  :score="analysis.personal_projects.score"-->
+                <!--                  title="Personal Projects"-->
+                <!--                />-->
+                <!--                <ResumeHeaderStat-->
+                <!--                  :score="analysis.skills.score"-->
+                <!--                  title="Skills Section"-->
+                <!--                />-->
               </div>
               <!--end::Stats-->
             </div>
@@ -169,11 +179,11 @@
           <!--begin::Nav item-->
           <li class="nav-item">
             <router-link
-              :to="`/resume/${resume.id}/analysis`"
+              :to="`/scan/${singleScan.id}/results`"
               class="nav-link text-active-primary me-6"
               active-class="active"
             >
-              Analysis
+              ATS Analysis
             </router-link>
           </li>
           <!--end::Nav item-->
@@ -181,10 +191,21 @@
           <li class="nav-item">
             <router-link
               class="nav-link text-active-primary me-6"
-              :to="`/resume/${resume.id}/cover_letters`"
+              :to="`/scan/${singleScan.id}/cover_letter`"
               active-class="active"
             >
               Cover letters
+            </router-link>
+          </li>
+          <!--end::Nav item-->
+          <!--begin::Nav item-->
+          <li class="nav-item">
+            <router-link
+              class="nav-link text-active-primary me-6"
+              :to="`/scan/${singleScan.id}/resume`"
+              active-class="active"
+            >
+              Resume
             </router-link>
           </li>
           <!--end::Nav item-->
@@ -200,7 +221,12 @@
 <script lang="ts" setup>
 import Dropdown3 from "@/components/dropdown/Dropdown3.vue";
 import { computed, onMounted, ref } from "vue";
-import type { Resume, ResumeLLMAnalysis } from "../../../types";
+import type {
+  ATSAnalysis,
+  ATSAnalysisJobData,
+  Resume,
+  ResumeLLMAnalysis,
+} from "../../../types";
 import { useRoute } from "vue-router";
 import { get } from "@/core/services/ApiService2";
 import ResumeHeaderStat from "@/components/ResumeHeaderStat.vue";
@@ -212,15 +238,14 @@ import { storeToRefs } from "pinia";
 const route = useRoute();
 
 const resumeStore = useResumeStore();
-const { resume } = storeToRefs(resumeStore);
-const analysis = computed<ResumeLLMAnalysis>(
-  () => resume?.value?.analysis || ({} as ResumeLLMAnalysis)
-);
+const { singleScan } = storeToRefs(resumeStore);
+const analysis = computed<ATSAnalysis>(() => {
+  return singleScan.value.ats_analysis;
+});
 
 onMounted(async () => {
-  const _resume = await get("/resumes/" + route.params["resume_id"], {});
-  resumeStore.setResume(_resume as Resume);
-  console.log(analysis.value, resume.value);
+  const scan = await get("/job/scans/" + route.params["scan_id"], {});
+  resumeStore.setJobScan(scan as ATSAnalysisJobData);
 });
 </script>
 
