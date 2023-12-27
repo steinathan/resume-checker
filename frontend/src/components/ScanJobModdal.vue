@@ -24,7 +24,6 @@
         <!--begin::Modal body-->
         <div class="modal-body py-lg-10 px-lg-10">
           <div class="d-flex justify-content-center">
-            <!-- is uploading -->
             <div v-if="isProcessing" class="col-6 w-50 text-center">
               <div
                 class="spinner-border"
@@ -61,6 +60,7 @@
                   name="document"
                   placeholder="https://boards.greenhouse.io/remotecom/jobs/xxxxxxxxxxxx"
                   type="text"
+                  v-model="jobURL"
                 />
               </div>
               <div class="text-center text-muted text-uppercase fw-bold my-5">
@@ -73,6 +73,7 @@
                   class="form-control form-control-lg form-control-solid"
                   name="document"
                   rows="3"
+                  v-model="jobDescription"
                   placeholder="Remote is solving global remote organizations’ biggest challenge: employing anyone anywhere compliantly. We make it possible for businesses big and small to employ a global team by handling global payroll, benefits, taxes, and compliance. Check out remote.com/how-it-works to learn more or if you’re interested in adding to the mission, scroll down to apply now.
 
 Please take a look at remote.com/handbook to learn more about our culture and what it is like to work here. Not only do we encourage folks from all ethnic groups, genders, sexuality, age and abilities to apply, but we prioritize a sense of belonging. You can check out independent reviews by other candidates on Glassdoor or look up the results of our candidate surveys to see how others feel about working and interviewing here.
@@ -112,6 +113,7 @@ Remote Compensation Philosophy"
                 <h3 class="fs-4 fw-boldest">Select a CV</h3>
                 <select
                   class="form-select form-select-solid select2-hidden-accessible"
+                  v-model="selectedCV"
                 >
                   <option
                     v-for="resume in resumes"
@@ -131,6 +133,7 @@ Remote Compensation Philosophy"
           </div>
 
           <div
+            v-if="!isProcessing"
             class="mt-5 card-footer d-flex align-items-end justify-content-between"
           >
             <div></div>
@@ -167,23 +170,34 @@ import { useAuthStore } from "@/stores/auth";
 import supabase from "@/core/services/supabase";
 import { useResumeStore } from "@/stores/resume";
 import moment from "moment/moment";
+import type { ATSAnalysisJobData } from "../../types";
 
 const authStore = useAuthStore();
-const { user } = storeToRefs(authStore);
 
 const logger = useLogger();
-const route = useRoute();
 const router = useRouter();
 
 const isProcessing = ref(false);
 const uploadProgress = ref(0);
 const errMsg = ref<string>("");
-const uploadMessage = ref("Do not close your browser tab");
-const isValid = ref(false);
+const uploadMessage = ref(
+  "Analyzing the job, please do not close your browser tab"
+);
+
+const jobDescription = ref("");
+const jobURL = ref("");
+const selectedCV = ref("");
+
+const isValid = computed(() => {
+  return (
+    Boolean(selectedCV.value) && Boolean(jobURL.value || jobDescription.value)
+  );
+});
 
 function clearStates() {
   isProcessing.value = false;
   uploadProgress.value = 0;
+  setError("");
 }
 
 function setError(msg: string) {
@@ -196,44 +210,28 @@ const resumeFile = ref<File | null>(null);
 const resumeStore = useResumeStore();
 const { resumes } = storeToRefs(resumeStore);
 
-function NotifyUser() {
-  Swal.fire({
-    title: "Great, but Its not over yet!",
-    text: "We're processing this document, but we'll let you know via mail about the status of this operation",
-    icon: "success",
-    allowOutsideClick: false,
-    allowEscapeKey: false,
-    buttonsStyling: false,
-    confirmButtonText: "Ok, got it!",
-    heightAuto: false,
-    customClass: {
-      confirmButton: "btn btn-primary",
-    },
-  }).then(() => {
-    window.location.replace("/dashboard");
-  });
-}
-
-const handleFileUpload = () => {
-  const file = fileInput.value?.files?.[0];
-  if (file) {
-    isValid.value = true;
-    resumeFile.value = file;
-  }
-};
-
 async function processScan() {
-  setError("");
-  isProcessing.value = true;
-  logger.debug("starting upload:...");
   clearStates();
-  NotifyUser();
-  hideModal("#upload_resume_modal" as unknown as HTMLElement);
+  logger.debug("starting to process job...");
+  isProcessing.value = true;
+
+  const params = {
+    job_url: jobURL.value,
+    job_description: jobDescription.value,
+    resume_id: selectedCV.value,
+  };
+  const data = await post<ATSAnalysisJobData>("/job/scan", params);
+  console.log("DATA:", data, data.ats_analysis);
+  // router.push({
+  //   name:""
+  // })
+  clearStates();
+  hideModal("#scan_job_modal" as unknown as HTMLElement);
 }
 
-async function gotoDocsRoute(id: string) {
+async function gotoJobRoute(id: string) {
   await router.push({
-    name: "view-document",
+    name: "view-scan",
     params: {
       id: id,
     },

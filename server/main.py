@@ -8,7 +8,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.dependencies import get_current_user
-from app.models.common_models import User, Resume
+from app.models.common_models import User, Resume, AtsJobScan
 from app.supabase_client.client import supabase
 from app.handlers.resume_handler import CreateResumeParams, create_new_resume, find_all_resumes, process_job_for_resume, \
     AnalyseJobForResumeParams, analyze_resume, find_resume_by_id
@@ -54,8 +54,9 @@ async def create_resume(params: CreateResumeParams, current_user: Annotated[User
     return find_resume_by_id(current_user, resume.id)
 
 
-@app.post("/job/process")
-async def create_resume(params: AnalyseJobForResumeParams, current_user: Annotated[User, Depends(get_current_user)]):
+@app.post("/job/scan", response_model=AtsJobScan)
+async def at_scan_job(params: AnalyseJobForResumeParams, current_user: Annotated[User, Depends(get_current_user)]):
+    """ scans a job against a resume """
     return process_job_for_resume(current_user, params)
 
 

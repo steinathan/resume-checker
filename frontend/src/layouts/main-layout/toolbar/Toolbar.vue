@@ -51,7 +51,7 @@
           data-bs-target="#scan_job_modal"
           id="kt_toolbar_primary_button"
         >
-          Scan a Job
+          Scan Job (ATS)
         </button>
         <!--end::Button-->
       </div>
