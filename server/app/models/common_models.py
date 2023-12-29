@@ -1,11 +1,12 @@
 from __future__ import annotations
 from datetime import datetime
-from typing import ClassVar, Any
+from typing import ClassVar, Any, List
 
 from pydantic import BaseModel, Field
 
 from app.prompts.ats_job_prompt import AtsJobPromptModel
 from app.prompts.resume_analysis_prompt import ResumeCheckerModel, ResumeSection
+from app.skill_extractor.skill_extractor import MatchingResult as SkillExtractorResult, APISkill
 
 
 class AllBaseModel(BaseModel):
@@ -58,6 +59,7 @@ class Resume(AllBaseModel):
     src: str
     name: str
     text: str | None = None
+    skills: List[APISkill] | None = Field(default=[])
     analysis: ResumeLLMAnalysis | None = None
 
 
@@ -73,6 +75,7 @@ class AtsJobScan(AllBaseModel):
     user_id: str
     resume_id: str
     cover_letter_id: str | None = None
-    job_url: str
+    job_url: str | None = Field(default="no url provided")
     job_description: str
     ats_analysis: AtsJobPromptModel | None = None
+    skills_analysis: SkillExtractorResult | None = None

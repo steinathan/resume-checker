@@ -10,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.dependencies import get_current_user
 from app.models.common_models import User, Resume, AtsJobScan
 from app.supabase_client.client import supabase
-from app.handlers.resume_handler import CreateResumeParams, create_new_resume, find_all_resumes, process_job_for_resume, \
+from app.handlers.resume_handler import CreateResumeParams, create_new_resume, find_all_resumes, process_ats_scan, \
     AnalyseJobForResumeParams, analyze_resume, find_resume_by_id, list_job_scans_for_user, find_job_scan_by_id
 
 load_dotenv()
@@ -57,7 +57,7 @@ async def create_resume(params: CreateResumeParams, current_user: Annotated[User
 @app.post("/job/scan", response_model=AtsJobScan)
 async def at_scan_job(params: AnalyseJobForResumeParams, current_user: Annotated[User, Depends(get_current_user)]):
     """ scans a job against a resume """
-    return process_job_for_resume(current_user, params)
+    return process_ats_scan(current_user, params)
 
 
 @app.get("/job/scans", response_model=Optional[List[AtsJobScan]])

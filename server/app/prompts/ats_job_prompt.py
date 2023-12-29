@@ -12,11 +12,13 @@ job_ats_tmpl = """You are an expert ATS analyzer personnel evaluating my resume 
 
 no other explanations must be produced
 
-# MY RESUME:
-{resume}
-
 # JOB DESCRIPTION:
 {job_description}
+# END JOB DESCRIPTION
+
+# MY RESUME:
+{resume}
+# END RESUME
 
 # MY RESUME ANALYSIS:
 \n
@@ -55,20 +57,18 @@ class AtsSkill(BaseModel):
     type: SkillType = Field(description="The skill type.")
 
 
+class TitleMatch(BaseModel):
+    explanation: str = Field(description="possible explanation for the match")
+    match: bool = Field(default=False, description="indicate if the job title is matched within the resume")
+
+
 class AtsJobPromptModel(BaseModel):
     """ analyzes a job against a resume """
-    job_title: str = Field(description="Extract the job title from the provided job description or attempt to create "
-                                       "a suitable one.")
+    job_title: str = Field(description="Extract the job title from the provided job description")
     company_name: str = Field(description="Extract the company's name from the job description or make an inference "
                                           "if it's not explicitly mentioned")
     education: JobSection = Field(
         description="Extract the educational qualifications necessary for the job from the job description")
-    # experience: JobSection = Field(description="Outline the required work experience for the job.")
-    # met_skills: JobSection = Field(
-    #     description="Identify the essential skills outlined in the job description that the resume meets")
-    unmet_skills: JobSection = Field(
-        description="Highlight the critical skills specified in the job description that are not adequately reflected in the resume.")
-    # soft_skills: JobSection = Field(description="Identify and all soft skills needed from the job description")
     avoidable_keywords: JobSection = Field(
         description="Identify and list keywords in the work experience and skills section that may not be suitable or "
                     "relevant for the job and could be omitted.")
@@ -76,9 +76,7 @@ class AtsJobPromptModel(BaseModel):
         description="Evaluate the alignment of the resume with the job description. float from [0.0-10.0].")
     summary: str = Field(description="Explain whether the resume is suitable or unsuitable for the job description "
                                      "and the reasons behind it.")
-    title_match: bool = Field(default=False, description="indicate if the job title is matched within the resume")
-    # skills: List[AtsSkill] = Field(description="Identify and extract at least 20 skills present in the job description")
-    # rejection_rate: RejectionRateEnum = Field(description="Rejection rate of the resume based on the ATS analysis.", default="unknown")
+    title_match: TitleMatch = Field(description="indicate if the job title is matched within the resume")
 
 
 job_ats_parser = PydanticOutputParser(pydantic_object=AtsJobPromptModel)

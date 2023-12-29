@@ -45,16 +45,26 @@ export interface ATSAnalysisSection {
   suggestion: string;
   score: number;
 }
+
+export interface SkillsAnalysis {
+  ats_skills: Array<{
+    skill_id: string;
+    name: string;
+    is_match: boolean;
+  }>;
+}
+
 export interface ATSAnalysis {
   education: ATSAnalysisSection;
-  met_skills: ATSAnalysisSection;
-  unmet_skills: ATSAnalysisSection;
-  resume_skills: ATSAnalysisSection;
+  // met_skills: ATSAnalysisSection;
+  // unmet_skills: ATSAnalysisSection;
+  // resume_skills: ATSAnalysisSection;
   avoidable_keywords: ATSAnalysisSection;
   score: number;
   explanation: string;
   job_title: string;
   company_name: string;
+  skills_analysis: SkillsAnalysis;
 }
 
 export interface ATSAnalysisJobData {

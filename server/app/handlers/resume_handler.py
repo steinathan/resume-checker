@@ -6,9 +6,11 @@ from pydantic import BaseModel
 
 from app.handlers.resume_checkerv2 import ResumeAnalyser, AtsAnalyserResult
 from app.models.common_models import Resume, User, CoverLetter, AtsJobScan
+from app.skill_extractor.skill_extractor import SkillExtractor
 from app.supabase_client.client import supabase
 from uuid import uuid4
 
+from app.skill_extractor.skill_extractor import MatchingResult as SkillExtractorResult
 from app.prompts.resume_analysis_prompt import ResumeCheckerModel
 
 TABLE_NAME = "resumes"
@@ -90,40 +92,53 @@ def create_cover_letter(user: User, resume: Resume, scan_result: AtsAnalyserResu
     return CoverLetter(**response.data[0])
 
 
-def create_scan_result(scan_result: AtsAnalyserResult, user: User, resume: Resume,
+def create_scan_result(skills_result: SkillExtractorResult, scan_result: AtsAnalyserResult, user: User,
+                       resume: Resume,
                        cover_letter: CoverLetter | None = None) -> AtsJobScan:
     job = AtsJobScan(
         id=str(uuid4()),
         user_id=user.id,
         resume_id=resume.id,
         job_description=scan_result.job_description,
-        job_url=scan_result.job_url or cover_letter.job_url,
-        ats_analysis=scan_result.ats_analysis
+        ats_analysis=scan_result.ats_analysis,
+        skills_analysis=skills_result
     )
 
+    if scan_result is not None:
+        job.job_url = scan_result.job_url
+
     if cover_letter is not None:
+        job.job_url = cover_letter.job_url
         job.cover_letter_id = cover_letter.id
+
 
     logging.info("creating job scan result", job.model_dump())
     response = supabase.table(JOB_SCAN_TABLE).insert(job.model_dump()).execute()
     return AtsJobScan(**response.data[0])
 
 
-def process_job_for_resume(user: User, params: AnalyseJobForResumeParams):
+def process_ats_scan(user: User, params: AnalyseJobForResumeParams):
     resume = find_resume_by_id(user, params.resume_id)
     if not resume:
         raise Exception("Resume not found for user")
-    analyzer = ResumeAnalyser(job_posting_url=params.job_url, job_content=params.job_description, resume_content=resume.text)
-    result: AtsAnalyserResult = analyzer.run_ats()
+
+    analyzer = ResumeAnalyser(job_posting_url=params.job_url, job_content=params.job_description,
+                              resume_content=resume.text)
+    ats_result: AtsAnalyserResult = analyzer.run_ats()
+
+    skill_extractor = SkillExtractor()
+    skill_extractor_result = skill_extractor.process_ats_skills(analyzer.resume_content, analyzer.job_content)
 
     cover_letter = None
 
     # create cover letter
-    if result.generated_cover_letter is not None:
-        cover_letter = create_cover_letter(user, resume, result)
+    if ats_result.generated_cover_letter is not None:
+        cover_letter = create_cover_letter(user, resume, ats_result)
 
     # create resume ats job scan in db
-    job_scan = create_scan_result(scan_result=result, user=user, resume=resume, cover_letter=cover_letter)
+    job_scan = create_scan_result(skills_result=skill_extractor_result, scan_result=ats_result, user=user,
+                                  resume=resume,
+                                  cover_letter=cover_letter)
     return job_scan
 
 
@@ -135,13 +150,21 @@ async def analyze_resume(user: User, resume_id: str) -> object:
     analyzer = ResumeAnalyser(resume_content=resume.text, resume_file_path=resume.src)
     analysis: ResumeCheckerModel = analyzer.analyse_resume()
 
+    skill_extractor = SkillExtractor()
+    skills = skill_extractor.get_skills(analyzer.resume_content)
+
     # update the resume with analysis results
-    update_resume(user, resume.id, resume.model_copy(update={"analysis": analysis, "text": analyzer.resume_content}))
+    update_resume(user, resume.id, resume.model_copy(update={
+        "analysis": analysis,
+        "text": analyzer.resume_content,
+        "skills": skills
+        }
+    ))
 
     return analysis
 
 
 def list_job_scans_for_user(user: User) -> list[AtsJobScan]:
-    response = supabase.table(JOB_SCAN_TABLE).select("*").order("created_at", desc=True).eq("user_id", user.id).execute()
+    response = supabase.table(JOB_SCAN_TABLE).select("*").order("created_at", desc=True).eq("user_id",
+                                                                                            user.id).execute()
     return [AtsJobScan(**data) for data in response.data]
-

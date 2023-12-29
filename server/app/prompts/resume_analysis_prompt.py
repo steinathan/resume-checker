@@ -38,7 +38,7 @@ resume_cover_letter_prompt = PromptTemplate(
 class ResumeSection(BaseModel):
     issues: List[str] = Field(
         description="issues you found in the section, eg. missing end-date, inconsistent date formatting")
-    improvements: List[str] = Field(description="ways in which the section can be improved based on the issue")
+    improvements: List[str] = Field(description="ways in which the section can be improved based on the issue with examples")
     done: List[str] = Field(
         description="things user did for sections, examples: provided your phone number. provided your email."
                     "added a work experience")
