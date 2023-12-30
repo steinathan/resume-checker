@@ -52,7 +52,7 @@ const routes: Array<RouteRecordRaw> = [
         ],
       },
       {
-        path: "/scan/:scan_id",
+        path: "/scans/:scan_id",
         name: "single-scan",
         redirect: {
           name: "single-scan-analysis",
@@ -65,6 +65,18 @@ const routes: Array<RouteRecordRaw> = [
             name: "single-scan-analysis",
             component: () =>
               import("@/components/job_scan/single_job_scan_section.vue"),
+          },
+          {
+            path: "cover-letter",
+            name: "single-scan-cover-letter",
+            component: () =>
+              import("@/components/job_scan/single_job_scan_section.vue"),
+          },
+          {
+            path: "resume",
+            name: "single-scan-resume",
+            component: () =>
+              import("@/components/job_scan/single_scan_resume.vue"),
           },
         ],
       },

@@ -25,7 +25,19 @@
       <div v-if="body || title" :class="`fw-semobold ${button}`">
         <h4 v-if="title" class="text-gray-900 fw-bold">{{ title }}</h4>
 
-        <div v-if="body" v-html="body" :class="`fs-6 text-gray-700 pe-7`"></div>
+        <div
+          v-if="body && typeof body === 'string'"
+          v-html="body"
+          :class="`fs-6 text-gray-700 pe-7`"
+        ></div>
+        <div v-if="body && typeof body === 'object'">
+          <ul>
+            <li class="mb-3 fs-4 me-1" v-for="(li, i) in body" :key="i">
+              <!--              <i class="fas fa-lightbulb text-info fs-2"></i>-->
+              {{ li }}
+            </li>
+          </ul>
+        </div>
       </div>
       <!--end::Content-->
 

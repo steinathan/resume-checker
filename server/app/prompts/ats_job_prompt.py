@@ -28,8 +28,8 @@ no other explanations must be produced
 class JobSection(BaseModel):
     issues: List[str] = Field(
         description="If applicable to the section, identify and list any potential issue that might present challenges in securing the job.")
-    values: List[str] = Field(
-        description="If applicable to the section. Enumerate the values within the section that align with the given instructions.")
+    # values: List[str] = Field(
+    #     description="If applicable to the section. Enumerate the values within the section that align with the given instructions.")
     explanation: str = Field(
         description="Provide potential explanations or justifications for the identified issues in the section.")
     suggestion: str = Field(description="If applicable, suggest improvements to the section based on its value.")
@@ -68,7 +68,7 @@ class AtsJobPromptModel(BaseModel):
     company_name: str = Field(description="Extract the company's name from the job description or make an inference "
                                           "if it's not explicitly mentioned")
     education: JobSection = Field(
-        description="Extract the educational qualifications necessary for the job from the job description")
+        description="Extract the educational qualifications necessary for the job from the job description only")
     avoidable_keywords: JobSection = Field(
         description="Identify and list keywords in the work experience and skills section that may not be suitable or "
                     "relevant for the job and could be omitted.")
@@ -76,7 +76,8 @@ class AtsJobPromptModel(BaseModel):
         description="Evaluate the alignment of the resume with the job description. float from [0.0-10.0].")
     summary: str = Field(description="Explain whether the resume is suitable or unsuitable for the job description "
                                      "and the reasons behind it.")
-    title_match: TitleMatch = Field(description="indicate if the job title is matched within the resume")
+    title_match: TitleMatch = Field(description="indicate if the job title from the job description is matched within "
+                                                "the resume or not")
 
 
 job_ats_parser = PydanticOutputParser(pydantic_object=AtsJobPromptModel)

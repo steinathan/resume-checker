@@ -62,7 +62,7 @@ export function post<T = Record<string, any>>(url, data): Promise<T> {
 
 export function get<T = Record<string, any>>(
   url,
-  query: Record<string, any>
+  query: Record<string, any> = {}
 ): Promise<T> {
   return axios.get(url, {
     params: query,

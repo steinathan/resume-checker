@@ -179,7 +179,7 @@
           <!--begin::Nav item-->
           <li class="nav-item">
             <router-link
-              :to="`/scan/${singleScan.id}/results`"
+              :to="`/scans/${singleScan.id}/results`"
               class="nav-link text-active-primary me-6"
               active-class="active"
             >
@@ -191,10 +191,10 @@
           <li class="nav-item">
             <router-link
               class="nav-link text-active-primary me-6"
-              :to="`/scan/${singleScan.id}/cover_letter`"
+              :to="`/scans/${singleScan.id}/resume`"
               active-class="active"
             >
-              Cover letters
+              Resume
             </router-link>
           </li>
           <!--end::Nav item-->
@@ -202,10 +202,10 @@
           <li class="nav-item">
             <router-link
               class="nav-link text-active-primary me-6"
-              :to="`/scan/${singleScan.id}/resume`"
+              :to="`/scans/${singleScan.id}/cover-letter`"
               active-class="active"
             >
-              Resume
+              Cover letters
             </router-link>
           </li>
           <!--end::Nav item-->
@@ -244,8 +244,14 @@ const analysis = computed<ATSAnalysis>(() => {
 });
 
 onMounted(async () => {
-  const scan = await get("/job/scans/" + route.params["scan_id"], {});
-  resumeStore.setJobScan(scan as ATSAnalysisJobData);
+  const scan = await get<ATSAnalysisJobData>(
+    "/job/scans/" + route.params["scan_id"]
+  );
+  resumeStore.setJobScan(scan);
+
+  if (scan && scan.resume_id) {
+    await resumeStore.fetchResume(scan.resume_id);
+  }
 });
 </script>
 

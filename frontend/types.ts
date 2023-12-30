@@ -47,12 +47,14 @@ export interface ATSAnalysisSection {
 }
 
 export interface SkillsAnalysis {
-  ats_skills: Array<{
-    skill_id: string;
-    name: string;
-    is_match: boolean;
-  }>;
+  ats_skills: Array<AtsSkill>;
 }
+
+export type AtsSkill = {
+  skill_id: string;
+  name: string;
+  is_match: boolean;
+};
 
 export interface ATSAnalysis {
   education: ATSAnalysisSection;
@@ -64,7 +66,6 @@ export interface ATSAnalysis {
   explanation: string;
   job_title: string;
   company_name: string;
-  skills_analysis: SkillsAnalysis;
 }
 
 export interface ATSAnalysisJobData {
@@ -76,5 +77,6 @@ export interface ATSAnalysisJobData {
   cover_letter_id: string;
   job_url: string;
   job_description: string;
+  skills_analysis: SkillsAnalysis;
   ats_analysis: ATSAnalysis;
 }

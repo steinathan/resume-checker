@@ -5,6 +5,7 @@ import type {
   Resume,
   ResumeLLMAnalysis,
 } from "../../types";
+import { get } from "@/core/services/ApiService2";
 
 export const useResumeStore = defineStore("resume", () => {
   const singleScan = ref<ATSAnalysisJobData>({} as ATSAnalysisJobData);
@@ -27,6 +28,11 @@ export const useResumeStore = defineStore("resume", () => {
     jobScans.value = scans;
   }
 
+  async function fetchResume(id) {
+    const resume = await get<Resume>("/resumes/" + id, {});
+    setResume(resume);
+  }
+
   return {
     resume,
     resumes,
@@ -36,5 +42,6 @@ export const useResumeStore = defineStore("resume", () => {
     setJobScans,
     setResumes,
     setResume,
+    fetchResume,
   };
 });
