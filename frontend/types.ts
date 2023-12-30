@@ -68,7 +68,7 @@ export interface ATSAnalysis {
   company_name: string;
 }
 
-export interface ATSAnalysisJobData {
+export interface JobScan {
   id: string;
   created_at: string;
   updated_at: string;
@@ -79,4 +79,9 @@ export interface ATSAnalysisJobData {
   job_description: string;
   skills_analysis: SkillsAnalysis;
   ats_analysis: ATSAnalysis;
+}
+
+export interface JobScanResult {
+  cover_letter: any;
+  job_scan: JobScan;
 }

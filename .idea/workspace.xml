@@ -4,17 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f139b09e-ed21-44ad-98e3-6a656f3a056f" name="Changes" comment="add skills extractor">
+    <list default="true" id="f139b09e-ed21-44ad-98e3-6a656f3a056f" name="Changes" comment="removed old UI from tables to divs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Notice.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Notice.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ScanJobModdal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ScanJobModdal.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/job_scan/single_job_scan_section.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/job_scan/single_job_scan_section.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/page-layouts/SingleJobScanLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/page-layouts/SingleJobScanLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/resume/single_resume_section.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/resume/single_resume_section.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/core/services/ApiService2.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/services/ApiService2.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/JobScanList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/widgets/tables/JobScanList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/router/clean.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/clean.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/stores/resume.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/stores/resume.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/prompts/ats_job_prompt.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/prompts/ats_job_prompt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/handlers/resume_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/handlers/resume_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/models/common_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/models/common_models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/skill_extractor/skill_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/skill_extractor/skill_extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +113,7 @@
     &quot;nodejs_interpreter_path&quot;: &quot;/home/navicstein/.nvm/versions/node/v19.8.1/bin/node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;/home/navicstein/.nvm/versions/node/v19.8.1/bin/yarn&quot;,
     &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;swagger&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/home/navicstein/Idea/resume-checker/frontend/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -170,8 +175,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +206,9 @@
       <workItem from="1703760532473" duration="1526000" />
       <workItem from="1703810291407" duration="423000" />
       <workItem from="1703810730345" duration="3873000" />
-      <workItem from="1703889155756" duration="10847000" />
+      <workItem from="1703889155756" duration="12313000" />
+      <workItem from="1703947955492" duration="9630000" />
+      <workItem from="1703967653672" duration="593000" />
     </task>
     <task id="LOCAL-00001" summary="↫ initial commit">
       <option name="closed" value="true" />
@@ -339,7 +346,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703814454175</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="removed old UI from tables to divs">
+      <option name="closed" value="true" />
+      <created>1703900119983</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1703900119983</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,7 +391,8 @@
     <MESSAGE value="add(server): dummy dockerfile + dummy test file" />
     <MESSAGE value="add(ui &amp; server): ats analysis" />
     <MESSAGE value="add skills extractor" />
-    <option name="LAST_COMMIT_MESSAGE" value="add skills extractor" />
+    <MESSAGE value="removed old UI from tables to divs" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed old UI from tables to divs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -385,11 +401,6 @@
           <url>file://$PROJECT_DIR$/app/handlers/resume_checkerv2.py</url>
           <line>112</line>
           <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py</url>
-          <line>142</line>
-          <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/server/tests/test_analyzer.py</url>
@@ -401,16 +412,15 @@
           <line>138</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py</url>
-          <line>145</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/frontend/src/components/job_scan/scan_section.vue</url>
           <line>24</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/components/job_scan/cover_letter.vue</url>
+          <line>1</line>
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -422,7 +432,7 @@
     <SUITE FILE_PATH="coverage/resume_checker$common_models.coverage" NAME="common_models Coverage Results" MODIFIED="1703602919459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/models" />
     <SUITE FILE_PATH="coverage/resume_checker$resume_analysis_prompt.coverage" NAME="resume_analysis_prompt Coverage Results" MODIFIED="1703715592232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/prompts" />
     <SUITE FILE_PATH="coverage/resume_checker$job_matcher_prompt.coverage" NAME="job_matcher_prompt Coverage Results" MODIFIED="1703666837684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/prompts" />
-    <SUITE FILE_PATH="coverage/resume_checker$main.coverage" NAME="main Coverage Results" MODIFIED="1703893550662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/resume_checker$main.coverage" NAME="main Coverage Results" MODIFIED="1703955678274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
     <SUITE FILE_PATH="coverage/resume_checker$ats_job_prompt.coverage" NAME="ats_job_prompt Coverage Results" MODIFIED="1703715597533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/prompts" />
     <SUITE FILE_PATH="coverage/resume_checker$test_analyzer.coverage" NAME="test_analyzer Coverage Results" MODIFIED="1703716618727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/tests" />
   </component>

@@ -160,19 +160,14 @@ Remote Compensation Philosophy"
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { storeToRefs } from "pinia";
-import { useRoute, useRouter } from "vue-router";
+import { useRouter } from "vue-router";
 import { useLogger } from "vue-logger-plugin";
 import Notice from "@/components/Notice.vue";
 import { post } from "@/core/services/ApiService2";
 import { hideModal } from "@/core/helpers/dom";
-import Swal from "sweetalert2";
-import { useAuthStore } from "@/stores/auth";
-import supabase from "@/core/services/supabase";
 import { useResumeStore } from "@/stores/resume";
 import moment from "moment/moment";
-import type { ATSAnalysisJobData } from "../../types";
-
-const authStore = useAuthStore();
+import type { JobScan } from "../../types";
 
 const logger = useLogger();
 const router = useRouter();
@@ -217,7 +212,7 @@ async function processScan() {
     job_description: jobDescription.value,
     resume_id: selectedCV.value,
   };
-  const data = await post<ATSAnalysisJobData>("/job/scan", params);
+  const data = await post<JobScan>("/job/scan", params);
   console.log("DATA:", data, data.ats_analysis);
   // router.push({
   //   name:""
@@ -231,7 +226,7 @@ function gotoJobRoute(id: string) {
   router.push({
     name: "single-scan",
     params: {
-      id: id,
+      scan_id: id,
     },
   });
 }

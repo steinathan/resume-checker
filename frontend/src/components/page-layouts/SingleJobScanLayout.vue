@@ -205,7 +205,7 @@
               :to="`/scans/${singleScan.id}/cover-letter`"
               active-class="active"
             >
-              Cover letters
+              Cover letter
             </router-link>
           </li>
           <!--end::Nav item-->
@@ -223,7 +223,8 @@ import Dropdown3 from "@/components/dropdown/Dropdown3.vue";
 import { computed, onMounted, ref } from "vue";
 import type {
   ATSAnalysis,
-  ATSAnalysisJobData,
+  JobScan,
+  JobScanResult,
   Resume,
   ResumeLLMAnalysis,
 } from "../../../types";
@@ -244,13 +245,14 @@ const analysis = computed<ATSAnalysis>(() => {
 });
 
 onMounted(async () => {
-  const scan = await get<ATSAnalysisJobData>(
+  const scan = await get<JobScanResult>(
     "/job/scans/" + route.params["scan_id"]
   );
-  resumeStore.setJobScan(scan);
+  resumeStore.setJobScan(scan?.job_scan);
+  resumeStore.setCoverLetter(scan?.cover_letter);
 
-  if (scan && scan.resume_id) {
-    await resumeStore.fetchResume(scan.resume_id);
+  if (scan && scan.job_scan?.resume_id) {
+    await resumeStore.fetchResume(scan.job_scan?.resume_id);
   }
 });
 </script>

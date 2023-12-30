@@ -98,7 +98,7 @@ class SkillExtractor:
             description = data["skill"]["description"]
             skill_id = data["skill"]["id"]
             skills.append(
-                APISkill(skill_id=skill_id, name=name, description=description)
+                APISkill(skill_id=skill_id, name=name)
             )
 
         return skills
@@ -126,7 +126,6 @@ class SkillExtractor:
         result = MatchingResult(
             ats_skills=skills,
             resume_skills=self.resume_skills,
-            job_skills=self.job_skills
         )
 
         return result

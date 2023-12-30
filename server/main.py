@@ -11,7 +11,8 @@ from app.dependencies import get_current_user
 from app.models.common_models import User, Resume, AtsJobScan
 from app.supabase_client.client import supabase
 from app.handlers.resume_handler import CreateResumeParams, create_new_resume, find_all_resumes, process_ats_scan, \
-    AnalyseJobForResumeParams, analyze_resume, find_resume_by_id, list_job_scans_for_user, find_job_scan_by_id
+    AnalyseJobForResumeParams, analyze_resume, find_resume_by_id, list_job_scans_for_user, find_job_scan_by_id, \
+    JobScanResult
 
 load_dotenv()
 
@@ -78,7 +79,7 @@ async def find_resume(resume_id: str, current_user: Annotated[User, Depends(get_
     return find_resume_by_id(current_user, resume_id)
 
 
-@app.get("/job/scans/{scan_id}", response_model=Optional[AtsJobScan])
+@app.get("/job/scans/{scan_id}", response_model=Optional[JobScanResult])
 async def find_job_scan(scan_id: str, current_user: Annotated[User, Depends(get_current_user)]):
     """ finds the resume by id """
     return find_job_scan_by_id(current_user, scan_id)

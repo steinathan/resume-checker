@@ -56,8 +56,8 @@ def trim_space(text: str) -> str:
 
 @dataclass
 class AtsAnalyserResult:
-    resume_content: str
-    job_url: str
+    resume_content: str | None
+    job_url: str | None
     job_description: str
     generated_cover_letter: str | None = None
     ats_analysis: AtsJobPromptModel | None = None
@@ -66,7 +66,7 @@ class AtsAnalyserResult:
 class ResumeAnalyser:
     """ ResumeAnalyser takes in a path to your resume and a job posting URL and lets you know if you're fit for the
     job or not"""
-    llm = None
+    llm = any
     resume_content: str | None = ""
     job_content: str | None = ""
 
@@ -101,12 +101,12 @@ class ResumeAnalyser:
 
         logging.info(f"Using {model_name} model")
 
-        self.load_resume(self.resume_path)
+        self.load_resume(self.resume_path or "")
 
         if self.job_posting_url:
             self.load_job_site(self.job_posting_url)
 
-    def load_resume(self, path: str | None):
+    def load_resume(self, path: str):
         """ loads the resume text from the resume path """
         if not self.resume_content:
             logging.info(f"Resume content not provided, loading resume from URL or PATH: {path}")

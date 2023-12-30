@@ -45,13 +45,9 @@
     <div class="card-header border-0 pt-5">
       <h3 class="card-title align-items-start flex-column">
         <span class="card-label fw-bold fs-3 mb-1">Skills Comparison</span
-        ><span class="text-muted mt-1 fw-semibold fs-7"
-          >Skills enable you to perform job-specific duties and
-          responsibilities. You can learn hard skills in the classroom, training
-          courses, and on the job. These skills are typically focused on
-          teachable tasks and measurable abilities such as the use of tools,
-          equipment, or software. Hard skills have a high impact on your match
-          score.
+        ><span class="text-muted mt-1 fw-semibold fs-7">
+          Skills we found from the job description that may or may not be an
+          exact match in your resume
         </span>
       </h3>
     </div>

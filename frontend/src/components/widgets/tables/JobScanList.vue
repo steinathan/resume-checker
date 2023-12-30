@@ -63,13 +63,12 @@
               <thead>
                 <tr class="fw-bold text-muted">
                   <!--                  <th class="p-0 w-50px"></th>-->
-                  <th class="p-0 min-w-150px">Name</th>
-                  <th class="p-0 min-w-140px">Scanned At</th>
-                  <th class="p-0 min-w-140px">Score</th>
-                  <!--                  <th class="p-0 min-w-110px">URL/Description</th>-->
-                  <th class="p-0 min-w-50px">Cover letterID</th>
-                  <th class="p-0 min-w-50px">Resume ID</th>
-                  <th class="p-0 min-w-50px text-end">Action</th>
+                  <th class="p-0">Score</th>
+                  <th class="p-0">Name</th>
+                  <th class="p-0">Scanned At</th>
+                  <th class="p-0">Cover letterID</th>
+                  <th class="p-0">Resume ID</th>
+                  <!--                  <th class="p-0 min-w-50px text-end">Action</th>-->
                 </tr>
               </thead>
               <!--end::Table head-->
@@ -90,6 +89,14 @@
                     <!--                        </span>-->
                     <!--                      </div>-->
                     <!--                    </td>-->
+                    <td class="text-muted fw-bolder fs-1">
+                      <span
+                        :style="`color: ${getColorCodeByPercentage(
+                          scan.ats_analysis?.score * 10
+                        )}`"
+                        >{{ scan.ats_analysis?.score }}</span
+                      >
+                    </td>
                     <td>
                       <router-link
                         :to="{
@@ -98,7 +105,7 @@
                             scan_id: scan.id,
                           },
                           query: {
-                            from: 'job_scan',
+                            from: 'dashboard',
                           },
                         }"
                       >
@@ -110,14 +117,6 @@
                           {{ scan?.ats_analysis?.company_name }}</span
                         >
                       </router-link>
-                    </td>
-                    <td class="text-muted fw-bolder fs-2">
-                      <span
-                        :style="`color: ${getColorCodeByPercentage(
-                          scan.ats_analysis?.score * 10
-                        )}`"
-                        >{{ scan.ats_analysis?.score }}</span
-                      >
                     </td>
                     <td>
                       {{
@@ -145,21 +144,21 @@
                             resume_id: scan.resume_id,
                           },
                           query: {
-                            from: 'job_scan',
+                            from: 'dashboard',
                           },
                         }"
                       >
                         {{ scan.resume_id }}
                       </router-link>
                     </td>
-                    <td class="text-end">
-                      <a
-                        href=""
-                        class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
-                      >
-                        <KTIcon icon-name="arrow-right" icon-class="fs-2" />
-                      </a>
-                    </td>
+                    <!--                    <td class="text-end">-->
+                    <!--                      <a-->
+                    <!--                        href=""-->
+                    <!--                        class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"-->
+                    <!--                      >-->
+                    <!--                        <KTIcon icon-name="arrow-right" icon-class="fs-2" />-->
+                    <!--                      </a>-->
+                    <!--                    </td>-->
                   </tr>
                 </template>
               </tbody>
@@ -180,7 +179,7 @@ import { getAssetPath } from "@/core/helpers/assets";
 import EmptyState from "@/components/EmptyState.vue";
 import { onMounted, ref } from "vue";
 import { get } from "@/core/services/ApiService2";
-import type { ATSAnalysisJobData } from "../../../../types";
+import type { JobScan } from "../../../../types";
 import { getColorCodeByPercentage } from "@/core/helpers/color";
 import moment from "moment";
 import { storeToRefs } from "pinia";
@@ -190,7 +189,7 @@ const resumeStore = useResumeStore();
 const { jobScans: scans } = storeToRefs(resumeStore);
 
 onMounted(async () => {
-  const _scans = await get<ATSAnalysisJobData[]>("/job/scans", {});
+  const _scans = await get<JobScan[]>("/job/scans", {});
   resumeStore.setJobScans(_scans);
 });
 </script>

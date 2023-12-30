@@ -1,22 +1,21 @@
 import { computed, ref } from "vue";
 import { defineStore } from "pinia";
-import type {
-  ATSAnalysisJobData,
-  Resume,
-  ResumeLLMAnalysis,
-} from "../../types";
+import type { JobScan, Resume, ResumeLLMAnalysis } from "../../types";
 import { get } from "@/core/services/ApiService2";
 
 export const useResumeStore = defineStore("resume", () => {
-  const singleScan = ref<ATSAnalysisJobData>({} as ATSAnalysisJobData);
+  const singleScan = ref<JobScan>({} as JobScan);
   const resume = ref<Resume>({} as Resume);
+
+  const coverLetter = ref<any>({});
+
   const resumes = ref<Resume[]>([]);
-  const jobScans = ref<ATSAnalysisJobData[]>([]);
+  const jobScans = ref<JobScan[]>([]);
 
   function setResume(r: Resume) {
     resume.value = r;
   }
-  function setJobScan(s: ATSAnalysisJobData) {
+  function setJobScan(s: JobScan) {
     singleScan.value = s;
   }
 
@@ -24,8 +23,11 @@ export const useResumeStore = defineStore("resume", () => {
     resumes.value = rs;
   }
 
-  function setJobScans(scans: ATSAnalysisJobData[]) {
+  function setJobScans(scans: JobScan[]) {
     jobScans.value = scans;
+  }
+  function setCoverLetter(obj: any) {
+    coverLetter.value = obj;
   }
 
   async function fetchResume(id) {
@@ -38,6 +40,8 @@ export const useResumeStore = defineStore("resume", () => {
     resumes,
     jobScans,
     singleScan,
+    coverLetter,
+    setCoverLetter,
     setJobScan,
     setJobScans,
     setResumes,

@@ -69,8 +69,7 @@ const routes: Array<RouteRecordRaw> = [
           {
             path: "cover-letter",
             name: "single-scan-cover-letter",
-            component: () =>
-              import("@/components/job_scan/single_job_scan_section.vue"),
+            component: () => import("@/components/job_scan/cover_letter.vue"),
           },
           {
             path: "resume",
