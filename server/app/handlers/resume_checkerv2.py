@@ -2,14 +2,16 @@ from __future__ import annotations
 
 import logging
 import os
+import re
 import tempfile
 from dataclasses import dataclass
 from datetime import datetime
+from typing import Any
+import fitz
 
 import requests
 import validators
 from dotenv import load_dotenv
-from langchain.document_loaders import PyPDFLoader
 from langchain_community.chat_models import ChatOpenAI
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.llms.ollama import Ollama
@@ -18,7 +20,7 @@ from langchain_core.callbacks import StreamingStdOutCallbackHandler, CallbackMan
 
 from app.prompts.ats_job_prompt import job_ats_parser, job_ats_prompt, AtsJobPromptModel
 from app.prompts.resume_analysis_prompt import resume_cover_letter_prompt, analyse_resume_prompt, \
-    ResumeCheckerModel, analyse_resume_parser
+    ResumeCheckerModel, analyse_resume_parser, ResumeAnalysisResult
 
 load_dotenv()
 
@@ -36,6 +38,19 @@ def is_valid_url(url: str) -> bool:
     return validators.url(url)
 
 
+def detect_email(text):
+    email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+    matches = re.findall(email_pattern, text)
+    return len(matches) > 0 if matches else None
+
+
+def detect_linkedin(text):
+    """ detect a linkedin url or string """
+    linkedin_pattern = r'(linkedin\.com\/\w+)|(linkedin\.com\/in\/\w+)|(\bLinkedIn\b)'
+    matches = re.search(linkedin_pattern, text, flags=re.IGNORECASE)
+    return matches.group() if matches else None
+
+
 def download_pdf(url):
     response = requests.get(url)
 
@@ -49,9 +64,21 @@ def download_pdf(url):
         print(f"Failed to download PDF. Status code: {response.status_code}")
         return None
 
+def has_interest(text):
+    pattern = re.compile(r'\b:\s*interests?\s*:\b|\binterests?\b|\b:\s*interests?\b|\binterests?\s*:\b', re.IGNORECASE)
+    return bool(pattern.search(text))
 
-def trim_space(text: str) -> str:
-    return text.replace("\n", " ").replace("\r", " ").replace("\t", " ")
+def extract_text_with_formatting(pdf_path) -> tuple[str, int]:
+    """ langchain pdf doesn't preserve formatting"""
+    # noinspection PyUnresolvedReferences
+    doc = fitz.open(pdf_path)
+    text = ""
+
+    for page_num in range(doc.page_count):
+        page = doc[page_num]
+        text += page.get_text()
+
+    return text, doc.page_count
 
 
 @dataclass
@@ -66,9 +93,10 @@ class AtsAnalyserResult:
 class ResumeAnalyser:
     """ ResumeAnalyser takes in a path to your resume and a job posting URL and lets you know if you're fit for the
     job or not"""
-    llm = any
+    llm: Any = None
     resume_content: str | None = ""
     job_content: str | None = ""
+    resume_page_count: int | None = None
 
     def __init__(self, job_posting_url: str | None = None, resume_file_path: str | None = None,
                  resume_content: str | None = None, job_content: str | None = None):
@@ -83,7 +111,7 @@ class ResumeAnalyser:
 
         model_name = os.getenv("LLM_MODEL")
         if model_name == "openai":
-            self.llm = ChatOpenAI(model_name="gpt-3.5-turbo-1106")
+            self.llm = ChatOpenAI(model_name="gpt-3.5-turbo-1106")  # type: ignore
         elif model_name == "ollama":
             self.llm = Ollama(
                 model="mistral",
@@ -91,7 +119,7 @@ class ResumeAnalyser:
                     [StreamingStdOutCallbackHandler()])
             )
         elif model_name == "together":
-            self.llm = Together(
+            self.llm = Together(  # type: ignore
                 model="mistralai/Mistral-7B-Instruct-v0.2",
                 temperature=0.7,
                 top_k=1,
@@ -113,14 +141,8 @@ class ResumeAnalyser:
             if is_valid_url(path):
                 logging.info(f"Loading resume from HTTP: {path}")
                 path = download_pdf(path)
-            loader = PyPDFLoader(path)
             logging.info(f"Loading resume from local file: {path}")
-
-            docs = loader.load()
-            for doc in docs:
-                if not self.resume_content:
-                    self.resume_content = ""
-                self.resume_content += trim_space(doc.page_content)
+            self.resume_content, self.resume_page_count = extract_text_with_formatting(path)
 
     def load_job_site(self, url):
         """ loads the job text from the job site url """
@@ -129,7 +151,7 @@ class ResumeAnalyser:
         for doc in docs:
             if not self.job_content:
                 self.job_content = ""
-            self.job_content += trim_space(doc.page_content)
+            self.job_content += (doc.page_content)
 
     def run_ats(self) -> AtsAnalyserResult:
         """ Runs the program for an ATS """
@@ -151,7 +173,7 @@ class ResumeAnalyser:
             resume_content=self.resume_content,
             generated_cover_letter=cover_letter,
             ats_analysis=ats_result,
-            job_description=self.job_content,
+            job_description=str(self.job_content),
             job_url=self.job_posting_url,
         )
 
@@ -160,8 +182,42 @@ class ResumeAnalyser:
         this only analysis the resume without the job description"""
         analyse_resume_prompt_str = analyse_resume_prompt.format(resume=self.resume_content)
         output = self.llm.predict(analyse_resume_prompt_str)
-        resume_analysis_result = analyse_resume_parser.parse(output)
-        return resume_analysis_result
+
+        llm_output: ResumeCheckerModel = analyse_resume_parser.parse(output)
+        analysis_result = ResumeAnalysisResult(**llm_output.model_dump())
+
+        # local word count calculations & ema+il/LinkedIn parsing
+        word_count = self.calculate_word_count(str(self.resume_content))
+        if word_count < 475:
+            analysis_result.word_count.issues.append(
+                f"There are {word_count} words in your resume, which is below the recommended word for your resume")
+            analysis_result.word_count.improvements.append("Consider adding more targeted keywords and strong nouns")
+        elif word_count > 600:
+            analysis_result.word_count.issues.append(
+                f"There are {word_count} words in your resume, which is above the recommended word for your resume")
+            analysis_result.word_count.improvements.append("Consider removing some keywords and nouns")
+
+        # check for contact email & urls
+        has_linkedin = detect_linkedin(self.resume_content)
+        if not has_linkedin:
+            analysis_result.contact_info.issues.append("No linkedin url provided")
+            analysis_result.contact_info.improvements.append(
+                "Including your LinkedIn on your resume lets recruiters quickly explore your professional journey and achievements.")
+
+        has_email = detect_email(self.resume_content)
+        if not has_email:
+            analysis_result.contact_info.issues.append("No email address provided")
+            analysis_result.contact_info.improvements.append(
+                "Consider adding an email address, Use a professional-looking gmail, outlook, or personal domain email address. Delete your hotmail if any with extreme prejudice.")
+
+        if self.resume_page_count is not None and self.resume_page_count > 1:
+            analysis_result.file_info.issues.append("Resume pages are much")
+            analysis_result.file_info.improvements.append("Unless you have 20+ years' experience, make it 1 page.")
+
+        if has_interest(self.resume_content):
+            analysis_result.interests.issues.append("No interests provided")
+            analysis_result.interests.improvements.append("Interests are important because it gives the interviewer something to connect with you on, and it makes you more than just a faceless resume")
+        return analysis_result
 
     def generate_cover_letter(self) -> str:
         """ generate cover letter for the job"""
@@ -170,16 +226,10 @@ class ResumeAnalyser:
         cover_letter = self.llm.predict(cover_letter_prompt_str)
         logging.debug(cover_letter_prompt_str)
 
-        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-        filename = f"cover_letter_{timestamp}.txt"
-        filename = os.path.join("cover_letters", filename)
-
-        with open(filename, "w") as f:
-            f.write(cover_letter)
-
-        logging.info(f"Cover letter generated at {filename}")
-        print(f"""
-Here's an example cover letter you can use
-{cover_letter}
-        """)
         return cover_letter
+
+    def calculate_word_count(self, text: str) -> int:
+        """ calculate word count of text """
+        words = text.split()
+        word_count = len(words)
+        return word_count

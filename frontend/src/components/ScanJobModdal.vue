@@ -49,7 +49,7 @@
                 :body="errMsg"
               ></Notice>
 
-              <div>
+              <div class="mt-5">
                 <h3 class="fs-4 fw-boldest">Enter any public job URL</h3>
                 <div class="my-3">
                   This URL should be accessible by someone not authenticated
@@ -203,23 +203,24 @@ const resumeStore = useResumeStore();
 const { resumes } = storeToRefs(resumeStore);
 
 async function processScan() {
-  clearStates();
-  logger.debug("starting to process job...");
-  isProcessing.value = true;
+  try {
+    clearStates();
+    logger.debug("starting to process job...");
+    isProcessing.value = true;
 
-  const params = {
-    job_url: jobURL.value,
-    job_description: jobDescription.value,
-    resume_id: selectedCV.value,
-  };
-  const data = await post<JobScan>("/job/scan", params);
-  console.log("DATA:", data, data.ats_analysis);
-  // router.push({
-  //   name:""
-  // })
-  clearStates();
-  hideModal("#scan_job_modal" as unknown as HTMLElement);
-  gotoJobRoute(data.id);
+    const params = {
+      job_url: jobURL.value,
+      job_description: jobDescription.value,
+      resume_id: selectedCV.value,
+    };
+    const data = await post<JobScan>("/job/scan", params);
+    clearStates();
+    hideModal("#scan_job_modal" as unknown as HTMLElement);
+    gotoJobRoute(data.id);
+  } catch (e) {
+    isProcessing.value = false;
+    setError(e.message || "Sorry, something bad happened, try again?");
+  }
 }
 
 function gotoJobRoute(id: string) {

@@ -67,7 +67,7 @@ defineProps({
       <Notice
         v-if="suggestion"
         classes="rounded-3 mt-5"
-        color="warning"
+        color="info"
         title="Suggestion"
         :body="suggestion"
       ></Notice>

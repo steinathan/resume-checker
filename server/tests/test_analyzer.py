@@ -8,12 +8,19 @@ resume_path = "https://rbscckjjbznellmpzemf.supabase.co/storage/v1/object/public
 job_url = "https://boards.greenhouse.io/remotecom/jobs/5789193003"
 
 
-def test_resume_analyser():
+def test_resume_ats_analyser():
     analyzer = ResumeAnalyser(job_posting_url=job_url, resume_file_path=resume_path)
     result = analyzer.run_ats()
     print(result)
 
-test_resume_analyser()
+
+def test_analyse_resume():
+    analyzer = ResumeAnalyser(job_posting_url=job_url, resume_file_path=resume_path)
+    result = analyzer.analyse_resume()
+    print(result)
+
+
+test_analyse_resume()
 
 
 def gen_uuid():
@@ -43,4 +50,3 @@ def test_create_cover_letter():
 
 def test_create_scan_result():
     create_scan_result(analysis, user, resume, letter)
-

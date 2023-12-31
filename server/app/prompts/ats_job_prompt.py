@@ -80,7 +80,7 @@ class AtsJobPromptModel(BaseModel):
                                                 "the resume or not")
 
 
-job_ats_parser = PydanticOutputParser(pydantic_object=AtsJobPromptModel)
+job_ats_parser = PydanticOutputParser(pydantic_object=AtsJobPromptModel)  # type: ignore
 
 job_ats_prompt = PromptTemplate(
     template=job_ats_tmpl,
@@ -90,4 +90,3 @@ job_ats_prompt = PromptTemplate(
     }
 )
 
-print(job_ats_parser.get_format_instructions())

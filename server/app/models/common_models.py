@@ -5,7 +5,7 @@ from typing import ClassVar, Any, List
 from pydantic import BaseModel, Field
 
 from app.prompts.ats_job_prompt import AtsJobPromptModel
-from app.prompts.resume_analysis_prompt import ResumeCheckerModel, ResumeSection
+from app.prompts.resume_analysis_prompt import ResumeSection, ResumeAnalysisResult
 from app.skill_extractor.skill_extractor import MatchingResult as SkillExtractorResult, APISkill
 
 
@@ -23,7 +23,7 @@ class User(AllBaseModel):
     disabled: bool | None = False
 
 
-class ResumeLLMAnalysis(ResumeCheckerModel):
+class ResumeLLMAnalysis(ResumeAnalysisResult):
     """ ResumeLLMAnalysis is the analysis of the resume after being parsed into an LLM, processed after resume is
     uploaded"""
     sections_count: int = Field(

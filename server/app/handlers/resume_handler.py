@@ -157,15 +157,17 @@ def process_ats_scan(user: User, params: AnalyseJobForResumeParams):
     return job_scan
 
 
-async def analyze_resume(user: User, resume_id: str) -> object:
+async def analyze_resume(user: User, resume_id: str) -> ResumeCheckerModel:
     resume = find_resume_by_id(user, resume_id)
     if not resume:
         raise Exception("Resume not found for user")
 
+    # process via LLM
     analyzer = ResumeAnalyser(
         resume_content=resume.text, resume_file_path=resume.src)
     analysis: ResumeCheckerModel = analyzer.analyse_resume()
 
+    # extract skills
     skill_extractor = SkillExtractor()
     skills = skill_extractor.get_skills(str(analyzer.resume_content))
 
