@@ -64,9 +64,11 @@ def download_pdf(url):
         print(f"Failed to download PDF. Status code: {response.status_code}")
         return None
 
+
 def has_interest(text):
     pattern = re.compile(r'\b:\s*interests?\s*:\b|\binterests?\b|\b:\s*interests?\b|\binterests?\s*:\b', re.IGNORECASE)
     return bool(pattern.search(text))
+
 
 def extract_text_with_formatting(pdf_path) -> tuple[str, int]:
     """ langchain pdf doesn't preserve formatting"""
@@ -177,7 +179,7 @@ class ResumeAnalyser:
             job_url=self.job_posting_url,
         )
 
-    def analyse_resume(self) -> ResumeCheckerModel:
+    def analyse_resume(self) -> ResumeAnalysisResult:
         """ analyses the resume extracting, ats tips, contact info, education match, date formatting and file type,
         this only analysis the resume without the job description"""
         analyse_resume_prompt_str = analyse_resume_prompt.format(resume=self.resume_content)
@@ -192,20 +194,21 @@ class ResumeAnalyser:
             analysis_result.word_count.issues.append(
                 f"There are {word_count} words in your resume, which is below the recommended word for your resume")
             analysis_result.word_count.improvements.append("Consider adding more targeted keywords and strong nouns")
+            analysis_result.file_info.score = 7.5
         elif word_count > 600:
             analysis_result.word_count.issues.append(
                 f"There are {word_count} words in your resume, which is above the recommended word for your resume")
             analysis_result.word_count.improvements.append("Consider removing some keywords and nouns")
+            analysis_result.file_info.score = 5.5
 
         # check for contact email & urls
-        has_linkedin = detect_linkedin(self.resume_content)
-        if not has_linkedin:
+        if not detect_linkedin(self.resume_content):
             analysis_result.contact_info.issues.append("No linkedin url provided")
             analysis_result.contact_info.improvements.append(
                 "Including your LinkedIn on your resume lets recruiters quickly explore your professional journey and achievements.")
 
-        has_email = detect_email(self.resume_content)
-        if not has_email:
+        if not detect_email(self.resume_content):
+            # score auto added by gpt
             analysis_result.contact_info.issues.append("No email address provided")
             analysis_result.contact_info.improvements.append(
                 "Consider adding an email address, Use a professional-looking gmail, outlook, or personal domain email address. Delete your hotmail if any with extreme prejudice.")
@@ -213,10 +216,18 @@ class ResumeAnalyser:
         if self.resume_page_count is not None and self.resume_page_count > 1:
             analysis_result.file_info.issues.append("Resume pages are much")
             analysis_result.file_info.improvements.append("Unless you have 20+ years' experience, make it 1 page.")
+            analysis_result.file_info.score = 6.5
+        else:
+            analysis_result.file_info.score = 9
 
-        if has_interest(self.resume_content):
+        if not has_interest(self.resume_content):
             analysis_result.interests.issues.append("No interests provided")
-            analysis_result.interests.improvements.append("Interests are important because it gives the interviewer something to connect with you on, and it makes you more than just a faceless resume")
+            analysis_result.interests.improvements.append(
+                "Interests are important because it gives the interviewer something to connect with you on, and it makes you more than just a faceless resume")
+            analysis_result.interests.score = 1.5
+        else:
+            analysis_result.interests.score = 9
+
         return analysis_result
 
     def generate_cover_letter(self) -> str:

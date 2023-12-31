@@ -30,7 +30,7 @@
           <button
             class="btn btn-sm btn-dark fw-bold"
             data-bs-toggle="modal"
-            data-bs-target="#new-collection-modal"
+            data-bs-target="#scan_job_modal"
             title="scan new job"
           >
             Scan new Job

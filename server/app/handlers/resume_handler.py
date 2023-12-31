@@ -11,7 +11,7 @@ from app.supabase_client.client import supabase
 from uuid import uuid4
 
 from app.skill_extractor.skill_extractor import MatchingResult as SkillExtractorResult
-from app.prompts.resume_analysis_prompt import ResumeCheckerModel
+from app.prompts.resume_analysis_prompt import ResumeCheckerModel, ResumeAnalysisResult
 
 TABLE_NAME = "resumes"
 COVER_LETTER_TABLE = "cover_letters"
@@ -165,7 +165,7 @@ async def analyze_resume(user: User, resume_id: str) -> ResumeCheckerModel:
     # process via LLM
     analyzer = ResumeAnalyser(
         resume_content=resume.text, resume_file_path=resume.src)
-    analysis: ResumeCheckerModel = analyzer.analyse_resume()
+    analysis: ResumeAnalysisResult = analyzer.analyse_resume()
 
     # extract skills
     skill_extractor = SkillExtractor()

@@ -221,11 +221,38 @@
   />
 
   <ScanSection
+    title="Interests"
+    :issues="analysis?.interests?.issues"
+    :score="analysis?.interests?.score"
+    :suggestion="analysis?.interests?.improvements"
+    :done="analysis?.interests?.done"
+    hide-checked
+  />
+
+  <ScanSection
     title="Section Headings"
     :issues="analysis?.section_headings?.issues"
     :score="analysis?.section_headings?.score"
     :suggestion="analysis?.section_headings?.improvements"
     :done="analysis?.section_headings?.done"
+    hide-checked
+  />
+
+  <ScanSection
+    title="Word Count"
+    :issues="analysis?.word_count?.issues"
+    :score="analysis?.word_count?.score"
+    :suggestion="analysis?.word_count?.improvements"
+    :done="analysis?.word_count?.done"
+    hide-checked
+  />
+
+  <ScanSection
+    title="File Info"
+    :issues="analysis?.file_info?.issues"
+    :score="analysis?.file_info?.score"
+    :suggestion="analysis?.file_info?.improvements"
+    :done="analysis?.file_info?.done"
     hide-checked
   />
 
@@ -236,8 +263,8 @@
         skills enable you to perform job-specific duties and responsibilities.
         You can learn skills in the classroom, training courses, and on the job.
         These skills are typically focused on teachable tasks and measurable
-        abilities such as the use of tools, equipment, or software. Hard skills
-        have a high impact on your match score.
+        abilities such as the use of tools, equipment, or software. skills have
+        a high impact on your match score.
       </p>
       <span
         v-for="skill in resumeSkills"

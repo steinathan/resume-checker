@@ -12,6 +12,25 @@ defineProps({
   score: Number,
   done: Array<String>,
 });
+
+const variants = [
+  "Great job, nothing to do here",
+  "Well done, no tasks left",
+  "Excellent work, nothing else to address",
+  "Fantastic job, all clear",
+  "Superb, no further actions required",
+  "Outstanding work, nothing left to do",
+  "Bravo, no tasks on the horizon",
+  "Impressive, nothing requires attention",
+  "Kudos, no additional tasks at the moment",
+  "Top-notch work, nothing to address here",
+];
+
+// Function to get a random item from the array
+function getRandomWord() {
+  const randomIndex = Math.floor(Math.random() * variants.length);
+  return variants[randomIndex];
+}
 </script>
 
 <template>
@@ -43,7 +62,7 @@ defineProps({
       <!--  issues  -->
       <div class="mb-3 fs-4 me-1" v-if="issues && issues.length === 0">
         <i class="fas fa-check-circle text-success fs-2"></i>
-        Great job
+        {{ getRandomWord() }}
       </div>
       <ul>
         <li class="mb-3 fs-4 me-1" v-for="(li, i) in issues" :key="i">
@@ -61,11 +80,11 @@ defineProps({
       </ul>
 
       <!-- explanation -->
-      <p class="fs-5 m-0">
+      <p v-if="explanation" class="fs-5 m-0">
         {{ explanation }}
       </p>
       <Notice
-        v-if="suggestion"
+        v-if="suggestion?.length > 0"
         classes="rounded-3 mt-5"
         color="info"
         title="Suggestion"
