@@ -13,19 +13,18 @@ RUN yarn build
 # Stage 2: Build server
 FROM python:3.11 as backend-builder
 
-WORKDIR /app
+WORKDIR /project
 
-COPY server/pyproject.toml poetry.lock* /app/
-RUN ls
-COPY server/.env /app/
+COPY server/pyproject.toml poetry.lock* /project/
+COPY server/.env /project/
 
 RUN pip install poetry
 RUN poetry config virtualenvs.create false
 ENV PATH="$PATH:$POETRY_HOME/bin"
 RUN poetry install --no-root
 
-COPY server /app
+COPY server /project
 
-COPY --from=frontend-builder /app/dist /app/server/static
-
+COPY --from=frontend-builder /app/dist /project/static
+RUN ls -la /project/static
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]

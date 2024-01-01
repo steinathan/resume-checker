@@ -1,4 +1,8 @@
 import logging
+import os
+
+import sentry_sdk
+
 from typing import Annotated, List, Optional
 
 import uvicorn
@@ -13,6 +17,7 @@ from app.dependencies import get_current_user
 from app.models.common_models import User, Resume, AtsJobScan
 from app.supabase_client.client import supabase
 from pathlib import Path
+from api_analytics.fastapi import Analytics  # type: ignore
 
 from app.handlers.resume_handler import CreateResumeParams, create_new_resume, find_all_resumes, process_ats_scan, \
     AnalyseJobForResumeParams, analyze_resume, find_resume_by_id, list_job_scans_for_user, find_job_scan_by_id, \
@@ -29,6 +34,13 @@ logging.basicConfig(
     ]
 )
 
+sentry_sdk.init(
+    dsn=os.environ.get("SENTRY_DSN"),
+    traces_sample_rate=1.0,
+    send_default_pii=True,
+    profiles_sample_rate=1.0,
+)
+
 app = FastAPI()
 origins = ["*"]
 
@@ -39,6 +51,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+app.add_middleware(Analytics, api_key=os.environ.get("API_ANALYTICS_KEY") or "")
 
 
 @app.get("/users/me", response_model=User)
@@ -97,13 +110,22 @@ async def analyze_user_resume(resume_id: str, current_user: Annotated[User, Depe
     return await analyze_resume(current_user, resume_id)
 
 
-app.mount("/", StaticFiles(directory="static", html=True), name="static")
+@app.get("/sentry-debug")
+async def trigger_error():
+    division_by_zero = 1 / 0
 
 
 @app.exception_handler(404)
 async def redirect_all_requests_to_frontend(request: Request, exc: HTTPException):
+    """ redirect all non-server routes to be served by the client """
     return HTMLResponse(open(Path(__file__).parent / "static/index.html").read())
 
+
+app.mount("/", StaticFiles(directory="static", html=True), name="static")
+
+log_config = uvicorn.config.LOGGING_CONFIG
+log_config["formatters"]["access"]["fmt"] = "%(asctime)s - %(levelname)s - %(message)s"
+log_config["formatters"]["default"]["fmt"] = "%(asctime)s - %(levelname)s - %(message)s"
 
 if __name__ == "__main__":
     uvicorn.run("main:app", port=8080, reload=True)

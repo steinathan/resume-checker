@@ -1,80 +1,80 @@
-# flyctl launch added from .mypy_cache/.gitignore
-# Automatically created by mypy
-.mypy_cache/**/*
-
-# flyctl launch added from frontend/.gitignore
-frontend/src/assets/css
-
-# Logs
-frontend/**/logs
-frontend/**/*.log
-frontend/**/npm-debug.log*
-frontend/**/yarn-debug.log*
-frontend/**/yarn-error.log*
-frontend/**/pnpm-debug.log*
-frontend/**/lerna-debug.log*
-
-frontend/**/node_modules
-frontend/**/.DS_Store
-frontend/**/dist
-frontend/**/dist-ssr
-frontend/**/coverage
-frontend/**/*.local
-
-frontend/cypress/videos
-frontend/cypress/screenshots
-
-# Editor directories and files
-frontend/**/.vscode/*
-!frontend/**/.vscode/extensions.json
-frontend/**/.idea
-frontend/**/*.suo
-frontend/**/*.ntvs*
-frontend/**/*.njsproj
-frontend/**/*.sln
-frontend/**/*.sw?
-
-# flyctl launch added from resume-landing/.gitignore
-resume-landing/**/.DS_Store
-resume-landing/**/node_modules
-resume-landing/dist
-
-
-# local env files
-resume-landing/**/.env.local
-resume-landing/**/.env.*.local
-
-# Log files
-resume-landing/**/npm-debug.log*
-resume-landing/**/yarn-debug.log*
-resume-landing/**/yarn-error.log*
-resume-landing/**/pnpm-debug.log*
-
-# Editor directories and files
-resume-landing/**/.idea
-resume-landing/**/.vscode
-resume-landing/**/*.suo
-resume-landing/**/*.ntvs*
-resume-landing/**/*.njsproj
-resume-landing/**/*.sln
-resume-landing/**/*.sw?
-
-# flyctl launch added from server/.gitignore
-server/**/cover_letters/*.txt
-server/**/resumes/*.pdf
-server/**/*.log
-server/**/__pycache__
-
-# flyctl launch added from server/.idea/.gitignore
-# Default ignored files
-server/.idea/shelf
-server/.idea/workspace.xml
-
-# flyctl launch added from server/.pytest_cache/.gitignore
-# Created by pytest automatically.
-server/.pytest_cache/**/*
-
-# flyctl launch added from server/tests/.pytest_cache/.gitignore
-# Created by pytest automatically.
-server/tests/.pytest_cache/**/*
-fly.toml
+## flyctl launch added from .mypy_cache/.gitignore
+## Automatically created by mypy
+#.mypy_cache/**/*
+#
+## flyctl launch added from frontend/.gitignore
+#frontend/src/assets/css
+#
+## Logs
+#frontend/**/logs
+#frontend/**/*.log
+#frontend/**/npm-debug.log*
+#frontend/**/yarn-debug.log*
+#frontend/**/yarn-error.log*
+#frontend/**/pnpm-debug.log*
+#frontend/**/lerna-debug.log*
+#
+#frontend/**/node_modules
+#frontend/**/.DS_Store
+##frontend/**/dist
+#frontend/**/dist-ssr
+#frontend/**/coverage
+#frontend/**/*.local
+#
+#frontend/cypress/videos
+#frontend/cypress/screenshots
+#
+## Editor directories and files
+#frontend/**/.vscode/*
+#!frontend/**/.vscode/extensions.json
+#frontend/**/.idea
+#frontend/**/*.suo
+#frontend/**/*.ntvs*
+#frontend/**/*.njsproj
+#frontend/**/*.sln
+#frontend/**/*.sw?
+#
+## flyctl launch added from resume-landing/.gitignore
+#resume-landing/**/.DS_Store
+#resume-landing/**/node_modules
+#resume-landing/dist
+#
+#
+## local env files
+#resume-landing/**/.env.local
+#resume-landing/**/.env.*.local
+#
+## Log files
+#resume-landing/**/npm-debug.log*
+#resume-landing/**/yarn-debug.log*
+#resume-landing/**/yarn-error.log*
+#resume-landing/**/pnpm-debug.log*
+#
+## Editor directories and files
+#resume-landing/**/.idea
+#resume-landing/**/.vscode
+#resume-landing/**/*.suo
+#resume-landing/**/*.ntvs*
+#resume-landing/**/*.njsproj
+#resume-landing/**/*.sln
+#resume-landing/**/*.sw?
+#
+## flyctl launch added from server/.gitignore
+#server/**/cover_letters/*.txt
+#server/**/resumes/*.pdf
+#server/**/*.log
+#server/**/__pycache__
+#
+## flyctl launch added from server/.idea/.gitignore
+## Default ignored files
+#server/.idea/shelf
+#server/.idea/workspace.xml
+#
+## flyctl launch added from server/.pytest_cache/.gitignore
+## Created by pytest automatically.
+#server/.pytest_cache/**/*
+#
+## flyctl launch added from server/tests/.pytest_cache/.gitignore
+## Created by pytest automatically.
+#server/tests/.pytest_cache/**/*
+#fly.toml
