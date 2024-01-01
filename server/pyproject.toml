@@ -33,6 +33,8 @@ types-requests = "^2.31.0.10"
 pymupdf = "^1.23.8"
 fastapi-analytics = "^1.2.1"
 sentry-sdk = {extras = ["fastapi"], version = "^1.39.1"}
+docx = "^0.2.4"
+docxtpl = "^0.16.7"
 
 
 [build-system]

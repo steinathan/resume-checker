@@ -85,5 +85,9 @@ class AtsJobScan(AllBaseModel):
     cover_letter_id: str | None = None
     job_url: str | None = Field(default="no url provided")
     job_description: str
+
+    # analysis from LLM
     ats_analysis: AtsJobPromptModel | None = None
+
+    # analysis from Skiller skills
     skills_analysis: SkillExtractorResult | None = None

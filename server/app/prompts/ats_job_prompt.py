@@ -58,7 +58,7 @@ class AtsSkill(BaseModel):
 
 
 class TitleMatch(BaseModel):
-    explanation: str = Field(description="possible explanation for the match")
+    explanation: str = Field(default="", description="possible explanation for the match")
     match: bool = Field(default=False, description="indicate if the job title is matched within the resume")
 
 

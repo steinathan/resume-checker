@@ -1,17 +1,21 @@
 from __future__ import annotations
 
 import logging
+from typing import List, Dict
 
 from pydantic import BaseModel
 
 from app.handlers.resume_checkerv2 import ResumeAnalyser, AtsAnalyserResult
+from app.helpers.resume_generator import build_resume
 from app.models.common_models import Resume, User, CoverLetter, AtsJobScan
-from app.skill_extractor.skill_extractor import SkillExtractor
+from app.prompts.ats_job_prompt import JobSection
+from app.prompts.resume_fixer import StructuredResume
+from app.skill_extractor.skill_extractor import SkillExtractor, AtsSkill
 from app.supabase_client.client import supabase
 from uuid import uuid4
 
 from app.skill_extractor.skill_extractor import MatchingResult as SkillExtractorResult
-from app.prompts.resume_analysis_prompt import ResumeCheckerModel, ResumeAnalysisResult
+from app.prompts.resume_analysis_prompt import ResumeCheckerModel, ResumeAnalysisResult, ResumeSection
 
 TABLE_NAME = "resumes"
 COVER_LETTER_TABLE = "cover_letters"
@@ -155,6 +159,53 @@ def process_ats_scan(user: User, params: AnalyseJobForResumeParams):
             user.id, resume.id, job_scan.id, ats_result.generated_cover_letter)
 
     return job_scan
+
+
+def fix_resume(user: User, resume_id: str, scan_id: str | None = None):
+    """ gets issues, suggestions and skills, and trys to `fix` the resume using a default resume template """
+    # TODO: get list of templates from DB
+    template = "master_tmpl.docx"
+
+    resume = find_resume_by_id(user, resume_id)
+    if not resume:
+        raise Exception("Resume not found for user")
+
+    analyzer = ResumeAnalyser(
+        resume_content=resume.text, resume_file_path=resume.src)
+
+    issues: List[str] = []
+    suggestions: List[str] = []
+    missing_skills: List[str] = []
+
+    # find all issues & suggestions from resume and job description
+    if resume.analysis:
+        vals = resume.analysis.__dict__.items()
+        for key, value in vals:
+            if isinstance(value, ResumeSection):
+                issues.extend(value.issues)
+                suggestions.extend(value.improvements)
+
+    if scan_id:
+        scan_result = find_job_scan_by_id(user, scan_id)
+        if scan_result and scan_result.job_scan:
+            job_scan = scan_result.job_scan
+
+            # find missing skills from job description
+            ats_skills: list[AtsSkill] = job_scan.skills_analysis.ats_skills if job_scan.skills_analysis else []
+            missing_skills.extend([skill.name for skill in ats_skills])
+
+            # add improvements && issues from scan result
+            if job_scan.ats_analysis:
+                vals = job_scan.ats_analysis.__dict__.items()
+                for key, value in vals:
+                    if isinstance(value, JobSection):
+                        issues.extend(value.issues)
+                        suggestions.append(value.suggestion)
+
+    analysis: StructuredResume = analyzer.revamp_resume(issues=issues, suggestions=suggestions, skills=missing_skills)
+    new_resume = build_resume(template, analysis)
+
+    return new_resume
 
 
 async def analyze_resume(user: User, resume_id: str) -> ResumeCheckerModel:

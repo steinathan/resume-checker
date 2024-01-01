@@ -1,4 +1,7 @@
+from typing import Dict, List
+
 from app.models.common_models import ResumeLLMAnalysis
+from app.prompts.resume_analysis_prompt import ResumeSection
 
 analysis_dump = {
     "contact_info": {
@@ -91,3 +94,18 @@ analysis_dump = {
 text = ResumeLLMAnalysis(**analysis_dump)
 print("total_score", text.total_score)
 print("section_count", text.sections_count)
+
+if text:
+    issues: List[str] = []
+    suggestions: List[str] = []
+    missing_skills: List[str] = []
+
+    vals = text.__dict__.items()
+    for key, value in vals:
+        if isinstance(value, ResumeSection):
+            issues.extend(value.issues)
+            suggestions.extend(value.improvements)
+
+    print(issues)
+    print(suggestions)
+    print(missing_skills)

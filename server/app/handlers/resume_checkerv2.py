@@ -6,7 +6,7 @@ import re
 import tempfile
 from dataclasses import dataclass
 from datetime import datetime
-from typing import Any
+from typing import Any, List
 import fitz
 
 import requests
@@ -21,6 +21,7 @@ from langchain_core.callbacks import StreamingStdOutCallbackHandler, CallbackMan
 from app.prompts.ats_job_prompt import job_ats_parser, job_ats_prompt, AtsJobPromptModel
 from app.prompts.resume_analysis_prompt import resume_cover_letter_prompt, analyse_resume_prompt, \
     ResumeCheckerModel, analyse_resume_parser, ResumeAnalysisResult
+from app.prompts.resume_fixer import revamp_resume_prompt, resume_fixer_parser, StructuredResume
 
 load_dotenv()
 
@@ -90,6 +91,18 @@ class AtsAnalyserResult:
     job_description: str
     generated_cover_letter: str | None = None
     ats_analysis: AtsJobPromptModel | None = None
+
+
+def calculate_word_count(text: str) -> int:
+    """ calculate word count of text """
+    words = text.split()
+    word_count = len(words)
+    return word_count
+
+
+def to_prompt_bullet(items: List[str]) -> str:
+    """ """
+    return ", ".join([f"{item}" for item in items])
 
 
 class ResumeAnalyser:
@@ -189,7 +202,7 @@ class ResumeAnalyser:
         analysis_result = ResumeAnalysisResult(**llm_output.model_dump())
 
         # local word count calculations & ema+il/LinkedIn parsing
-        word_count = self.calculate_word_count(str(self.resume_content))
+        word_count = calculate_word_count(str(self.resume_content))
         if word_count < 475:
             analysis_result.word_count.issues.append(
                 f"There are {word_count} words in your resume, which is below the recommended word for your resume")
@@ -239,8 +252,17 @@ class ResumeAnalyser:
 
         return cover_letter
 
-    def calculate_word_count(self, text: str) -> int:
-        """ calculate word count of text """
-        words = text.split()
-        word_count = len(words)
-        return word_count
+    def revamp_resume(self, skills: List[str], suggestions: List[str], issues: List[str]) -> StructuredResume:
+        """ revamp the resume fixing the issues """
+        revamp_prompt_str = revamp_resume_prompt.format(
+            resume=self.resume_content,
+            suggestions=to_prompt_bullet(suggestions),
+            issues=to_prompt_bullet(issues),
+            missing_skills=to_prompt_bullet(skills),
+        )
+        logging.debug(revamp_prompt_str)
+
+        llm_out = self.llm.predict(revamp_prompt_str)
+        revamped_resume: StructuredResume = resume_fixer_parser.parse(llm_out)
+
+        return revamped_resume
