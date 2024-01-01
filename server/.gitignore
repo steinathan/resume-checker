@@ -3,3 +3,4 @@ resumes/*.pdf
 .env
 *.log
 __pycache__
+static/*

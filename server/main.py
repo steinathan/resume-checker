@@ -3,13 +3,16 @@ from typing import Annotated, List, Optional
 
 import uvicorn
 from dotenv import load_dotenv
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends, Request, HTTPException
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from starlette.responses import HTMLResponse
 
 from app.dependencies import get_current_user
 from app.models.common_models import User, Resume, AtsJobScan
 from app.supabase_client.client import supabase
+from pathlib import Path
 
 from app.handlers.resume_handler import CreateResumeParams, create_new_resume, find_all_resumes, process_ats_scan, \
     AnalyseJobForResumeParams, analyze_resume, find_resume_by_id, list_job_scans_for_user, find_job_scan_by_id, \
@@ -36,11 +39,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-
-@app.get("/")
-def read_root():
-    return {"Cver": "World"}
 
 
 @app.get("/users/me", response_model=User)
@@ -97,6 +95,14 @@ async def get_login_token(form_data: Annotated[OAuth2PasswordRequestForm, Depend
 async def analyze_user_resume(resume_id: str, current_user: Annotated[User, Depends(get_current_user)]):
     """ analyzes a resume extracting fixes and suggestions, save the results to the resume"""
     return await analyze_resume(current_user, resume_id)
+
+
+app.mount("/", StaticFiles(directory="static", html=True), name="static")
+
+
+@app.exception_handler(404)
+async def redirect_all_requests_to_frontend(request: Request, exc: HTTPException):
+    return HTMLResponse(open(Path(__file__).parent / "static/index.html").read())
 
 
 if __name__ == "__main__":

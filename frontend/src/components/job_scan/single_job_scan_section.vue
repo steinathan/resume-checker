@@ -58,7 +58,7 @@
         >
           <thead>
             <tr class="border-0 fw-bold text-muted">
-              <th class="">ID</th>
+              <!--              <th class="">ID</th>-->
               <th class="">Name</th>
               <th class="text-center">Job Match</th>
             </tr>
@@ -68,12 +68,12 @@
               v-for="skill in sortSkills(skillAnalysis.ats_skills)"
               :key="skill.skill_id"
             >
-              <td>
-                <span
-                  class="text-muted fw-bold text-hover-primary d-block mb-1 fs-6"
-                  >{{ skill.skill_id }}</span
-                >
-              </td>
+              <!--              <td>-->
+              <!--                <span-->
+              <!--                  class="text-muted fw-bold text-hover-primary d-block mb-1 fs-6"-->
+              <!--                  >{{ skill.skill_id }}</span-->
+              <!--                >-->
+              <!--              </td>-->
               <td>
                 <span
                   class="text-gray-900 fw-bold text-hover-primary d-block mb-1 fs-6"

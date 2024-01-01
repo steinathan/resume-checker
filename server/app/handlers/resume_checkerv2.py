@@ -194,12 +194,12 @@ class ResumeAnalyser:
             analysis_result.word_count.issues.append(
                 f"There are {word_count} words in your resume, which is below the recommended word for your resume")
             analysis_result.word_count.improvements.append("Consider adding more targeted keywords and strong nouns")
-            analysis_result.file_info.score = 7.5
+            analysis_result.word_count.score = 7.5
         elif word_count > 600:
             analysis_result.word_count.issues.append(
                 f"There are {word_count} words in your resume, which is above the recommended word for your resume")
             analysis_result.word_count.improvements.append("Consider removing some keywords and nouns")
-            analysis_result.file_info.score = 5.5
+            analysis_result.word_count.score = 5.5
 
         # check for contact email & urls
         if not detect_linkedin(self.resume_content):

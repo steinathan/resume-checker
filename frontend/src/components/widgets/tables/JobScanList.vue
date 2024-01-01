@@ -66,7 +66,7 @@
                   <th class="p-0">Score</th>
                   <th class="p-0">Name</th>
                   <th class="p-0">Scanned At</th>
-                  <th class="p-0">Cover letterID</th>
+                  <th class="p-0">Has Cover Letter</th>
                   <th class="p-0">Resume ID</th>
                   <!--                  <th class="p-0 min-w-50px text-end">Action</th>-->
                 </tr>
@@ -134,7 +134,7 @@
                     <!--                      </span>-->
                     <!--                    </td>-->
                     <td class="">
-                      {{ scan.cover_letter_id || "non generated" }}
+                      {{ !!scan.cover_letter_id }}
                     </td>
                     <td class="">
                       <router-link

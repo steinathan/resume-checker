@@ -4,13 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f139b09e-ed21-44ad-98e3-6a656f3a056f" name="Changes" comment="improving prompt and UI">
+    <list default="true" id="f139b09e-ed21-44ad-98e3-6a656f3a056f" name="Changes" comment="added file_type and word_count">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/EmptyState.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/EmptyState.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/job_scan/scan_section.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/job_scan/scan_section.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/resume/single_resume_section.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/resume/single_resume_section.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/job_scan/single_job_scan_section.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/job_scan/single_job_scan_section.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/JobScanList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/widgets/tables/JobScanList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/services/supabase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/services/supabase.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resume-landing/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/handlers/resume_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/handlers/resume_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +55,8 @@
     <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/.cache/pypoetry/virtualenvs/langchain-resume-generator-9GWSRKUL-py3.11/lib/python3.11/site-packages/pydantic/main.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/.cache/pypoetry/virtualenvs/langchain-resume-generator-9GWSRKUL-py3.11/lib/python3.11/site-packages/starlette/staticfiles.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/frontend/node_modules/@supabase/gotrue-js/dist/module/lib/types.d.ts" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/frontend/node_modules/vue-router/dist/vue-router.d.ts" root0="SKIP_INSPECTION" />
   </component>
@@ -104,7 +112,7 @@
     "nodejs_interpreter_path": "/home/navicstein/.nvm/versions/node/v19.8.1/bin/node",
     "nodejs_package_manager_path": "/home/navicstein/.nvm/versions/node/v19.8.1/bin/yarn",
     "npm.dev.executor": "Run",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Console Font",
     "ts.external.directory.path": "/home/navicstein/Idea/resume-checker/frontend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   },
@@ -123,14 +131,14 @@
       <recent name="$PROJECT_DIR$/frontend/src/core/services" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/frontend/src/components/resume" />
       <recent name="$PROJECT_DIR$/server" />
       <recent name="$PROJECT_DIR$/server/app/prompts" />
       <recent name="$PROJECT_DIR$/app/handlers" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="langchain-ollama" />
       <option name="ENV_FILES" value="" />
@@ -167,14 +175,13 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95" />
+        <option value="bundled-python-sdk-50da183f06c8-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13135.95" />
       </set>
     </attachedChunks>
   </component>
@@ -200,7 +207,9 @@
       <workItem from="1703889155756" duration="12313000" />
       <workItem from="1703947955492" duration="9630000" />
       <workItem from="1703967653672" duration="1130000" />
-      <workItem from="1703971479961" duration="10974000" />
+      <workItem from="1703971479961" duration="12053000" />
+      <workItem from="1704069451340" duration="3701000" />
+      <workItem from="1704073640175" duration="944000" />
     </task>
     <task id="LOCAL-00001" summary="↫ initial commit">
       <option name="closed" value="true" />
@@ -362,7 +371,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703981246292</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="added file_type and word_count">
+      <option name="closed" value="true" />
+      <created>1703982999134</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1703982999134</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -413,7 +430,8 @@
     <MESSAGE value="removed old UI from tables to divs" />
     <MESSAGE value="restructured and fixed issue with ATS" />
     <MESSAGE value="improving prompt and UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="improving prompt and UI" />
+    <MESSAGE value="added file_type and word_count" />
+    <option name="LAST_COMMIT_MESSAGE" value="added file_type and word_count" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -438,21 +456,6 @@
           <line>31</line>
           <option name="timeStamp" value="51" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py</url>
-          <line>185</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/frontend/src/components/job_scan/scan_section.vue</url>
-          <line>43</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/frontend/src/components/job_scan/cover_letter.vue</url>
-          <line>1</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -463,8 +466,8 @@
     <SUITE FILE_PATH="coverage/resume_checker$common_models.coverage" NAME="common_models Coverage Results" MODIFIED="1703602919459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/models" />
     <SUITE FILE_PATH="coverage/resume_checker$resume_analysis_prompt.coverage" NAME="resume_analysis_prompt Coverage Results" MODIFIED="1703977536416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/prompts" />
     <SUITE FILE_PATH="coverage/resume_checker$job_matcher_prompt.coverage" NAME="job_matcher_prompt Coverage Results" MODIFIED="1703666837684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/prompts" />
-    <SUITE FILE_PATH="coverage/resume_checker$main.coverage" NAME="main Coverage Results" MODIFIED="1703980602408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/resume_checker$main.coverage" NAME="main Coverage Results" MODIFIED="1704071713330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
     <SUITE FILE_PATH="coverage/resume_checker$ats_job_prompt.coverage" NAME="ats_job_prompt Coverage Results" MODIFIED="1703715597533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/prompts" />
-    <SUITE FILE_PATH="coverage/resume_checker$test_analyzer.coverage" NAME="test_analyzer Coverage Results" MODIFIED="1703981177667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/tests" />
+    <SUITE FILE_PATH="coverage/resume_checker$test_analyzer.coverage" NAME="test_analyzer Coverage Results" MODIFIED="1703983562829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/tests" />
   </component>
 </project>
