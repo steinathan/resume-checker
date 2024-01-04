@@ -39,7 +39,7 @@ class Intro(BaseModel):
     citizenship: str | None = Field(
         None, description="Citizenship information")
     email: str | None = Field(None, description="Email address")
-    linkedin: str | None = Field(..., description="LinkedIn profile")
+    linkedin: str | None = Field(None, description="LinkedIn profile")
     location: str | None = Field(None, description="Location information")
     personName: str | None = Field(None, description="Name of the person")
     phone: str | None = Field(None, description="Phone number")
@@ -81,7 +81,7 @@ class StructuredResume(BaseModel):
         None, description="List of projects")
     skillDict: Dict[str, List[str]] | None = Field(
         None,
-        description="Dictionary of skills and interests, for example: Programming, Infrastructure & Automation, Security & Compliance, Other Skills")
+        description="Dictionary of skills and interests, for example: Programming, Infrastructure & Automation, Other Skills")
 
 
 resume_fixer_parser = PydanticOutputParser(

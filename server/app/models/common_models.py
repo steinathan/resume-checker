@@ -14,6 +14,8 @@ class AllBaseModel(BaseModel):
     # adding iso format for supabase purposes
     created_at: str = datetime.now().isoformat()
     updated_at: str = datetime.now().isoformat()
+    deleted_at: str | None = None
+    deleted: bool = False
 
 
 class User(AllBaseModel):

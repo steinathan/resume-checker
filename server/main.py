@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+import asyncio
 import logging
 import os
 
@@ -21,7 +24,7 @@ from api_analytics.fastapi import Analytics  # type: ignore
 
 from app.handlers.resume_handler import CreateResumeParams, create_new_resume, find_all_resumes, process_ats_scan, \
     AnalyseJobForResumeParams, analyze_resume, find_resume_by_id, list_job_scans_for_user, find_job_scan_by_id, \
-    JobScanResult
+    JobScanResult, delete_resume, fix_resume
 
 load_dotenv()
 
@@ -63,8 +66,18 @@ async def read_users_me(current_user: Annotated[User, Depends(get_current_user)]
 async def create_resume(params: CreateResumeParams, current_user: Annotated[User, Depends(get_current_user)]):
     """ creates a new resume called after uploading to bucket"""
     resume = create_new_resume(current_user, params)
-    await analyze_resume(current_user, resume.id)
-    return find_resume_by_id(current_user, resume.id)
+    try:
+        await analyze_resume(current_user, resume.id)
+        return find_resume_by_id(current_user, resume.id)
+    except Exception as e:
+        logging.error(e)
+        await delete_resume(current_user, resume.id)
+        raise HTTPException(status_code=500, detail="Error processing resume, kindly re-upload this resume")
+
+
+@app.delete("/resume/{resume_id}", response_model=Resume)
+async def delete_resume_by_id(resume_id: str, current_user: Annotated[User, Depends(get_current_user)]):
+    await delete_resume(current_user, resume_id)
 
 
 @app.post("/job/scan", response_model=AtsJobScan)
@@ -108,6 +121,13 @@ async def get_login_token(form_data: Annotated[OAuth2PasswordRequestForm, Depend
 async def analyze_user_resume(resume_id: str, current_user: Annotated[User, Depends(get_current_user)]):
     """ analyzes a resume extracting fixes and suggestions, save the results to the resume"""
     return await analyze_resume(current_user, resume_id)
+
+
+@app.post("/resume/{resume_id}/fix")
+def fix_user_resume(current_user: Annotated[User, Depends(get_current_user)], resume_id: str,
+                          scan_id: str | None = None):
+    """ attempts to fix the issues in the resume using the feeback from the job scan"""
+    return fix_resume(current_user, resume_id, scan_id)
 
 
 @app.get("/sentry-debug")

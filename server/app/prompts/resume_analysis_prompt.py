@@ -21,7 +21,7 @@ generate a cover letter than can be used as it is with a title and body
 
 analyse_resume_tmpl = """As a Resume Specialist, meticulously evaluate the given resume, offering insightful 
 observations, precise enhancements, and assign a comprehensive score to each section. give detailed tips where 
-necessary to the improvements fields
+necessary to the improvements fields, you must ignore all formatting issues are the resume is converted to text and may loose formatting in the process
 
 {format_instructions}
 
@@ -56,7 +56,7 @@ class ResumeCheckerModel(BaseModel):
     experience: ResumeSection = Field(description="experience")
     skills: ResumeSection = Field(description="skills")
     summary: ResumeSection = Field(description="summary")
-    personal_projects: ResumeSection = Field(description="personal projects")
+    personal_projects: ResumeSection = Field(description="check if there are personal personal projects in the resume")
     date_formatting: ResumeSection = Field(
         description="how well and consistent was the date formatted")
     section_headings: ResumeSection = Field(

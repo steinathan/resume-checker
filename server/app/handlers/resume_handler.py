@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import logging
+import os
+from datetime import datetime
 from typing import List, Dict
 
 from pydantic import BaseModel
@@ -17,7 +19,7 @@ from uuid import uuid4
 from app.skill_extractor.skill_extractor import MatchingResult as SkillExtractorResult
 from app.prompts.resume_analysis_prompt import ResumeCheckerModel, ResumeAnalysisResult, ResumeSection
 
-TABLE_NAME = "resumes"
+RESUME_TABLE = "resumes"
 COVER_LETTER_TABLE = "cover_letters"
 JOB_SCAN_TABLE = "job_scans"
 
@@ -42,18 +44,22 @@ def create_new_resume(user: User, params: CreateResumeParams) -> Resume:
             raise ValueError("src must be a valid PDF")
 
     resume = Resume(**params.model_dump(), user_id=user.id, id=resume_id)
-    response = supabase.table(TABLE_NAME).insert(resume.model_dump()).execute()
+    response = supabase.table(RESUME_TABLE).insert(resume.model_dump()).execute()
     return Resume(**response.data[0])
 
 
 def find_all_resumes(user: User) -> list[Resume]:
-    response = supabase.table(TABLE_NAME).select(
-        "*").order("created_at", desc=True).eq("user_id", user.id).execute()
+    response = (supabase.table(RESUME_TABLE)
+                .select("*")
+                .neq('deleted', True)
+                .order("created_at", desc=True)
+                .eq("user_id", user.id).execute()
+                )
     return [Resume(**data) for data in response.data]
 
 
 def update_resume(user: User, resume_id: str, resume: Resume) -> Resume | None:
-    (supabase.table(TABLE_NAME).update(resume.model_dump())
+    (supabase.table(RESUME_TABLE).update(resume.model_dump())
      .eq("user_id", user.id)
      .eq("id", resume_id)
      .execute())
@@ -61,16 +67,23 @@ def update_resume(user: User, resume_id: str, resume: Resume) -> Resume | None:
 
 
 async def delete_resume(user: User, resume_id: str) -> bool:
-    await (supabase.table(TABLE_NAME).delete()
-           .eq("user_id", user.id)
-           .eq("id", resume_id)
-           .execute())
+    # TODO: delete the file, then the cover letter, then the resume
+    (supabase.table(RESUME_TABLE).update({
+        "deletedAt": datetime.now().isoformat(),
+        "deleted": True,
+    })
+     .eq("user_id", user.id)
+     .eq("id", resume_id)
+     .execute())
     return True
 
 
 def find_resume_by_id(user: User, resume_id: str) -> Resume | None:
-    response = supabase.table(TABLE_NAME).select(
-        "*").eq("user_id", user.id).eq("id", resume_id).execute()
+    response = (supabase.table(RESUME_TABLE)
+                .select("*")
+                .eq("user_id", user.id)
+                .eq("id", resume_id).execute()
+                )
     if response.data:
         return Resume(**response.data[0])
     return None
@@ -164,7 +177,8 @@ def process_ats_scan(user: User, params: AnalyseJobForResumeParams):
 def fix_resume(user: User, resume_id: str, scan_id: str | None = None):
     """ gets issues, suggestions and skills, and trys to `fix` the resume using a default resume template """
     # TODO: get list of templates from DB
-    template = "master_tmpl.docx"
+    template_name = "master_tmpl.docx"
+    master_tmpl_path = os.path.join(os.getcwd(), 'resume_templates', template_name)
 
     resume = find_resume_by_id(user, resume_id)
     if not resume:
@@ -203,7 +217,7 @@ def fix_resume(user: User, resume_id: str, scan_id: str | None = None):
                         suggestions.append(value.suggestion)
 
     analysis: StructuredResume = analyzer.revamp_resume(issues=issues, suggestions=suggestions, skills=missing_skills)
-    new_resume = build_resume(template, analysis)
+    new_resume = build_resume(master_tmpl_path, analysis)
 
     return new_resume
 
@@ -234,6 +248,9 @@ async def analyze_resume(user: User, resume_id: str) -> ResumeCheckerModel:
 
 
 def list_job_scans_for_user(user: User) -> list[AtsJobScan]:
-    response = supabase.table(JOB_SCAN_TABLE).select("*").order("created_at", desc=True).eq("user_id",
-                                                                                            user.id).execute()
+    response = (supabase.table(JOB_SCAN_TABLE)
+                .select("*")
+                .order("created_at", desc=True)
+                .eq("user_id", user.id)
+                .execute())
     return [AtsJobScan(**data) for data in response.data]

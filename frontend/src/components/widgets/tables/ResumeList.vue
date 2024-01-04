@@ -102,8 +102,8 @@
                           params: { resume_id: resume.id },
                         }"
                         class="text-dark fw-bold text-hover-primary fs-6"
-                        >{{ resume.name }}</router-link
-                      >
+                        >{{ resume.name }}
+                      </router-link>
                       <span
                         class="text-muted fw-semobold text-muted d-block fs-7"
                         >{{
@@ -183,12 +183,12 @@
                   <!--                    <KTIcon icon-name="pencil" icon-class="fs-3" />-->
                   <!--                  </a>-->
 
-                  <a
-                    href="#"
+                  <button
+                    @click="deleteResume(resume.id as string)"
                     class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm"
                   >
                     <KTIcon icon-name="trash" icon-class="fs-3" />
-                  </a>
+                  </button>
                 </td>
               </tr>
             </template>
@@ -205,7 +205,7 @@
 </template>
 
 <script lang="ts" setup>
-import { get } from "@/core/services/ApiService2";
+import { get, _delete } from "@/core/services/ApiService2";
 import { onMounted, ref } from "vue";
 import type { Resume } from "../../../../types";
 import { getColorCodeByPercentage } from "@/core/helpers/color";
@@ -219,8 +219,20 @@ const resumeStore = useResumeStore();
 
 const { resumes } = storeToRefs(resumeStore);
 
-onMounted(async () => {
+const fetchResume = async () => {
   const userResumes = await get("/resumes", {});
   resumeStore.setResumes(userResumes as Resume[]);
+};
+
+onMounted(() => {
+  fetchResume();
 });
+
+const deleteResume = async (id: string) => {
+  const yes = confirm("Delete this resume?");
+  if (yes) {
+    await _delete("/resume/" + id);
+    await fetchResume();
+  }
+};
 </script>

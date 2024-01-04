@@ -60,6 +60,10 @@ export function post<T = Record<string, any>>(url, data): Promise<T> {
   return axios.post(url, data);
 }
 
+export function _delete<T = Record<string, any>>(url, data = {}): Promise<T> {
+  return axios.delete(url, data);
+}
+
 export function get<T = Record<string, any>>(
   url,
   query: Record<string, any> = {}

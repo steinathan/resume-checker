@@ -66,6 +66,14 @@
 
             <!--begin::Actions-->
             <div class="d-flex my-4">
+              <button
+                @click="fixResume()"
+                class="btn btn-sm btn-primary me-2"
+                id="kt_user_follow_button"
+              >
+                <KTIcon icon-name="check" icon-class="fs-3 d-none" />
+                Fix Issues
+              </button>
               <a
                 href="#"
                 class="btn btn-sm btn-light me-2"
@@ -202,7 +210,7 @@ import Dropdown3 from "@/components/dropdown/Dropdown3.vue";
 import { computed, onMounted, ref } from "vue";
 import type { Resume, ResumeLLMAnalysis } from "../../../types";
 import { useRoute } from "vue-router";
-import { get } from "@/core/services/ApiService2";
+import { get, post } from "@/core/services/ApiService2";
 import ResumeHeaderStat from "@/components/ResumeHeaderStat.vue";
 import KTIcon from "@/core/helpers/kt-icon/KTIcon.vue";
 import { getColorCodeByPercentage } from "@/core/helpers/color";
@@ -222,6 +230,13 @@ onMounted(async () => {
   resumeStore.setResume(_resume as Resume);
   console.log(analysis.value, resume.value);
 });
+
+async function fixResume() {
+  const yes = confirm("Fix your resume?");
+  if (yes) {
+    await post(`/resume/${resume.value.id}/fix`, null);
+  }
+}
 </script>
 
 <style>

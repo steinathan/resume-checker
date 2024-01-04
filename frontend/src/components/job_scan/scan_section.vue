@@ -9,6 +9,7 @@ defineProps({
   issues: Array<String>,
   checked: Boolean,
   hideChecked: Boolean,
+  hideCount: Boolean,
   score: Number,
   done: Array<String>,
 });
@@ -41,6 +42,7 @@ function getRandomWord() {
           {{ title }}
         </a>
         <span
+          v-if="issues && issues.length > 0"
           class="float-end section-score"
           :style="`color:${getColorCodeByPercentage(score * 10)}`"
           >{{ score }}</span
@@ -58,7 +60,6 @@ function getRandomWord() {
           style="font-size: xx-large"
         ></i>
       </span>
-
       <!--  issues  -->
       <div class="mb-3 fs-4 me-1" v-if="issues && issues.length === 0">
         <i class="fas fa-check-circle text-success fs-2"></i>

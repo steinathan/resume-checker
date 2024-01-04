@@ -1,6 +1,7 @@
 """"
 Slightly modified version from: https://github.com/louisgregg/ats-resume-generator
 """
+from typing import Dict
 
 from docxtpl import DocxTemplate, RichText
 import re
@@ -11,6 +12,22 @@ from app.prompts.resume_fixer import StructuredResume
 
 def gen_filename(txt: str, extension: str) -> str:
     return re.sub('[^0-9a-zA-Z ]+', '', txt.lower()).replace(' ', '_') + '.' + extension
+
+
+def render_intro_links(intro: Dict[str, str], template):
+    if hasattr(intro, "linkedin"):
+        rt = RichText()
+        rt.add(
+            text="LinkedIn",
+            size="30px",
+            underline=True,
+            style="SubtleReference",
+            font="Garamond",
+            url_id=template.build_url_id(intro['linkedin']),
+        )
+        intro["linkedin"] = rt
+
+    return intro
 
 
 def render_project_links(project_list, template):
@@ -51,7 +68,8 @@ def build_resume(template_path: str, resume: StructuredResume) -> str:
         pp.pprint(context)
 
     # render links as click-able hyperlinks using the richTextString class
-    context['projects'] = render_project_links(context['projectList'], template)
+    if hasattr(context, 'projectList'):
+        context['projects'] = render_project_links(context['projectList'], template)
 
     docx_file = gen_filename(context['intro']['personName'], 'docx')
     print(f"Generating resume document: {docx_file}")
