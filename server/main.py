@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import asyncio
 import logging
 import os
 
@@ -14,7 +13,7 @@ from fastapi import FastAPI, Depends, Request, HTTPException
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from starlette.responses import HTMLResponse
+from starlette.responses import HTMLResponse, FileResponse
 
 from app.dependencies import get_current_user
 from app.models.common_models import User, Resume, AtsJobScan
@@ -123,11 +122,15 @@ async def analyze_user_resume(resume_id: str, current_user: Annotated[User, Depe
     return await analyze_resume(current_user, resume_id)
 
 
-@app.post("/resume/{resume_id}/fix")
+@app.get("/resume/{resume_id}/fix")
 def fix_user_resume(current_user: Annotated[User, Depends(get_current_user)], resume_id: str,
-                          scan_id: str | None = None):
+                    scan_id: str | None = None):
     """ attempts to fix the issues in the resume using the feeback from the job scan"""
-    return fix_resume(current_user, resume_id, scan_id)
+    # template_name = "jobby_mcjobface.docx"
+    # file_path = os.path.join(os.getcwd(),  template_name)
+    file_path = fix_resume(current_user, resume_id, scan_id)
+    file_name = Path(file_path).name
+    return FileResponse(path=file_path, filename=file_name, media_type='application/octet-stream')
 
 
 @app.get("/sentry-debug")

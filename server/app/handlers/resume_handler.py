@@ -69,7 +69,7 @@ def update_resume(user: User, resume_id: str, resume: Resume) -> Resume | None:
 async def delete_resume(user: User, resume_id: str) -> bool:
     # TODO: delete the file, then the cover letter, then the resume
     (supabase.table(RESUME_TABLE).update({
-        "deletedAt": datetime.now().isoformat(),
+        "deleted_at": datetime.now().isoformat(),
         "deleted": True,
     })
      .eq("user_id", user.id)

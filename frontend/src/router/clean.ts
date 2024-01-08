@@ -9,6 +9,17 @@ import { useConfigStore } from "@/stores/config";
 
 const routes: Array<RouteRecordRaw> = [
   {
+    path: "/home",
+    component: () => import("@/layouts/HomeLayout.vue"),
+    children: [
+      {
+        path: "",
+        name: "home",
+        component: () => import("@/views/Home.vue"),
+      },
+    ],
+  },
+  {
     path: "/",
     name: "sign-in-home",
     component: () =>

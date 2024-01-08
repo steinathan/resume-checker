@@ -135,8 +135,8 @@ class ResumeAnalyser:
             )
         elif model_name == "together":
             self.llm = Together(  # type: ignore
-                model="mistralai/Mistral-7B-Instruct-v0.2",
-                temperature=0.7,
+                model="openchat/openchat-3.5-1210",
+                temperature=0,
                 top_k=1,
             )
         else:

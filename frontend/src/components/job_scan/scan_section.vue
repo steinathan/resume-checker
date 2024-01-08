@@ -67,7 +67,7 @@ function getRandomWord() {
       </div>
       <ul>
         <li class="mb-3 fs-4 me-1" v-for="(li, i) in issues" :key="i">
-          <i class="fas fa-circle-exclamation text-danger fs-2"></i>
+          <i class="fas fa-circle-exclamation text-warning fs-2"></i>
           {{ li }}
         </li>
       </ul>

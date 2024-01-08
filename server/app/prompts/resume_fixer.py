@@ -10,6 +10,8 @@ Revise my resume by incorporating the following skills and addressing specific i
 
 {format_instructions}
 
+You must not include any explanation whatsoever, only pure JSON!
+
 # Skills to add:
 {missing_skills}
 
@@ -95,6 +97,6 @@ revamp_resume_prompt = PromptTemplate(
     }
 )
 
-print(resume_fixer_parser.get_format_instructions())
+# print(resume_fixer_parser.get_format_instructions())
 
 

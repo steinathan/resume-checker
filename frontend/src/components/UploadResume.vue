@@ -94,6 +94,9 @@
                     @change="handleFileUpload"
                   />
                 </label>
+                <div v-if="resumeFile" class="text-body fs-6">
+                  {{ resumeFile.name }}
+                </div>
               </div>
 
               <!--              <div class="text-center text-muted text-uppercase fw-bold mb-5">-->
@@ -210,50 +213,46 @@ const handleFileUpload = () => {
 };
 
 async function uploadFile() {
-  setError("");
-  const BUCKET_NAME = "ai-resume";
-  isUploading.value = true;
-  logger.debug("starting upload:...");
-  const uploadPath = `${user.value.id}/${resumeFile.value!.name}`;
-  const { data, error } = await supabase.storage
-    .from(BUCKET_NAME)
-    .upload(uploadPath, resumeFile.value as File, {
-      cacheControl: "3600",
-      upsert: true,
-    });
+  try {
+    setError("");
+    const BUCKET_NAME = "ai-resume";
+    isUploading.value = true;
+    logger.debug("starting upload:...");
 
-  if (error) {
-    setError(error.message);
+    const uploadPath = `${user.value.id}/${resumeFile.value!.name}`;
+    const { data, error } = await supabase.storage
+      .from(BUCKET_NAME)
+      .upload(uploadPath, resumeFile.value as File, {
+        cacheControl: "3600",
+        upsert: true,
+      });
+
+    if (error) {
+      throw new Error(error.message);
+    }
+
+    if (data) {
+      uploadProgress.value = 50;
+      let { data: fileData } = supabase.storage
+        .from(BUCKET_NAME)
+        .getPublicUrl(data.path);
+
+      const createResumeParams = {
+        src: fileData.publicUrl,
+        name: resumeFile.value!.name,
+      };
+
+      await post("/resume", createResumeParams);
+      uploadProgress.value = 100;
+      clearStates();
+      NotifyUser();
+      hideModal("#upload_resume_modal" as unknown as HTMLElement);
+    }
+  } catch (error: any) {
+    setError(error?.message || "Sorry, an error occurred, try again?");
     uploadProgress.value = 0;
     isUploading.value = false;
   }
-
-  if (data) {
-    uploadProgress.value = 50;
-    let { data: fileData } = supabase.storage
-      .from(BUCKET_NAME)
-      .getPublicUrl(data.path);
-
-    const createResumeParams = {
-      src: fileData.publicUrl,
-      name: resumeFile.value!.name,
-    };
-
-    await post("/resume", createResumeParams);
-    uploadProgress.value = 100;
-    clearStates();
-    NotifyUser();
-    hideModal("#upload_resume_modal" as unknown as HTMLElement);
-  }
-}
-
-async function gotoDocsRoute(id: string) {
-  await router.push({
-    name: "view-document",
-    params: {
-      id: id,
-    },
-  });
 }
 </script>
 

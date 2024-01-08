@@ -210,7 +210,7 @@ import Dropdown3 from "@/components/dropdown/Dropdown3.vue";
 import { computed, onMounted, ref } from "vue";
 import type { Resume, ResumeLLMAnalysis } from "../../../types";
 import { useRoute } from "vue-router";
-import { get, post } from "@/core/services/ApiService2";
+import axios, { get, post } from "@/core/services/ApiService2";
 import ResumeHeaderStat from "@/components/ResumeHeaderStat.vue";
 import KTIcon from "@/core/helpers/kt-icon/KTIcon.vue";
 import { getColorCodeByPercentage } from "@/core/helpers/color";
@@ -232,9 +232,28 @@ onMounted(async () => {
 });
 
 async function fixResume() {
-  const yes = confirm("Fix your resume?");
-  if (yes) {
-    await post(`/resume/${resume.value.id}/fix`, null);
+  try {
+    const yes = confirm("Fix your resume?");
+    if (yes) {
+      const url = `/resume/${resume.value.id}/fix`;
+      await axios({
+        url: url,
+        method: "GET",
+        responseType: "blob",
+      }).then((response) => {
+        const url = window.URL.createObjectURL(new Blob([response]));
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "revamped_resume.docx";
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+      });
+    }
+  } catch (e) {
+    alert(
+      "Something bad happened while trying to this this resume, please try again!"
+    );
   }
 }
 </script>
