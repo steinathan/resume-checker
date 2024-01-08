@@ -16,9 +16,9 @@
         <!--end::Title-->
         <!--begin::Text-->
         <div class="fs-5 text-muted">
-          We helps you target your resume for a particular job by providing
+          We help you target your resume for a particular job by providing
           helpful insights and <br />
-          suggestions and then fixing your resume so it beats the ATS system
+          suggestions and then fixing your resume so it beats the ATS check
         </div>
         <!--end::Text-->
       </div>
@@ -70,7 +70,7 @@
           <div class="text-center mb-10 mb-md-0">
             <!--begin::Illustration-->
             <img
-              src="/media/illustrations/sketchy-1/8.png"
+              src="/media/illustrations/sketchy-1/4.png"
               class="mh-125px mb-9"
               alt=""
             />
@@ -90,11 +90,11 @@
             <!--end::Heading-->
             <!--begin::Description-->
             <div class="fs-6 fs-lg-4 text-muted">
-              To initiate the scanning process, simply input the job's
-              description or URL. Our AI then thoroughly analyzes your resume,
-              comparing it to the requirements of the job. Utilize the match
-              rate report generated to understand how to optimize your resume
-              effectively, increasing your chances of securing more interviews.
+              Simply input the job's description or URL. Our AI then thoroughly
+              analyzes your resume, comparing it to the requirements of the job.
+              Utilize the match rate report generated to understand how to
+              optimize your resume effectively, increasing your chances of
+              securing more interviews.
             </div>
             <!--end::Description-->
           </div>
@@ -107,7 +107,7 @@
           <div class="text-center mb-10 mb-md-0">
             <!--begin::Illustration-->
             <img
-              src="/media/illustrations/sketchy-1/12.png"
+              src="/media/illustrations/sketchy-1/9.png"
               class="mh-125px mb-9"
               alt=""
             />

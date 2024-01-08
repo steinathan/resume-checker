@@ -9,7 +9,7 @@ import { useConfigStore } from "@/stores/config";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/home",
+    path: "/",
     component: () => import("@/layouts/HomeLayout.vue"),
     children: [
       {
@@ -18,15 +18,6 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/Home.vue"),
       },
     ],
-  },
-  {
-    path: "/",
-    name: "sign-in-home",
-    component: () =>
-      import("@/views/crafted/authentication/basic-flow/SignIn.vue"),
-    meta: {
-      pageTitle: "Sign In",
-    },
   },
   {
     path: "/dash",

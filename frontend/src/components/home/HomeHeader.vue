@@ -31,7 +31,7 @@
               </button>
               <!--end::Mobile menu toggle-->
               <!--begin::Logo image-->
-              <a href="../../demo1/dist/landing.html">
+              <a href="/signin">
                 <img
                   alt="Logo"
                   src="/media/logos/landing.svg"
@@ -112,11 +112,7 @@
             <!--end::Menu wrapper-->
             <!--begin::Toolbar-->
             <div class="flex-equal text-end ms-1">
-              <a
-                href="../../demo1/dist/authentication/layouts/corporate/sign-in.html"
-                class="btn btn-success"
-                >Sign In</a
-              >
+              <a href="/sign-in" class="btn btn-success">Sign In</a>
             </div>
             <!--end::Toolbar-->
           </div>

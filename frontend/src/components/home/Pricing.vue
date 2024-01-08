@@ -31,16 +31,14 @@
               Clear Pricing Makes it Easy
             </h1>
             <div class="text-gray-600 fw-semibold fs-5">
-              Save thousands to millions of bucks by using single tool for
-              different <br />amazing and outstanding cool and great useful
-              admin
+              Boost your interview chances. Cancel any time.
             </div>
           </div>
           <!--end::Heading-->
           <!--begin::Pricing-->
           <div class="text-center" id="kt_pricing">
             <!--begin::Row-->
-            <div class="row g-10">
+            <div class="row align-content-between">
               <!--begin::Col-->
               <div class="col-xl-6">
                 <div class="d-flex h-100 align-items-center">
@@ -55,7 +53,7 @@
                       <!--end::Title-->
                       <!--begin::Description-->
                       <div class="text-gray-400 fw-semibold mb-5">
-                        Best Settings for Startups
+                        $1 forever
                       </div>
                       <!--end::Description-->
                       <!--begin::Price-->
@@ -65,7 +63,7 @@
                           class="fs-3x fw-bold text-primary"
                           data-kt-plan-price-month="99"
                           data-kt-plan-price-annual="999"
-                          >99</span
+                          >1</span
                         >
                         <span
                           class="fs-7 fw-semibold opacity-50"
@@ -80,62 +78,20 @@
                     <!--begin::Features-->
                     <div class="w-100 mb-10">
                       <!--begin::Item-->
-                      <div class="d-flex flex-stack mb-5">
+                      <div
+                        v-for="(item, i) in freeItems"
+                        :key="i"
+                        class="d-flex flex-stack mb-5"
+                      >
                         <span
                           class="fw-semibold fs-6 text-gray-800 text-start pe-3"
-                          >Up to 10 Active Users</span
+                          >{{ item.title }}</span
                         >
                         <i class="ki-duotone ki-check-circle fs-1 text-success">
                           <span class="path1"></span>
                           <span class="path2"></span>
                         </i>
                       </div>
-                      <!--end::Item-->
-                      <!--begin::Item-->
-                      <div class="d-flex flex-stack mb-5">
-                        <span
-                          class="fw-semibold fs-6 text-gray-800 text-start pe-3"
-                          >Up to 30 Project Integrations</span
-                        >
-                        <i class="ki-duotone ki-check-circle fs-1 text-success">
-                          <span class="path1"></span>
-                          <span class="path2"></span>
-                        </i>
-                      </div>
-                      <!--end::Item-->
-                      <!--begin::Item-->
-                      <div class="d-flex flex-stack mb-5">
-                        <span class="fw-semibold fs-6 text-gray-800"
-                          >Keen Analytics Platform</span
-                        >
-                        <i class="ki-duotone ki-cross-circle fs-1">
-                          <span class="path1"></span>
-                          <span class="path2"></span>
-                        </i>
-                      </div>
-                      <!--end::Item-->
-                      <!--begin::Item-->
-                      <div class="d-flex flex-stack mb-5">
-                        <span class="fw-semibold fs-6 text-gray-800"
-                          >Targets Timelines & Files</span
-                        >
-                        <i class="ki-duotone ki-cross-circle fs-1">
-                          <span class="path1"></span>
-                          <span class="path2"></span>
-                        </i>
-                      </div>
-                      <!--end::Item-->
-                      <!--begin::Item-->
-                      <div class="d-flex flex-stack">
-                        <span class="fw-semibold fs-6 text-gray-800"
-                          >Unlimited Projects</span
-                        >
-                        <i class="ki-duotone ki-cross-circle fs-1">
-                          <span class="path1"></span>
-                          <span class="path2"></span>
-                        </i>
-                      </div>
-                      <!--end::Item-->
                     </div>
                     <!--end::Features-->
                     <!--begin::Select-->
@@ -156,7 +112,7 @@
                     <!--begin::Heading-->
                     <div class="mb-7 text-center">
                       <!--begin::Title-->
-                      <h1 class="text-white mb-5 fw-boldest">Business</h1>
+                      <h1 class="text-white mb-5 fw-boldest">Monthly</h1>
                       <!--end::Title-->
                       <!--begin::Description-->
                       <div class="text-white opacity-75 fw-semibold mb-5">
@@ -170,7 +126,7 @@
                           class="fs-3x fw-bold text-white"
                           data-kt-plan-price-month="199"
                           data-kt-plan-price-annual="1999"
-                          >199</span
+                          >14</span
                         >
                         <span
                           class="fs-7 fw-semibold text-white opacity-75"
@@ -185,59 +141,16 @@
                     <!--begin::Features-->
                     <div class="w-100 mb-10">
                       <!--begin::Item-->
-                      <div class="d-flex flex-stack mb-5">
+                      <div
+                        v-for="(item, i) in premiumItems"
+                        :key="i"
+                        class="d-flex flex-stack mb-5"
+                      >
                         <span
                           class="fw-semibold fs-6 text-white opacity-75 text-start pe-3"
-                          >Up to 10 Active Users</span
+                          >{{ item.title }}</span
                         >
                         <i class="ki-duotone ki-check-circle fs-1 text-white">
-                          <span class="path1"></span>
-                          <span class="path2"></span>
-                        </i>
-                      </div>
-                      <!--end::Item-->
-                      <!--begin::Item-->
-                      <div class="d-flex flex-stack mb-5">
-                        <span
-                          class="fw-semibold fs-6 text-white opacity-75 text-start pe-3"
-                          >Up to 30 Project Integrations</span
-                        >
-                        <i class="ki-duotone ki-check-circle fs-1 text-white">
-                          <span class="path1"></span>
-                          <span class="path2"></span>
-                        </i>
-                      </div>
-                      <!--end::Item-->
-                      <!--begin::Item-->
-                      <div class="d-flex flex-stack mb-5">
-                        <span
-                          class="fw-semibold fs-6 text-white opacity-75 text-start pe-3"
-                          >Keen Analytics Platform</span
-                        >
-                        <i class="ki-duotone ki-check-circle fs-1 text-white">
-                          <span class="path1"></span>
-                          <span class="path2"></span>
-                        </i>
-                      </div>
-                      <!--end::Item-->
-                      <!--begin::Item-->
-                      <div class="d-flex flex-stack mb-5">
-                        <span
-                          class="fw-semibold fs-6 text-white opacity-75 text-start pe-3"
-                          >Targets Timelines & Files</span
-                        >
-                        <i class="ki-duotone ki-check-circle fs-1 text-white">
-                          <span class="path1"></span>
-                          <span class="path2"></span>
-                        </i>
-                      </div>
-                      <!--end::Item-->
-                      <!--begin::Item-->
-                      <div class="d-flex flex-stack">
-                        <span class="fw-semibold fs-6 text-white opacity-75"
-                          >Unlimited Projects</span
-                        >
-                        <i class="ki-duotone ki-cross-circle fs-1 text-white">
                           <span class="path1"></span>
                           <span class="path2"></span>
                         </i>
@@ -285,4 +198,62 @@
   <!--end::Pricing Section-->
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const freeItems = [
+  {
+    title: "5 Match Rate calculations / month",
+    checked: true,
+  },
+  {
+    title: "5 Keyword Comparisons / month",
+    checked: true,
+  },
+  {
+    title: "Resume Manager",
+    checked: true,
+  },
+  {
+    title: "Cover letter generation",
+    checked: true,
+  },
+  {
+    title: "Resume Fixer",
+    checked: true,
+  },
+];
+
+const premiumItems = [
+  {
+    title: "Unlimited Match Rate calculations",
+    checked: true,
+  },
+  {
+    title: "Unlimited Keyword Comparisons",
+    checked: true,
+  },
+  {
+    title: "Unlimited Scan History",
+    checked: true,
+  },
+  {
+    title: "Predicted Skills",
+    checked: true,
+  },
+  {
+    title: "Resume Manager",
+    checked: true,
+  },
+  {
+    title: "Jobs Matcher",
+    checked: true,
+  },
+  {
+    title: "Premium ATS & Recruiter Findings",
+    checked: true,
+  },
+  {
+    title: "Premium Cover Letter Template",
+    checked: true,
+  },
+];
+</script>

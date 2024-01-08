@@ -11,13 +11,12 @@
           id="clients"
           data-kt-scroll-offset="{default: 125, lg: 150}"
         >
-          What Our Clients Say
+          Customer testimonials
         </h3>
         <!--end::Title-->
         <!--begin::Description-->
         <div class="fs-5 text-muted fw-bold">
-          Save thousands to millions of bucks by using single tool <br />for
-          different amazing and great useful admin
+          50+ real life stories from trusted users
         </div>
         <!--end::Description-->
       </div>
@@ -25,7 +24,7 @@
       <!--begin::Row-->
       <div class="row g-lg-10 mb-10 mb-lg-20">
         <!--begin::Col-->
-        <div class="col-lg-4">
+        <div v-for="(t, i) in testimonials" :key="i" class="col-lg-4">
           <!--begin::Testimonial-->
           <div
             class="d-flex flex-column justify-content-between h-lg-100 px-10 px-lg-0 pe-lg-10 mb-15 mb-lg-0"
@@ -53,15 +52,12 @@
               <!--end::Rating-->
               <!--begin::Title-->
               <div class="fs-2 fw-bold text-dark mb-3">
-                This is by far the cleanest template <br />and the most well
-                structured
+                {{ t.title }}
               </div>
               <!--end::Title-->
               <!--begin::Feedback-->
               <div class="text-gray-500 fw-semibold fs-4">
-                The most well thought out design theme I have ever used. The
-                codes are up to tandard. The css styles are very clean. In fact
-                the cleanest and the most up to standard I have ever seen.
+                {{ t.description }}
               </div>
               <!--end::Feedback-->
             </div>
@@ -69,142 +65,16 @@
             <!--begin::Author-->
             <div class="d-flex align-items-center">
               <!--begin::Avatar-->
-              <div class="symbol symbol-circle symbol-50px me-5">
-                <img src="/media/avatars/300-1.jpg" class="" alt="" />
-              </div>
+              <!--              <div class="symbol symbol-circle symbol-50px me-5">-->
+              <!--                <img src="/media/avatars/300-1.jpg" class="" alt="" />-->
+              <!--              </div>-->
               <!--end::Avatar-->
               <!--begin::Name-->
               <div class="flex-grow-1">
-                <a href="#" class="text-dark fw-bold text-hover-primary fs-6"
-                  >Paul Miles</a
-                >
-                <span class="text-muted d-block fw-bold">Development Lead</span>
-              </div>
-              <!--end::Name-->
-            </div>
-            <!--end::Author-->
-          </div>
-          <!--end::Testimonial-->
-        </div>
-        <!--end::Col-->
-        <!--begin::Col-->
-        <div class="col-lg-4">
-          <!--begin::Testimonial-->
-          <div
-            class="d-flex flex-column justify-content-between h-lg-100 px-10 px-lg-0 pe-lg-10 mb-15 mb-lg-0"
-          >
-            <!--begin::Wrapper-->
-            <div class="mb-7">
-              <!--begin::Rating-->
-              <div class="rating mb-6">
-                <div class="rating-label me-2 checked">
-                  <i class="ki-duotone ki-star fs-5"></i>
-                </div>
-                <div class="rating-label me-2 checked">
-                  <i class="ki-duotone ki-star fs-5"></i>
-                </div>
-                <div class="rating-label me-2 checked">
-                  <i class="ki-duotone ki-star fs-5"></i>
-                </div>
-                <div class="rating-label me-2 checked">
-                  <i class="ki-duotone ki-star fs-5"></i>
-                </div>
-                <div class="rating-label me-2 checked">
-                  <i class="ki-duotone ki-star fs-5"></i>
-                </div>
-              </div>
-              <!--end::Rating-->
-              <!--begin::Title-->
-              <div class="fs-2 fw-bold text-dark mb-3">
-                This is by far the cleanest template <br />and the most well
-                structured
-              </div>
-              <!--end::Title-->
-              <!--begin::Feedback-->
-              <div class="text-gray-500 fw-semibold fs-4">
-                The most well thought out design theme I have ever used. The
-                codes are up to tandard. The css styles are very clean. In fact
-                the cleanest and the most up to standard I have ever seen.
-              </div>
-              <!--end::Feedback-->
-            </div>
-            <!--end::Wrapper-->
-            <!--begin::Author-->
-            <div class="d-flex align-items-center">
-              <!--begin::Avatar-->
-              <div class="symbol symbol-circle symbol-50px me-5">
-                <img src="/media/avatars/300-2.jpg" class="" alt="" />
-              </div>
-              <!--end::Avatar-->
-              <!--begin::Name-->
-              <div class="flex-grow-1">
-                <a href="#" class="text-dark fw-bold text-hover-primary fs-6"
-                  >Janya Clebert</a
-                >
-                <span class="text-muted d-block fw-bold">Development Lead</span>
-              </div>
-              <!--end::Name-->
-            </div>
-            <!--end::Author-->
-          </div>
-          <!--end::Testimonial-->
-        </div>
-        <!--end::Col-->
-        <!--begin::Col-->
-        <div class="col-lg-4">
-          <!--begin::Testimonial-->
-          <div
-            class="d-flex flex-column justify-content-between h-lg-100 px-10 px-lg-0 pe-lg-10 mb-15 mb-lg-0"
-          >
-            <!--begin::Wrapper-->
-            <div class="mb-7">
-              <!--begin::Rating-->
-              <div class="rating mb-6">
-                <div class="rating-label me-2 checked">
-                  <i class="ki-duotone ki-star fs-5"></i>
-                </div>
-                <div class="rating-label me-2 checked">
-                  <i class="ki-duotone ki-star fs-5"></i>
-                </div>
-                <div class="rating-label me-2 checked">
-                  <i class="ki-duotone ki-star fs-5"></i>
-                </div>
-                <div class="rating-label me-2 checked">
-                  <i class="ki-duotone ki-star fs-5"></i>
-                </div>
-                <div class="rating-label me-2 checked">
-                  <i class="ki-duotone ki-star fs-5"></i>
-                </div>
-              </div>
-              <!--end::Rating-->
-              <!--begin::Title-->
-              <div class="fs-2 fw-bold text-dark mb-3">
-                This is by far the cleanest template <br />and the most well
-                structured
-              </div>
-              <!--end::Title-->
-              <!--begin::Feedback-->
-              <div class="text-gray-500 fw-semibold fs-4">
-                The most well thought out design theme I have ever used. The
-                codes are up to tandard. The css styles are very clean. In fact
-                the cleanest and the most up to standard I have ever seen.
-              </div>
-              <!--end::Feedback-->
-            </div>
-            <!--end::Wrapper-->
-            <!--begin::Author-->
-            <div class="d-flex align-items-center">
-              <!--begin::Avatar-->
-              <div class="symbol symbol-circle symbol-50px me-5">
-                <img src="/media/avatars/300-16.jpg" class="" alt="" />
-              </div>
-              <!--end::Avatar-->
-              <!--begin::Name-->
-              <div class="flex-grow-1">
-                <a href="#" class="text-dark fw-bold text-hover-primary fs-6"
-                  >Steave Brown</a
-                >
-                <span class="text-muted d-block fw-bold">Development Lead</span>
+                <a href="#" class="text-dark fw-bold text-hover-primary fs-6">{{
+                  t.userName
+                }}</a>
+                <!--                <span class="text-muted d-block fw-bold">Development Lead</span>-->
               </div>
               <!--end::Name-->
             </div>
@@ -224,20 +94,20 @@
         <div class="my-2 me-5">
           <!--begin::Title-->
           <div class="fs-1 fs-lg-2qx fw-bold text-white mb-2">
-            Start With Metronic Today,
-            <span class="fw-normal">Speed Up Development!</span>
+            5+ job seekers rely on us to get hired
+            <!--            <span class="fw-normal">Speed Up Development!</span>-->
           </div>
           <!--end::Title-->
           <!--begin::Description-->
           <div class="fs-6 fs-lg-5 text-white fw-semibold opacity-75">
-            Join over 100,000 Professionals Community to Stay Ahead
+            Start with a free Premium trial for 2 weeks
           </div>
           <!--end::Description-->
         </div>
         <!--end::Content-->
         <!--begin::Link-->
         <a
-          class="btn btn-lg btn-outline border-2 btn-outline-white flex-shrink-0 my-2"
+          class="btn btn-lg btn-secondary btn-outline border-2 btn-outline-white flex-shrink-0 my-2"
           >Get started today</a
         >
         <!--end::Link-->
@@ -249,4 +119,31 @@
   <!--end::Testimonials Section-->
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const testimonials = [
+  {
+    title: "",
+    description:
+      "Great tool. I've made the mistake of sending the wrong coverletter to the wrong company before. This will eliminate that from happening. It also gave me a better way to format my resume!",
+    userName: "Rodrigo M.",
+    userRole: "",
+    avatar: "",
+  },
+  {
+    title: "",
+    description:
+      "Niceee! Application looks very slick and has a very nice user experience. I love it 🖤 Congratulations!",
+    userName: "Maddy O.",
+    userRole: "",
+    avatar: "",
+  },
+  {
+    title: "",
+    description:
+      "I have known for Resumescan's service for few years, and all of their tips and advice really helped me to get my current job in abroad! They are innovative and keep developing! Highly recommend :)",
+    userName: "Niloufer T.",
+    userRole: "",
+    avatar: "",
+  },
+];
+</script>

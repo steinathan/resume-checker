@@ -2,10 +2,7 @@
   <!--begin::Wrapper-->
   <div class="w-lg-500px p-10">
     <!--begin::Form-->
-    <VForm
-        class="form w-100"
-        id="kt_login_signin_form"
-    >
+    <VForm class="form w-100" id="kt_login_signin_form">
       <!--begin::Heading-->
       <div class="text-center mb-10">
         <!--begin::Title-->
@@ -110,14 +107,14 @@
 
         <!--begin::Google link-->
         <a
-            href="#"
-            @click="onGoogleClick"
-            class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5"
+          href="#"
+          @click="onGoogleClick"
+          class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5"
         >
           <img
-              alt="Logo"
-              :src="getAssetPath('media/svg/brand-logos/google-icon.svg')"
-              class="h-20px me-3"
+            alt="Logo"
+            :src="getAssetPath('media/svg/brand-logos/google-icon.svg')"
+            class="h-20px me-3"
           />
           Continue with Google
         </a>
@@ -156,11 +153,11 @@
 </template>
 
 <script lang="ts" setup>
-import {getAssetPath} from "@/core/helpers/assets";
-import {defineComponent, onMounted, ref} from "vue";
-import {ErrorMessage, Field, Form as VForm} from "vee-validate";
-import {useAuthStore, type User} from "@/stores/auth";
-import {useRouter} from "vue-router";
+import { getAssetPath } from "@/core/helpers/assets";
+import { defineComponent, onMounted, ref } from "vue";
+import { ErrorMessage, Field, Form as VForm } from "vee-validate";
+import { useAuthStore, type User } from "@/stores/auth";
+import { useRouter } from "vue-router";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import * as Yup from "yup";
 import supabase from "@/core/services/supabase";
@@ -177,28 +174,29 @@ const login = Yup.object().shape({
 
 const onGoogleClick = () => {
   supabase.auth.signInWithOAuth({
-    provider: 'google',
+    provider: "google",
     options: {
       queryParams: {
         redirectTo: `${window.location.origin}/sign-in`,
-        access_type: 'offline',
-        prompt: 'consent',
+        access_type: "offline",
+        prompt: "consent",
       },
-    }
-  })
-}
+    },
+  });
+};
 
 onMounted(async () => {
-  const {data} = await supabase.auth.getUser()
+  const { data } = await supabase.auth.getUser();
 
   if (data && data.user) {
-    const {data: sessionData, error} = await supabase.auth.getSession()
-    const {session} = sessionData
-    data.user.api_token = session?.access_token
-    store.setAuth(data.user as User)
-    window.location.replace(window.location.origin + "/dashboard")
+    const { data: sessionData, error } = await supabase.auth.getSession();
+    const { session } = sessionData;
+    // @ts-ignore
+    data.user.api_token = session?.access_token;
+    store.setAuth(data.user as unknown as User);
+    window.location.replace(window.location.origin + "/dashboard");
   } else {
-    console.warn("user not logged in")
+    console.warn("user not logged in");
   }
-})
+});
 </script>

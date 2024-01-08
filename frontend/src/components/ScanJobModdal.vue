@@ -32,7 +32,7 @@
               >
                 <span class="visually-hidden">Loading...</span>
               </div>
-              <h1 class="fw-boldest mt-5">{{ uploadProgress }}%</h1>
+              <!--              <h1 class="fw-boldest mt-5">{{ uploadProgress }}%</h1>-->
               <p class="text-center fs-6 fw-boldest">
                 {{ uploadMessage }}
               </p>
