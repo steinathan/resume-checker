@@ -287,7 +287,7 @@ import type { Resume, ResumeLLMAnalysis, ResumeSection } from "../../../types";
 import { useResumeStore } from "@/stores/resume";
 import { storeToRefs } from "pinia";
 import _ from "lodash";
-import ScanSection from "@/components/job_scan/scan_section.vue";
+import ScanSection from "@/components/jobScan/ScanSection.vue";
 
 type rev = {
   heading: string;

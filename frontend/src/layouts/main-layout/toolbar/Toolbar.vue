@@ -66,13 +66,11 @@
 import { getAssetPath } from "@/core/helpers/assets";
 import { defineComponent } from "vue";
 import PageTitle from "@/layouts/main-layout/toolbar/PageTitle.vue";
-import Dropdown1 from "@/components/dropdown/Dropdown1.vue";
 import { toolbarWidthFluid } from "@/core/helpers/config";
 
 export default defineComponent({
   name: "KToolbar",
   components: {
-    Dropdown1,
     PageTitle,
   },
   setup() {

@@ -206,7 +206,6 @@
 </template>
 
 <script lang="ts" setup>
-import Dropdown3 from "@/components/dropdown/Dropdown3.vue";
 import { computed, onMounted, ref } from "vue";
 import type { Resume, ResumeLLMAnalysis } from "../../../types";
 import { useRoute } from "vue-router";

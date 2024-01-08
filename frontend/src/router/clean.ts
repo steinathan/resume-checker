@@ -66,18 +66,18 @@ const routes: Array<RouteRecordRaw> = [
             path: "results",
             name: "single-scan-analysis",
             component: () =>
-              import("@/components/job_scan/single_job_scan_section.vue"),
+              import("@/components/jobScan/SingleJobScanSection.vue"),
           },
           {
             path: "cover-letter",
             name: "single-scan-cover-letter",
-            component: () => import("@/components/job_scan/cover_letter.vue"),
+            component: () => import("@/components/jobScan/CoverLetter.vue"),
           },
           {
             path: "resume",
             name: "single-scan-resume",
             component: () =>
-              import("@/components/job_scan/single_scan_resume.vue"),
+              import("@/components/jobScan/SingleScanResume.vue"),
           },
         ],
       },

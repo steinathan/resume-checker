@@ -171,79 +171,79 @@
         </div>
       </template>
 
-      <div
-        data-kt-menu-trigger="click"
-        data-kt-menu-placement="bottom-start"
-        class="menu-item menu-lg-down-accordion me-lg-1"
-      >
-        <span class="menu-link py-3">
-          <span class="menu-title">{{ translate("resources") }}</span>
-          <span class="menu-arrow d-lg-none"></span>
-        </span>
-        <div
-          class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px"
-        >
-          <div class="menu-item">
-            <a
-              class="menu-link py-3"
-              href="https://preview.keenthemes.com/metronic8/vue/docs/#/utilities"
-            >
-              <span class="menu-icon">
-                <i
-                  v-if="headerMenuIcons === 'bootstrap'"
-                  class="bi bi-box fs-3"
-                ></i>
-                <KTIcon
-                  v-if="headerMenuIcons === 'keenthemes'"
-                  icon-name="rocket"
-                  icon-class="fs-2"
-                />
-              </span>
-              <span class="menu-title">{{ translate("components") }}</span>
-            </a>
-          </div>
-          <div class="menu-item">
-            <a
-              class="menu-link py-3"
-              href="https://preview.keenthemes.com/metronic8/vue/docs/#/doc-overview"
-            >
-              <span class="menu-icon">
-                <i
-                  v-if="headerMenuIcons === 'bootstrap'"
-                  class="bi bi-card-text fs-3"
-                ></i>
-                <KTIcon
-                  v-if="headerMenuIcons === 'keenthemes'"
-                  icon-name="abstract-26"
-                  icon-class="fs-2"
-                />
-              </span>
-              <span class="menu-title">{{ translate("documentation") }}</span>
-            </a>
-          </div>
-          <div class="menu-item">
-            <a
-              class="menu-link py-3"
-              href="https://preview.keenthemes.com/metronic8/vue/docs/#/changelog"
-            >
-              <span class="menu-icon">
-                <i
-                  v-if="headerMenuIcons === 'bootstrap'"
-                  class="bi bi-journal-code fs-3"
-                ></i>
-                <KTIcon
-                  v-if="headerMenuIcons === 'keenthemes'"
-                  icon-name="code"
-                  icon-class="fs-2"
-                />
-              </span>
-              <span class="menu-title"
-                >{{ translate("changelog") }} v{{ version }}</span
-              >
-            </a>
-          </div>
-        </div>
-      </div>
+      <!--      <div-->
+      <!--        data-kt-menu-trigger="click"-->
+      <!--        data-kt-menu-placement="bottom-start"-->
+      <!--        class="menu-item menu-lg-down-accordion me-lg-1"-->
+      <!--      >-->
+      <!--        <span class="menu-link py-3">-->
+      <!--          <span class="menu-title">{{ translate("resources") }}</span>-->
+      <!--          <span class="menu-arrow d-lg-none"></span>-->
+      <!--        </span>-->
+      <!--        <div-->
+      <!--          class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px"-->
+      <!--        >-->
+      <!--          <div class="menu-item">-->
+      <!--            <a-->
+      <!--              class="menu-link py-3"-->
+      <!--              href="https://preview.keenthemes.com/metronic8/vue/docs/#/utilities"-->
+      <!--            >-->
+      <!--              <span class="menu-icon">-->
+      <!--                <i-->
+      <!--                  v-if="headerMenuIcons === 'bootstrap'"-->
+      <!--                  class="bi bi-box fs-3"-->
+      <!--                ></i>-->
+      <!--                <KTIcon-->
+      <!--                  v-if="headerMenuIcons === 'keenthemes'"-->
+      <!--                  icon-name="rocket"-->
+      <!--                  icon-class="fs-2"-->
+      <!--                />-->
+      <!--              </span>-->
+      <!--              <span class="menu-title">{{ translate("components") }}</span>-->
+      <!--            </a>-->
+      <!--          </div>-->
+      <!--          <div class="menu-item">-->
+      <!--            <a-->
+      <!--              class="menu-link py-3"-->
+      <!--              href="https://preview.keenthemes.com/metronic8/vue/docs/#/doc-overview"-->
+      <!--            >-->
+      <!--              <span class="menu-icon">-->
+      <!--                <i-->
+      <!--                  v-if="headerMenuIcons === 'bootstrap'"-->
+      <!--                  class="bi bi-card-text fs-3"-->
+      <!--                ></i>-->
+      <!--                <KTIcon-->
+      <!--                  v-if="headerMenuIcons === 'keenthemes'"-->
+      <!--                  icon-name="abstract-26"-->
+      <!--                  icon-class="fs-2"-->
+      <!--                />-->
+      <!--              </span>-->
+      <!--              <span class="menu-title">{{ translate("documentation") }}</span>-->
+      <!--            </a>-->
+      <!--          </div>-->
+      <!--          <div class="menu-item">-->
+      <!--            <a-->
+      <!--              class="menu-link py-3"-->
+      <!--              href="https://preview.keenthemes.com/metronic8/vue/docs/#/changelog"-->
+      <!--            >-->
+      <!--              <span class="menu-icon">-->
+      <!--                <i-->
+      <!--                  v-if="headerMenuIcons === 'bootstrap'"-->
+      <!--                  class="bi bi-journal-code fs-3"-->
+      <!--                ></i>-->
+      <!--                <KTIcon-->
+      <!--                  v-if="headerMenuIcons === 'keenthemes'"-->
+      <!--                  icon-name="code"-->
+      <!--                  icon-class="fs-2"-->
+      <!--                />-->
+      <!--              </span>-->
+      <!--              <span class="menu-title"-->
+      <!--                >{{ translate("changelog") }} v{{ version }}</span-->
+      <!--              >-->
+      <!--            </a>-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
 
       <!--end::Menu-->
     </div>
