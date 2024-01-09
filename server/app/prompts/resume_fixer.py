@@ -54,7 +54,7 @@ class Job(BaseModel):
     endDate: str | None = Field(None, description="End date of the job")
     location: str | None = Field(None, description="Location of the job")
     responsibilities: List[str] | None = Field(
-        None, description="List of job responsibilities")
+        [], description="List of job responsibilities, each responsibility should be in a separate array item")
     startDate: str | None = Field(None, description="Start date of the job")
     title: str | None = Field(None, description="Job title")
 
@@ -68,22 +68,19 @@ class Project(BaseModel):
 
 class SkillDict(BaseModel):
     Skills: List[str] | None = Field(
-        None, description="List of technical skills")
+        [], description="List of technical skills")
     Interests: List[str] | None = Field(
-        None, description="List of personal interests")
+        [], description="List of personal interests")
 
 
 class StructuredResume(BaseModel):
     degrees: List[Degree] | None = Field(
-        None, description="List of educational degrees")
-    intro: Intro | None = Field(None, description="Introduction section")
-    jobs: List[Job] | None = Field(
-        None, description="List of work experiences")
-    projectList: List[Project] | None = Field(
-        None, description="List of projects")
-    skillDict: Dict[str, List[str]] | None = Field(
-        None,
-        description="Dictionary of skills and interests, for example: Programming, Infrastructure & Automation, Other Skills")
+        [], description="List of educational degrees")
+    intro: Intro | None = Field({}, description="Introduction section")
+    jobs: List[Job] | None = Field([], description="List of work experiences")
+    projectList: List[Project] | None = Field([], description="List of projects")
+    skillDict: Dict[str, List[str]] | None = Field({},
+                                                   description="Dictionary of skills and interests, for example: Programming, Infrastructure & Automation, Other Skills")
 
 
 resume_fixer_parser = PydanticOutputParser(
@@ -98,5 +95,3 @@ revamp_resume_prompt = PromptTemplate(
 )
 
 # print(resume_fixer_parser.get_format_instructions())
-
-

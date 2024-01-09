@@ -4,155 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f139b09e-ed21-44ad-98e3-6a656f3a056f" name="Changes" comment="fixing homepage">
+    <list default="true" id="f139b09e-ed21-44ad-98e3-6a656f3a056f" name="Changes" comment="removing dummy components">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/activity-timeline-items/Item1.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/activity-timeline-items/Item2.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/activity-timeline-items/Item3.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/activity-timeline-items/Item4.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/activity-timeline-items/Item5.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/activity-timeline-items/Item6.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/activity-timeline-items/Item7.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/activity-timeline-items/Item8.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/calendar/CalendarApp1.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/cards/Card.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/cards/Card1.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/cards/Card2.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/cards/Card3.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/cards/Card4.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/customers/cards/events-and-logs/Events.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/customers/cards/events-and-logs/Logs.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/customers/cards/overview/CreditBalance.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/customers/cards/overview/Invoices.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/customers/cards/overview/PaymentMethods.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/customers/cards/overview/PaymentRecords.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/customers/cards/statments/Earnings.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/customers/cards/statments/Statement.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/dashboard-default-widgets/Widget1.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/dashboard-default-widgets/Widget10.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/dashboard-default-widgets/Widget2.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/dashboard-default-widgets/Widget3.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/dashboard-default-widgets/Widget4.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/dashboard-default-widgets/Widget5.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/dashboard-default-widgets/Widget6.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/dashboard-default-widgets/Widget7.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/dashboard-default-widgets/Widget8.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/dashboard-default-widgets/Widget9.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/devs/Questions.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/devs/Replies.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/devs/TextFormatting.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/dropdown/Dropdown1.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/dropdown/Dropdown2.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/dropdown/Dropdown3.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/dropdown/Dropdown4.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/files/File.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/files/Folder.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/highlighters/CodeHighlighter.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/highlighters/CodeHighlighter2.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/job_scan/cover_letter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/jobScan/CoverLetter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/job_scan/scan_section.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/jobScan/ScanSection.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/job_scan/single_job_scan_section.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/jobScan/SingleJobScanSection.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/job_scan/single_scan_resume.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/jobScan/SingleScanResume.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/kt-datatable/KTDataTable.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/kt-datatable/table-partials/Loading.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/kt-datatable/table-partials/TableFooter.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/kt-datatable/table-partials/models.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/kt-datatable/table-partials/table-content/TableContent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/kt-datatable/table-partials/table-content/table-body/TableBodyRow.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/kt-datatable/table-partials/table-content/table-footer/TableItemsPerPageSelect.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/kt-datatable/table-partials/table-content/table-footer/TablePagination.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/kt-datatable/table-partials/table-content/table-head/TableHeadRow.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/messenger-parts/MessageIn.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/messenger-parts/MessageOut.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/forms/AddCustomerModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/forms/CreateAPIKeyModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/forms/ExportCustomerModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/forms/NewAddressModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/forms/NewCardModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/forms/NewEventModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/forms/NewTargetModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/general/InviteFriendsModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/general/ShareAndEarnModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/general/UpgradePlanModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/general/ViewUsersModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/wizards/CreateAccountModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/wizards/TwoFactorAuthModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/wizards/create-app-modal/CreateAppModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/wizards/create-app-modal/CreateAppModalForm.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/wizards/create-app-modal/steps/CreateAppStep1.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/wizards/create-app-modal/steps/CreateAppStep2.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/wizards/create-app-modal/steps/CreateAppStep3.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/wizards/create-app-modal/steps/CreateAppStep4.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/wizards/create-app-modal/steps/CreateAppStep5.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modals/wizards/create-app-modal/types.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/page-layouts/SingleJobScanLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/page-layouts/SingleJobScanLayout.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/page-layouts/SingleResumeLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/page-layouts/SingleResumeLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/resume/single_resume_section.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/resume/single_resume_section.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/charts/Widget1.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/charts/Widget2.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/charts/Widget3.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/charts/Widget4.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/charts/Widget5.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/charts/Widget6.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/charts/Widget7.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/charts/Widget8.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/engage/Widget1.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/feeds/Widget1.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/feeds/Widget2.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/feeds/Widget3.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/feeds/Widget4.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/feeds/Widget5.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/feeds/Widget6.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/lists/Widget1.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/lists/Widget2.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/lists/Widget3.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/lists/Widget4.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/lists/Widget5.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/lists/Widget6.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/lists/Widget7.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/lists/Widget8.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/mixed/Widget1.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/mixed/Widget10.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/mixed/Widget11.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/mixed/Widget12.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/mixed/Widget13.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/mixed/Widget14.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/mixed/Widget2.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/mixed/Widget3.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/mixed/Widget4.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/mixed/Widget5.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/mixed/Widget6.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/mixed/Widget7.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/mixed/Widget8.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/mixed/Widget9.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/statsistics/Widget1.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/statsistics/Widget2.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/statsistics/Widget3.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/statsistics/Widget4.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/statsistics/Widget5.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/statsistics/Widget6.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/JobScanList.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/ResumeList.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/Widget1.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/Widget10.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/Widget11.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/Widget12.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/Widget13.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/Widget2.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/Widget3.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/Widget4.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/Widget6.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/Widget7.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/Widget8.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/wizard/steps/Step1.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/wizard/steps/Step2.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/wizard/steps/Step3.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/wizard/steps/Step4.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/wizard/steps/Step5.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/layouts/main-layout/MainLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/layouts/main-layout/MainLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/layouts/main-layout/header/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/layouts/main-layout/header/Menu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/layouts/main-layout/toolbar/Toolbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/layouts/main-layout/toolbar/Toolbar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router/clean.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/clean.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/helpers/resume_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/helpers/resume_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/prompts/resume_fixer.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/prompts/resume_fixer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/navicstein_chinemerem.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/resume_templates/master_tmpl.docx" beforeDir="false" afterPath="$PROJECT_DIR$/server/resume_templates/master_tmpl.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,9 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="Python Script" />
         <option value="Vue Composition API Component" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -276,7 +136,7 @@
       <recent name="$PROJECT_DIR$/server" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="langchain-ollama" />
       <option name="ENV_FILES" value="" />
@@ -328,8 +188,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
         <item itemvalue="Python.main" />
+        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -377,7 +237,8 @@
       <workItem from="1704575629385" duration="2299000" />
       <workItem from="1704623996161" duration="4265000" />
       <workItem from="1704742221218" duration="362000" />
-      <workItem from="1704745943355" duration="8096000" />
+      <workItem from="1704745943355" duration="13218000" />
+      <workItem from="1704841782633" duration="712000" />
     </task>
     <task id="LOCAL-00001" summary="↫ initial commit">
       <option name="closed" value="true" />
@@ -587,7 +448,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704755693172</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="removing dummy components">
+      <option name="closed" value="true" />
+      <created>1704756570089</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1704756570089</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -619,7 +488,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/server" />
     </ignored-roots>
-    <MESSAGE value="↫ initial commit" />
     <MESSAGE value=" fix readme, add cli usage, improved prompt" />
     <MESSAGE value="¶ refactor, entry point, add cli" />
     <MESSAGE value="started v1 of API" />
@@ -644,7 +512,8 @@
     <MESSAGE value="started AI adding resume builder" />
     <MESSAGE value=" add option to soft delete resume&#10;tested resume fixer" />
     <MESSAGE value="fixing homepage" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing homepage" />
+    <MESSAGE value="removing dummy components" />
+    <option name="LAST_COMMIT_MESSAGE" value="removing dummy components" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -691,8 +560,38 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py</url>
+          <line>204</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/main.py</url>
+          <line>72</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/app/helpers/resume_generator.py</url>
+          <line>68</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/app/handlers/resume_handler.py</url>
+          <line>218</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/app/handlers/resume_handler.py</url>
+          <line>214</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py</url>
+          <line>264</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py</url>
           <line>265</line>
-          <option name="timeStamp" value="62" />
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -705,7 +604,7 @@
     <SUITE FILE_PATH="coverage/resume_checker$common_models.coverage" NAME="common_models Coverage Results" MODIFIED="1704148636040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/models" />
     <SUITE FILE_PATH="coverage/resume_checker$resume_analysis_prompt.coverage" NAME="resume_analysis_prompt Coverage Results" MODIFIED="1703977536416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/prompts" />
     <SUITE FILE_PATH="coverage/resume_checker$job_matcher_prompt.coverage" NAME="job_matcher_prompt Coverage Results" MODIFIED="1703666837684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/prompts" />
-    <SUITE FILE_PATH="coverage/resume_checker$main.coverage" NAME="main Coverage Results" MODIFIED="1704748384477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/resume_checker$main.coverage" NAME="main Coverage Results" MODIFIED="1704760289750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
     <SUITE FILE_PATH="coverage/resume_checker$ats_job_prompt.coverage" NAME="ats_job_prompt Coverage Results" MODIFIED="1703715597533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/prompts" />
     <SUITE FILE_PATH="coverage/resume_checker$test_analyzer.coverage" NAME="test_analyzer Coverage Results" MODIFIED="1704125905972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/tests" />
   </component>

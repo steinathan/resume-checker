@@ -4,3 +4,4 @@ resumes/*.pdf
 *.log
 __pycache__
 static/*
+*.docx

@@ -88,13 +88,21 @@
               <!--begin::Menu-->
               <div class="me-0">
                 <button
-                  class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
-                  data-kt-menu-trigger="click"
-                  data-kt-menu-placement="bottom-end"
-                  data-kt-menu-flip="top-end"
+                  @click="fixUserResume"
+                  class="btn btn-sm btn-primary me-2"
+                  id="kt_user_follow_button"
                 >
-                  <i class="bi bi-three-dots fs-3"></i>
+                  <KTIcon icon-name="check" icon-class="fs-3 d-none" />
+                  Fix Resume
                 </button>
+                <!--                <button-->
+                <!--                  class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"-->
+                <!--                  data-kt-menu-trigger="click"-->
+                <!--                  data-kt-menu-placement="bottom-end"-->
+                <!--                  data-kt-menu-flip="top-end"-->
+                <!--                >-->
+                <!--                  <i class="bi bi-three-dots fs-3"></i>-->
+                <!--                </button>-->
                 <!--                <Dropdown3></Dropdown3>-->
               </div>
               <!--end::Menu-->
@@ -234,6 +242,8 @@ import KTIcon from "@/core/helpers/kt-icon/KTIcon.vue";
 import { getColorCodeByPercentage } from "@/core/helpers/color";
 import { useResumeStore } from "@/stores/resume";
 import { storeToRefs } from "pinia";
+import Swal from "sweetalert2";
+import { fixResume } from "@/core/services/hooks";
 
 const route = useRoute();
 
@@ -254,6 +264,16 @@ onMounted(async () => {
     await resumeStore.fetchResume(scan.job_scan?.resume_id);
   }
 });
+
+async function fixUserResume() {
+  try {
+    await fixResume(singleScan.value.resume_id as string, singleScan.value.id);
+  } catch (e) {
+    alert(
+      "Something bad happened while trying to this this resume, please try again!"
+    );
+  }
+}
 </script>
 
 <style>

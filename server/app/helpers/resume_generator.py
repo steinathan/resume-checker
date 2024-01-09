@@ -33,6 +33,9 @@ def render_intro_links(intro: Dict[str, str], template):
 def render_project_links(project_list, template):
     """ render the `projectList` list into RichText with embedded links """
     project_list_combined = []
+    if not project_list:
+        return project_list_combined
+
     for project in project_list:
         rich_text_string = RichText(project['description'])
         if 'link' in project and 'code' in project:

@@ -94,7 +94,7 @@
         <div class="my-2 me-5">
           <!--begin::Title-->
           <div class="fs-1 fs-lg-2qx fw-bold text-white mb-2">
-            5+ job seekers rely on us to get hired
+            50+ job seekers rely on us to get hired
             <!--            <span class="fw-normal">Speed Up Development!</span>-->
           </div>
           <!--end::Title-->

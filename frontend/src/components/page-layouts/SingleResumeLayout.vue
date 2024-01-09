@@ -67,7 +67,7 @@
             <!--begin::Actions-->
             <div class="d-flex my-4">
               <button
-                @click="fixResume()"
+                @click="fixUserResume"
                 class="btn btn-sm btn-primary me-2"
                 id="kt_user_follow_button"
               >
@@ -215,6 +215,8 @@ import KTIcon from "@/core/helpers/kt-icon/KTIcon.vue";
 import { getColorCodeByPercentage } from "@/core/helpers/color";
 import { useResumeStore } from "@/stores/resume";
 import { storeToRefs } from "pinia";
+import Swal from "sweetalert2";
+import { fixResume } from "@/core/services/hooks";
 
 const route = useRoute();
 
@@ -230,25 +232,9 @@ onMounted(async () => {
   console.log(analysis.value, resume.value);
 });
 
-async function fixResume() {
+async function fixUserResume() {
   try {
-    const yes = confirm("Fix your resume?");
-    if (yes) {
-      const url = `/resume/${resume.value.id}/fix`;
-      await axios({
-        url: url,
-        method: "GET",
-        responseType: "blob",
-      }).then((response) => {
-        const url = window.URL.createObjectURL(new Blob([response]));
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "revamped_resume.docx";
-        document.body.appendChild(a);
-        a.click();
-        window.URL.revokeObjectURL(url);
-      });
-    }
+    await fixResume(resume.value.id as string);
   } catch (e) {
     alert(
       "Something bad happened while trying to this this resume, please try again!"
