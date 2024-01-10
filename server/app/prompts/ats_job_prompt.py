@@ -67,8 +67,8 @@ class AtsJobPromptModel(BaseModel):
     job_title: str = Field(description="Extract the job title from the provided job description")
     company_name: str = Field(description="Extract the company's name from the job description or make an inference "
                                           "if it's not explicitly mentioned")
-    education: JobSection = Field(
-        description="Extract the educational qualifications necessary for the job from the job description only")
+    # education: JobSection = Field(
+    #     description="Extract the educational qualifications necessary for the job from the job description only")
     avoidable_keywords: JobSection = Field(
         description="Identify and list keywords in the work experience and skills section that may not be suitable or "
                     "relevant for the job and could be omitted.")

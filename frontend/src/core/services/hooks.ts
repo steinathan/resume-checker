@@ -5,7 +5,9 @@ export async function fixResume(
   resumeId: string,
   scanId: string | null = null
 ) {
-  const yes = confirm("Fix your resume?");
+  const yes = confirm(
+    "We'll attempt to add these missing skills to your resume, continue?"
+  );
   if (yes) {
     const url = `/resume/${resumeId}/fix?scan_id=${scanId}`;
     await axios({

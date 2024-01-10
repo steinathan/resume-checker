@@ -88,11 +88,15 @@
               <!--begin::Menu-->
               <div class="me-0">
                 <button
+                  :disabled="loading"
                   @click="fixUserResume"
                   class="btn btn-sm btn-primary me-2"
                   id="kt_user_follow_button"
                 >
-                  <KTIcon icon-name="check" icon-class="fs-3 d-none" />
+                  <span
+                    v-if="loading"
+                    class="spinner-border spinner-border-sm align-middle ms-2"
+                  ></span>
                   Fix Resume
                 </button>
                 <!--                <button-->
@@ -237,15 +241,14 @@ import type {
 } from "../../../types";
 import { useRoute } from "vue-router";
 import { get } from "@/core/services/ApiService2";
-import ResumeHeaderStat from "@/components/ResumeHeaderStat.vue";
 import KTIcon from "@/core/helpers/kt-icon/KTIcon.vue";
 import { getColorCodeByPercentage } from "@/core/helpers/color";
 import { useResumeStore } from "@/stores/resume";
 import { storeToRefs } from "pinia";
-import Swal from "sweetalert2";
 import { fixResume } from "@/core/services/hooks";
 
 const route = useRoute();
+const loading = ref(false);
 
 const resumeStore = useResumeStore();
 const { singleScan } = storeToRefs(resumeStore);
@@ -267,11 +270,14 @@ onMounted(async () => {
 
 async function fixUserResume() {
   try {
+    loading.value = true;
     await fixResume(singleScan.value.resume_id as string, singleScan.value.id);
   } catch (e) {
     alert(
       "Something bad happened while trying to this this resume, please try again!"
     );
+  } finally {
+    loading.value = false;
   }
 }
 </script>

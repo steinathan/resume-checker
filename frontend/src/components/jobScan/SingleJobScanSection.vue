@@ -13,14 +13,14 @@
     :suggestion="analysis?.title_match?.suggestion"
   />
 
-  <ScanSection
-    title="Education Requirement"
-    :explanation="analysis?.education.explanation"
-    :issues="analysis?.education.issues"
-    :score="analysis?.education.score"
-    :suggestion="analysis?.education?.suggestion"
-    hide-checked
-  />
+  <!--  <ScanSection-->
+  <!--    title="Education Requirement"-->
+  <!--    :explanation="analysis?.education.explanation"-->
+  <!--    :issues="analysis?.education.issues"-->
+  <!--    :score="analysis?.education.score"-->
+  <!--    :suggestion="analysis?.education?.suggestion"-->
+  <!--    hide-checked-->
+  <!--  />-->
 
   <ScanSection
     title="Avoidable Keywords"
@@ -116,6 +116,7 @@ import { storeToRefs } from "pinia";
 import _ from "lodash";
 import Notice from "@/components/Notice.vue";
 import ScanSection from "@/components/jobScan/ScanSection.vue";
+import Swal from "sweetalert2";
 
 type rev = {
   heading: string;

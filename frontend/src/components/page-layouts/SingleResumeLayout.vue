@@ -186,15 +186,15 @@
           </li>
           <!--end::Nav item-->
           <!--begin::Nav item-->
-          <li class="nav-item">
-            <router-link
-              class="nav-link text-active-primary me-6"
-              :to="`/resume/${resume.id}/cover_letters`"
-              active-class="active"
-            >
-              Cover letters
-            </router-link>
-          </li>
+          <!--          <li class="nav-item">-->
+          <!--            <router-link-->
+          <!--              class="nav-link text-active-primary me-6"-->
+          <!--              :to="`/resume/${resume.id}/cover_letters`"-->
+          <!--              active-class="active"-->
+          <!--            >-->
+          <!--              Cover letters-->
+          <!--            </router-link>-->
+          <!--          </li>-->
           <!--end::Nav item-->
         </ul>
       </div>
