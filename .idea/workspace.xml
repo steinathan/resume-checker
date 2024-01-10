@@ -231,7 +231,7 @@
       <workItem from="1704623996161" duration="4265000" />
       <workItem from="1704742221218" duration="362000" />
       <workItem from="1704745943355" duration="13218000" />
-      <workItem from="1704841782633" duration="3690000" />
+      <workItem from="1704841782633" duration="4054000" />
     </task>
     <task id="LOCAL-00001" summary="↫ initial commit">
       <option name="closed" value="true" />
@@ -465,7 +465,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704844928629</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="📂 add(workflow): new workflow file">
+      <option name="closed" value="true" />
+      <created>1704846060183</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1704846060183</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +505,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/server" />
     </ignored-roots>
-    <MESSAGE value="started v1 of API" />
     <MESSAGE value="added models and supabase integration" />
     <MESSAGE value="start adding resume modals etc" />
     <MESSAGE value="refactored to client-server structure" />
@@ -522,7 +529,8 @@
     <MESSAGE value="removing dummy components" />
     <MESSAGE value="add landing, build for production" />
     <MESSAGE value="to new repo and beyond" />
-    <option name="LAST_COMMIT_MESSAGE" value="to new repo and beyond" />
+    <MESSAGE value=" add(workflow): new workflow file" />
+    <option name="LAST_COMMIT_MESSAGE" value=" add(workflow): new workflow file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

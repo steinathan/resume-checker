@@ -90,6 +90,7 @@
                     type="file"
                     id="fileInput"
                     ref="fileInput"
+                    accept="application/pdf"
                     style="display: none"
                     @change="handleFileUpload"
                   />
