@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f139b09e-ed21-44ad-98e3-6a656f3a056f" name="Changes" comment="add landing, build for production">
+    <list default="true" id="f139b09e-ed21-44ad-98e3-6a656f3a056f" name="Changes" comment="to new repo and beyond">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/jobScan/SingleJobScanSection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/jobScan/SingleJobScanSection.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/page-layouts/SingleJobScanLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/page-layouts/SingleJobScanLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/page-layouts/SingleResumeLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/page-layouts/SingleResumeLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/core/services/hooks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/services/hooks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/prompts/ats_job_prompt.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/prompts/ats_job_prompt.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +231,7 @@
       <workItem from="1704623996161" duration="4265000" />
       <workItem from="1704742221218" duration="362000" />
       <workItem from="1704745943355" duration="13218000" />
-      <workItem from="1704841782633" duration="2355000" />
+      <workItem from="1704841782633" duration="3690000" />
     </task>
     <task id="LOCAL-00001" summary="↫ initial commit">
       <option name="closed" value="true" />
@@ -462,7 +457,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704843346701</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="to new repo and beyond">
+      <option name="closed" value="true" />
+      <created>1704844928629</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1704844928629</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +497,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/server" />
     </ignored-roots>
-    <MESSAGE value="¶ refactor, entry point, add cli" />
     <MESSAGE value="started v1 of API" />
     <MESSAGE value="added models and supabase integration" />
     <MESSAGE value="start adding resume modals etc" />
@@ -519,7 +521,8 @@
     <MESSAGE value="fixing homepage" />
     <MESSAGE value="removing dummy components" />
     <MESSAGE value="add landing, build for production" />
-    <option name="LAST_COMMIT_MESSAGE" value="add landing, build for production" />
+    <MESSAGE value="to new repo and beyond" />
+    <option name="LAST_COMMIT_MESSAGE" value="to new repo and beyond" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
