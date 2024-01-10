@@ -23,11 +23,7 @@
         <div class="d-flex flex-column container pt-lg-20">
           <!--begin::Heading-->
           <div class="mb-13 text-center">
-            <h1
-              class="fs-2hx fw-bold text-white mb-5"
-              id="pricing"
-              data-kt-scroll-offset="{default: 100, lg: 150}"
-            >
+            <h1 class="fs-2hx fw-bold text-white mb-5" id="pricing">
               Clear Pricing Makes it Easy
             </h1>
             <div class="text-gray-600 fw-semibold fs-5">
@@ -41,7 +37,7 @@
             <div class="row align-content-between">
               <!--begin::Col-->
               <div class="col-xl-6">
-                <div class="d-flex h-100 align-items-center">
+                <div class="d-flex h- 100 align-items-center">
                   <!--begin::Option-->
                   <div
                     class="w-100 d-flex flex-column flex-center rounded-3 bg-body py-15 px-10"

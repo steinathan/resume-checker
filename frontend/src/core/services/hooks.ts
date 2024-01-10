@@ -16,8 +16,8 @@ export async function fixResume(
       responseType: "blob",
     }).then(async (response) => {
       await Swal.fire({
-        title: "We're fixing your Resume for this Job description",
-        text: "You'll soon download your Resume as an editable DOCX but keep in mind that this is just an evaluation copy and you must carefully review the resume after downloading",
+        title: "Your Resume is ready!",
+        text: "Kindly download your Resume as an editable DOCX but keep in mind that this is just an evaluation copy and you must carefully review the resume after downloading",
         icon: "success",
         buttonsStyling: false,
         confirmButtonText: "Ok, got it!",

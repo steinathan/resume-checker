@@ -41,13 +41,13 @@
                   class="text-gray-800 text-hover-primary fs-2 fw-bold me-1"
                   >{{ singleScan.ats_analysis.job_title }}</span
                 >
-                <span>
-                  <KTIcon
-                    title="Analyzed successfully"
-                    icon-name="verify"
-                    icon-class="fs-1 text-primary"
-                  />
-                </span>
+                <!--                <span>-->
+                <!--                  <KTIcon-->
+                <!--                    title="Analyzed successfully"-->
+                <!--                    icon-name="verify"-->
+                <!--                    icon-class="fs-1 text-primary"-->
+                <!--                  />-->
+                <!--                </span>-->
               </div>
               <!--end::Name-->
 
@@ -56,8 +56,11 @@
                 <span
                   class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2"
                 >
-                  <KTIcon icon-name="calendar" icon-class="fs-4 me-1" />
-                  {{ singleScan.created_at }}
+                  {{
+                    moment(singleScan.created_at).format(
+                      "MMMM Do YYYY, h:mm:ss a"
+                    )
+                  }}
                 </span>
               </div>
               <!--end::Info-->
@@ -66,7 +69,6 @@
                 <span
                   class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2"
                 >
-                  <KTIcon icon-name="user" icon-class="fs-4 me-1" />
                   {{ analysis.company_name }}
                 </span>
               </div>
@@ -246,6 +248,7 @@ import { getColorCodeByPercentage } from "@/core/helpers/color";
 import { useResumeStore } from "@/stores/resume";
 import { storeToRefs } from "pinia";
 import { fixResume } from "@/core/services/hooks";
+import moment from "moment";
 
 const route = useRoute();
 const loading = ref(false);

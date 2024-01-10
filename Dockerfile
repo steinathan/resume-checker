@@ -15,8 +15,7 @@ FROM python:3.11 as backend-builder
 
 WORKDIR /project
 
-COPY server/pyproject.toml poetry.lock* /project/
-COPY server/.env /project/
+COPY server /project
 
 RUN pip install poetry
 RUN poetry config virtualenvs.create false

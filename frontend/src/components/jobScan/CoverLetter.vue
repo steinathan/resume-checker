@@ -1,9 +1,19 @@
 <template>
-  <div class="card">
+  <Notice
+    v-if="!coverLetter"
+    classes="rounded-3 my-5"
+    color="warning"
+    title="No cover letter was generated"
+    body="Cover letter wasn't generated because the resume didnt reach a minimum score threshold for the job"
+  ></Notice>
+
+  <div class="card" v-else>
     <div class="card-body">
       <div class="card-title mb-5 d-flex justify-content-between">
         <div class="m-0">
-          <h4 class="fs-1 text-gray-800 w-bolder">Cover Letter</h4>
+          <h4 class="card-title fw-bolder text-hover-primary fs-2">
+            Cover Letter
+          </h4>
           <p class="fw-semibold fs-4 text-gray-600 mb-2">
             Here is an auto generated cover letter that you can utilize when
             applying for this position.
@@ -36,6 +46,7 @@ import { storeToRefs } from "pinia";
 import { useResumeStore } from "@/stores/resume";
 import { onMounted, ref } from "vue";
 import Clipboard from "clipboard";
+import Notice from "@/components/Notice.vue";
 
 const resumeStore = useResumeStore();
 

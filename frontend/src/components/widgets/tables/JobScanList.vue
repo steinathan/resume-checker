@@ -66,8 +66,9 @@
                   <th class="p-0">Score</th>
                   <th class="p-0">Name</th>
                   <th class="p-0">Scanned At</th>
-                  <th class="p-0">Has Cover Letter</th>
-                  <th class="p-0">Resume ID</th>
+                  <!--                  <th class="p-0">Has Cover Letter</th>-->
+                  <!--                  <th class="p-0">Resume ID</th>-->
+                  <th class="p-0">Action</th>
                   <!--                  <th class="p-0 min-w-50px text-end">Action</th>-->
                 </tr>
               </thead>
@@ -133,22 +134,38 @@
                     <!--                        {{ scan.job_url || scan.job_description }}...-->
                     <!--                      </span>-->
                     <!--                    </td>-->
+                    <!--                    <td class="">-->
+                    <!--                      {{ !!scan.cover_letter_id }}-->
+                    <!--                    </td>-->
                     <td class="">
-                      {{ !!scan.cover_letter_id }}
-                    </td>
-                    <td class="">
+                      <!--                      <router-link-->
+                      <!--                        class="btn btn-secondary btn-sm"-->
+                      <!--                        :to="{-->
+                      <!--                          name: 'single-resume',-->
+                      <!--                          params: {-->
+                      <!--                            resume_id: scan.resume_id,-->
+                      <!--                          },-->
+                      <!--                          query: {-->
+                      <!--                            from: 'dashboard',-->
+                      <!--                          },-->
+                      <!--                        }"-->
+                      <!--                      >-->
+                      <!--                        View Resume-->
+                      <!--                      </router-link>-->
+
                       <router-link
+                        class="btn btn-primary btn-sm"
                         :to="{
-                          name: 'single-resume',
+                          name: 'single-scan',
                           params: {
-                            resume_id: scan.resume_id,
+                            scan_id: scan.id,
                           },
                           query: {
                             from: 'dashboard',
                           },
                         }"
                       >
-                        {{ scan.resume_id }}
+                        View
                       </router-link>
                     </td>
                     <!--                    <td class="text-end">-->

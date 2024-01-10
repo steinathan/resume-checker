@@ -33,9 +33,7 @@
             ><span class="path1"></span><span class="path2"></span
           ></i>
           <div class="text-inverse-info fw-bold fs-2 mb-2 mt-5">0/10</div>
-          <div class="text-inverse-info fw-semibold fs-7">
-            Resume Score Rating
-          </div>
+          <div class="text-inverse-info fw-semibold fs-7">Total Scan Score</div>
         </div>
       </div>
     </div>
