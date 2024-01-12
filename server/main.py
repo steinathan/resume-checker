@@ -60,7 +60,10 @@ async def trigger_error():
 @app.exception_handler(404)
 async def redirect_all_requests_to_frontend(request: Request, exc: HTTPException):
     """ redirect all non-server routes to be served by the client """
-    return HTMLResponse(open(Path(__file__).parent / "static/index.html").read())
+    try:
+        return HTMLResponse(open(Path(__file__).parent / "static/index.html").read())
+    except FileNotFoundError:
+        pass
 
 
 app.mount("/", StaticFiles(directory="static", html=True), name="static")

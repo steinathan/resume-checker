@@ -16,10 +16,10 @@
         <!--begin::Username-->
         <div class="d-flex flex-column">
           <div class="fw-bold d-flex align-items-center fs-5">
-            {{ user.name || user.email?.split("@")[0] }}
+            {{ user.full_name || user.email?.split("@")[0] }}
 
             <span
-              v-if="user.pro"
+              v-if="user.stripe_customer_id"
               class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2"
               >Pro</span
             >

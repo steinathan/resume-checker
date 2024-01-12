@@ -1,3 +1,5 @@
+import type { User } from "@/stores/auth";
+
 export interface MenuItem {
   heading?: string;
   sectionTitle?: string;
@@ -8,17 +10,24 @@ export interface MenuItem {
   sub?: Array<MenuItem>;
 }
 
-const MainMenuConfig: Array<MenuItem> = [
-  {
-    pages: [
-      {
-        heading: "dashboard",
-        route: "/dashboard",
-        keenthemesIcon: "element-11",
-        bootstrapIcon: "bi-app-indicator",
-      },
-    ],
-  },
-];
+const MainMenuConfig = (user: User): Array<MenuItem> => {
+  const pages = [
+    {
+      heading: "dashboard",
+      route: "/dashboard",
+    },
+  ];
+  if (!user?.stripe_customer_id) {
+    pages.push({
+      heading: "upgrade",
+      route: "/upgrade",
+    });
+  }
+  return [
+    {
+      pages: pages,
+    },
+  ];
+};
 
 export default MainMenuConfig;

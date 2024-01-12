@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends
 from fastapi.security import OAuth2PasswordRequestForm
 
 from app.dependencies import get_current_user
+from app.handlers import user_handler
 from app.models.common_models import User
 from app.supabase_client.client import supabase
 from typing import Annotated
@@ -21,3 +22,8 @@ async def get_login_token(form_data: Annotated[OAuth2PasswordRequestForm, Depend
     data = supabase.auth.sign_in_with_password({"email": form_data.username, "password": form_data.password})
     token, token_type = data.session.access_token, data.session.token_type
     return {"access_token": token, "token_type": token_type}
+
+
+@router.get("/user/verify", response_model=User)
+async def verify_user(jwt: str):
+    return user_handler.upsert_user_by_jwt(jwt)

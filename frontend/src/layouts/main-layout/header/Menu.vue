@@ -20,7 +20,7 @@
       id="#kt_header_menu"
       data-kt-menu="true"
     >
-      <template v-for="(item, i) in MainMenuConfig" :key="i">
+      <template v-for="(item, i) in MainMenuConfig(user)" :key="i">
         <template v-if="!item.heading">
           <template v-for="(menuItem, j) in item.pages" :key="j">
             <div v-if="menuItem.heading" class="menu-item me-lg-1">
@@ -251,42 +251,29 @@
   <!--end::Menu wrapper-->
 </template>
 
-<script lang="ts">
-import { getAssetPath } from "@/core/helpers/assets";
-import { defineComponent } from "vue";
+<script lang="ts" setup>
 import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
 import MainMenuConfig from "@/core/config/MainMenuConfig";
 import { headerMenuIcons } from "@/core/helpers/config";
-import { version } from "@/core/helpers/documentation";
+import { useAuthStore } from "@/stores/auth";
+import { storeToRefs } from "pinia";
 
-export default defineComponent({
-  name: "KTMenu",
-  components: {},
-  setup() {
-    const { t, te } = useI18n();
-    const route = useRoute();
+const { t, te } = useI18n();
+const route = useRoute();
 
-    const hasActiveChildren = (match: string) => {
-      return route.path.indexOf(match) !== -1;
-    };
+const authStore = useAuthStore();
+const { user } = storeToRefs(authStore);
 
-    const translate = (text: string) => {
-      if (te(text)) {
-        return t(text);
-      } else {
-        return text;
-      }
-    };
+const hasActiveChildren = (match: string) => {
+  return route.path.indexOf(match) !== -1;
+};
 
-    return {
-      hasActiveChildren,
-      headerMenuIcons,
-      MainMenuConfig,
-      translate,
-      version,
-      getAssetPath,
-    };
-  },
-});
+const translate = (text: string) => {
+  if (te(text)) {
+    return t(text);
+  } else {
+    return text;
+  }
+};
 </script>

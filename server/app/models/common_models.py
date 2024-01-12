@@ -18,11 +18,18 @@ class AllBaseModel(BaseModel):
     deleted: bool = False
 
 
-class User(AllBaseModel):
-    username: str
-    email: str | None = None
+class User(BaseModel):
+    id: str
+    email_address: str | None = None
     full_name: str | None = None
     disabled: bool | None = False
+
+    stripe_customer_id: str | None = None
+    stripe_subscription_id: str | None = None
+    stripe_subscription_status: str | None = None
+    stripe_subscription_current_period_start: int | None = None
+    stripe_subscription_current_period_end: int | None = None
+    stripe_subscription_cancel_at_period_end: bool | None = None
 
 
 class ResumeLLMAnalysis(ResumeAnalysisResult):

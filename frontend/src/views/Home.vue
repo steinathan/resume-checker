@@ -3,7 +3,9 @@
     <HowItWorks />
   </div>
   <!--  <OurProject />-->
-  <Pricing />
+  <div class="mt-20">
+    <Pricing />
+  </div>
   <Testimonies />
 </template>
 

@@ -1,28 +1,41 @@
 <template>
-  <div>
-    <button @click="redirectToCheckout">Subscribe</button>
+  <div class="mt-10">
+    <Pricing @select="handlePriceSelect" hide-background />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { loadStripe } from "@stripe/stripe-js";
+import Pricing from "@/components/home/Pricing.vue";
+import { useAuthStore } from "@/stores/auth";
+import { storeToRefs } from "pinia";
+
+const authStore = useAuthStore();
+const { user } = storeToRefs(authStore);
 
 const stripePromise = loadStripe(
   "pk_test_51OWqHeBSae2LEN6sWpGyrocTqNDU0EshPTznV6EtlqP2Ee88pxcx9GXUBNzfQNfmteI9fx1tHlLjsseP7EYrO3i300rpRNKh8r"
 );
 
+function handlePriceSelect(val) {
+  const params = {
+    user_id: user.value.id,
+    email_address: user.value.email,
+    plan_name: val,
+  };
+  redirectToCheckout(params);
+}
+
 const baseURL = import.meta.env.VITE_APP_API_URL;
-const redirectToCheckout = async () => {
+const redirectToCheckout = async (params: Record<string, string> = {}) => {
   const stripe = await stripePromise;
 
-  // Fetch your backend endpoint to create a Checkout Session
-  const response = await fetch(`${baseURL}/get-session`, {
+  const response = await fetch(`${baseURL}/stripe/get-checkout-url`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    // You can pass additional data to your server here
-    body: JSON.stringify({}),
+    body: JSON.stringify(params),
   });
 
   const session = await response.json();
@@ -33,7 +46,6 @@ const redirectToCheckout = async () => {
   });
 
   if (result.error) {
-    // Handle any errors that occurred during the redirect
     console.error(result.error.message);
   }
 };

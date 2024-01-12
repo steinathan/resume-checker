@@ -154,23 +154,9 @@
 
 <script lang="ts" setup>
 import { getAssetPath } from "@/core/helpers/assets";
-import { defineComponent, onMounted, ref } from "vue";
+import { onMounted, ref } from "vue";
 import { ErrorMessage, Field, Form as VForm } from "vee-validate";
-import { useAuthStore, type User } from "@/stores/auth";
-import { useRouter } from "vue-router";
-import Swal from "sweetalert2/dist/sweetalert2.js";
-import * as Yup from "yup";
 import supabase from "@/core/services/supabase";
-
-const store = useAuthStore();
-const router = useRouter();
-const submitButton = ref<HTMLButtonElement | null>(null);
-
-//Create form validation object
-const login = Yup.object().shape({
-  email: Yup.string().email().required().label("Email"),
-  password: Yup.string().min(4).required().label("Password"),
-});
 
 const onGoogleClick = () => {
   supabase.auth.signInWithOAuth({
@@ -185,18 +171,5 @@ const onGoogleClick = () => {
   });
 };
 
-onMounted(async () => {
-  const { data } = await supabase.auth.getUser();
-
-  if (data && data.user) {
-    const { data: sessionData, error } = await supabase.auth.getSession();
-    const { session } = sessionData;
-    // @ts-ignore
-    data.user.api_token = session?.access_token;
-    store.setAuth(data.user as unknown as User);
-    window.location.replace(window.location.origin + "/dashboard");
-  } else {
-    console.warn("user not logged in");
-  }
-});
+onMounted(async () => {});
 </script>

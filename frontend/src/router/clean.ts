@@ -35,7 +35,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/components/stripe/StripeCheckout.vue"),
       },
       {
-        path: "/stripe/success",
+        path: "/stripe",
         component: () => import("@/components/stripe/StripeSuccess.vue"),
       },
 

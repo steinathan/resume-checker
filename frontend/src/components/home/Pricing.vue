@@ -2,21 +2,21 @@
   <!--begin::Pricing Section-->
   <div class="mt-sm-n20">
     <!--begin::Curve top-->
-    <div class="landing-curve landing-dark-color">
-      <svg
-        viewBox="15 -1 1470 48"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M1 48C4.93573 47.6644 8.85984 47.3311 12.7725 47H1489.16C1493.1 47.3311 1497.04 47.6644 1501 48V47H1489.16C914.668 -1.34764 587.282 -1.61174 12.7725 47H1V48Z"
-          fill="currentColor"
-        ></path>
-      </svg>
-    </div>
+    <!--    <div class="landing-curve landing-dark-color">-->
+    <!--      <svg-->
+    <!--        viewBox="15 -1 1470 48"-->
+    <!--        fill="none"-->
+    <!--        xmlns="http://www.w3.org/2000/svg"-->
+    <!--      >-->
+    <!--        <path-->
+    <!--          d="M1 48C4.93573 47.6644 8.85984 47.3311 12.7725 47H1489.16C1493.1 47.3311 1497.04 47.6644 1501 48V47H1489.16C914.668 -1.34764 587.282 -1.61174 12.7725 47H1V48Z"-->
+    <!--          fill="currentColor"-->
+    <!--        ></path>-->
+    <!--      </svg>-->
+    <!--    </div>-->
     <!--end::Curve top-->
     <!--begin::Wrapper-->
-    <div class="py-20 landing-dark-bg">
+    <div class="py-20" :class="' landing-dark-bg'">
       <!--begin::Container-->
       <div class="container">
         <!--begin::Plans-->
@@ -36,7 +36,7 @@
             <!--begin::Row-->
             <div class="row align-content-between">
               <!--begin::Col-->
-              <div class="col-xl-6">
+              <div v-if="!hideFree" class="col-xl-6">
                 <div class="d-flex h- 100 align-items-center">
                   <!--begin::Option-->
                   <div
@@ -91,7 +91,12 @@
                     </div>
                     <!--end::Features-->
                     <!--begin::Select-->
-                    <a href="#" class="btn btn-primary">Select</a>
+                    <button
+                      @click="emit('select', 'free')"
+                      class="btn btn-primary"
+                    >
+                      Select
+                    </button>
                     <!--end::Select-->
                   </div>
                   <!--end::Option-->
@@ -155,11 +160,12 @@
                     </div>
                     <!--end::Features-->
                     <!--begin::Select-->
-                    <a
-                      href="#"
+                    <button
+                      @click="emit('select', 'premium')"
                       class="btn btn-color-primary btn-active-light-primary btn-light"
-                      >Select</a
                     >
+                      Select
+                    </button>
                     <!--end::Select-->
                   </div>
                   <!--end::Option-->
@@ -195,6 +201,13 @@
 </template>
 
 <script setup lang="ts">
+defineProps({
+  hideFree: Boolean,
+  hideBackground: Boolean,
+});
+
+const emit = defineEmits(["select"]);
+
 const freeItems = [
   {
     title: "5 Match Rate calculations / month",

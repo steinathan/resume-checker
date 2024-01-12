@@ -7,12 +7,20 @@ import supabase from "@/core/services/supabase";
 export interface User {
   id: string;
   name: string;
+  full_name: string;
   surname: string;
   email: string;
   password: string;
   pro?: string;
   api_token: string;
   profile_url?: string;
+  disabled: false;
+  stripe_customer_id: string;
+  stripe_subscription_id: string;
+  stripe_subscription_status: string;
+  stripe_subscription_current_period_start: number;
+  stripe_subscription_current_period_end: number;
+  stripe_subscription_cancel_at_period_end: boolean;
 }
 
 export const useAuthStore = defineStore("auth", () => {
@@ -39,6 +47,7 @@ export const useAuthStore = defineStore("auth", () => {
     errors.value = [];
     JwtService.destroyToken();
   }
+
   function logout() {
     supabase.auth.signOut().catch(console.error);
     purgeAuth();

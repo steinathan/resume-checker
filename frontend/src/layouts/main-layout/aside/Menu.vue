@@ -17,7 +17,7 @@
       class="menu menu-rounded menu-column menu-sub-indention menu-active-bg menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 px-3 fw-semibold"
       data-kt-menu="true"
     >
-      <template v-for="(item, i) in MainMenuConfig" :key="i">
+      <template v-for="(item, i) in MainMenuConfig(user)" :key="i">
         <div v-if="item.heading" class="menu-item">
           <div class="menu-content pt-8 pb-2">
             <span class="menu-section text-muted text-uppercase fs-8 ls-1">
@@ -180,49 +180,38 @@
   <!--end::Menu wrapper-->
 </template>
 
-<script lang="ts">
-import { getAssetPath } from "@/core/helpers/assets";
+<script lang="ts" setup>
 import { defineComponent, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
 import { version } from "@/core/helpers/documentation";
 import { asideMenuIcons } from "@/core/helpers/config";
 import MainMenuConfig from "@/core/config/MainMenuConfig";
+import { useAuthStore } from "@/stores/auth";
+import { storeToRefs } from "pinia";
 
-export default defineComponent({
-  name: "kt-menu",
-  components: {},
-  setup() {
-    const { t, te } = useI18n();
-    const route = useRoute();
-    const scrollElRef = ref<null | HTMLElement>(null);
+const { t, te } = useI18n();
+const route = useRoute();
+const scrollElRef = ref<null | HTMLElement>(null);
 
-    onMounted(() => {
-      if (scrollElRef.value) {
-        scrollElRef.value.scrollTop = 0;
-      }
-    });
+const authStore = useAuthStore();
+const { user } = storeToRefs(authStore);
 
-    const translate = (text: string) => {
-      if (te(text)) {
-        return t(text);
-      } else {
-        return text;
-      }
-    };
-
-    const hasActiveChildren = (match: string) => {
-      return route.path.indexOf(match) !== -1;
-    };
-
-    return {
-      hasActiveChildren,
-      MainMenuConfig,
-      asideMenuIcons,
-      version,
-      translate,
-      getAssetPath,
-    };
-  },
+onMounted(() => {
+  if (scrollElRef.value) {
+    scrollElRef.value.scrollTop = 0;
+  }
 });
+
+const translate = (text: string) => {
+  if (te(text)) {
+    return t(text);
+  } else {
+    return text;
+  }
+};
+
+const hasActiveChildren = (match: string) => {
+  return route.path.indexOf(match) !== -1;
+};
 </script>

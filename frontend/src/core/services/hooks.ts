@@ -1,5 +1,7 @@
 import axios from "@/core/services/ApiService2";
 import Swal from "sweetalert2";
+import supabase from "@/core/services/supabase";
+import { useAuthStore, type User } from "@/stores/auth";
 
 export async function fixResume(
   resumeId: string,
@@ -38,5 +40,28 @@ export async function fixResume(
       a.click();
       window.URL.revokeObjectURL(url);
     });
+  }
+}
+
+export async function runPostLogin() {
+  const { data } = await supabase.auth.getUser();
+  const store = useAuthStore();
+
+  if (data && data.user) {
+    const { data: sessionData, error } = await supabase.auth.getSession();
+    const { session } = sessionData;
+    const apiUser = await axios.get(
+      "/user/verify?jwt=" + session?.access_token
+    );
+
+    const mergedUser = {
+      ...apiUser,
+      ...data.user,
+      api_token: session?.access_token,
+    };
+
+    store.setAuth(mergedUser as unknown as User);
+  } else {
+    console.warn("user not logged in");
   }
 }

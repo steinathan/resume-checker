@@ -71,6 +71,8 @@ import type { User } from "@/stores/auth";
 import { useAuthStore } from "@/stores/auth";
 import UploadResume from "@/components/UploadResume.vue";
 import ScanJobModdal from "@/components/ScanJobModdal.vue";
+import axios from "@/core/services/ApiService2";
+import { runPostLogin } from "@/core/services/hooks";
 
 export default defineComponent({
   name: "master-layout",
@@ -94,18 +96,7 @@ export default defineComponent({
     const authStore = useAuthStore();
 
     onMounted(async () => {
-      const { data } = await supabase.auth.getUser();
-
-      if (data && data.user) {
-        const { data: sessionData, error } = await supabase.auth.getSession();
-        const { session } = sessionData;
-        // @ts-ignore
-        data.user.api_token = session?.access_token;
-        authStore.setAuth(data.user as unknown as User);
-      } else {
-        console.warn("user not logged in");
-      }
-
+      await runPostLogin();
       nextTick(() => {
         reinitializeComponents();
       });
