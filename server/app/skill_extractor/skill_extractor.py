@@ -73,6 +73,7 @@ class SkillExtractor:
 
     def get_skills(self, text: str) -> List[APISkill]:
         self.refresh_access_token()
+        print("[SkillExtractor] getting skills")
 
         url = "https://emsiservices.com/skills/versions/latest/extract"
         querystring = {"language": "en"}
@@ -115,7 +116,10 @@ class SkillExtractor:
 
     def process_ats_skills(self, user_resume: str, job_description: str) -> MatchingResult:
         """ """
-        self.resume_skills = self.get_skills(user_resume)
+        if not self.resume_skills:
+            print(f"[SkillExtractor] resume skill not provided, getting skills from resume")
+            self.resume_skills = self.get_skills(user_resume)
+
         self.job_skills = self.get_skills(job_description)
 
         skills = self.to_ats_skills(self.resume_skills, self.job_skills)

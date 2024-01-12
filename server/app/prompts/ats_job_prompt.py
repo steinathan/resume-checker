@@ -28,13 +28,11 @@ no other explanations must be produced
 class JobSection(BaseModel):
     issues: List[str] = Field(
         description="If applicable to the section, identify and list any potential issue that might present challenges in securing the job.")
-    # values: List[str] = Field(
-    #     description="If applicable to the section. Enumerate the values within the section that align with the given instructions.")
     explanation: str = Field(
         description="Provide potential explanations or justifications for the identified issues in the section.")
     suggestion: str = Field(description="If applicable, suggest improvements to the section based on its value.")
-    score: float = Field(
-        description="Assign a score to the section indicating how well the resume aligns with the job description, on a scale from 0 to 10.")
+    score: float = Field(0,
+        description="Assign a score to the section indicating how well it aligns with the job description, on a scale from 0 to 10.")
 
 
 class RejectionRateEnum(str, Enum):
@@ -69,9 +67,8 @@ class AtsJobPromptModel(BaseModel):
                                           "if it's not explicitly mentioned")
     # education: JobSection = Field(
     #     description="Extract the educational qualifications necessary for the job from the job description only")
-    avoidable_keywords: JobSection = Field(
-        description="Identify and list keywords in the work experience and skills section that may not be suitable or "
-                    "relevant for the job and could be omitted.")
+    # avoidable_keywords: JobSection = Field(
+    #     description="From the Resume, identify and list avoidable skills that might present challenges in securing the job.")
     score: float = Field(
         description="Evaluate the alignment of the resume with the job description. float from [0.0-10.0].")
     summary: str = Field(description="Explain whether the resume is suitable or unsuitable for the job description "
@@ -89,4 +86,3 @@ job_ats_prompt = PromptTemplate(
         "format_instructions": job_ats_parser.get_format_instructions()
     }
 )
-

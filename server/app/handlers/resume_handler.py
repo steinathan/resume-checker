@@ -158,10 +158,20 @@ def process_ats_scan(user: User, params: AnalyseJobForResumeParams):
                               resume_content=resume.text)
     ats_result: AtsAnalyserResult = analyzer.run_ats()
 
-    skill_extractor = SkillExtractor()
+    skill_extractor = SkillExtractor(resume.skills)
     skill_extractor_result = skill_extractor.process_ats_skills(
         str(analyzer.resume_content), str(analyzer.job_content))
 
+    #  get the percentage of skills matched vs not match / 10
+    matched_skills = [skill for skill in skill_extractor_result.ats_skills if skill.is_match]
+    unmatched_skills = [skill for skill in skill_extractor_result.ats_skills if not skill.is_match]
+
+    skill_score = len(matched_skills) / len(unmatched_skills) * 10
+
+    if ats_result.ats_analysis.title_match.match:
+        skill_score += 3
+
+    ats_result.ats_analysis.score = round(skill_score)  # type: ignore
     # create resume ats job scan in db
     job_scan = create_scan_result(skills_result=skill_extractor_result, scan_result=ats_result, user=user,
                                   resume=resume)

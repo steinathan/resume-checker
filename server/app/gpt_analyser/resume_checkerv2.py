@@ -169,7 +169,7 @@ class ResumeAnalyser:
 
         cover_letter: str | None = None
 
-        if fit:
+        if True:
             cover_letter = self.generate_cover_letter()
         else:
             logging.info("resume is not fit, refusing to generate cover letter")

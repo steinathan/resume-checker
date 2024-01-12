@@ -10,7 +10,7 @@
           <!--begin::Logo-->
           <div class="mb-7">
             <a href="#" class="">
-              <img alt="Logo" src="/media/logos/custom-2.svg" class="h-40px" />
+              <img alt="Logo" src="/media/logos/default.svg" class="h-40px" />
             </a>
           </div>
           <!--end::Logo-->

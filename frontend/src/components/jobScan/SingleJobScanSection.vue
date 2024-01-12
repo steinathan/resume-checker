@@ -22,14 +22,14 @@
   <!--    hide-checked-->
   <!--  />-->
 
-  <ScanSection
-    title="Avoidable Keywords"
-    :explanation="analysis?.avoidable_keywords.explanation"
-    :issues="analysis?.avoidable_keywords.issues"
-    :score="analysis?.avoidable_keywords.score"
-    :suggestion="analysis?.avoidable_keywords?.suggestion"
-    hide-checked
-  />
+  <!--  <ScanSection-->
+  <!--    title="Avoidable Keywords"-->
+  <!--    :explanation="analysis?.avoidable_keywords.explanation"-->
+  <!--    :issues="analysis?.avoidable_keywords.issues"-->
+  <!--    :score="analysis?.avoidable_keywords.score"-->
+  <!--    :suggestion="analysis?.avoidable_keywords?.suggestion"-->
+  <!--    hide-checked-->
+  <!--  />-->
 
   <!--  Skill comparison-->
   <div class="py-2">

@@ -96,6 +96,20 @@ yarl = ">=1.0,<2.0"
 speedups = ["Brotli", "aiodns", "brotlicffi"]
 
 [[package]]
+name = "aiomcache"
+version = "0.8.1"
+description = "Minimal pure python memcached client"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "aiomcache-0.8.1-py3-none-any.whl", hash = "sha256:c0e86a732702e28973d58db81ae8c024ff6aee09bd5808f1c55469598f0cddcf"},
+    {file = "aiomcache-0.8.1.tar.gz", hash = "sha256:ef7dede44ccb4bbe386ff4958c45c4a17e66476c801594489ba45408adb13b7b"},
+]
+
+[package.dependencies]
+typing-extensions = {version = ">=4", markers = "python_version < \"3.11\""}
+
+[[package]]
 name = "aiosignal"
 version = "1.3.1"
 description = "aiosignal: a list of registered asynchronous callbacks"
@@ -723,6 +737,7 @@ files = [
 
 [package.dependencies]
 aiohttp = {version = ">=3.8.3", markers = "python_version >= \"3.11\""}
+aiomcache = {version = "*", optional = true, markers = "extra == \"memcache\" or extra == \"all\""}
 fastapi = "*"
 pendulum = "*"
 typing-extensions = {version = ">=4.1.0", markers = "python_version < \"3.10\""}
@@ -3690,4 +3705,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8.1,<4.0"
-content-hash = "69928f31ec8624fe0c343b52c17435093c43d606c25f05732c77ac708637a133"
+content-hash = "dc0a41ade434691d498ff55c3571713e1e178f3a63d8f1d23957f9af161b0f1f"
