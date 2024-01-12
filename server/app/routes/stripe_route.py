@@ -2,6 +2,7 @@ import os
 
 import stripe
 from fastapi import APIRouter, Header, Request
+from pydantic import BaseModel
 from starlette.responses import JSONResponse
 
 router = APIRouter(
@@ -9,8 +10,14 @@ router = APIRouter(
 )
 
 
+class CheckoutPayload(BaseModel):
+    email_address: str
+    user_id: str
+    plan_name: str
+
+
 @router.post("/stripe/get-checkout-url")
-async def get_stripe_session():
+async def get_stripe_session(payload: CheckoutPayload):
     stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
     frontend_base = os.getenv("FRONTEND_BASE_URL")
 
@@ -21,10 +28,12 @@ async def get_stripe_session():
             'quantity': 1,
         }],
         mode='subscription',
-        success_url=f'{frontend_base}/stripe',
+        success_url=f'{frontend_base}/stripe/success',
         cancel_url=f'{frontend_base}/stripe?cancel=true',
         metadata={
-            'userId': "dummy-user-id",
+            'user_id': payload.user_id,
+            'email_address': payload.email_address,
+            'plan_name': payload.plan_name,
         },
     )
 
@@ -46,11 +55,32 @@ async def webhook_received(request: Request, stripe_signature: str = Header(None
         return {"error": str(e)}
 
     event_type = event['type']
+
     if event_type == 'checkout.session.completed':
         print('checkout session completed')
         session = event_data['object']
-        user_id = session.get('metadata', {}).get('userId')
-        print("user_id", user_id)
+        meta = session.get('metadata', {})
+
+        user_id = meta.get('user_id')
+        email_address = meta.get('email_address')
+        plan_name = meta.get('plan_name')
+
+        subscription_id = session.get('subscription')
+        subscription = stripe.Subscription.retrieve(subscription_id)
+
+        print("got meta info:", user_id, email_address, plan_name)
+        user = await get_user_by_id(user_id)
+        if user:
+            # Update user's Stripe information
+            user.stripe_customer_id = session.get('customer')
+            user.stripe_subscription_id = session.get('subscription')
+            user.stripe_subscription_status = subscription.status
+            user.stripe_subscription_current_period_start = subscription.current_period_start
+            user.stripe_subscription_current_period_end = subscription.current_period_end
+            user.stripe_subscription_cancel_at_period_end = subscription.cancel_at_period_end
+
+            # Save the updated user in the database
+            await update_user(user)
 
     elif event_type == 'invoice.paid':
         print('invoice paid')

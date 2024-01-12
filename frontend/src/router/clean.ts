@@ -20,10 +20,6 @@ const routes: Array<RouteRecordRaw> = [
     ],
   },
   {
-    path: "/test-stripe",
-    component: () => import("@/components/stripe/StripeCheckout.vue"),
-  },
-  {
     path: "/dash",
     redirect: "/dashboard",
     component: () => import("@/layouts/main-layout/MainLayout.vue"),
@@ -31,6 +27,18 @@ const routes: Array<RouteRecordRaw> = [
       middleware: "auth",
     },
     children: [
+      {
+        path: "/upgrade",
+        meta: {
+          middleware: "auth",
+        },
+        component: () => import("@/components/stripe/StripeCheckout.vue"),
+      },
+      {
+        path: "/stripe/success",
+        component: () => import("@/components/stripe/StripeSuccess.vue"),
+      },
+
       {
         path: "/dashboard",
         name: "dashboard",

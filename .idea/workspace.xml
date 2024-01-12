@@ -4,21 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f139b09e-ed21-44ad-98e3-6a656f3a056f" name="Changes" comment="👼 removed unused buttons and details from the dashboard">
+    <list default="true" id="f139b09e-ed21-44ad-98e3-6a656f3a056f" name="Changes" comment="🔮 tested stripe: refactored server">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/fly.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/fly.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/home/Pricing.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/home/Pricing.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/stripe/StripeCheckout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/stripe/StripeCheckout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/config/MainMenuConfig.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/config/MainMenuConfig.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/router/clean.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/clean.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resume_logger.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/gpt_analyser/resume_checkerv2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/handlers/resume_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/handlers/resume_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/routes/resume_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/routes/resume_route.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/routes/scan_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/routes/scan_route.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/routes/user_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/routes/user_route.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/tests/test_analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/tests/test_analyzer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/models/common_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/models/common_models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/routes/stripe_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/routes/stripe_route.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +92,7 @@
     "Python.test.executor": "Debug",
     "Python.test_analyzer.executor": "Debug",
     "Python.test_resume_score.executor": "Run",
+    "Python.user_handler.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -142,7 +137,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="langchain-ollama" />
       <option name="ENV_FILES" value="" />
@@ -237,7 +232,7 @@
       <workItem from="1704841782633" duration="8706000" />
       <workItem from="1704882033307" duration="801000" />
       <workItem from="1704913800815" duration="1969000" />
-      <workItem from="1705013373285" duration="4727000" />
+      <workItem from="1705013373285" duration="9488000" />
     </task>
     <task id="LOCAL-00001" summary="↫ initial commit">
       <option name="closed" value="true" />
@@ -495,7 +490,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704849270921</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="🔮 tested stripe: refactored server">
+      <option name="closed" value="true" />
+      <created>1705018126609</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1705018126609</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,7 +530,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/server" />
     </ignored-roots>
-    <MESSAGE value="refactored to client-server structure" />
     <MESSAGE value="moved server to app-server struture" />
     <MESSAGE value="added base example resume listing" />
     <MESSAGE value="added dummy resume section" />
@@ -552,7 +554,8 @@
     <MESSAGE value=" add(workflow): new workflow file" />
     <MESSAGE value=" fix(workflow): fixing workflow file&#10; opts to only allow PDF files" />
     <MESSAGE value=" removed unused buttons and details from the dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value=" removed unused buttons and details from the dashboard" />
+    <MESSAGE value=" tested stripe: refactored server" />
+    <option name="LAST_COMMIT_MESSAGE" value=" tested stripe: refactored server" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -602,14 +605,31 @@
           <line>68</line>
           <option name="timeStamp" value="67" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/app/routes/stripe_route.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/app/handlers/user_handler.py</url>
+          <line>15</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/frontend/dist/assets/index.479068da.js</url>
           <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/components/home/Pricing.vue</url>
+          <line>34</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="83" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/resume_checker$user_handler.coverage" NAME="user_handler Coverage Results" MODIFIED="1705022446501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/handlers" />
     <SUITE FILE_PATH="coverage/resume_checker$resume_checkerv2.coverage" NAME="resume_checkerv2 Coverage Results" MODIFIED="1703691789946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/handlers" />
     <SUITE FILE_PATH="coverage/resume_checker$resume_fixer.coverage" NAME="resume_fixer Coverage Results" MODIFIED="1704123669704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/prompts" />
     <SUITE FILE_PATH="coverage/resume_checker$resume_handler.coverage" NAME="resume_handler Coverage Results" MODIFIED="1703670616465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/handlers" />
@@ -617,7 +637,7 @@
     <SUITE FILE_PATH="coverage/resume_checker$common_models.coverage" NAME="common_models Coverage Results" MODIFIED="1704148636040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/models" />
     <SUITE FILE_PATH="coverage/resume_checker$resume_analysis_prompt.coverage" NAME="resume_analysis_prompt Coverage Results" MODIFIED="1703977536416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/prompts" />
     <SUITE FILE_PATH="coverage/resume_checker$job_matcher_prompt.coverage" NAME="job_matcher_prompt Coverage Results" MODIFIED="1703666837684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/prompts" />
-    <SUITE FILE_PATH="coverage/resume_checker$main.coverage" NAME="main Coverage Results" MODIFIED="1705017863101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/resume_checker$main.coverage" NAME="main Coverage Results" MODIFIED="1705020354856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
     <SUITE FILE_PATH="coverage/resume_checker$ats_job_prompt.coverage" NAME="ats_job_prompt Coverage Results" MODIFIED="1703715597533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/prompts" />
     <SUITE FILE_PATH="coverage/resume_checker$test_analyzer.coverage" NAME="test_analyzer Coverage Results" MODIFIED="1704125905972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/tests" />
   </component>
