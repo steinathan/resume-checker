@@ -21,6 +21,7 @@
     "@popperjs/core": "2.11.6",
     "@supabase/supabase-js": "^2.39.1",
     "@tinymce/tinymce-vue": "^4.0.4",
+    "@vue-stripe/vue-stripe": "^4.5.0",
     "@vueform/multiselect": "^1.2.5",
     "animate.css": "^4.1.1",
     "apexcharts": "^3.35.5",
@@ -51,6 +52,7 @@
     "vue-inline-svg": "^3.1.0",
     "vue-logger-plugin": "^2.2.3",
     "vue-router": "^4.1.5",
+    "vue-stripe-js": "^1.0.1",
     "vue3-apexcharts": "^1.4.1",
     "yup": "^0.32.8"
   },

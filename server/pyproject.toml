@@ -36,6 +36,7 @@ sentry-sdk = {extras = ["fastapi"], version = "^1.39.1"}
 docx = "^0.2.4"
 docxtpl = "^0.16.7"
 fastapi-cache2 = "^0.2.1"
+stripe = "^7.11.0"
 
 
 [build-system]

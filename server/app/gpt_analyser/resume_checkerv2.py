@@ -5,7 +5,6 @@ import os
 import re
 import tempfile
 from dataclasses import dataclass
-from datetime import datetime
 from typing import Any, List
 import fitz
 
@@ -24,15 +23,6 @@ from app.prompts.resume_analysis_prompt import resume_cover_letter_prompt, analy
 from app.prompts.resume_fixer import revamp_resume_prompt, resume_fixer_parser, StructuredResume
 
 load_dotenv()
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s]: %(message)s",
-    handlers=[
-        logging.FileHandler("resume_logger.log"),
-        logging.StreamHandler()
-    ]
-)
 
 
 def is_valid_url(url: str) -> bool:

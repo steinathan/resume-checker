@@ -3,11 +3,11 @@ from __future__ import annotations
 import logging
 import os
 from datetime import datetime
-from typing import List, Dict
+from typing import List
 
 from pydantic import BaseModel
 
-from app.handlers.resume_checkerv2 import ResumeAnalyser, AtsAnalyserResult
+from app.gpt_analyser.resume_checkerv2 import ResumeAnalyser, AtsAnalyserResult
 from app.helpers.resume_generator import build_resume
 from app.models.common_models import Resume, User, CoverLetter, AtsJobScan
 from app.prompts.ats_job_prompt import JobSection

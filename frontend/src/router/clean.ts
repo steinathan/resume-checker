@@ -20,6 +20,10 @@ const routes: Array<RouteRecordRaw> = [
     ],
   },
   {
+    path: "/test-stripe",
+    component: () => import("@/components/stripe/StripeCheckout.vue"),
+  },
+  {
     path: "/dash",
     redirect: "/dashboard",
     component: () => import("@/layouts/main-layout/MainLayout.vue"),

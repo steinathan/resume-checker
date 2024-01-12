@@ -1,6 +1,6 @@
 import uuid
 
-from app.handlers.resume_checkerv2 import ResumeAnalyser, AtsAnalyserResult
+from app.gpt_analyser.resume_checkerv2 import ResumeAnalyser, AtsAnalyserResult
 from app.handlers.resume_handler import create_cover_letter, create_scan_result
 from app.models.common_models import User, Resume, CoverLetter
 

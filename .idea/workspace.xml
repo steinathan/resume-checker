@@ -4,15 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f139b09e-ed21-44ad-98e3-6a656f3a056f" name="Changes" comment="🧤 fix(workflow): fixing workflow file&#10;👌 opts to only allow PDF files">
+    <list default="true" id="f139b09e-ed21-44ad-98e3-6a656f3a056f" name="Changes" comment="👼 removed unused buttons and details from the dashboard">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/home/Pricing.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/home/Pricing.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/jobScan/CoverLetter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/jobScan/CoverLetter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/page-layouts/SingleJobScanLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/page-layouts/SingleJobScanLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/widgets/tables/JobScanList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/widgets/tables/JobScanList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/layouts/main-layout/menus/UserAccountMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/layouts/main-layout/menus/UserAccountMenu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/router/clean.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/clean.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resume_logger.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/gpt_analyser/resume_checkerv2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/handlers/resume_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/handlers/resume_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/routes/resume_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/routes/resume_route.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/routes/scan_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/routes/scan_route.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/routes/user_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/routes/user_route.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tests/test_analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/tests/test_analyzer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +28,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
-        <option value="Vue Composition API Component" />
         <option value="TypeScript File" />
+        <option value="Vue Composition API Component" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -99,7 +105,7 @@
     "git-widget-placeholder": "feature/resume-api",
     "javascript.nodejs.core.library.configured.version": "19.8.1",
     "javascript.nodejs.core.library.typings.version": "20.10.5",
-    "last_opened_file_path": "/home/navicstein/Idea/resume-checker/frontend/src/components",
+    "last_opened_file_path": "/home/navicstein/Idea/resume-checker/server/app/routes",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -110,7 +116,7 @@
     "nodejs_package_manager_path": "/home/navicstein/.nvm/versions/node/v19.8.1/bin/yarn",
     "npm.dev.executor": "Run",
     "npm.serve.executor": "Run",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "settings.editor.selected.configurable": "editor.preferences.appearance",
     "ts.external.directory.path": "/home/navicstein/Idea/resume-checker/frontend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   },
@@ -122,21 +128,21 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/app/routes" />
       <recent name="$PROJECT_DIR$/frontend/src/components" />
       <recent name="$PROJECT_DIR$/frontend/src/components/job_scan" />
       <recent name="$PROJECT_DIR$/frontend/src/components/page-layouts" />
       <recent name="$PROJECT_DIR$/server/app/prompts" />
-      <recent name="$PROJECT_DIR$/frontend/src/core/services" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/app/gpt_checker" />
+      <recent name="$PROJECT_DIR$/frontend/src/components/stripe" />
       <recent name="$PROJECT_DIR$/frontend/src/components/home" />
       <recent name="$PROJECT_DIR$/frontend/src/layouts" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/frontend/src/components/resume" />
-      <recent name="$PROJECT_DIR$/server" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="langchain-ollama" />
       <option name="ENV_FILES" value="" />
@@ -176,20 +182,10 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="serve" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/resume-landing/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="serve" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
         <item itemvalue="Python.main" />
+        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -238,7 +234,10 @@
       <workItem from="1704623996161" duration="4265000" />
       <workItem from="1704742221218" duration="362000" />
       <workItem from="1704745943355" duration="13218000" />
-      <workItem from="1704841782633" duration="6636000" />
+      <workItem from="1704841782633" duration="8706000" />
+      <workItem from="1704882033307" duration="801000" />
+      <workItem from="1704913800815" duration="1969000" />
+      <workItem from="1705013373285" duration="4727000" />
     </task>
     <task id="LOCAL-00001" summary="↫ initial commit">
       <option name="closed" value="true" />
@@ -488,7 +487,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704846427673</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="👼 removed unused buttons and details from the dashboard">
+      <option name="closed" value="true" />
+      <created>1704849270921</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1704849270921</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +527,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/server" />
     </ignored-roots>
-    <MESSAGE value="start adding resume modals etc" />
     <MESSAGE value="refactored to client-server structure" />
     <MESSAGE value="moved server to app-server struture" />
     <MESSAGE value="added base example resume listing" />
@@ -545,7 +551,8 @@
     <MESSAGE value="to new repo and beyond" />
     <MESSAGE value=" add(workflow): new workflow file" />
     <MESSAGE value=" fix(workflow): fixing workflow file&#10; opts to only allow PDF files" />
-    <option name="LAST_COMMIT_MESSAGE" value=" fix(workflow): fixing workflow file&#10; opts to only allow PDF files" />
+    <MESSAGE value=" removed unused buttons and details from the dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value=" removed unused buttons and details from the dashboard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -556,7 +563,7 @@
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py</url>
+          <url>file://$PROJECT_DIR$/server/app/gpt_analyser/resume_checkerv2.py</url>
           <line>175</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
@@ -566,34 +573,29 @@
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py</url>
+          <url>file://$PROJECT_DIR$/server/app/gpt_analyser/resume_checkerv2.py</url>
           <line>198</line>
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py</url>
+          <url>file://$PROJECT_DIR$/server/app/gpt_analyser/resume_checkerv2.py</url>
           <line>267</line>
           <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py</url>
+          <url>file://$PROJECT_DIR$/server/app/gpt_analyser/resume_checkerv2.py</url>
           <line>179</line>
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py</url>
+          <url>file://$PROJECT_DIR$/server/app/gpt_analyser/resume_checkerv2.py</url>
           <line>176</line>
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/server/app/handlers/resume_checkerv2.py</url>
+          <url>file://$PROJECT_DIR$/server/app/gpt_analyser/resume_checkerv2.py</url>
           <line>204</line>
           <option name="timeStamp" value="65" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/server/main.py</url>
-          <line>72</line>
-          <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/server/app/helpers/resume_generator.py</url>
@@ -615,7 +617,7 @@
     <SUITE FILE_PATH="coverage/resume_checker$common_models.coverage" NAME="common_models Coverage Results" MODIFIED="1704148636040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/models" />
     <SUITE FILE_PATH="coverage/resume_checker$resume_analysis_prompt.coverage" NAME="resume_analysis_prompt Coverage Results" MODIFIED="1703977536416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/prompts" />
     <SUITE FILE_PATH="coverage/resume_checker$job_matcher_prompt.coverage" NAME="job_matcher_prompt Coverage Results" MODIFIED="1703666837684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/prompts" />
-    <SUITE FILE_PATH="coverage/resume_checker$main.coverage" NAME="main Coverage Results" MODIFIED="1704847524904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/resume_checker$main.coverage" NAME="main Coverage Results" MODIFIED="1705017863101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
     <SUITE FILE_PATH="coverage/resume_checker$ats_job_prompt.coverage" NAME="ats_job_prompt Coverage Results" MODIFIED="1703715597533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/app/prompts" />
     <SUITE FILE_PATH="coverage/resume_checker$test_analyzer.coverage" NAME="test_analyzer Coverage Results" MODIFIED="1704125905972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/tests" />
   </component>
