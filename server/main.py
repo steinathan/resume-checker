@@ -11,6 +11,8 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from fastapi_cache import FastAPICache
+from fastapi_cache.backends.inmemory import InMemoryBackend
 from starlette.responses import HTMLResponse
 
 from app.routes import user_route, scan_route, resume_route, stripe_route  # type: ignore
@@ -26,12 +28,14 @@ logging.basicConfig(
     ]
 )
 
-sentry_sdk.init(
-    dsn=os.environ.get("SENTRY_DSN"),
-    traces_sample_rate=1.0,
-    send_default_pii=True,
-    profiles_sample_rate=1.0,
-)
+if os.environ.get("ENV") == "production":
+    print("initialized sentry")
+    sentry_sdk.init(
+        dsn=os.environ.get("SENTRY_DSN"),
+        traces_sample_rate=1.0,
+        send_default_pii=True,
+        profiles_sample_rate=1.0,
+    )
 
 app = FastAPI()
 
@@ -71,6 +75,11 @@ app.mount("/", StaticFiles(directory="static", html=True), name="static")
 log_config = uvicorn.config.LOGGING_CONFIG
 log_config["formatters"]["access"]["fmt"] = "%(asctime)s - %(levelname)s - %(message)s"
 log_config["formatters"]["default"]["fmt"] = "%(asctime)s - %(levelname)s - %(message)s"
+
+
+@app.on_event("startup")
+async def startup():
+    FastAPICache.init(InMemoryBackend(), prefix="fastapi-cache")
 
 if __name__ == "__main__":
     uvicorn.run("main:app", port=8080, reload=True)

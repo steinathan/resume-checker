@@ -7,13 +7,13 @@
       <!--begin::Wrapper-->
       <div class="card card-flush w-md-650px py-5">
         <div class="card-body py-15 py-lg-20">
-          <!--begin::Logo-->
-          <div class="mb-7">
-            <a href="#" class="">
-              <img alt="Logo" src="/media/logos/default.svg" class="h-40px" />
-            </a>
-          </div>
-          <!--end::Logo-->
+          <!--          &lt;!&ndash;begin::Logo&ndash;&gt;-->
+          <!--          <div class="mb-7">-->
+          <!--            <a href="#" class="">-->
+          <!--              <img alt="Logo" src="/media/logos/default.svg" class="h-40px" />-->
+          <!--            </a>-->
+          <!--          </div>-->
+          <!--          &lt;!&ndash;end::Logo&ndash;&gt;-->
 
           <!--begin::Title-->
           <h1 class="fw-bolder text-gray-900 mb-5">Purchase Successful</h1>

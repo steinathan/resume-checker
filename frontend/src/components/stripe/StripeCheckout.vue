@@ -13,9 +13,8 @@ import { storeToRefs } from "pinia";
 const authStore = useAuthStore();
 const { user } = storeToRefs(authStore);
 
-const stripePromise = loadStripe(
-  "pk_test_51OWqHeBSae2LEN6sWpGyrocTqNDU0EshPTznV6EtlqP2Ee88pxcx9GXUBNzfQNfmteI9fx1tHlLjsseP7EYrO3i300rpRNKh8r"
-);
+const key = import.meta.env.VITE_APP_STRIPE_PUB_KEY;
+const stripePromise = loadStripe(key);
 
 function handlePriceSelect(val) {
   const params = {

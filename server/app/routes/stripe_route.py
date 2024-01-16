@@ -1,3 +1,4 @@
+import math
 import os
 
 import stripe
@@ -5,7 +6,7 @@ from fastapi import APIRouter, Header, Request
 from pydantic import BaseModel
 from starlette.responses import JSONResponse
 
-from app.handlers.user_handler import find_user_by_id, update_user
+from app.handlers.user_handler import find_user_by_id, update_user, update_user_by_dict
 
 router = APIRouter(
     tags=["stripe"],
@@ -81,7 +82,21 @@ async def webhook_received(request: Request, stripe_signature: str = Header(None
             user.stripe_subscription_cancel_at_period_end = subscription.cancel_at_period_end
 
             # ~!
-            update_user(user)
+            try:
+                await update_user_by_dict(user.id, {
+                    "stripe_customer_id": user.stripe_customer_id,
+                    "stripe_subscription_id": user.stripe_subscription_id,
+                    "stripe_subscription_status": user.stripe_subscription_status,
+                    "stripe_subscription_current_period_start": user.stripe_subscription_current_period_start,
+                    "stripe_subscription_current_period_end": user.stripe_subscription_current_period_end,
+                    "stripe_subscription_cancel_at_period_end": user.stripe_subscription_cancel_at_period_end,
+                    "plan": "paid",
+                    "scans_remaining": 200,
+                    "resume_analysis_remaining": 200,
+                })
+            except Exception as e:
+                raise Exception(f"failed to update user: {str(e)}")
+
 
     elif event_type == 'invoice.paid':
         print('invoice paid')

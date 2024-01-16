@@ -5,10 +5,11 @@ from pathlib import Path
 from typing import Annotated, Optional, List
 
 from fastapi import APIRouter, Depends, HTTPException
+from fastapi_cache.decorator import cache
 from starlette.responses import FileResponse
 
 from app.dependencies import get_current_user
-from app.handlers import resume_handler
+from app.handlers import resume_handler, user_handler
 from app.handlers.resume_handler import CreateResumeParams
 from app.models.common_models import Resume, User
 
@@ -21,10 +22,22 @@ router = APIRouter(
 @router.post("/resume", response_model=Resume)
 async def create_resume(params: CreateResumeParams, current_user: Annotated[User, Depends(get_current_user)]):
     """ creates a new resume called after uploading to bucket"""
+    if current_user.resume_analysis_remaining <= 0:
+        raise Exception("You have no resume analysis remaining")
+
     resume = resume_handler.create_new_resume(current_user, params)
     try:
         await resume_handler.analyze_resume(current_user, resume.id)
-        return resume_handler.find_resume_by_id(current_user, resume.id)
+        resume = resume_handler.find_resume_by_id(current_user, resume.id)
+
+        # update plan details for user
+        if resume and current_user.plan == "free":
+            current_user.resume_analysis_remaining -= 1
+            await user_handler.update_user_by_dict(current_user.id, {
+                "resume_analysis_remaining": current_user.resume_analysis_remaining,
+            })
+
+        return resume
     except Exception as e:
         logging.error(e)
         await resume_handler.delete_resume(current_user, resume.id)
@@ -54,6 +67,7 @@ async def analyze_user_resume(resume_id: str, current_user: Annotated[User, Depe
     return await resume_handler.analyze_resume(current_user, resume_id)
 
 
+@cache(expire=60 * 5)
 @router.get("/resume/{resume_id}/fix")
 def fix_user_resume(current_user: Annotated[User, Depends(get_current_user)], resume_id: str,
                     scan_id: str | None = None):

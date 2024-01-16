@@ -26,13 +26,25 @@ class User(BaseModel):
 
     # for free users, 3 scans per day
     scans_remaining: int = Field(3)
+    scans_remaining_reached: bool = Field(False)
 
+    resume_analysis_remaining: int = Field(3)
+    resume_analysis_limit_reached: bool = Field(False)
+
+    plan: str = Field("free")
     stripe_customer_id: str | None = None
     stripe_subscription_id: str | None = None
     stripe_subscription_status: str | None = None
     stripe_subscription_current_period_start: int | None = None
     stripe_subscription_current_period_end: int | None = None
     stripe_subscription_cancel_at_period_end: bool | None = None
+
+    def __init__(self, **data):
+        super().__init__(**data)
+        if self.stripe_customer_id:
+            self.plan = "paid"
+        self.scans_remaining_reached = self.scans_remaining <= 0
+        self.resume_analysis_limit_reached = self.resume_analysis_remaining <= 0
 
 
 class ResumeLLMAnalysis(ResumeAnalysisResult):

@@ -1,6 +1,6 @@
 <template>
   <!--begin::Toolbar-->
-  <div class="toolbar py-5 py-lg-15" id="kt_toolbar">
+  <div v-if="user" class="toolbar py-5 py-lg-15" id="kt_toolbar">
     <!--begin::Container-->
     <div
       id="kt_toolbar_container"
@@ -10,7 +10,16 @@
       }"
       class="d-flex flex-stack flex-wrap"
     >
-      <PageTitle />
+      <!--      <div></div>-->
+      <Notice
+        v-if="user.plan === 'free'"
+        classes="border-0 w-fluid"
+        color="warning"
+        title="You're on a free plan"
+        :body="`you have ${user.resume_analysis_remaining} resume analysis and ${user.scans_remaining} scan analysis remaining, consider upgrading your account`"
+      ></Notice>
+
+      <!--      <PageTitle />-->
 
       <!--begin::Actions-->
       <div class="d-flex align-items-center py-3 py-md-1">
@@ -62,22 +71,13 @@
   <!--end::Toolbar-->
 </template>
 
-<script lang="ts">
-import { getAssetPath } from "@/core/helpers/assets";
-import { defineComponent } from "vue";
+<script lang="ts" setup>
 import PageTitle from "@/layouts/main-layout/toolbar/PageTitle.vue";
 import { toolbarWidthFluid } from "@/core/helpers/config";
+import Notice from "@/components/Notice.vue";
+import { storeToRefs } from "pinia";
+import { useAuthStore } from "@/stores/auth";
 
-export default defineComponent({
-  name: "KToolbar",
-  components: {
-    PageTitle,
-  },
-  setup() {
-    return {
-      toolbarWidthFluid,
-      getAssetPath,
-    };
-  },
-});
+const authStore = useAuthStore();
+const { user } = storeToRefs(authStore);
 </script>

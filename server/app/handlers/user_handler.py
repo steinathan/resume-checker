@@ -38,3 +38,9 @@ def upsert_user(user: User) -> User:
 def update_user(user: User) -> User | None:
     upsert_user(user)
     return user
+
+
+async def update_user_by_dict(id: str, user_dict: dict) -> None:
+    """ updates the user by dict, performs partial update """
+    (supabase.table(USERS_TABLE).update(user_dict)
+     .eq('id', id).execute())
