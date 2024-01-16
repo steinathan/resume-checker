@@ -19,7 +19,7 @@ const MainMenuConfig = (user: User): Array<MenuItem> => {
   ];
   if (!user?.stripe_customer_id) {
     pages.push({
-      heading: "upgrade",
+      heading: "Upgrade",
       route: "/upgrade",
     });
   }

@@ -1,35 +1,27 @@
 <template>
   <!--begin::Tables Widget 9-->
 
-  <div class="fs-4 px-5">
-    {{ singleScan.ats_analysis?.summary }}
-  </div>
+  <!--  <div class="fs-4 px-5">-->
+  <!--    {{ singleScan.ats_analysis?.summary }}-->
+  <!--  </div>-->
 
-  <!--  Title match -->
-  <ScanSection
-    title="Job Title Match"
-    :explanation="analysis?.title_match?.explanation"
-    :checked="analysis?.title_match.match"
-    :suggestion="analysis?.title_match?.suggestion"
-  />
+  <!--    <ScanSection-->
+  <!--      title="Education Requirement"-->
+  <!--      :explanation="analysis?.education.explanation"-->
+  <!--      :issues="analysis?.education.issues"-->
+  <!--      :score="analysis?.education.score"-->
+  <!--      :suggestion="analysis?.education?.suggestion"-->
+  <!--      hide-checked-->
+  <!--    />-->
 
-  <!--  <ScanSection-->
-  <!--    title="Education Requirement"-->
-  <!--    :explanation="analysis?.education.explanation"-->
-  <!--    :issues="analysis?.education.issues"-->
-  <!--    :score="analysis?.education.score"-->
-  <!--    :suggestion="analysis?.education?.suggestion"-->
-  <!--    hide-checked-->
-  <!--  />-->
-
-  <!--  <ScanSection-->
-  <!--    title="Avoidable Keywords"-->
-  <!--    :explanation="analysis?.avoidable_keywords.explanation"-->
-  <!--    :issues="analysis?.avoidable_keywords.issues"-->
-  <!--    :score="analysis?.avoidable_keywords.score"-->
-  <!--    :suggestion="analysis?.avoidable_keywords?.suggestion"-->
-  <!--    hide-checked-->
-  <!--  />-->
+  <!--    <ScanSection-->
+  <!--      title="Avoidable Keywords"-->
+  <!--      :explanation="analysis?.avoidable_keywords.explanation"-->
+  <!--      :issues="analysis?.avoidable_keywords.issues"-->
+  <!--      :score="analysis?.avoidable_keywords.score"-->
+  <!--      :suggestion="analysis?.avoidable_keywords?.suggestion"-->
+  <!--      hide-checked-->
+  <!--    />-->
 
   <!--  Skill comparison-->
   <div class="py-2">
@@ -96,6 +88,15 @@
   </div>
 
   <!-- end comparison -->
+
+  <!--  Title match -->
+  <ScanSection
+    v-if="analysis?.title_match?.explanation"
+    title="Job Title Match"
+    :explanation="analysis?.title_match?.explanation"
+    :checked="analysis?.title_match.match"
+    :suggestion="analysis?.title_match?.suggestion"
+  />
 </template>
 
 <script lang="ts" setup>

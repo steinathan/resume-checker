@@ -24,6 +24,9 @@ class User(BaseModel):
     full_name: str | None = None
     disabled: bool | None = False
 
+    # for free users, 3 scans per day
+    scans_remaining: int = Field(3)
+
     stripe_customer_id: str | None = None
     stripe_subscription_id: str | None = None
     stripe_subscription_status: str | None = None
@@ -100,3 +103,22 @@ class AtsJobScan(AllBaseModel):
 
     # analysis from Skiller skills
     skills_analysis: SkillExtractorResult | None = None
+
+    # skills score of matched vs unmatched skills
+    skills_score: int | None = Field(0)
+    job_skills_count: int | None = Field(0)
+
+    def __init__(self, **data):
+        super().__init__(**data)
+
+        #  auto compute the matched and unmatched skills if they're empty
+        if len(self.skills_analysis.matched_skills) == 0:
+            self.skills_analysis.matched_skills = [skill for skill in self.skills_analysis.ats_skills if skill.is_match]
+        if len(self.skills_analysis.unmatched_skills) == 0:
+            self.skills_analysis.unmatched_skills = [skill for skill in self.skills_analysis.ats_skills if
+                                                     not skill.is_match]
+
+        if self.skills_analysis:
+            match_count = len(self.skills_analysis.matched_skills)
+            self.job_skills_count = len(self.skills_analysis.ats_skills)
+            self.skills_score = round(match_count * self.job_skills_count / 10)

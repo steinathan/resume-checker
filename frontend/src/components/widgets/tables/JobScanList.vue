@@ -93,10 +93,11 @@
                     <td class="text-muted fw-bolder fs-1">
                       <span
                         :style="`color: ${getColorCodeByPercentage(
-                          scan.ats_analysis?.score * 10
+                          scan.skills_score * 10
                         )}`"
-                        >{{ scan.ats_analysis?.score }}</span
                       >
+                        {{ scan.skills_score }} </span
+                      ><span>/{{ scan.job_skills_count }} </span>
                     </td>
                     <td>
                       <router-link

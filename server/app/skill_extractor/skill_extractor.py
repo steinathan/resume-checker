@@ -27,6 +27,9 @@ class MatchingResult(BaseModel):
         description="List of re-shaped skills matching from job")
     resume_skills: List[APISkill] = Field(
         description="List of skills found in the resume")
+    matched_skills: List[AtsSkill] = Field([],
+                                           description="List of skills matched between job and resume")
+    unmatched_skills: List[APISkill] = Field([], description="List of skills not matched between job and resume")
 
 
 # noinspection PyMethodMayBeStatic
@@ -124,12 +127,14 @@ class SkillExtractor:
 
         skills = self.to_ats_skills(self.resume_skills, self.job_skills)
 
-        # matched_skills = [skill for skill in skills if skill.is_match]
-        # unmatched_skills = [skill for skill in skills if not skill.is_match]
+        matched_skills: List[AtsSkill] = [skill for skill in skills if skill.is_match]
+        unmatched_skills: List[AtsSkill] = [skill for skill in skills if not skill.is_match]
 
         result = MatchingResult(
             ats_skills=skills,
             resume_skills=self.resume_skills,
+            unmatched_skills=unmatched_skills,  # type: ignore
+            matched_skills=matched_skills,
         )
 
         return result

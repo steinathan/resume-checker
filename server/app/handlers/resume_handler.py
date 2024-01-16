@@ -12,7 +12,7 @@ from app.helpers.resume_generator import build_resume
 from app.models.common_models import Resume, User, CoverLetter, AtsJobScan
 from app.prompts.ats_job_prompt import JobSection
 from app.prompts.resume_fixer import StructuredResume
-from app.skill_extractor.skill_extractor import SkillExtractor, AtsSkill
+from app.skill_extractor.skill_extractor import SkillExtractor, AtsSkill, MatchingResult
 from app.supabase_client.client import supabase
 from uuid import uuid4
 
@@ -159,16 +159,16 @@ def process_ats_scan(user: User, params: AnalyseJobForResumeParams):
     ats_result: AtsAnalyserResult = analyzer.run_ats()
 
     skill_extractor = SkillExtractor(resume.skills)
-    skill_extractor_result = skill_extractor.process_ats_skills(
+    skill_extractor_result: MatchingResult = skill_extractor.process_ats_skills(
         str(analyzer.resume_content), str(analyzer.job_content))
 
     #  get the percentage of skills matched vs not match / 10
-    matched_skills = [skill for skill in skill_extractor_result.ats_skills if skill.is_match]
-    unmatched_skills = [skill for skill in skill_extractor_result.ats_skills if not skill.is_match]
+    matched_skills = skill_extractor_result.matched_skills
+    unmatched_skills = skill_extractor_result.unmatched_skills
 
     skill_score = len(matched_skills) / len(unmatched_skills) * 10
 
-    if ats_result.ats_analysis.title_match.match:
+    if ats_result.ats_analysis.title_match.match:  # type: ignore
         skill_score += 3
 
     ats_result.ats_analysis.score = round(skill_score)  # type: ignore

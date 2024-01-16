@@ -1,0 +1,5 @@
+{
+    "python.missingPackage.severity": "Warning",
+    "vue.inlayHints.missingProps": true,
+    "mypy.dmypyExecutable": "dmypy"
+}

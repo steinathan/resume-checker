@@ -11,12 +11,14 @@
               <span
                 class="total_score"
                 :style="{
-                  color: getColorCodeByPercentage(analysis?.score * 10),
+                  color: getColorCodeByPercentage(singleScan.skills_score * 10),
                 }"
               >
-                {{ analysis?.score }}
+                {{ singleScan.skills_score }}
               </span>
-              <span class="text-muted score_base"> /10 </span>
+              <span class="text-muted score_base">
+                /{{ singleScan.job_skills_count }}
+              </span>
             </div>
 
             <div
@@ -99,7 +101,7 @@
                     v-if="loading"
                     class="spinner-border spinner-border-sm align-middle ms-2"
                   ></span>
-                  Fix Resume
+                  Get Resume Suggestion
                 </button>
                 <!--                <button-->
                 <!--                  class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"-->
