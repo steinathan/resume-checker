@@ -67,7 +67,6 @@ async def analyze_user_resume(resume_id: str, current_user: Annotated[User, Depe
     return await resume_handler.analyze_resume(current_user, resume_id)
 
 
-@cache(expire=60 * 5)
 @router.get("/resume/{resume_id}/fix")
 def fix_user_resume(current_user: Annotated[User, Depends(get_current_user)], resume_id: str,
                     scan_id: str | None = None):

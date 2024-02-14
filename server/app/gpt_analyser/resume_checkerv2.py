@@ -165,15 +165,8 @@ class ResumeAnalyser:
         logging.debug(check_prompt_str)
         output = self.llm.predict(check_prompt_str)
         ats_result: AtsJobPromptModel = job_ats_parser.parse(output)
-        fit = ats_result.score > 6.5
 
-        cover_letter: str | None = None
-
-        if True:
-            cover_letter = self.generate_cover_letter()
-        else:
-            logging.info("resume is not fit, refusing to generate cover letter")
-
+        cover_letter: str = self.generate_cover_letter()
         return AtsAnalyserResult(
             resume_content=self.resume_content,
             generated_cover_letter=cover_letter,

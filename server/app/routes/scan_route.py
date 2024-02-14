@@ -40,7 +40,6 @@ async def get_job_scans(current_user: Annotated[User, Depends(get_current_user)]
     return resume_handler.list_job_scans_for_user(current_user)
 
 
-@cache(expire=60)
 @router.get("/job/scans/{scan_id}", response_model=Optional[JobScanResult])
 async def find_job_scan(scan_id: str, current_user: Annotated[User, Depends(get_current_user)]):
     """ finds the resume by id """

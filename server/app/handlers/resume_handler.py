@@ -168,8 +168,8 @@ def process_ats_scan(user: User, params: AnalyseJobForResumeParams):
 
     skill_score = len(matched_skills) / len(unmatched_skills) * 10
 
-    if ats_result.ats_analysis.title_match.match:  # type: ignore
-        skill_score += 3
+    # if ats_result.ats_analysis.title_match.match:  # type: ignore
+    #     skill_score += 3
 
     ats_result.ats_analysis.score = round(skill_score)  # type: ignore
     # create resume ats job scan in db

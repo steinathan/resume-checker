@@ -1,8 +1,7 @@
 #!/bin/bash
 
 while true; do
-    # Your command goes here
-    fly deploy --local-only
+    fly deploy
 
     
     # Check the exit status of the last command
