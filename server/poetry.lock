@@ -2460,6 +2460,17 @@ files = [
 ]
 
 [[package]]
+name = "random-username"
+version = "1.0.2"
+description = "Randomly generate compelling usernames."
+optional = false
+python-versions = "*"
+files = [
+    {file = "random-username-1.0.2.tar.gz", hash = "sha256:5fdc0604b5d1bdfe4acf4cd7491a9de1caf41bbdd890f646b434e09ae2a1b7ce"},
+    {file = "random_username-1.0.2-py3-none-any.whl", hash = "sha256:2536feb63fecde7e01ede4a541aadb6f0b58794a7ab327ca5369d2a4b7664c06"},
+]
+
+[[package]]
 name = "rapidfuzz"
 version = "3.6.0"
 description = "rapid fuzzy string matching"
@@ -3757,4 +3768,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8.1,<4.0"
-content-hash = "ecfd2b300d10b91ea06aed088c10661a5a94740fd18befeee339f4a8862875bc"
+content-hash = "abda7bfbac93e6d5d23082fe6930777bbc3269cda6e40fd94284d6449c183b61"

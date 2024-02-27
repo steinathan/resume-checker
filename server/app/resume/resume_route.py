@@ -31,13 +31,15 @@ async def create_resume(params: ResumeCreateInput, current_user: Annotated[User,
 @router.get("/resumes", response_model=Optional[List[Resume]])
 async def list_resume(current_user: Annotated[User, Depends(get_current_user)]):
     """ list all resumes for user """
-    return resume_service.find_all_resumes(current_user)
+    resumes = await resume_service.find_all_resumes(current_user)
+    return resumes
 
 
 @router.get("/resumes/{resume_id}", response_model=Optional[Resume])
 async def find_resume(resume_id: str, current_user: Annotated[User, Depends(get_current_user)]):
     """ finds the resume by id """
-    return resume_service.find_resume_by_id(current_user, resume_id)
+    resume = await resume_service.find_resume_by_id(current_user, resume_id)
+    return resume
 
 
 @router.delete("/resume/{resume_id}", response_model=Resume)

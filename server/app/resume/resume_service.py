@@ -72,7 +72,7 @@ async def delete_resume(user: User, resume_id: str) -> bool:
     return True
 
 
-def find_resume_by_id(user: User, resume_id: str) -> Resume | None:
+async def find_resume_by_id(user: User, resume_id: str) -> Resume | None:
     response = (supabase.table(RESUME_TABLE)
                 .select("*")
                 .eq("user_id", user.id)
