@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-py"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Provider {
+  email
+  github
+  google
+}
+
+enum Visibility {
+  public
+  private
+}
+
+model User {
+  id                                       String   @id @default(cuid())
+  name                                     String
+  picture                                  String?
+  username                                 String   @unique
+  email                                    String   @unique
+  locale                                   String   @default("en-US")
+  email_verified                           Boolean  @default(false)
+  two_factor_enabled                       Boolean  @default(false)
+  created_at                               DateTime @default(now())
+  updated_at                               DateTime @updatedAt
+  provider                                 Provider
+  secrets                                  Secrets?
+  resumes                                  Resume[]
+  scans_remaining                          Int      @default(3)
+  scans_remaining_reached                  Boolean  @default(false)
+  resume_analysis_remaining                Int      @default(3)
+  resume_analysis_limit_reached            Boolean  @default(false)
+  plan                                     String   @default("free")
+  stripe_customer_id                       String?
+  stripe_subscription_id                   String?
+  stripe_subscription_status               String?
+  stripe_subscription_current_period_start Int?
+  stripe_subscription_current_period_end   Int?
+  stripe_subscription_cancel_at_period_end Boolean?
+}
+
+model Secrets {
+  id                      String    @id @default(cuid())
+  password                String?
+  last_signed_in          DateTime?
+  verification_token      String?
+  two_factor_secret       String?
+  two_factor_backup_codes String[]  @default([])
+  refresh_token           String?
+  reset_token             String?   @unique
+  user_id                 String    @unique
+  user                    User      @relation(fields: [user_id], references: [id], onDelete: Cascade)
+}
+
+model Resume {
+  id         String     @id @default(cuid())
+  title      String
+  slug       String
+  data       Json       @default("{}")
+  visibility Visibility @default(private)
+  locked     Boolean    @default(false)
+  user_id    String
+  user       User       @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  created_at DateTime   @default(now())
+  updated_at DateTime   @updatedAt
+
+  @@unique([user_id, id])
+  @@unique([user_id, slug])
+  @@index(fields: [user_id])
+}

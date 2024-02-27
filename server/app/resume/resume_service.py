@@ -5,11 +5,13 @@ import os
 from datetime import datetime
 from typing import List
 
+from prisma.models import Resume
+from prisma.types import ResumeCreateInput, ResumeUpdateInput
 from pydantic import BaseModel
 
 from app.gpt_analyser.resume_checkerv2 import ResumeAnalyser, AtsAnalyserResult
 from app.helpers.resume_generator import build_resume
-from app.models.common_models import Resume, User, CoverLetter, AtsJobScan
+from app.models.common_models import User, CoverLetter, AtsJobScan
 from app.prompts.ats_job_prompt import JobSection
 from app.prompts.resume_fixer import StructuredResume
 from app.skill_extractor.skill_extractor import SkillExtractor, AtsSkill, MatchingResult
@@ -30,51 +32,43 @@ class AnalyseJobForResumeParams(BaseModel):
     resume_id: str | None = None
 
 
-class CreateResumeParams(BaseModel):
-    """ create resume parameters after uploading one"""
-    src: str
-    name: str
-    text: str | None = None
+async def create_new_resume(user: User, params: ResumeCreateInput) -> Resume:
+    data: ResumeCreateInput = {
+        "user_id": user.id,
+        "title": params.get("title"),
+        "slug": params.get("slug")
+    }
+    resume = await Resume.prisma().create(data=data)
+    return resume
 
 
-def create_new_resume(user: User, params: CreateResumeParams) -> Resume:
-    resume_id = str(uuid4())
-    if params.src:
-        if not params.src.endswith("pdf"):
-            raise ValueError("src must be a valid PDF")
-
-    resume = Resume(**params.model_dump(), user_id=user.id, id=resume_id)
-    response = supabase.table(RESUME_TABLE).insert(resume.model_dump()).execute()
-    return Resume(**response.data[0])
-
-
-def find_all_resumes(user: User) -> list[Resume]:
-    response = (supabase.table(RESUME_TABLE)
-                .select("*")
-                .neq('deleted', True)
-                .order("created_at", desc=True)
-                .eq("user_id", user.id).execute()
-                )
-    return [Resume(**data) for data in response.data]
+async def find_all_resumes(user: User) -> list[Resume]:
+    user_resumes = await Resume.prisma().find_many(
+        where={
+            "user_id": user.id
+        },
+        order={
+            "updated_at": "desc"
+        }
+    )
+    return user_resumes
 
 
-def update_resume(user: User, resume_id: str, resume: Resume) -> Resume | None:
-    (supabase.table(RESUME_TABLE).update(resume.model_dump())
-     .eq("user_id", user.id)
-     .eq("id", resume_id)
-     .execute())
-    return find_resume_by_id(user, resume_id)
+async def update_resume(resume_id: str, params: ResumeUpdateInput) -> Resume | None:
+    resume = await Resume.prisma().update(
+        where={
+            "id": resume_id,
+        },
+        data=params)
+    return resume
 
 
 async def delete_resume(user: User, resume_id: str) -> bool:
     # TODO: delete the file, then the cover letter, then the resume
-    (supabase.table(RESUME_TABLE).update({
-        "deleted_at": datetime.now().isoformat(),
-        "deleted": True,
+    await Resume.prisma().delete(where={
+        "id": resume_id,
+        # "user_id": user.id
     })
-     .eq("user_id", user.id)
-     .eq("id", resume_id)
-     .execute())
     return True
 
 

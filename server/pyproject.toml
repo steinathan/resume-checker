@@ -38,6 +38,7 @@ docxtpl = "^0.16.7"
 fastapi-cache2 = {extras = ["memcache"], version = "^0.2.1"}
 stripe = "^7.11.0"
 pydantic = "^2.5.3"
+prisma = "^0.12.0"
 
 
 [build-system]

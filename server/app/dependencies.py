@@ -2,10 +2,9 @@ from typing import Annotated
 
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
-from fastapi_cache.decorator import cache
 
-from app.handlers import user_handler
-from app.handlers.user_handler import upsert_user_by_jwt
+from app.user import user_service
+from app.user.user_service import upsert_user_by_jwt
 from app.models.common_models import User
 from app.supabase_client.client import supabase
 
@@ -25,4 +24,4 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]) -> Use
                 detail="Invalid authentication credentials",
                 headers={"WWW-Authenticate": "Bearer"},
             )
-        return user_handler.find_user_by_id(user.id)
+        return user_service.find_user_by_id(user.id)

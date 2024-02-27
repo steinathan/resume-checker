@@ -1,4 +1,3 @@
-import math
 import os
 
 import stripe
@@ -6,7 +5,7 @@ from fastapi import APIRouter, Header, Request
 from pydantic import BaseModel
 from starlette.responses import JSONResponse
 
-from app.handlers.user_handler import find_user_by_id, update_user, update_user_by_dict
+from app.user.user_service import find_user_by_id, update_user_by_dict
 
 router = APIRouter(
     tags=["stripe"],

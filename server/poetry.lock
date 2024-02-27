@@ -1592,6 +1592,20 @@ tgrep = ["pyparsing"]
 twitter = ["twython"]
 
 [[package]]
+name = "nodeenv"
+version = "1.8.0"
+description = "Node.js virtual environment builder"
+optional = false
+python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*"
+files = [
+    {file = "nodeenv-1.8.0-py2.py3-none-any.whl", hash = "sha256:df865724bb3c3adc86b3876fa209771517b0cfe596beff01a92700e0e8be4cec"},
+    {file = "nodeenv-1.8.0.tar.gz", hash = "sha256:d51e0c37e64fbf47d017feac3145cdbb58836d7eee8c6f6d3b6880c5456227d2"},
+]
+
+[package.dependencies]
+setuptools = "*"
+
+[[package]]
 name = "numpy"
 version = "1.24.4"
 description = "Fundamental package for array computing in Python"
@@ -1926,6 +1940,32 @@ deprecation = ">=2.1.0,<3.0.0"
 httpx = ">=0.24.0,<0.25.0"
 pydantic = ">=1.9,<3.0"
 strenum = ">=0.4.9,<0.5.0"
+
+[[package]]
+name = "prisma"
+version = "0.12.0"
+description = "Prisma Client Python is an auto-generated and fully type-safe database client"
+optional = false
+python-versions = ">=3.7.0"
+files = [
+    {file = "prisma-0.12.0-py3-none-any.whl", hash = "sha256:4b90438bb8030f71a33bfb66fdf2ce1e342a28ee524e4c2702d9f73643571d6f"},
+    {file = "prisma-0.12.0.tar.gz", hash = "sha256:ec22804caae37555bd9ffa5efdcc630b2bed77187d13da5269715b1ad51a35f9"},
+]
+
+[package.dependencies]
+click = ">=7.1.2"
+httpx = ">=0.19.0"
+jinja2 = ">=2.11.2"
+nodeenv = "*"
+pydantic = ">=1.8.0,<3"
+python-dotenv = ">=0.12.0"
+StrEnum = {version = "*", markers = "python_version < \"3.11\""}
+tomlkit = "*"
+typing-extensions = ">=4.0.1"
+
+[package.extras]
+all = ["nodejs-bin"]
+node = ["nodejs-bin"]
 
 [[package]]
 name = "pyasn1"
@@ -2384,6 +2424,7 @@ files = [
     {file = "PyYAML-6.0.1-cp311-cp311-win_amd64.whl", hash = "sha256:bf07ee2fef7014951eeb99f56f39c9bb4af143d8aa3c21b1677805985307da34"},
     {file = "PyYAML-6.0.1-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:855fb52b0dc35af121542a76b9a84f8d1cd886ea97c84703eaa6d88e37a2ad28"},
     {file = "PyYAML-6.0.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:40df9b996c2b73138957fe23a16a4f0ba614f4c0efce1e9406a184b6d07fa3a9"},
+    {file = "PyYAML-6.0.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a08c6f0fe150303c1c6b71ebcd7213c2858041a7e01975da3a99aed1e7a378ef"},
     {file = "PyYAML-6.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6c22bec3fbe2524cde73d7ada88f6566758a8f7227bfbf93a408a9d86bcc12a0"},
     {file = "PyYAML-6.0.1-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:8d4e9c88387b0f5c7d5f281e55304de64cf7f9c0021a3525bd3b1c542da3b0e4"},
     {file = "PyYAML-6.0.1-cp312-cp312-win32.whl", hash = "sha256:d483d2cdf104e7c9fa60c544d92981f12ad66a457afae824d146093b8c294c54"},
@@ -3042,6 +3083,17 @@ python-versions = ">=3.7"
 files = [
     {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
     {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
+]
+
+[[package]]
+name = "tomlkit"
+version = "0.12.3"
+description = "Style preserving TOML library"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "tomlkit-0.12.3-py3-none-any.whl", hash = "sha256:b0a645a9156dc7cb5d3a1f0d4bab66db287fcb8e0430bdd4664a095ea16414ba"},
+    {file = "tomlkit-0.12.3.tar.gz", hash = "sha256:75baf5012d06501f07bee5bf8e801b9f343e7aac5a92581f20f80ce632e6b5a4"},
 ]
 
 [[package]]
@@ -3705,4 +3757,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8.1,<4.0"
-content-hash = "5a19bec8f66d1de6bb9bf8e4fc27c67ddb996dc759642cf1baadd904a5ae85cf"
+content-hash = "ecfd2b300d10b91ea06aed088c10661a5a94740fd18befeee339f4a8862875bc"

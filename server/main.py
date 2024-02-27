@@ -14,8 +14,10 @@ from fastapi.staticfiles import StaticFiles
 from fastapi_cache import FastAPICache
 from fastapi_cache.backends.inmemory import InMemoryBackend
 from starlette.responses import HTMLResponse
-
-from app.routes import user_route, scan_route, resume_route, stripe_route  # type: ignore
+from prisma import Prisma
+from app.routes import scan_route, stripe_route  # type: ignore
+from app.resume import resume_route
+from app.user import user_route
 
 load_dotenv()
 
@@ -79,6 +81,9 @@ log_config["formatters"]["default"]["fmt"] = "%(asctime)s - %(levelname)s - %(me
 
 @app.on_event("startup")
 async def startup():
+    db = Prisma(auto_register=True, log_queries=True)
+    await db.connect()
+    print("[startup] app started successfully")
     FastAPICache.init(InMemoryBackend(), prefix="fastapi-cache")
 
 if __name__ == "__main__":

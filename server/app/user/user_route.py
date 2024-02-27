@@ -1,9 +1,10 @@
 from fastapi import APIRouter, Depends
 from fastapi.security import OAuth2PasswordRequestForm
+from prisma.models import User
 
 from app.dependencies import get_current_user
-from app.handlers import user_handler
-from app.models.common_models import User
+from app.user import user_service
+# from app.models.common_models import User
 from app.supabase_client.client import supabase
 from typing import Annotated
 
@@ -26,4 +27,4 @@ async def get_login_token(form_data: Annotated[OAuth2PasswordRequestForm, Depend
 
 @router.get("/user/verify", response_model=User)
 async def verify_user(jwt: str):
-    return user_handler.upsert_user_by_jwt(jwt)
+    return user_service.upsert_user_by_jwt(jwt)

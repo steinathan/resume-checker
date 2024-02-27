@@ -1,7 +1,7 @@
 import uuid
 
 from app.gpt_analyser.resume_checkerv2 import ResumeAnalyser, AtsAnalyserResult
-from app.handlers.resume_handler import create_cover_letter, create_scan_result
+from app.resume.resume_service import create_cover_letter, create_scan_result
 from app.models.common_models import User, Resume, CoverLetter
 
 resume_path = "https://rbscckjjbznellmpzemf.supabase.co/storage/v1/object/public/ai-resume/d8cce208-7143-4eaa-9f51-7ee3c55630f4/Resume%20-%20Navi.pdf"
