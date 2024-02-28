@@ -11,9 +11,9 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="get-token")
 
 
 async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]) -> User:
-    user = await user_service.upsert_user_by_jwt(token)
-    if user:
-        return user
+    data = supabase.auth.get_user(token)
+    if data.user:
+        return await user_service.find_user_by_id(data.user.id)
     else:
         data = supabase.auth.get_user(token)
         user = data.user

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import logging
 import os
 from datetime import datetime
@@ -14,6 +15,7 @@ from app.helpers.resume_generator import build_resume
 from app.models.common_models import User, CoverLetter, AtsJobScan
 from app.prompts.ats_job_prompt import JobSection
 from app.prompts.resume_fixer import StructuredResume
+from app.resume.resume_schema.default_resume import default_resume
 from app.skill_extractor.skill_extractor import SkillExtractor, AtsSkill, MatchingResult
 from app.supabase_client.client import supabase
 from uuid import uuid4
@@ -36,7 +38,8 @@ async def create_new_resume(user: User, params: ResumeCreateInput) -> Resume:
     data: ResumeCreateInput = {
         "user_id": user.id,
         "title": params.get("title"),
-        "slug": params.get("slug")
+        "slug": params.get("slug"),
+        "data": default_resume,  # type: ignore
     }
     resume = await Resume.prisma().create(data=data)
     return resume
@@ -49,17 +52,25 @@ async def find_all_resumes(user: User) -> list[Resume]:
         },
         order={
             "updated_at": "desc"
+        },
+        include={
+            "user": True
         }
     )
     return user_resumes
 
 
-async def update_resume(resume_id: str, params: ResumeUpdateInput) -> Resume | None:
+async def update_resume(resume_id: str, params: Resume) -> Resume | None:
     resume = await Resume.prisma().update(
         where={
             "id": resume_id,
         },
-        data=params)
+        data={
+            "title": params.title,
+            "slug": params.slug,
+            "visibility": params.visibility,
+            "data": json.dumps(params.data),  # type:ignore
+        })
     return resume
 
 
@@ -73,14 +84,15 @@ async def delete_resume(user: User, resume_id: str) -> bool:
 
 
 async def find_resume_by_id(user: User, resume_id: str) -> Resume | None:
-    response = (supabase.table(RESUME_TABLE)
-                .select("*")
-                .eq("user_id", user.id)
-                .eq("id", resume_id).execute()
-                )
-    if response.data:
-        return Resume(**response.data[0])
-    return None
+    resume = await Resume.prisma().find_first(
+        where={
+            "id": resume_id
+        },
+        include={
+            "user": True
+        }
+    )
+    return resume
 
 
 class JobScanResult(BaseModel):

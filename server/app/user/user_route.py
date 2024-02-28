@@ -34,6 +34,10 @@ class UserLoginInput(BaseModel):
 async def get_me(current_user: Annotated[User, Depends(get_current_user)]):
     return current_user
 
+@router.patch("/me")
+async def update_profile(current_user: Annotated[User, Depends(get_current_user)]):
+    return current_user
+
 
 @router.get("/providers")
 async def get_providers():

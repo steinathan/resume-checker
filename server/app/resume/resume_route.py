@@ -5,13 +5,13 @@ from pathlib import Path
 from typing import Annotated, Optional, List
 
 from fastapi import APIRouter, Depends, HTTPException
-from prisma.types import ResumeCreateInput
+from prisma.models import Resume
+from prisma.types import ResumeCreateInput, ResumeUpdateInput
 from starlette.responses import FileResponse
 
 from app.dependencies import get_current_user
 from app.resume import resume_service
-from app.user import user_service
-from app.models.common_models import Resume, User
+from app.models.common_models import User
 
 router = APIRouter(
     tags=["resume"],
@@ -33,6 +33,17 @@ async def list_resume(current_user: Annotated[User, Depends(get_current_user)]):
     """ list all resumes for user """
     resumes = await resume_service.find_all_resumes(current_user)
     return resumes
+
+
+@router.get("/resume/print/{resume_id}/preview")
+async def print_resume(resume_id: str):
+    print(f"print resume: {resume_id}")
+    return {"url": "https://storage.rxresu.me/clqvjye6h02bokbjpuv404idr/previews/clqvjz1bk0077ur9pxk6l8n46.jpg"}
+
+
+@router.patch("/resume/{resume_id}")
+async def update_resume(resume_id: str, payload: Resume):
+    return await resume_service.update_resume(resume_id, payload)
 
 
 @router.get("/resumes/{resume_id}", response_model=Optional[Resume])
